@@ -7,58 +7,21 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Custom Styles (기존 스타일시트 경로를 유지) -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <style>
-        /* 모달 스타일 추가 */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.6);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        .modal-content h3 {
-            margin-top: 0;
-        }
-
-        .modal-content .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .modal-content .close:hover,
-        .modal-content .close:focus {
-            color: #000;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
-    <!-- Header (기존 상단 메뉴와 동일) -->
+    <!-- Language Selector -->
+    <div id="language-selector" class="language-selector">
+        <button class="lang-btn active" data-lang="en"><i class="fas fa-globe"></i> EN</button>
+        <button class="lang-btn" data-lang="ko"><i class="fas fa-globe"></i> 한국어</button>
+        <button class="lang-btn" data-lang="ja"><i class="fas fa-globe"></i> 日本語</button>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -72,22 +35,22 @@
         </div>
     </header>
 
-    <!-- Navigation (기존 하단 메뉴와 동일) -->
+    <!-- Navigation -->
     <nav class="main-nav">
         <div class="container">
             <div class="nav-tabs">
-                <a href="index.html" class="tab-btn" data-translate="nav_compatibility">Compatibility</a>
-                <a href="#" class="tab-btn" data-translate="nav_dating_style">Dating Style</a>
-                <a href="#" class="tab-btn" data-translate="nav_ideal_type">Ideal Type</a>
-                <a href="#" class="tab-btn" data-translate="nav_ranking">Rankings</a>
-                <a href="#" class="tab-btn" data-translate="nav_conversation">Conversation</a>
-                <a href="#" class="tab-btn" data-translate="nav_balance_game">Balance Game</a>
-                <a href="#" class="tab-btn" data-translate="nav_about">About</a>
+                <button class="tab-btn" onclick="location.href='index.html#compatibility'" data-translate="nav_compatibility">Compatibility</button>
+                <button class="tab-btn" onclick="location.href='index.html#dating-style'" data-translate="nav_dating_style">Dating Style</button>
+                <button class="tab-btn" onclick="location.href='index.html#ideal-type'" data-translate="nav_ideal_type">Ideal Type</button>
+                <button class="tab-btn" onclick="location.href='index.html#ranking'" data-translate="nav_ranking">Rankings</button>
+                <button class="tab-btn" onclick="location.href='index.html#conversation'" data-translate="nav_conversation">Conversation</button>
+                <button class="tab-btn" onclick="location.href='index.html#balance-game'" data-translate="nav_balance_game">Balance Game</button>
+                <button class="tab-btn" onclick="location.href='index.html#about'" data-translate="nav_about">About</button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content (연락처 내용) -->
+    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
             <section id="contact" class="content-section">
@@ -96,6 +59,8 @@
                 </div>
                 <div class="contact-content">
                     <p>Have questions, feedback, or need support? We're here to help! Please use the form below to get in touch with us, or click the button to reveal our email address for direct inquiries.</p>
+                    
+                    <p>Our team at MBTILove is dedicated to providing clear answers and helpful guidance for all your inquiries. Whether you have technical issues, suggestions for improvement, or partnership opportunities, we’d love to hear from you.</p>
                     
                     <div class="contact-info">
                         <div class="contact-item">
@@ -109,23 +74,23 @@
                         </div>
                     </div>
                     
-                    <p>We typically respond to inquiries within 24-48 hours. Thank you for your interest in MBTILove!</p>
+                    <p>We typically respond to inquiries within 24-48 hours. Thank you for trusting MBTILove and being part of our growing community. Your feedback helps us make the platform better for everyone.</p>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Footer (기존 하단 메뉴와 동일) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="privacy.html" data-translate="privacy_policy">Privacy Policy</a>
-                    <a href="terms.html" data-translate="terms_conditions">Terms & Conditions</a>
-                    <a href="contact.html" data-translate="contact">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="footer-disclaimer">
-                    <p data-translate="disclaimer">This site provides MBTI-based analysis for entertainment and educational purposes. The results should not be considered professional psychological advice.</p>
+                    <p data-translate="disclaimer">This site provides MBTI-based analysis for entertainment and educational purposes. Results should not be considered as professional psychological advice.</p>
                 </div>
                 <div class="footer-copyright">
                     <p>© 2025 MBTILove.xyz - <span data-translate="all_rights_reserved">All Rights Reserved</span></p>
@@ -139,31 +104,26 @@
         <div class="modal-content">
             <span class="close" id="close-email-modal">&times;</span>
             <h3>Contact Email</h3>
-            <p>contact@mbtilove.xyz</p>
+            <p>If you have any questions, please send an email to the address below.</p>
+            <p><a href="mailto:support@mbtilove.xyz" style="color: blue; text-decoration: none;">support@mbtilove.xyz</a></p>
         </div>
     </div>
 
-    <!-- Scripts (기존 스크립트 경로를 유지) -->
+    <!-- Scripts -->
     <script src="assets/data/translations.js"></script>
     <script src="assets/js/language.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const showEmailBtn = document.getElementById('show-email-btn');
             const emailModal = document.getElementById('email-modal');
             const closeEmailModal = document.getElementById('close-email-modal');
 
-            // Show the modal when the button is clicked
             showEmailBtn.addEventListener('click', () => {
                 emailModal.style.display = 'block';
             });
-
-            // Close the modal when the close button is clicked
             closeEmailModal.addEventListener('click', () => {
                 emailModal.style.display = 'none';
             });
-
-            // Close the modal when clicking outside of it
             window.addEventListener('click', (event) => {
                 if (event.target === emailModal) {
                     emailModal.style.display = 'none';
