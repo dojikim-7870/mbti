@@ -95,22 +95,7 @@ class MBTILoveApp {
             nextQuestionBtn.addEventListener('click', () => this.nextQuestion());
         }
 
-        // Footer links
-        document.getElementById('privacy-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.openModal('privacy-modal');
-        });
-
-        document.getElementById('terms-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.openModal('terms-modal');
-        });
-
-        document.getElementById('contact-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.openModal('contact-modal');
-        });
-    }
+       
 
     switchTab(tabName) {
         // Hide all content
