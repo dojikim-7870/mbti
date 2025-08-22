@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Balance Game - Discover Your Relationship Preferences | MBTILove</title>
+    <meta name="description" content="Play our interactive MBTI Balance Game to discover your relationship preferences. Choose between options to reveal your dating style and personality insights.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        
+        /* Game Container */
+        .game-container { min-height: calc(100vh - 70px); background: linear-gradient(135deg, var(--soft-pink), white); }
+        
+        /* Welcome Screen */
+        .welcome-screen {
+            display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 70px);
+            background: linear-gradient(135deg, var(--mbti-gold), var(--warm-coral)); color: white; text-align: center;
+        }
+        .welcome-content { max-width: 800px; padding: 2rem; }
+        .welcome-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: bold; margin-bottom: 1.5rem; }
+        .welcome-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 3rem; opacity: 0.9; }
+        .welcome-features { display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .feature-item { display: flex; align-items: center; gap: 0.5rem; }
+        .start-btn {
+            background: white; color: var(--mbti-gold); padding: 1.5rem 3rem; border: none; border-radius: 3rem;
+            font-size: 1.25rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .start-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+        .how-it-works {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 2rem; padding: 2rem;
+            max-width: 600px; margin: 2rem auto 0; text-align: left;
+        }
+        .how-it-works h3 { margin-bottom: 1.5rem; text-align: center; }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .step { display: flex; align-items: flex-start; gap: 1rem; }
+        .step-number {
+            width: 2rem; height: 2rem; background: rgba(255,255,255,0.2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; flex-shrink: 0;
+        }
+        
+        /* Game Screen */
+        .game-screen { display: none; padding: 2rem 1rem; min-height: calc(100vh - 70px); }
+        .game-screen.active { display: block; }
+        .game-content { max-width: 900px; margin: 0 auto; }
+        .progress-bar {
+            width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px; margin-bottom: 2rem; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--romantic-rose), var(--deep-purple)); 
+            transition: width 0.5s ease; border-radius: 4px;
+        }
+        .question-counter { text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666; }
+        .question-card {
+            background: white; border-radius: 2rem; padding: 3rem; text-align: center; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 2rem;
+        }
+        .question-category { 
+            background: var(--lavender); color: var(--deep-purple); padding: 0.5rem 1.5rem; 
+            border-radius: 2rem; font-size: 0.9rem; font-weight: 600; display: inline-block; margin-bottom: 1.5rem;
+        }
+        .question-text { font-size: 1.5rem; font-weight: 600; margin-bottom: 2rem; color: #333; line-height: 1.4; }
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .option-btn {
+            background: linear-gradient(135deg, var(--soft-pink), white); border: 2px solid rgba(219, 73, 122, 0.3);
+            padding: 2rem; border-radius: 1.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s; color: #333; text-align: center;
+        }
+        .option-btn:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-color: var(--romantic-rose); }
+        .option-label { font-size: 0.9rem; color: var(--romantic-rose); font-weight: bold; margin-bottom: 0.5rem; }
+        
+        /* Results Screen */
+        .results-screen { display: none; padding: 2rem 1rem; background: white; }
+        .results-screen.active { display: block; }
+        .results-content { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .results-header { margin-bottom: 3rem; }
+        .results-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333; }
+        .personality-result {
+            background: linear-gradient(135deg, var(--romantic-rose), var(--deep-purple)); color: white;
+            padding: 2rem; border-radius: 2rem; margin-bottom: 3rem; display: inline-block; min-width: 300px;
+        }
+        .personality-type { font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .personality-description { font-size: 1.1rem; opacity: 0.9; }
+        
+        .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .insight-card {
+            background: white; border: 1px solid #e0e0e0; border-radius: 1.5rem; padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: left; transition: all 0.3s;
+        }
+        .insight-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .insight-category { 
+            background: var(--romantic-rose); color: white; padding: 0.5rem 1rem; 
+            border-radius: 1rem; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;
+        }
+        .insight-question { font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .insight-choice { color: var(--romantic-rose); font-weight: 600; margin-bottom: 1rem; }
+        .insight-text { color: #666; line-height: 1.5; margin-bottom: 1rem; }
+        .insight-analysis { background: var(--soft-pink); padding: 1rem; border-radius: 1rem; font-size: 0.9rem; color: #555; }
+        
+        .reset-btn {
+            background: var(--deep-purple); color: white; padding: 1rem 2rem; border: none; border-radius: 2rem;
+            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s;
+        }
+        .reset-btn:hover { background: var(--romantic-rose); transform: translateY(-2px); }
+        
+        /* AdSense Banner */
+        .adsense-banner {
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .welcome-features { gap: 1rem; }
+            .options { grid-template-columns: 1fr; gap: 1rem; }
+            .option-btn { padding: 1.5rem; }
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active">EN</button>
+                <button class="lang-btn">日本語</button>
+                <button class="lang-btn">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="game-container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+                <h1 class="welcome-title font-poppins">MBTI Balance Game</h1>
+                <p class="welcome-subtitle">
+                    Discover your relationship preferences through fun either/or questions. Learn about your dating style, 
+                    communication preferences, and what you truly value in romantic partnerships.
+                </p>
+                
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <span>❤️</span>
+                        <span>10 Questions</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>👥</span>
+                        <span>Personal Insights</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>✨</span>
+                        <span>Relationship Tips</span>
+                    </div>
+                </div>
+                
+                <button class="start-btn" onclick="startGame()">Start the Balance Game</button>
+                
+                <div class="how-it-works">
+                    <h3 class="font-poppins">How It Works</h3>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <span>Answer 10 either/or questions about your relationship preferences</span>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <span>Get insights into your dating style and relationship values</span>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <span>Learn about your compatibility with different personality types</span>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <span>Get personalized relationship advice and tips</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="game-screen">
+            <div class="game-content">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                
+                <div id="question-counter" class="question-counter">Question 1 of 10</div>
+                
+                <div id="question-card" class="question-card">
+                    <!-- Question content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen">
+            <div class="results-content">
+                <!-- AdSense Banner -->
+                <div class="adsense-banner">
+                    <p>Advertisement</p>
+                </div>
+                
+                <div class="results-header">
+                    <h2 class="results-title font-poppins">Your Results</h2>
+                    <div class="personality-result">
+                        <h3 class="personality-type" id="personality-type">Your Relationship Style:</h3>
+                        <p class="personality-description" id="personality-description"></p>
+                    </div>
+                </div>
+                
+                <div id="insights-grid" class="insights-grid">
+                    <!-- Insights will be populated by JavaScript -->
+                </div>
+                
+                <button class="reset-btn" onclick="resetGame()">Take the Quiz Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Balance Game Questions
+        const questions = [
+            {
+                id: 1,
+                category: "Connection Style",
+                question: "In a relationship, what's more important?",
+                optionA: "Deep emotional connection",
+                optionB: "Intellectual compatibility",
+                insights: {
+                    optionA: "You prioritize emotional intimacy and heart-to-heart connections. You value partners who can share feelings openly and create emotional safety.",
+                    optionB: "You value mental stimulation and shared interests. You're drawn to partners who can engage in meaningful discussions and challenge your thinking.",
+                    analysis: "Both emotional and intellectual connections are important, but knowing your primary preference helps identify compatible partners."
+                }
+            },
+            {
+                id: 2,
+                category: "Dating Style",
+                question: "When planning dates, you prefer:",
+                optionA: "Spontaneous adventures",
+                optionB: "Well-planned romantic evenings",
+                insights: {
+                    optionA: "You're drawn to excitement and novelty in relationships. Spontaneity keeps things fresh and allows for authentic moments to unfold naturally.",
+                    optionB: "You appreciate thoughtful gestures and romantic planning. Structure and anticipation can make experiences more meaningful and special.",
+                    analysis: "Understanding your preference helps communicate your ideal relationship rhythm to your partner."
+                }
+            },
+            {
+                id: 3,
+                category: "Conflict Resolution",
+                question: "In conflicts, you tend to:",
+                optionA: "Address issues immediately",
+                optionB: "Take time to think before discussing",
+                insights: {
+                    optionA: "You prefer direct communication and quick resolution. This can prevent issues from festering but might sometimes feel overwhelming to your partner.",
+                    optionB: "You value reflection and measured responses. This leads to thoughtful discussions but might frustrate partners who prefer immediate resolution.",
+                    analysis: "Knowing your conflict style helps you communicate your needs and understand your partner's different approach."
+                }
+            },
+            {
+                id: 4,
+                category: "Partner Preference",
+                question: "Your ideal partner is:",
+                optionA: "Your best friend who you're also attracted to",
+                optionB: "Someone who complements and challenges you",
+                insights: {
+                    optionA: "You value friendship as the foundation of love. You want a partner who truly gets you and shares your interests and values.",
+                    optionB: "You're attracted to growth and balance. You seek someone who brings different strengths and helps you become a better person.",
+                    analysis: "Both approaches can lead to fulfilling relationships, but understanding your preference helps you recognize your ideal dynamic."
+                }
+            },
+            {
+                id: 5,
+                category: "Love Expression",
+                question: "When showing love, you prefer:",
+                optionA: "Grand romantic gestures",
+                optionB: "Small daily acts of care",
+                insights: {
+                    optionA: "You appreciate dramatic expressions of love that show your partner is thinking of you in big ways. These moments become cherished memories.",
+                    optionB: "You value consistency and daily kindness. Small gestures show ongoing care and attention to your needs and preferences.",
+                    analysis: "Understanding how you give and receive love helps create more meaningful expressions of affection in your relationships."
+                }
+            },
+            {
+                id: 6,
+                category: "Relationship Values",
+                question: "For long-term happiness, you need:",
+                optionA: "Stability and security",
+                optionB: "Growth and adventure",
+                insights: {
+                    optionA: "You thrive in relationships that provide emotional and practical security. Predictability and reliability help you feel safe to be vulnerable.",
+                    optionB: "You need relationships that evolve and challenge you. Stagnation feels threatening, while growth keeps the relationship vibrant and engaging.",
+                    analysis: "Knowing your core relationship needs helps you choose partners who can provide what you need to thrive long-term."
+                }
+            },
+            {
+                id: 7,
+                category: "Support Style",
+                question: "When your partner is stressed, you:",
+                optionA: "Give them space to process",
+                optionB: "Offer immediate support and comfort",
+                insights: {
+                    optionA: "You respect your partner's need for independence and self-regulation. You understand that sometimes the best support is giving someone room to breathe.",
+                    optionB: "You show care through active presence and comfort. You want to be there for your partner and help them through difficult times.",
+                    analysis: "Understanding different support styles helps you give your partner what they actually need, not just what you would want."
+                }
+            },
+            {
+                id: 8,
+                category: "Attraction Factors",
+                question: "You're most attracted to:",
+                optionA: "Confidence and ambition",
+                optionB: "Kindness and empathy",
+                insights: {
+                    optionA: "You're drawn to partners who know what they want and pursue their goals. Drive and self-assurance are exciting and inspiring to you.",
+                    optionB: "You value emotional intelligence and compassion. A caring heart and ability to understand others feels safe and attractive to you.",
+                    analysis: "Recognizing what initially attracts you helps identify potential partners, but remember that lasting relationships need multiple compatibility factors."
+                }
+            },
+            {
+                id: 9,
+                category: "Social Dynamics",
+                question: "In social situations as a couple, you prefer:",
+                optionA: "Being the center of attention together",
+                optionB: "Quietly observing and connecting one-on-one",
+                insights: {
+                    optionA: "You enjoy being part of the social energy and sharing experiences with groups. You like when your relationship adds to the fun of social gatherings.",
+                    optionB: "You prefer intimate connections and meaningful conversations. Large groups can feel draining, and you value quiet moments with your partner.",
+                    analysis: "Understanding your social preferences helps you find partners with compatible energy levels and social needs."
+                }
+            },
+            {
+                id: 10,
+                category: "Relationship Standards",
+                question: "Your relationship deal-breaker is:",
+                optionA: "Lack of emotional intimacy",
+                optionB: "Lack of personal growth",
+                insights: {
+                    optionA: "Emotional connection is non-negotiable for you. Without deep intimacy and vulnerability, relationships feel shallow and unsatisfying.",
+                    optionB: "You need relationships that challenge and develop you. Partners who don't grow or support your growth feel limiting and frustrating.",
+                    analysis: "Knowing your deal-breakers helps you make better relationship choices and communicate your non-negotiable needs."
+                }
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = [];
+        let gameStarted = false;
+
+        function startGame() {
+            gameStarted = true;
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('game-screen').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('question-counter').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            
+            document.getElementById('question-card').innerHTML = `
+                <div class="question-category">${question.category}</div>
+                <div class="question-text">${question.question}</div>
+                <div class="options">
+                    <button class="option-btn" onclick="selectAnswer('A')">
+                        <div class="option-label">Option A</div>
+                        ${question.optionA}
+                    </button>
+                    <button class="option-btn" onclick="selectAnswer('B')">
+                        <div class="option-label">Option B</div>
+                        ${question.optionB}
+                    </button>
+                </div>
+            `;
+        }
+
+        function selectAnswer(choice) {
+            answers.push({
+                questionId: questions[currentQuestion].id,
+                choice: choice
+            });
+            
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                setTimeout(() => {
+                    showQuestion();
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    showResults();
+                }, 300);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('game-screen').classList.remove('active');
+            document.getElementById('results-screen').classList.add('active');
+            
+            // Calculate personality insights
+            const personalityInsight = getPersonalityInsights();
+            document.getElementById('personality-type').textContent = 'Your Relationship Style:';
+            document.getElementById('personality-description').textContent = personalityInsight;
+            
+            // Generate question-by-question analysis
+            const insightsGrid = document.getElementById('insights-grid');
+            insightsGrid.innerHTML = '';
+            
+            answers.forEach((answer, index) => {
+                const question = questions.find(q => q.id === answer.questionId);
+                if (!question) return;
+                
+                const selectedInsight = answer.choice === 'A' ? question.insights.optionA : question.insights.optionB;
+                const selectedOption = answer.choice === 'A' ? question.optionA : question.optionB;
+                
+                const insightCard = document.createElement('div');
+                insightCard.className = 'insight-card';
+                insightCard.innerHTML = `
+                    <div class="insight-category">${question.category}</div>
+                    <div class="insight-question">${question.question}</div>
+                    <div class="insight-choice">Your choice: ${selectedOption}</div>
+                    <div class="insight-text">${selectedInsight}</div>
+                    <div class="insight-analysis">${question.insights.analysis}</div>
+                `;
+                insightsGrid.appendChild(insightCard);
+            });
+        }
+
+        function getPersonalityInsights() {
+            const categories = {
+                emotional: answers.filter(a => [1, 4, 10].includes(a.questionId) && a.choice === 'A').length,
+                intellectual: answers.filter(a => [1, 4, 10].includes(a.questionId) && a.choice === 'B').length,
+                spontaneous: answers.filter(a => [2, 6].includes(a.questionId) && a.choice === 'A').length,
+                planned: answers.filter(a => [2, 6].includes(a.questionId) && a.choice === 'B').length,
+                direct: answers.filter(a => [3, 8].includes(a.questionId) && a.choice === 'A').length,
+                thoughtful: answers.filter(a => [3, 8].includes(a.questionId) && a.choice === 'B').length,
+            };
+
+            let personalityType = '';
+            if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
+            else personalityType += 'Intellectual ';
+            
+            if (categories.spontaneous >= categories.planned) personalityType += 'Spontaneous ';
+            else personalityType += 'Planned ';
+            
+            if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
+            else personalityType += 'Thoughtful Communicator';
+
+            return personalityType;
+        }
+
+        function resetGame() {
+            currentQuestion = 0;
+            answers = [];
+            gameStarted = false;
+            
+            document.getElementById('results-screen').classList.remove('active');
+            document.getElementById('welcome-screen').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

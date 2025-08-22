@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Ideal MBTI Type - Perfect Personality Match | MBTILove</title>
+    <meta name="description" content="Discover your ideal MBTI personality type match for romantic relationships. Based on psychological compatibility research and personality complementarity.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--mbti-gold), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }
+        .hero-content { max-width: 1000px; margin: 0 auto; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        
+        /* Main Content */
+        .section { padding: 4rem 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+        
+        /* Interactive Finder */
+        .finder-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; }
+        .finder-title { font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 1rem; color: var(--deep-purple); }
+        .finder-subtitle { text-align: center; color: #666; margin-bottom: 2rem; }
+        
+        /* Type Grid */
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .type-btn {
+            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
+            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
+        }
+        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
+        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
+        
+        /* Ideal Types Results */
+        .results { background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 2rem; display: none; }
+        .results.show { display: block; }
+        .results-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; }
+        .ideal-types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .ideal-type-card {
+            background: linear-gradient(135deg, var(--soft-pink), white); padding: 1.5rem; border-radius: 1rem;
+            border: 1px solid rgba(219, 73, 122, 0.2); transition: all 0.3s; text-align: center;
+        }
+        .ideal-type-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .ideal-type-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .ideal-type-name { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .ideal-type-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+        .compatibility-percentage { font-size: 1.5rem; font-weight: bold; color: var(--romantic-rose); margin-bottom: 1rem; }
+        .ideal-type-description { color: #555; font-size: 0.9rem; line-height: 1.5; }
+        
+        /* Compatibility Insights */
+        .insights-section { margin-top: 3rem; }
+        .insights-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; color: var(--deep-purple); }
+        .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .insight-card {
+            background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e0e0e0;
+            text-align: center; transition: all 0.3s;
+        }
+        .insight-card:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .insight-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .insight-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .insight-text { color: #666; font-size: 0.9rem; }
+        
+        /* AdSense Banner */
+        .adsense-banner {
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .type-grid { grid-template-columns: repeat(2, 1fr); }
+            .ideal-types-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active">EN</button>
+                <button class="lang-btn">日本語</button>
+                <button class="lang-btn">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title font-poppins">Find Your Ideal MBTI Type</h1>
+            <p class="hero-subtitle">
+                Based on psychological compatibility research, discover which MBTI personality types complement your strengths, 
+                balance your weaknesses, and create the most harmonious romantic relationships.
+            </p>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
+
+    <!-- Interactive Ideal Type Finder -->
+    <section class="section">
+        <div class="container">
+            <div class="finder-section">
+                <h2 class="finder-title font-poppins">Interactive Ideal Type Finder</h2>
+                <p class="finder-subtitle">
+                    Select your MBTI type to discover your most compatible romantic partners
+                </p>
+                
+                <div class="type-grid">
+                    <button class="type-btn" onclick="findIdealTypes('INTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Architect</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('INTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Thinker</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ENTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Commander</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ENTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Debater</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('INFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Advocate</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('INFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Mediator</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ENFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Protagonist</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ENFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Campaigner</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ISTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Logistician</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ISFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Protector</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ESTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Executive</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ESFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Consul</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ISTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Virtuoso</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ISFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Adventurer</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ESTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Entrepreneur</div>
+                    </button>
+                    <button class="type-btn" onclick="findIdealTypes('ESFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Entertainer</div>
+                    </button>
+                </div>
+                
+                <!-- Results Section -->
+                <div id="results" class="results">
+                    <h3 class="results-title">Your Ideal Romantic Matches</h3>
+                    <div id="ideal-types-grid" class="ideal-types-grid">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="insights-section">
+                        <h4 class="insights-title">Why These Types Are Ideal for You</h4>
+                        <div class="insights-grid">
+                            <div class="insight-card">
+                                <div class="insight-icon">🧩</div>
+                                <h5 class="insight-title">Complementary Strengths</h5>
+                                <p class="insight-text">Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.</p>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">💬</div>
+                                <h5 class="insight-title">Communication Harmony</h5>
+                                <p class="insight-text">These types communicate in ways that resonate with your preferences, reducing misunderstandings.</p>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">🌱</div>
+                                <h5 class="insight-title">Growth Potential</h5>
+                                <p class="insight-text">Ideal matches challenge you to grow while providing the support you need to flourish.</p>
+                            </div>
+                            <div class="insight-card">
+                                <div class="insight-icon">❤️</div>
+                                <h5 class="insight-title">Emotional Connection</h5>
+                                <p class="insight-text">These personality types share values and emotional approaches that foster deep intimacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ideal type data
+        const idealTypeData = {
+            'INTJ': [
+                { type: 'ENFP', name: 'The Campaigner', compatibility: '95%', icon: '🌟', description: 'ENFPs bring spontaneity and warmth to balance INTJ\'s structured nature. Their enthusiasm inspires INTJs to explore new possibilities.' },
+                { type: 'ENTP', name: 'The Debater', compatibility: '92%', icon: '🔥', description: 'ENTPs challenge INTJs intellectually while sharing their love for innovation and strategic thinking.' },
+                { type: 'INFP', name: 'The Mediator', compatibility: '88%', icon: '💕', description: 'INFPs provide emotional depth and authenticity that helps INTJs connect with their feelings and values.' }
+            ],
+            'ENFP': [
+                { type: 'INTJ', name: 'The Architect', compatibility: '95%', icon: '🏗️', description: 'INTJs provide structure and direction that helps ENFPs turn their ideas into reality while appreciating their creativity.' },
+                { type: 'INFJ', name: 'The Advocate', compatibility: '90%', icon: '🌙', description: 'INFJs share ENFPs\' intuitive nature and values, creating deep emotional and intellectual connections.' },
+                { type: 'ISFJ', name: 'The Protector', compatibility: '85%', icon: '🛡️', description: 'ISFJs provide stability and care that grounds ENFPs while being inspired by their enthusiasm.' }
+            ],
+            'INFJ': [
+                { type: 'ENFP', name: 'The Campaigner', compatibility: '90%', icon: '🌟', description: 'ENFPs bring energy and spontaneity that helps INFJs break out of their shell and embrace new experiences.' },
+                { type: 'ENTP', name: 'The Debater', compatibility: '87%', icon: '🔥', description: 'ENTPs provide intellectual stimulation and help INFJs see different perspectives on their idealistic goals.' },
+                { type: 'ISFP', name: 'The Adventurer', compatibility: '83%', icon: '🎨', description: 'ISFPs share INFJs\' value-driven approach to life while bringing artistic sensitivity and flexibility.' }
+            ]
+            // Add more ideal type data for all types
+        };
+
+        const typeNames = {
+            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
+            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
+            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
+            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+        };
+
+        function findIdealTypes(selectedType) {
+            // Update button selection
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
+            event.target.closest('.type-btn').classList.add('selected');
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const idealTypesGrid = document.getElementById('ideal-types-grid');
+            
+            resultsDiv.classList.add('show');
+            idealTypesGrid.innerHTML = '';
+
+            // Get ideal types for selected type or use default data
+            const idealTypes = idealTypeData[selectedType] || [
+                { type: 'ENFP', name: 'The Campaigner', compatibility: '92%', icon: '🌟', description: 'This type brings balance and complementary strengths to your personality.' },
+                { type: 'INFJ', name: 'The Advocate', compatibility: '88%', icon: '🌙', description: 'Shares your values and provides emotional depth in relationships.' },
+                { type: 'ISFJ', name: 'The Protector', compatibility: '85%', icon: '🛡️', description: 'Offers stability and caring support that complements your nature.' }
+            ];
+
+            // Update results title
+            document.querySelector('.results-title').textContent = `Ideal Types for ${selectedType} - ${typeNames[selectedType]}`;
+
+            // Generate ideal type cards
+            idealTypes.forEach(idealType => {
+                const cardHTML = `
+                    <div class="ideal-type-card">
+                        <div class="ideal-type-icon">${idealType.icon}</div>
+                        <div class="ideal-type-name">${idealType.type}</div>
+                        <div class="ideal-type-subtitle">${idealType.name}</div>
+                        <div class="compatibility-percentage">${idealType.compatibility}</div>
+                        <div class="ideal-type-description">${idealType.description}</div>
+                    </div>
+                `;
+                idealTypesGrid.innerHTML += cardHTML;
+            });
+        }
+    </script>
+</body>
+</html>

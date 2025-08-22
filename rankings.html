@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Rankings - Love & Relationship Statistics | MBTILove</title>
+    <meta name="description" content="Discover MBTI personality rankings for love and relationships. From most romantic to best communicators, explore comprehensive personality statistics.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--deep-purple), var(--romantic-rose)); padding: 5rem 1rem; color: white; text-align: center; }
+        .hero-content { max-width: 1000px; margin: 0 auto; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        
+        /* Main Content */
+        .section { padding: 4rem 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+        
+        /* Rankings Categories */
+        .categories-nav { display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
+        .category-btn {
+            background: white; color: var(--deep-purple); padding: 0.75rem 1.5rem; border: 2px solid var(--deep-purple);
+            border-radius: 2rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: var(--deep-purple); color: white; transform: translateY(-2px);
+        }
+        
+        /* Ranking Lists */
+        .ranking-section { margin: 3rem 0; }
+        .ranking-title { font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 2rem; color: var(--deep-purple); }
+        .ranking-list { display: grid; gap: 1rem; }
+        .ranking-item {
+            background: linear-gradient(135deg, var(--soft-pink), white); padding: 1.5rem; border-radius: 1rem;
+            border: 1px solid rgba(219, 73, 122, 0.2); display: flex; align-items: center; gap: 1.5rem;
+            transition: all 0.3s; position: relative;
+        }
+        .ranking-item:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .ranking-position {
+            font-size: 2rem; font-weight: bold; color: var(--romantic-rose);
+            min-width: 60px; text-align: center;
+        }
+        .ranking-medal {
+            position: absolute; top: -5px; left: 45px; font-size: 1.5rem;
+        }
+        .ranking-content { flex: 1; }
+        .ranking-type { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.25rem; color: var(--deep-purple); }
+        .ranking-name { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .ranking-description { color: #555; font-size: 0.9rem; line-height: 1.4; }
+        .ranking-score { text-align: right; font-size: 1.1rem; font-weight: bold; color: var(--romantic-rose); }
+        
+        /* Statistics Cards */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .stat-card {
+            background: white; padding: 2rem; border-radius: 1rem; text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; transition: all 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .stat-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .stat-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .stat-value { font-size: 2rem; font-weight: bold; color: var(--romantic-rose); margin-bottom: 0.5rem; }
+        .stat-description { color: #666; font-size: 0.9rem; }
+        
+        /* AdSense Banner */
+        .adsense-banner {
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        .ranking-category { display: none; }
+        .ranking-category.active { display: block; }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .categories-nav { gap: 0.5rem; }
+            .category-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+            .ranking-item { flex-direction: column; text-align: center; }
+            .ranking-position { margin-bottom: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active">EN</button>
+                <button class="lang-btn">日本語</button>
+                <button class="lang-btn">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title font-poppins">MBTI Personality Rankings</h1>
+            <p class="hero-subtitle">
+                Discover fascinating insights about MBTI personality types in relationships. From most romantic to best 
+                communication skills, explore comprehensive rankings based on relationship psychology research.
+            </p>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title font-poppins">Relationship Rankings</h2>
+            
+            <!-- Category Navigation -->
+            <div class="categories-nav">
+                <button class="category-btn active" onclick="showCategory('romantic')">Most Romantic</button>
+                <button class="category-btn" onclick="showCategory('loyal')">Most Loyal</button>
+                <button class="category-btn" onclick="showCategory('communication')">Best Communicators</button>
+                <button class="category-btn" onclick="showCategory('adventurous')">Most Adventurous</button>
+                <button class="category-btn" onclick="showCategory('supportive')">Most Supportive</button>
+            </div>
+
+            <!-- Most Romantic Ranking -->
+            <div id="romantic" class="ranking-category active">
+                <div class="ranking-section">
+                    <h3 class="ranking-title">Most Romantic Personality Types</h3>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="ranking-position">1</div>
+                            <div class="ranking-medal">🏆</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFP</div>
+                                <div class="ranking-name">The Campaigner</div>
+                                <div class="ranking-description">ENFPs are natural romantics who put their heart and soul into relationships. They love grand gestures, spontaneous adventures, and creating magical moments with their partners.</div>
+                            </div>
+                            <div class="ranking-score">95/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">2</div>
+                            <div class="ranking-medal">🥈</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">INFP</div>
+                                <div class="ranking-name">The Mediator</div>
+                                <div class="ranking-description">INFPs bring deep emotional connection and poetic soul to romance. They express love through meaningful gestures and create intimate, authentic relationships.</div>
+                            </div>
+                            <div class="ranking-score">92/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">3</div>
+                            <div class="ranking-medal">🥉</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFJ</div>
+                                <div class="ranking-name">The Protagonist</div>
+                                <div class="ranking-description">ENFJs are devoted partners who anticipate their loved one's needs. They create romantic atmospheres and make their partners feel truly cherished.</div>
+                            </div>
+                            <div class="ranking-score">89/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">4</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESFP</div>
+                                <div class="ranking-name">The Entertainer</div>
+                                <div class="ranking-description">ESFPs bring fun, excitement, and spontaneity to romance. They love to surprise their partners and create joyful, memorable experiences together.</div>
+                            </div>
+                            <div class="ranking-score">85/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">5</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ISFP</div>
+                                <div class="ranking-name">The Adventurer</div>
+                                <div class="ranking-description">ISFPs express romance through artistic and thoughtful gestures. They create beautiful, personalized experiences that show their deep care.</div>
+                            </div>
+                            <div class="ranking-score">82/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Loyal Ranking -->
+            <div id="loyal" class="ranking-category">
+                <div class="ranking-section">
+                    <h3 class="ranking-title">Most Loyal Personality Types</h3>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="ranking-position">1</div>
+                            <div class="ranking-medal">🏆</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ISFJ</div>
+                                <div class="ranking-name">The Protector</div>
+                                <div class="ranking-description">ISFJs are incredibly loyal and devoted partners who prioritize their relationship above all else. They provide unwavering support and commitment.</div>
+                            </div>
+                            <div class="ranking-score">98/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">2</div>
+                            <div class="ranking-medal">🥈</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ISTJ</div>
+                                <div class="ranking-name">The Logistician</div>
+                                <div class="ranking-description">ISTJs are reliable and steadfast partners who honor their commitments. They build relationships on trust, consistency, and mutual respect.</div>
+                            </div>
+                            <div class="ranking-score">96/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">3</div>
+                            <div class="ranking-medal">🥉</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESFJ</div>
+                                <div class="ranking-name">The Consul</div>
+                                <div class="ranking-description">ESFJs are dedicated partners who work hard to maintain harmony and stability in their relationships. They're committed for the long haul.</div>
+                            </div>
+                            <div class="ranking-score">94/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">4</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">INFJ</div>
+                                <div class="ranking-name">The Advocate</div>
+                                <div class="ranking-description">INFJs form deep, meaningful connections and are loyal to their core values and chosen partners. They invest fully in relationships they believe in.</div>
+                            </div>
+                            <div class="ranking-score">91/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">5</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESTJ</div>
+                                <div class="ranking-name">The Executive</div>
+                                <div class="ranking-description">ESTJs are committed partners who take their relationship responsibilities seriously. They provide stability and work to build lasting partnerships.</div>
+                            </div>
+                            <div class="ranking-score">88/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Communicators Ranking -->
+            <div id="communication" class="ranking-category">
+                <div class="ranking-section">
+                    <h3 class="ranking-title">Best Communicators in Relationships</h3>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="ranking-position">1</div>
+                            <div class="ranking-medal">🏆</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFJ</div>
+                                <div class="ranking-name">The Protagonist</div>
+                                <div class="ranking-description">ENFJs excel at understanding their partner's feelings and expressing themselves clearly. They navigate difficult conversations with empathy and skill.</div>
+                            </div>
+                            <div class="ranking-score">96/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">2</div>
+                            <div class="ranking-medal">🥈</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESFJ</div>
+                                <div class="ranking-name">The Consul</div>
+                                <div class="ranking-description">ESFJs are natural communicators who prioritize harmony and understanding. They're skilled at expressing emotions and resolving conflicts peacefully.</div>
+                            </div>
+                            <div class="ranking-score">93/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">3</div>
+                            <div class="ranking-medal">🥉</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFP</div>
+                                <div class="ranking-name">The Campaigner</div>
+                                <div class="ranking-description">ENFPs are enthusiastic communicators who bring energy and openness to conversations. They encourage honest, authentic dialogue.</div>
+                            </div>
+                            <div class="ranking-score">90/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">4</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENTP</div>
+                                <div class="ranking-name">The Debater</div>
+                                <div class="ranking-description">ENTPs enjoy deep discussions and can articulate complex ideas well. They bring intellectual stimulation to relationship conversations.</div>
+                            </div>
+                            <div class="ranking-score">87/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">5</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">INFJ</div>
+                                <div class="ranking-name">The Advocate</div>
+                                <div class="ranking-description">INFJs are insightful communicators who understand underlying emotions and motivations. They create safe spaces for meaningful dialogue.</div>
+                            </div>
+                            <div class="ranking-score">85/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Adventurous Ranking -->
+            <div id="adventurous" class="ranking-category">
+                <div class="ranking-section">
+                    <h3 class="ranking-title">Most Adventurous in Relationships</h3>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="ranking-position">1</div>
+                            <div class="ranking-medal">🏆</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESTP</div>
+                                <div class="ranking-name">The Entrepreneur</div>
+                                <div class="ranking-description">ESTPs thrive on excitement and spontaneity in relationships. They love trying new experiences and keeping the romance alive with adventures.</div>
+                            </div>
+                            <div class="ranking-score">97/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">2</div>
+                            <div class="ranking-medal">🥈</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFP</div>
+                                <div class="ranking-name">The Campaigner</div>
+                                <div class="ranking-description">ENFPs bring enthusiasm and curiosity to relationships. They love exploring new places, ideas, and experiences with their partners.</div>
+                            </div>
+                            <div class="ranking-score">94/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">3</div>
+                            <div class="ranking-medal">🥉</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESFP</div>
+                                <div class="ranking-name">The Entertainer</div>
+                                <div class="ranking-description">ESFPs are spontaneous and fun-loving partners who enjoy trying new activities and creating memorable moments together.</div>
+                            </div>
+                            <div class="ranking-score">91/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">4</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENTP</div>
+                                <div class="ranking-name">The Debater</div>
+                                <div class="ranking-description">ENTPs enjoy intellectual adventures and exploring new possibilities with their partners. They bring innovation to relationship experiences.</div>
+                            </div>
+                            <div class="ranking-score">88/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">5</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ISTP</div>
+                                <div class="ranking-name">The Virtuoso</div>
+                                <div class="ranking-description">ISTPs enjoy hands-on adventures and practical experiences. They bring a sense of exploration and discovery to relationships.</div>
+                            </div>
+                            <div class="ranking-score">84/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Most Supportive Ranking -->
+            <div id="supportive" class="ranking-category">
+                <div class="ranking-section">
+                    <h3 class="ranking-title">Most Supportive Partners</h3>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="ranking-position">1</div>
+                            <div class="ranking-medal">🏆</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ISFJ</div>
+                                <div class="ranking-name">The Protector</div>
+                                <div class="ranking-description">ISFJs are incredibly nurturing and supportive partners who anticipate their loved one's needs and provide unwavering emotional support.</div>
+                            </div>
+                            <div class="ranking-score">98/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">2</div>
+                            <div class="ranking-medal">🥈</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ENFJ</div>
+                                <div class="ranking-name">The Protagonist</div>
+                                <div class="ranking-description">ENFJs are devoted supporters who help their partners achieve their dreams and provide encouragement through all of life's challenges.</div>
+                            </div>
+                            <div class="ranking-score">95/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">3</div>
+                            <div class="ranking-medal">🥉</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">INFJ</div>
+                                <div class="ranking-name">The Advocate</div>
+                                <div class="ranking-description">INFJs offer deep emotional support and understanding. They create safe spaces where their partners can be vulnerable and authentic.</div>
+                            </div>
+                            <div class="ranking-score">92/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">4</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">ESFJ</div>
+                                <div class="ranking-name">The Consul</div>
+                                <div class="ranking-description">ESFJs are caring partners who provide practical and emotional support. They're always there when their loved ones need them most.</div>
+                            </div>
+                            <div class="ranking-score">89/100</div>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-position">5</div>
+                            <div class="ranking-content">
+                                <div class="ranking-type">INFP</div>
+                                <div class="ranking-name">The Mediator</div>
+                                <div class="ranking-description">INFPs offer compassionate support and accept their partners unconditionally. They provide gentle encouragement and emotional validation.</div>
+                            </div>
+                            <div class="ranking-score">86/100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💕</div>
+                    <div class="stat-title">Average Relationship Satisfaction</div>
+                    <div class="stat-value">87%</div>
+                    <div class="stat-description">When matched with compatible MBTI types</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-title">Ideal Compatibility</div>
+                    <div class="stat-value">92%</div>
+                    <div class="stat-description">Perfect MBTI matches show this compatibility rate</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-title">Communication Success</div>
+                    <div class="stat-value">78%</div>
+                    <div class="stat-description">Of couples report better communication after understanding MBTI</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-title">Relationship Longevity</div>
+                    <div class="stat-value">5.2x</div>
+                    <div class="stat-description">Higher success rate for MBTI-aware couples</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showCategory(categoryId) {
+            // Hide all categories
+            document.querySelectorAll('.ranking-category').forEach(cat => {
+                cat.classList.remove('active');
+            });
+            
+            // Show selected category
+            document.getElementById(categoryId).classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

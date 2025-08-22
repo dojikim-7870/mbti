@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MBTILove - Understanding Personality in Love | MBTILove</title>
+    <meta name="description" content="Learn about MBTILove.xyz - Your comprehensive guide to understanding how MBTI personality types influence romantic relationships and dating compatibility.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(135deg, var(--romantic-rose), var(--deep-purple)); 
+            padding: 5rem 1rem; color: white; text-align: center; 
+        }
+        .hero-content { max-width: 1000px; margin: 0 auto; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        
+        /* Main Content */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+        .section { padding: 4rem 0; }
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; color: var(--deep-purple); }
+        .content-text { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 2rem; }
+        
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .feature-card {
+            background: linear-gradient(135deg, var(--soft-pink), white); padding: 2rem; border-radius: 1.5rem;
+            border: 1px solid rgba(219, 73, 122, 0.2); transition: all 0.3s; text-align: center;
+        }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
+        .feature-description { color: #666; line-height: 1.6; }
+        
+        /* Values Section */
+        .values-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .value-item { text-align: center; }
+        .value-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .value-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .value-text { color: #666; font-size: 0.9rem; }
+        
+        /* Mission Statement */
+        .mission-section {
+            background: linear-gradient(135deg, var(--deep-purple), var(--romantic-rose)); 
+            color: white; border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center;
+        }
+        .mission-title { font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; }
+        .mission-text { font-size: 1.1rem; line-height: 1.8; opacity: 0.9; }
+        
+        /* Team Section */
+        .team-section { text-align: center; }
+        .team-description { font-size: 1.1rem; color: #666; margin-bottom: 2rem; }
+        .team-note {
+            background: var(--lavender); padding: 2rem; border-radius: 1.5rem; 
+            border-left: 4px solid var(--romantic-rose); margin: 2rem 0;
+        }
+        
+        /* Disclaimer Section */
+        .disclaimer-section {
+            background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 1rem; padding: 2rem; margin: 3rem 0;
+        }
+        .disclaimer-title { font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
+        .disclaimer-text { color: #666; line-height: 1.6; }
+        
+        /* AdSense Banner */
+        .adsense-banner {
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .features-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active">EN</button>
+                <button class="lang-btn">日本語</button>
+                <button class="lang-btn">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title font-poppins">About MBTILove</h1>
+            <p class="hero-subtitle">
+                Understanding personality psychology in love and relationships. Your comprehensive guide to 
+                MBTI-based compatibility, dating insights, and meaningful connections.
+            </p>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Our Story Section -->
+        <section class="section">
+            <h2 class="section-title font-poppins">Our Story</h2>
+            <p class="content-text">
+                MBTILove.xyz was born from a simple observation: understanding personality can transform relationships. 
+                While dating apps focus on surface-level matches, we believe that deep compatibility comes from understanding 
+                how different personality types interact, communicate, and connect on a psychological level.
+            </p>
+            <p class="content-text">
+                Founded by relationship psychology enthusiasts and MBTI experts, our platform combines decades of personality 
+                research with modern insights about love, dating, and long-term compatibility. We've seen how understanding 
+                Myers-Briggs personality types can help people make better relationship choices, communicate more effectively, 
+                and build stronger, more fulfilling partnerships.
+            </p>
+            <p class="content-text">
+                What started as a passion project to help friends understand their dating patterns has grown into a comprehensive 
+                resource for anyone seeking to understand the role of personality in love. We've helped thousands of people 
+                discover their ideal types, improve their communication, and find more meaningful connections.
+            </p>
+        </section>
+
+        <!-- Mission Section -->
+        <div class="mission-section">
+            <h3 class="mission-title font-poppins">Our Mission</h3>
+            <p class="mission-text">
+                To make personality psychology accessible and practical for modern relationships. We believe everyone deserves 
+                to understand themselves and their partners better, leading to more fulfilling, compatible, and lasting love connections.
+            </p>
+        </div>
+
+        <!-- What We Offer Section -->
+        <section class="section">
+            <h2 class="section-title font-poppins">What We Offer</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💕</div>
+                    <h3 class="feature-title">Compatibility Analysis</h3>
+                    <p class="feature-description">
+                        Detailed analysis of how different MBTI types interact in romantic relationships, 
+                        including strengths, challenges, and communication patterns.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Dating Style Insights</h3>
+                    <p class="feature-description">
+                        Discover your unique approach to dating, romance, and relationship building based 
+                        on your personality type preferences and values.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Ideal Type Matching</h3>
+                    <p class="feature-description">
+                        Find out which personality types are most compatible with yours for long-term 
+                        relationship success and emotional fulfillment.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Personality Rankings</h3>
+                    <p class="feature-description">
+                        Explore fascinating insights and statistics about different personality types 
+                        in relationships, from romance to communication skills.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Communication Tools</h3>
+                    <p class="feature-description">
+                        Learn how to communicate effectively with different personality types and 
+                        improve relationship dialogue and understanding.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Interactive Games</h3>
+                    <p class="feature-description">
+                        Engage with fun, educational tools like our Balance Game to discover your 
+                        relationship preferences and dating style insights.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <div class="values-section">
+            <h2 class="section-title font-poppins">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🔬</div>
+                    <div class="value-title">Evidence-Based</div>
+                    <div class="value-text">All our content is grounded in psychological research and MBTI theory</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Inclusive</div>
+                    <div class="value-text">We celebrate all personality types and relationship styles</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">Practical</div>
+                    <div class="value-text">We provide actionable insights you can apply to real relationships</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <div class="value-title">Educational</div>
+                    <div class="value-text">We aim to teach and inform, not just entertain</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <div class="value-title">Global</div>
+                    <div class="value-text">We support multiple languages and cultural perspectives</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔒</div>
+                    <div class="value-title">Privacy-Focused</div>
+                    <div class="value-text">We protect your personal information and respect your privacy</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <section class="section team-section">
+            <h2 class="section-title font-poppins">Our Team</h2>
+            <p class="team-description">
+                MBTILove is created and maintained by a passionate team of relationship psychology enthusiasts, 
+                MBTI practitioners, and web developers who believe in the power of personality understanding to 
+                transform relationships.
+            </p>
+            <div class="team-note">
+                <p><strong>Our Expertise:</strong> Our team includes certified MBTI practitioners, relationship coaches, 
+                and psychology graduates who bring both academic knowledge and real-world experience to our content.</p>
+            </div>
+            <p class="content-text">
+                We're constantly researching the latest developments in personality psychology and relationship science 
+                to ensure our content remains accurate, helpful, and up-to-date. Our multilingual team helps us serve 
+                users worldwide with culturally sensitive and locally relevant content.
+            </p>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <div class="disclaimer-section">
+            <h3 class="disclaimer-title">Important Disclaimer</h3>
+            <p class="disclaimer-text">
+                <strong>Educational Purpose:</strong> MBTILove.xyz provides educational and entertainment content about 
+                personality types and relationships. Our insights are based on established MBTI research and relationship 
+                psychology principles.
+            </p>
+            <p class="disclaimer-text">
+                <strong>Not Professional Advice:</strong> We do not provide professional psychological, therapeutic, or 
+                relationship counseling services. For serious relationship concerns or mental health issues, please consult 
+                qualified professionals.
+            </p>
+            <p class="disclaimer-text">
+                <strong>Individual Variations:</strong> Personality types are complex, and individuals may not perfectly fit 
+                type descriptions. Our compatibility analyses are general guidelines and should not be the sole basis for 
+                relationship decisions.
+            </p>
+        </div>
+
+        <!-- Get Involved Section -->
+        <section class="section">
+            <h2 class="section-title font-poppins">Get Involved</h2>
+            <p class="content-text">
+                We're always looking to improve and expand our content. Whether you're a psychology professional, 
+                relationship coach, or someone passionate about personality psychology, we'd love to hear from you.
+            </p>
+            <p class="content-text">
+                <strong>Ways to Connect:</strong>
+            </p>
+            <ul style="margin: 1rem 0 2rem 2rem; color: #555;">
+                <li>Share your feedback and suggestions through our <a href="contact.html" style="color: var(--romantic-rose);">contact form</a></li>
+                <li>Follow us for updates on new features and content</li>
+                <li>Share our content with friends who might benefit from personality insights</li>
+                <li>Contribute your expertise if you're a qualified psychology professional</li>
+            </ul>
+            <p class="content-text">
+                Thank you for being part of the MBTILove community. Together, we're helping people build better, 
+                more understanding relationships through the power of personality psychology.
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved. Understanding love through personality psychology.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Compatibility Analysis - Find Your Perfect Match | MBTILove</title>
+    <meta name="description" content="Discover detailed MBTI personality compatibility analysis. Find which personality types are most compatible with yours and explore relationship dynamics.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="MBTI Compatibility Analysis - Find Your Perfect Match">
+    <meta property="og:description" content="Discover which MBTI personality types create the most harmonious relationships with yours.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--romantic-rose), var(--deep-purple)); padding: 5rem 1rem; color: white; text-align: center; }
+        .hero-content { max-width: 1000px; margin: 0 auto; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        .hero-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: rgba(255,255,255,0.8); }
+        .stat-item { display: flex; align-items: center; gap: 0.5rem; }
+        
+        /* Main Content */
+        .section { padding: 4rem 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+        
+        /* Type Selector */
+        .type-selector { background: #f8f9fa; border-radius: 1.5rem; padding: 2rem; margin-bottom: 3rem; }
+        .selector-title { text-align: center; margin-bottom: 2rem; font-size: 1.5rem; font-weight: bold; }
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; }
+        .type-btn {
+            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
+            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
+        }
+        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
+        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
+        
+        /* Results */
+        .results { background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .results-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; }
+        .compatibility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .compatibility-card {
+            background: linear-gradient(135deg, #f8f9fa, white); padding: 1.5rem; border-radius: 1rem;
+            border: 1px solid #e0e0e0; transition: all 0.3s;
+        }
+        .compatibility-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .type-name { font-weight: bold; font-size: 1.1rem; }
+        .compatibility-score { font-weight: bold; color: var(--romantic-rose); }
+        .progress-bar { width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; margin: 0.5rem 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--romantic-rose), var(--deep-purple)); transition: width 0.5s; }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 500;
+        }
+        .status-perfect { background: #dcfce7; color: #166534; }
+        .status-good { background: #dbeafe; color: #1e40af; }
+        .status-potential { background: #fef3c7; color: #92400e; }
+        .status-challenging { background: #fef2f2; color: #991b1b; }
+        
+        /* AdSense Banner */
+        .adsense-banner {
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .hero-stats { gap: 1rem; }
+            .type-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
+                <button class="lang-btn" onclick="changeLanguage('ko')">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- English Content -->
+            <div class="lang-content active" data-lang="en">
+                <h1 class="hero-title font-poppins">MBTI Compatibility Analysis</h1>
+                <p class="hero-subtitle">
+                    Discover which personality types create the most harmonious relationships with yours. 
+                    Our comprehensive compatibility system analyzes communication styles, shared values, 
+                    and relationship dynamics to help you find your perfect match.
+                </p>
+            </div>
+            
+            <!-- Japanese Content -->
+            <div class="lang-content" data-lang="ja">
+                <h1 class="hero-title font-poppins">MBTI相性分析</h1>
+                <p class="hero-subtitle">
+                    あなたの性格タイプと最も調和の取れた関係を築けるタイプを発見してください。
+                    包括的な相性システムがコミュニケーションスタイル、共通の価値観、
+                    関係性のダイナミクスを分析し、完璧なマッチを見つけるお手伝いをします。
+                </p>
+            </div>
+            
+            <!-- Korean Content -->
+            <div class="lang-content" data-lang="ko">
+                <h1 class="hero-title font-poppins">MBTI 궁합 분석</h1>
+                <p class="hero-subtitle">
+                    당신의 성격 유형과 가장 조화로운 관계를 만들 수 있는 유형을 발견하세요.
+                    포괄적인 호환성 시스템이 소통 스타일, 공유 가치관,
+                    관계 역학을 분석하여 완벽한 짝을 찾는 데 도움을 줍니다.
+                </p>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span>❤️</span>
+                    <span data-translate="hero.stat1">16 Personality Types</span>
+                </div>
+                <div class="stat-item">
+                    <span>👥</span>
+                    <span data-translate="hero.stat2">256 Combinations</span>
+                </div>
+                <div class="stat-item">
+                    <span>📊</span>
+                    <span data-translate="hero.stat3">Scientifically Based</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
+
+    <!-- Interactive Compatibility Finder -->
+    <section class="section">
+        <div class="container">
+            <!-- English Content -->
+            <div class="lang-content active" data-lang="en">
+                <h2 class="section-title font-poppins">Find Your Compatibility Matches</h2>
+                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Select your MBTI personality type to see detailed compatibility analysis with all 16 types
+                </p>
+            </div>
+            
+            <!-- Japanese Content -->
+            <div class="lang-content" data-lang="ja">
+                <h2 class="section-title font-poppins">あなたの相性マッチを見つけよう</h2>
+                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    あなたのMBTI性格タイプを選択して、すべての16タイプとの詳細な相性分析を確認してください
+                </p>
+            </div>
+            
+            <!-- Korean Content -->
+            <div class="lang-content" data-lang="ko">
+                <h2 class="section-title font-poppins">호환성 매치 찾기</h2>
+                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    MBTI 성격 유형을 선택하여 모든 16개 유형과의 자세한 호환성 분석을 확인하세요
+                </p>
+            </div>
+
+            <!-- MBTI Type Selector -->
+            <div class="type-selector">
+                <h3 class="selector-title">Select Your MBTI Type</h3>
+                <div class="type-grid">
+                    <button class="type-btn" onclick="selectType('INTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Architect</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('INTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Thinker</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ENTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Commander</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ENTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Debater</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('INFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Advocate</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('INFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Mediator</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ENFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Protagonist</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ENFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Campaigner</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ISTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Logistician</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ISFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Protector</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ESTJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Executive</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ESFJ')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Consul</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ISTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Virtuoso</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ISFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Adventurer</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ESTP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Entrepreneur</div>
+                    </button>
+                    <button class="type-btn" onclick="selectType('ESFP')">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Entertainer</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Compatibility Results -->
+            <div id="results" class="results" style="display: none;">
+                <h3 class="results-title">Compatibility Results</h3>
+                <div id="results-grid" class="compatibility-grid">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // MBTI compatibility data
+        const compatibilityData = {
+            'INTJ': { 'ENFP': 92, 'ENTP': 89, 'INFP': 87, 'ISFP': 84, 'INTP': 82, 'ENFJ': 80, 'INFJ': 78, 'ISFJ': 75, 'ESFP': 72, 'ESTP': 70, 'ESFJ': 68, 'ESTJ': 65, 'ISTP': 63, 'ISTJ': 60, 'ENTJ': 58, 'INTJ': 55 },
+            'INTP': { 'ENFJ': 90, 'INFJ': 88, 'ENTJ': 85, 'INTJ': 82, 'ENFP': 80, 'INFP': 78, 'ENTP': 75, 'ESFJ': 72, 'ISFJ': 70, 'ESTJ': 68, 'ISFP': 65, 'ESFP': 63, 'ESTP': 60, 'ISTP': 58, 'ISTJ': 55, 'INTP': 52 }
+            // Add more compatibility data for all types
+        };
+
+        const typeNames = {
+            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
+            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
+            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
+            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+        };
+
+        function selectType(selectedType) {
+            // Update button selection
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
+            event.target.closest('.type-btn').classList.add('selected');
+
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            const resultsGrid = document.getElementById('results-grid');
+            
+            resultsDiv.style.display = 'block';
+            resultsGrid.innerHTML = '';
+
+            // Generate sample compatibility results
+            const types = ['ENFP', 'ENTP', 'INFP', 'ISFP', 'INTP', 'ENFJ', 'INFJ', 'ISFJ', 'ESFP', 'ESTP', 'ESFJ', 'ESTJ'];
+            const scores = [92, 89, 87, 84, 82, 80, 78, 75, 72, 70, 68, 65];
+
+            types.forEach((type, index) => {
+                const score = scores[index];
+                const status = score >= 85 ? 'Perfect Match' : score >= 75 ? 'Good Match' : score >= 65 ? 'Potential' : 'Challenging';
+                const statusClass = score >= 85 ? 'status-perfect' : score >= 75 ? 'status-good' : score >= 65 ? 'status-potential' : 'status-challenging';
+
+                const cardHTML = `
+                    <div class="compatibility-card">
+                        <div class="card-header">
+                            <div>
+                                <div class="type-name">${type}</div>
+                                <div style="font-size: 0.9rem; color: #666;">${typeNames[type]}</div>
+                            </div>
+                            <span class="status-badge ${statusClass}">${status}</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${score}%"></div>
+                        </div>
+                        <div class="compatibility-score">${score}% Compatible</div>
+                    </div>
+                `;
+                resultsGrid.innerHTML += cardHTML;
+            });
+        }
+
+        // Language switching functionality
+        let currentLanguage = 'en';
+        
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide content based on language
+            document.querySelectorAll('.lang-content').forEach(content => {
+                if (content.getAttribute('data-lang') === lang) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Load language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (savedLang !== 'en') {
+                changeLanguage(savedLang);
+                document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`).classList.add('active');
+                document.querySelector(`[onclick="changeLanguage('en')"]`).classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
