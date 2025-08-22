@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 홈 -->
+  <url>
+    <loc>https://mbtilove.xyz/</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 주요 내비게이션 페이지 -->
+  <url><loc>https://mbtilove.xyz/compatibility.html</loc></url>
+  <url><loc>https://mbtilove.xyz/dating-style.html</loc></url>
+  <url><loc>https://mbtilove.xyz/ideal-type.html</loc></url>
+  <url><loc>https://mbtilove.xyz/rankings.html</loc></url>
+  <url><loc>https://mbtilove.xyz/conversation.html</loc></url>
+  <url><loc>https://mbtilove.xyz/balance-game.html</loc></url>
+  <url><loc>https://mbtilove.xyz/about.html</loc></url>
+
+  <!-- 법적/리소스 페이지 -->
+  <url><loc>https://mbtilove.xyz/contact.html</loc></url>
+  <url><loc>https://mbtilove.xyz/privacy-policy.html</loc></url>
+  <url><loc>https://mbtilove.xyz/terms-of-use.html</loc></url>
+
+</urlset>
