@@ -5,12 +5,10 @@
     <title>Contact Us | MBTILove</title>
     <meta name="description" content="Get in touch with MBTILove.xyz team. Contact us for questions, feedback, partnerships, or support related to our MBTI compatibility services.">
     
-    <!-- Open Graph tags -->
     <meta property="og:title" content="Contact MBTILove - Get in Touch">
     <meta property="og:description" content="Contact us for questions, feedback, or support related to MBTI personality compatibility and dating services.">
     <meta property="og:type" content="website">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -112,6 +110,67 @@
         .footer-section ul li a:hover { color: var(--romantic-rose); }
         .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            color: var(--deep-purple);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal-content p {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            word-break: break-all;
+        }
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        .modal-copy-btn {
+            background: var(--romantic-rose);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .modal-copy-btn:hover {
+            background: var(--deep-purple);
+        }
+        
         @media (max-width: 768px) {
             .nav { display: none; }
             .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -120,7 +179,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
@@ -141,7 +199,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title font-poppins">Get in Touch</h1>
@@ -152,10 +209,8 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="contact-grid">
-            <!-- Contact Form -->
             <div class="contact-form">
                 <h2 class="form-title font-poppins">Send us a Message</h2>
                 <form id="contact-form" onsubmit="handleSubmit(event)">
@@ -215,7 +270,6 @@
                 </form>
             </div>
             
-            <!-- Contact Information -->
             <div class="contact-info">
                 <h2 class="info-title font-poppins">Contact Information</h2>
                 
@@ -223,7 +277,9 @@
                     <div class="info-icon">📧</div>
                     <div class="info-content">
                         <h3>Email Support</h3>
-                        <p>support@mbtilove.xyz</p>
+                        <p>
+                            <button class="submit-btn" style="width: auto; padding: 0.5rem 1.5rem;" onclick="showModal()">Send Mail</button>
+                        </p>
                         <p style="font-size: 0.9rem; margin-top: 0.25rem;">We respond within 24-48 hours</p>
                     </div>
                 </div>
@@ -264,7 +320,6 @@
             </div>
         </div>
         
-        <!-- FAQ Section -->
         <div class="faq-section">
             <h2 class="faq-title font-poppins">Frequently Asked Questions</h2>
             <div class="faq-grid">
@@ -301,7 +356,15 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <div id="email-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 class="font-poppins">Email Support</h3>
+            <p id="email-text">support@mbtilove.xyz</p>
+            <button class="modal-copy-btn" onclick="copyEmail()">Copy Email</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -373,6 +436,27 @@
                 mbtiType: mbtiType || 'Not specified',
                 message
             });
+        }
+        
+        // Modal logic
+        function showModal() {
+            document.getElementById('email-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('email-modal').style.display = 'none';
+        }
+        
+        // Copy email address to clipboard
+        function copyEmail() {
+            const emailText = document.getElementById('email-text');
+            navigator.clipboard.writeText(emailText.textContent)
+                .then(() => {
+                    alert('Email address copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy email: ', err);
+                });
         }
     </script>
 </body>
