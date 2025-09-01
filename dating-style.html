@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,9 +23,14 @@
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: linear-gradient(135deg, var(--soft-pink), var(--lavender)); 
+            min-height: 100vh;
+        }
+
         /* Header Styles */
         header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -42,32 +48,96 @@
         .language-switcher { display: flex; gap: 0.5rem; }
         .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
         .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
-        /* General Styles */
-        .section { padding: 4rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
-        
-        /* Dating Style Grid */
-        .dating-style-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .style-card {
-            background: #fff; padding: 2rem; border-radius: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .style-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-        .style-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
-        .style-description { color: #666; }
-        
-        .quiz-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center; }
-        .quiz-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .quiz-btn { 
-            background: var(--romantic-rose); color: white; padding: 1rem 2rem; border: none; border-radius: 2rem; 
-            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 1rem 0;
-        }
-        .quiz-btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
 
+        .dating-style-main-section {
+            padding: 4rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 120px);
+            padding-top: 120px;
+        }
+        
+        .dating-style-container {
+            background: linear-gradient(135deg, var(--soft-pink), white);
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .dating-style-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+        
+        .dating-style-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .mbti-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            text-align: left;
+        }
+
+        .mbti-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .mbti-type {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--romantic-rose);
+            margin-bottom: 1rem;
+        }
+
+        .mbti-summary {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .mbti-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--deep-purple);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mbti-content-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .mbti-content-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mbti-content-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--warm-coral);
+            font-weight: bold;
+        }
+        
         /* Footer */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; margin-top: auto; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
         .footer-section h3 { color: white; margin-bottom: 1rem; }
         .footer-section ul { list-style: none; }
@@ -78,10 +148,6 @@
         
         .lang-content { display: none; }
         .lang-content.active { display: block; }
-        
-        @media (max-width: 768px) {
-            .nav { display: none; }
-        }
     </style>
 </head>
 <body>
@@ -105,100 +171,1327 @@
         </div>
     </header>
 
-    
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
 
-    <section class="section">
-        <div class="container">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="section-title font-poppins">Dating Styles</h2>
-                <div class="dating-style-grid">
-                    <div class="style-card">
-                        <h3 class="style-title">Extroverted (E) vs Introverted (I)</h3>
-                        <p class="style-description">Extroverts get energy from social interactions and seek out dates that are active and engaging. Introverts find comfort in one-on-one time and prefer quiet, intimate settings to connect more deeply.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">Sensing (S) vs Intuitive (N)</h3>
-                        <p class="style-description">Sensing types are practical and detail-oriented, focusing on realistic and tangible date experiences. Intuitive types are imaginative and future-focused, often seeking deeper meaning and intellectual connection in romance.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">Thinking (T) vs Feeling (F)</h3>
-                        <p class="style-description">Thinking types prioritize logic and objective analysis, approaching dating with a direct and rational mindset. Feeling types make decisions based on values and emotions, focusing on emotional harmony and empathy in their relationships.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">Judging (J) vs Perceiving (P)</h3>
-                        <p class="style-description">Judging types prefer structure and planning, wanting a clear sense of direction in dating. Perceiving types are flexible and spontaneous, enjoying an open-ended approach to dates and relationships.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="dating-style-main-section">
+        <div class="dating-style-container">
+            <h1 class="dating-style-title font-poppins">
+                <span class="lang-content active" data-lang="en">MBTI Dating Styles</span>
+                <span class="lang-content" data-lang="ja">MBTIデートスタイル</span>
+                <span class="lang-content" data-lang="ko">MBTI 연애 스타일</span>
+            </h1>
+            <p class="dating-style-subtitle">
+                <span class="lang-content active" data-lang="en">Every MBTI personality type has a unique approach to dating and romance. Discover how your type influences your relationships.</span>
+                <span class="lang-content" data-lang="ja">各MBTIタイプには、デートや恋愛への独自のアプローチがあります。あなたのタイプが人間関係にどう影響するか発見しましょう。</span>
+                <span class="lang-content" data-lang="ko">모든 MBTI 유형은 데이트와 연애에 독특한 방식을 가지고 있습니다. 당신의 유형이 관계에 어떤 영향을 미치는지 알아보세요.</span>
+            </p>
 
-            <div class="lang-content" data-lang="ja">
-                <h2 class="section-title font-poppins">デートスタイル</h2>
-                <div class="dating-style-grid">
-                    <div class="style-card">
-                        <h3 class="style-title">外向型 (E) vs 内向型 (I)</h3>
-                        <p class="style-description">外向型は社交的な交流からエネルギーを得て、活発で魅力的なデートを求めます。内向型は一対一の時間を快適に感じ、より深くつながるために静かで親密な環境を好みます。</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">感覚型 (S) vs 直観型 (N)</h3>
-                        <p class="style-description">感覚型は現実的で詳細志向で、具体的で目に見えるデート体験に焦点を当てます。直観型は想像力豊かで未来志向で、恋愛においてより深い意味や知的なつながりを求めることが多いです。</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">思考型 (T) vs 感情型 (F)</h3>
-                        <p class="style-description">思考型は論理と客観的な分析を優先し、直接的で合理的な考え方でデートに臨みます。感情型は価値観と感情に基づいて決断し、人間関係における感情的な調和と共感を重視します。</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">判断型 (J) vs 知覚型 (P)</h3>
-                        <p class="style-description">判断型は計画性と構造を好み、デートにおいて明確な方向性を求めます。知覚型は柔軟で自発的で、オープンなアプローチでデートや関係を楽しむタイプです。</p>
-                    </div>
-                </div>
-            </div>
+            <div class="mbti-grid">
 
-            <div class="lang-content" data-lang="ko">
-                <h2 class="section-title font-poppins">데이트 스타일</h2>
-                <div class="dating-style-grid">
-                    <div class="style-card">
-                        <h3 class="style-title">외향형 (E) vs 내향형 (I)</h3>
-                        <p class="style-description">외향형은 사회적 교류에서 에너지를 얻고 활발하고 매력적인 데이트를 추구합니다. 내향형은 일대일 시간을 편안하게 느끼며, 더 깊은 연결을 위해 조용하고 친밀한 환경을 선호합니다.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">감각형 (S) vs 직관형 (N)</h3>
-                        <p class="style-description">감각형은 실용적이고 세부적인 것에 초점을 맞춰 현실적이고 구체적인 데이트 경험을 중시합니다. 직관형은 상상력이 풍부하고 미래 지향적이며, 종종 연애에서 더 깊은 의미와 지적인 연결을 찾습니다.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">사고형 (T) vs 감정형 (F)</h3>
-                        <p class="style-description">사고형은 논리와 객관적 분석을 우선시하며, 직접적이고 합리적인 사고방식으로 데이트에 임합니다. 감정형은 가치관과 감정을 바탕으로 결정하며, 관계에서 감정적 조화와 공감을 중요하게 생각합니다.</p>
-                    </div>
-                    <div class="style-card">
-                        <h3 class="style-title">판단형 (J) vs 인식형 (P)</h3>
-                        <p class="style-description">판단형은 구조와 계획을 선호하며, 데이트에서 명확한 방향을 원합니다. 인식형은 유연하고 자발적이며, 정해지지 않은 자유로운 데이트를 즐기는 유형입니다.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quiz-section">
-                <div class="lang-content active" data-lang="en">
-                    <h3 class="quiz-title">Discover Your Dating Style</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        Take our interactive quiz to understand how your personality type influences your approach to dating and relationships.
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ISTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Pragmatic Lover"</span>
+                        <span class="lang-content" data-lang="ja">「現実的な恋人」</span>
+                        <span class="lang-content" data-lang="ko">"현실적인 연인"</span>
                     </p>
-                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Reliable and dependable.</span>
+                            <span class="lang-content" data-lang="ja">信頼性が高く、頼りになる。</span>
+                            <span class="lang-content" data-lang="ko">신뢰할 수 있고 의지가 된다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Committed and loyal.</span>
+                            <span class="lang-content" data-lang="ja">献身的で忠実。</span>
+                            <span class="lang-content" data-lang="ko">헌신적이고 충실하다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">May seem reserved or lack emotional expression.</span>
+                            <span class="lang-content" data-lang="ja">感情表現に乏しい。</span>
+                            <span class="lang-content" data-lang="ko">감정 표현이 서툴거나 무뚝뚝해 보일 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A well-planned, classic dinner and a movie.</span>
+                            <span class="lang-content" data-lang="ja">綿密に計画された、定番のディナーと映画。</span>
+                            <span class="lang-content" data-lang="ko">잘 짜인 계획에 따라 진행되는 차분한 저녁 식사나 영화 관람.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is responsible, respectful, and appreciates their stability.</span>
+                            <span class="lang-content" data-lang="ja">責任感があり、尊敬でき、安定性を評価してくれる人。</span>
+                            <span class="lang-content" data-lang="ko">책임감이 있고, 자신의 안정성을 존중해 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ISFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Devoted Caregiver"</span>
+                        <span class="lang-content" data-lang="ja">「献身的な世話人」</span>
+                        <span class="lang-content" data-lang="ko">"헌신적인 돌보미"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Warm, considerate, and nurturing.</span>
+                            <span class="lang-content" data-lang="ja">温かく、思いやりがあり、育む。</span>
+                            <span class="lang-content" data-lang="ko">따뜻하고, 사려 깊으며, 헌신적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Prioritizes their partner's happiness.</span>
+                            <span class="lang-content" data-lang="ja">パートナーの幸せを最優先する。</span>
+                            <span class="lang-content" data-lang="ko">상대의 행복을 자신의 행복보다 우선시한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">May be too passive or struggle to express their own needs.</span>
+                            <span class="lang-content" data-lang="ja">受動的すぎたり、自分のニーズを表現するのが苦手。</span>
+                            <span class="lang-content" data-lang="ko">자신의 감정이나 필요를 솔직하게 표현하지 못할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A quiet, cozy night at home cooking together or watching a movie.</span>
+                            <span class="lang-content" data-lang="ja">家で一緒に料理をしたり映画を見たりする、静かで心地よい夜。</span>
+                            <span class="lang-content" data-lang="ko">집에서 함께 요리하거나 영화를 보는 아늑하고 조용한 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is kind, appreciative, and makes them feel safe and secure.</span>
+                            <span class="lang-content" data-lang="ja">優しく、感謝の気持ちを表現し、安心感を与えてくれる人。</span>
+                            <span class="lang-content" data-lang="ko">따뜻하고, 자신의 노력에 감사하며, 안정감을 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">INFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Deep Soulmate"</span>
+                        <span class="lang-content" data-lang="ja">「深い魂の伴侶」</span>
+                        <span class="lang-content" data-lang="ko">"깊은 소울메이트"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Intuitive, compassionate, and understanding.</span>
+                            <span class="lang-content" data-lang="ja">直感的で、思いやりがあり、理解が深い。</span>
+                            <span class="lang-content" data-lang="ko">직관적이고, 이해심이 많으며, 깊은 공감 능력이 있다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Seeks a profound, meaningful connection.</span>
+                            <span class="lang-content" data-lang="ja">深くて意味のあるつながりを求める。</span>
+                            <span class="lang-content" data-lang="ko">진정으로 의미 있는 관계를 추구한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly idealistic and have unrealistic expectations.</span>
+                            <span class="lang-content" data-lang="ja">理想主義的すぎることがあり、非現実的な期待を抱くことがある。</span>
+                            <span class="lang-content" data-lang="ko">과도한 이상주의로 비현실적인 기대를 가질 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A quiet art gallery visit followed by a deep conversation over coffee.</span>
+                            <span class="lang-content" data-lang="ja">静かな美術館を訪れた後、カフェで深い会話をする。</span>
+                            <span class="lang-content" data-lang="ko">미술관에서 깊이 있는 대화를 나누거나 철학적인 이야기를 나눌 수 있는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who values deep connection, is open-minded, and shares their values.</span>
+                            <span class="lang-content" data-lang="ja">深い繋がりを大切にし、心が広く、価値観を共有できるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">깊은 관계를 중요하게 생각하고, 가치관을 공유할 수 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">INTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Strategic Planner"</span>
+                        <span class="lang-content" data-lang="ja">「戦略的な計画者」</span>
+                        <span class="lang-content" data-lang="ko">"전략적인 계획가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Direct, honest, and decisive.</span>
+                            <span class="lang-content" data-lang="ja">率直で、正直で、決断力がある。</span>
+                            <span class="lang-content" data-lang="ko">직설적이고, 솔직하며, 관계에 대한 명확한 비전이 있다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Loves to plan and build a strong future together.</span>
+                            <span class="lang-content" data-lang="ja">一緒に強固な未来を築くことを好む。</span>
+                            <span class="lang-content" data-lang="ko">함께 미래를 계획하고 관계를 발전시키는 것을 좋아한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly analytical and appear unemotional.</span>
+                            <span class="lang-content" data-lang="ja">分析的すぎたり、感情がないように見えることがある。</span>
+                            <span class="lang-content" data-lang="ko">너무 분석적이거나 감정적으로 무관심하게 보일 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A challenging escape room followed by a stimulating debate over coffee.</span>
+                            <span class="lang-content" data-lang="ja">脱出ゲームの後に、カフェで刺激的な討論をする。</span>
+                            <span class="lang-content" data-lang="ko">서로의 지적 호기심을 자극하는 전시회 관람이나 토론.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is intelligent, independent, and respects their need for space.</span>
+                            <span class="lang-content" data-lang="ja">知的で自立しており、彼らの個人的な空間の必要性を尊重する人。</span>
+                            <span class="lang-content" data-lang="ko">지적이고, 독립적이며, 자신의 논리를 이해해 주는 사람.</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="lang-content" data-lang="ja">
-                    <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        インタラクティブクイズに参加して、あなたの性格タイプがデートや関係への取り組みにどのように影響するかを理解してください。
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ISTP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Adventurous Partner"</span>
+                        <span class="lang-content" data-lang="ja">「冒険的なパートナー」</span>
+                        <span class="lang-content" data-lang="ko">"모험적인 파트너"</span>
                     </p>
-                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Calm, spontaneous, and hands-on.</span>
+                            <span class="lang-content" data-lang="ja">落ち着いていて、自発的で、実践的。</span>
+                            <span class="lang-content" data-lang="ko">침착하고, 즉흥적이며, 능동적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Excels at problem-solving and handling crises.</span>
+                            <span class="lang-content" data-lang="ja">問題解決や危機管理に長けている。</span>
+                            <span class="lang-content" data-lang="ko">문제를 해결하고 위기 상황을 처리하는 데 뛰어나다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be emotionally distant and avoid long-term commitment.</span>
+                            <span class="lang-content" data-lang="ja">感情的に距離を置いたり、長期的な約束を避けることがある。</span>
+                            <span class="lang-content" data-lang="ko">감정적으로 거리를 두거나, 장기적인 약속을 피할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A spontaneous road trip or learning a new physical skill together.</span>
+                            <span class="lang-content" data-lang="ja">思いつきのロードトリップや、新しい身体スキルを一緒に学ぶ。</span>
+                            <span class="lang-content" data-lang="ko">즉흥적인 드라이브나, 스릴 넘치는 액티비티.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is fun, independent, and allows them freedom.</span>
+                            <span class="lang-content" data-lang="ja">楽しくて自立しており、自由を許してくれる人。</span>
+                            <span class="lang-content" data-lang="ko">재미있고, 독립적이며, 자신의 자유를 존중해 주는 사람.</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="lang-content" data-lang="ko">
-                    <h3 class="quiz-title">당신의 데이트 스타일 발견</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        인터랙티브 퀴즈에 참여하여 성격 유형이 데이트와 관계에 대한 접근 방식에 어떻게 영향을 미치는지 이해해보세요.
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ISFP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Gentle Soul"</span>
+                        <span class="lang-content" data-lang="ja">「穏やかな魂」</span>
+                        <span class="lang-content" data-lang="ko">"온화한 영혼"</span>
                     </p>
-                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Artistic, sensitive, and spontaneous.</span>
+                            <span class="lang-content" data-lang="ja">芸術的で、繊細で、自発的。</span>
+                            <span class="lang-content" data-lang="ko">예술적 감각이 뛰어나고, 감성적이며, 즉흥적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Lives in the moment and creates new experiences.</span>
+                            <span class="lang-content" data-lang="ja">今を生き、新しい体験を生み出す。</span>
+                            <span class="lang-content" data-lang="ko">순간을 즐기며 새로운 경험을 만들어낸다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">May be indecisive and avoid conflict.</span>
+                            <span class="lang-content" data-lang="ja">優柔不断で、衝突を避けることがある。</span>
+                            <span class="lang-content" data-lang="ko">우유부단하며 갈등을 회피하는 경향이 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">An impromptu picnic in a park or attending a live music festival.</span>
+                            <span class="lang-content" data-lang="ja">公園での思いつきのピクニックやライブ音楽フェスティバルに参加する。</span>
+                            <span class="lang-content" data-lang="ko">공원에서 즉흥적인 피크닉이나, 야외에서 예술을 즐기는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who appreciates their creativity and emotional depth.</span>
+                            <span class="lang-content" data-lang="ja">彼らの創造性と感情の深さを評価してくれるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">자신의 예술성과 감정적 깊이를 이해하고 존중해 주는 사람.</span>
+                        </li>
+                    </ul>
                 </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">INFP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Dreamer"</span>
+                        <span class="lang-content" data-lang="ja">「夢想家」</span>
+                        <span class="lang-content" data-lang="ko">"몽상가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Idealistic, empathetic, and imaginative.</span>
+                            <span class="lang-content" data-lang="ja">理想主義的で、共感力があり、想像力豊か。</span>
+                            <span class="lang-content" data-lang="ko">이상주의적이고, 공감 능력이 뛰어나며, 상상력이 풍부하다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Creates a deep, spiritual bond with their partner.</span>
+                            <span class="lang-content" data-lang="ja">パートナーと深くて精神的な絆を築く。</span>
+                            <span class="lang-content" data-lang="ko">상대방과 깊고 의미 있는 정신적 유대감을 형성한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly sensitive to criticism and retreat easily.</span>
+                            <span class="lang-content" data-lang="ja">批判に過敏で、簡単に引きこもることがある。</span>
+                            <span class="lang-content" data-lang="ko">비판에 쉽게 상처받고, 갈등을 회피할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A long walk on the beach followed by stargazing, sharing dreams.</span>
+                            <span class="lang-content" data-lang="ja">ビーチを長く散歩した後、星空を眺めながら夢を語り合う。</span>
+                            <span class="lang-content" data-lang="ko">바닷가를 산책하거나, 밤하늘의 별을 보며 꿈을 공유하는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A gentle, authentic partner who understands their unique world.</span>
+                            <span class="lang-content" data-lang="ja">彼らのユニークな世界を理解してくれる、優しくて本物のパートナー。</span>
+                            <span class="lang-content" data-lang="ko">자신의 감성을 이해하고, 진실한 마음을 가진 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">INTP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Curious Mind"</span>
+                        <span class="lang-content" data-lang="ja">「好奇心旺盛な頭脳」</span>
+                        <span class="lang-content" data-lang="ko">"호기심 많은 지식인"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Intelligent, open-minded, and creative.</span>
+                            <span class="lang-content" data-lang="ja">知的で、心が広く、創造的。</span>
+                            <span class="lang-content" data-lang="ko">지적이고, 사고가 유연하며, 독창적인 해결책을 제시한다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Focuses on logical compatibility and shared interests.</span>
+                            <span class="lang-content" data-lang="ja">論理的な相性と共通の関心事に焦点を当てる。</span>
+                            <span class="lang-content" data-lang="ko">논리적인 궁합과 지적인 대화를 중요하게 생각한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can neglect emotional needs and seem detached.</span>
+                            <span class="lang-content" data-lang="ja">感情的なニーズを無視し、無関心に見えることがある。</span>
+                            <span class="lang-content" data-lang="ko">감정적인 교류에 서툴고, 무심한 인상을 줄 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A quiet afternoon at a bookstore or a museum, followed by a philosophical discussion.</span>
+                            <span class="lang-content" data-lang="ja">書店や博物館で静かに過ごした後、哲学的な議論をする。</span>
+                            <span class="lang-content" data-lang="ko">서점에서 시간을 보내거나, 새로운 아이디어에 대해 깊이 있는 대화를 나누는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who is intellectually stimulating and respects their personal space.</span>
+                            <span class="lang-content" data-lang="ja">知的に刺激的で、彼らの個人的な空間を尊重してくれるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">자신의 지적 호기심을 충족시켜 주고, 자유를 존중해 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESTP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Thrill-Seeker"</span>
+                        <span class="lang-content" data-lang="ja">「スリルを求める人」</span>
+                        <span class="lang-content" data-lang="ko">"스릴을 추구하는 사람"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Charismatic, energetic, and exciting.</span>
+                            <span class="lang-content" data-lang="ja">カリスマ性があり、エネルギッシュで、刺激的。</span>
+                            <span class="lang-content" data-lang="ko">카리스마 있고, 활동적이며, 늘 새로운 즐거움을 준다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Lives in the moment and makes every date an adventure.</span>
+                            <span class="lang-content" data-lang="ja">今を生き、あらゆるデートを冒険に変える。</span>
+                            <span class="lang-content" data-lang="ko">순간을 즐기고, 모든 데이트를 모험처럼 만든다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be impulsive and struggle with long-term planning.</span>
+                            <span class="lang-content" data-lang="ja">衝動的になり、長期的な計画が苦手。</span>
+                            <span class="lang-content" data-lang="ko">충동적이고, 장기적인 관계에 대한 고민을 피할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A spontaneous trip to a new city or an adrenaline-fueled activity like rock climbing.</span>
+                            <span class="lang-content" data-lang="ja">新しい街への思いつき旅行や、ロッククライミングのようなアドレナリンが湧く活動。</span>
+                            <span class="lang-content" data-lang="ko">예상치 못한 여행이나 스릴 넘치는 스포츠, 또는 신나는 파티.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who is fun, adaptable, and willing to try new things.</span>
+                            <span class="lang-content" data-lang="ja">楽しくて順応性があり、新しいことに挑戦してくれる人。</span>
+                            <span class="lang-content" data-lang="ko">자신과 함께 즐길 줄 알고, 삶에 대한 열정이 가득한 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESFP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Spontaneous Charmer"</span>
+                        <span class="lang-content" data-lang="ja">「自発的な魅力者」</span>
+                        <span class="lang-content" data-lang="ko">"즉흥적인 매력가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Fun-loving, energetic, and playful.</span>
+                            <span class="lang-content" data-lang="ja">楽しむことが好きで、エネルギッシュで、遊び心がある。</span>
+                            <span class="lang-content" data-lang="ko">낙천적이고, 에너지가 넘치며, 유쾌하다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Makes their partner feel loved and the center of attention.</span>
+                            <span class="lang-content" data-lang="ja">パートナーを愛されていると感じさせ、注目を集めさせる。</span>
+                            <span class="lang-content" data-lang="ko">상대방이 사랑받고 있다는 느낌을 받게 한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be easily distracted and avoid serious conversations.</span>
+                            <span class="lang-content" data-lang="ja">気が散りやすく、深刻な会話を避けることがある。</span>
+                            <span class="lang-content" data-lang="ko">주의가 산만해지기 쉽고, 깊은 대화를 피할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A lively night out at a concert or a dance party.</span>
+                            <span class="lang-content" data-lang="ja">コンサートやダンスパーティーでの賑やかな夜。</span>
+                            <span class="lang-content" data-lang="ko">사람들로 북적이는 곳에서 함께 춤을 추거나 노래를 부르는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is fun, optimistic, and enjoys being the center of attention.</span>
+                            <span class="lang-content" data-lang="ja">楽しくて楽観的で、注目の的になることを楽しむ人。</span>
+                            <span class="lang-content" data-lang="ko">긍정적이고, 함께하는 시간을 즐기며, 자신의 열정을 존중해 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENFP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Enthusiastic Connector"</span>
+                        <span class="lang-content" data-lang="ja">「熱心な繋ぎ手」</span>
+                        <span class="lang-content" data-lang="ko">"열정적인 연결자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Charming, curious, and full of life.</span>
+                            <span class="lang-content" data-lang="ja">魅力的で、好奇心旺盛で、生命力にあふれている。</span>
+                            <span class="lang-content" data-lang="ko">매력적이고, 호기심이 많으며, 삶에 대한 열정이 넘친다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Brings new ideas and excitement to the relationship.</span>
+                            <span class="lang-content" data-lang="ja">関係に新しいアイデアと興奮をもたらす。</span>
+                            <span class="lang-content" data-lang="ko">관계에 신선한 아이디어와 흥미를 불어넣는다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can lose interest quickly and overcommit themselves.</span>
+                            <span class="lang-content" data-lang="ja">すぐに興味を失ったり、過度な約束をすることがある。</span>
+                            <span class="lang-content" data-lang="ko">흥미를 쉽게 잃거나 너무 많은 것에 동시에 빠질 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A lively flea market exploration followed by a spontaneous cooking class.</span>
+                            <span class="lang-content" data-lang="ja">賑やかなフリーマーケットを散策した後、思いつきで料理教室に参加する。</span>
+                            <span class="lang-content" data-lang="ko">새로운 곳을 탐험하거나, 흥미로운 활동을 함께 배우는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">An imaginative, open-minded partner who enjoys deep conversations and new experiences.</span>
+                            <span class="lang-content" data-lang="ja">想像力豊かで心が広く、深い会話や新しい体験を楽しむパートナー。</span>
+                            <span class="lang-content" data-lang="ko">자신의 창의성을 존중하고, 새로운 아이디어에 열린 마음을 가진 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Ambitious Strategist"</span>
+                        <span class="lang-content" data-lang="ja">「野心的な戦略家」</span>
+                        <span class="lang-content" data-lang="ko">"야심찬 전략가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Confident, organized, and driven.</span>
+                            <span class="lang-content" data-lang="ja">自信があり、組織的で、意欲的。</span>
+                            <span class="lang-content" data-lang="ko">자신감 있고, 계획적이며, 관계를 발전시키는 데 적극적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Takes charge to create a thriving partnership.</span>
+                            <span class="lang-content" data-lang="ja">主導権を握り、繁栄するパートナーシップを築く。</span>
+                            <span class="lang-content" data-lang="ko">건강한 관계를 위해 주도적으로 문제를 해결한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly critical and emotionally distant.</span>
+                            <span class="lang-content" data-lang="ja">批判的すぎたり、感情的に距離を置くことがある。</span>
+                            <span class="lang-content" data-lang="ko">너무 비판적이거나 감정적인 부분을 간과할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">An exclusive restaurant with stimulating conversations about career and life goals.</span>
+                            <span class="lang-content" data-lang="ja">キャリアや人生の目標について刺激的な会話ができる高級レストラン。</span>
+                            <span class="lang-content" data-lang="ko">고급 레스토랑에서 커리어나 미래에 대한 진지한 대화를 나누는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who is intelligent, ambitious, and can challenge their ideas.</span>
+                            <span class="lang-content" data-lang="ja">知的で野心的で、彼らのアイデアに挑戦できるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">지적이고, 야심 차며, 자신의 생각을 논리적으로 반박할 수 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENTP</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Debater"</span>
+                        <span class="lang-content" data-lang="ja">「討論者」</span>
+                        <span class="lang-content" data-lang="ko">"토론가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Clever, quick-witted, and charismatic.</span>
+                            <span class="lang-content" data-lang="ja">賢く、機転が利き、カリスマ性がある。</span>
+                            <span class="lang-content" data-lang="ko">영리하고, 재치 있으며, 매력이 넘친다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Loves a good debate and intellectual sparring.</span>
+                            <span class="lang-content" data-lang="ja">良い議論と知的スパーリングを好む。</span>
+                            <span class="lang-content" data-lang="ko">지적인 토론과 새로운 아이디어를 탐색하는 것을 즐긴다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be argumentative and impatient with emotional needs.</span>
+                            <span class="lang-content" data-lang="ja">議論好きで、感情的なニーズに我慢がない。</span>
+                            <span class="lang-content" data-lang="ko">논쟁을 즐기며, 상대의 감정적인 필요를 간과할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Visiting a tech conference or an innovative art exhibit.</span>
+                            <span class="lang-content" data-lang="ja">技術カンファレンスや革新的なアート展を訪れる。</span>
+                            <span class="lang-content" data-lang="ko">새로운 기술을 체험하거나, 지적인 대화를 나눌 수 있는 카페.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who can keep up with their quick mind and is not easily offended.</span>
+                            <span class="lang-content" data-lang="ja">彼らの素早い頭脳についていけて、簡単に気を悪くしない人。</span>
+                            <span class="lang-content" data-lang="ko">자신의 논리에 도전할 수 있고, 흥미로운 대화 상대가 되어주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Traditionalist"</span>
+                        <span class="lang-content" data-lang="ja">「伝統主義者」</span>
+                        <span class="lang-content" data-lang="ko">"전통주의자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Reliable, responsible, and committed.</span>
+                            <span class="lang-content" data-lang="ja">信頼でき、責任感があり、献身的。</span>
+                            <span class="lang-content" data-lang="ko">신뢰할 수 있고, 책임감이 강하며, 관계에 헌신적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Takes initiative and plans for the future.</span>
+                            <span class="lang-content" data-lang="ja">主導権を握り、将来のために計画を立てる。</span>
+                            <span class="lang-content" data-lang="ko">관계를 주도하고 미래를 위한 계획을 세운다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly rigid and struggle to adapt to change.</span>
+                            <span class="lang-content" data-lang="ja">厳格すぎたり、変化に適応するのが苦手。</span>
+                            <span class="lang-content" data-lang="ko">너무 경직되어 있고, 상대의 감정적인 면을 간과할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A planned dinner at a high-end restaurant followed by an organized activity.</span>
+                            <span class="lang-content" data-lang="ja">高級レストランでの計画的なディナーの後、組織された活動。</span>
+                            <span class="lang-content" data-lang="ko">깔끔하고 전통적인 장소에서 미리 계획된 저녁 식사.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is reliable, respectful of tradition, and shares their values.</span>
+                            <span class="lang-content" data-lang="ja">信頼でき、伝統を尊重し、価値観を共有できる人。</span>
+                            <span class="lang-content" data-lang="ko">책임감이 강하고, 자신의 노력을 인정해주며, 안정감을 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Social Butterfly"</span>
+                        <span class="lang-content" data-lang="ja">「社交的な蝶」</span>
+                        <span class="lang-content" data-lang="ko">"사교적인 활동가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Caring, attentive, and warm-hearted.</span>
+                            <span class="lang-content" data-lang="ja">思いやりがあり、気配りができ、心が温かい。</span>
+                            <span class="lang-content" data-lang="ko">상냥하고, 세심하며, 배려심이 깊다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Excels at creating a fun and social environment.</span>
+                            <span class="lang-content" data-lang="ja">楽しく社交的な環境を作り出すことに長けている。</span>
+                            <span class="lang-content" data-lang="ko">즐겁고 편안한 분위기를 잘 조성한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly concerned with others' opinions and need approval.</span>
+                            <span class="lang-content" data-lang="ja">他人の意見を気にしすぎ、承認を求めることがある。</span>
+                            <span class="lang-content" data-lang="ko">다른 사람들의 시선을 의식하거나, 인정을 받으려는 경향이 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A group outing with friends or a lively dinner party.</span>
+                            <span class="lang-content" data-lang="ja">友達とのグループでの外出や賑やかなディナーパーティー。</span>
+                            <span class="lang-content" data-lang="ko">지인들과 함께 하는 모임이나 파티, 축제에 참가하는 것.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is kind, appreciative, and fits in well with their social circle.</span>
+                            <span class="lang-content" data-lang="ja">優しく、感謝の気持ちを表現し、彼らの社交界にうまく溶け込める人。</span>
+                            <span class="lang-content" data-lang="ko">따뜻하고, 자신을 이해해주며, 인간관계를 중요하게 생각하는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Inspiring Idealist"</span>
+                        <span class="lang-content" data-lang="ja">「感動的な理想主義者」</span>
+                        <span class="lang-content" data-lang="ko">"영감을 주는 이상주의자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Charismatic, empathetic, and intuitive.</span>
+                            <span class="lang-content" data-lang="ja">カリスマ性があり、共感力が高く、直感的。</span>
+                            <span class="lang-content" data-lang="ko">매력적이고, 공감 능력이 뛰어나며, 통찰력이 깊다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Naturally understands their partner's needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーのニーズを自然に理解する。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 필요를 자연스럽게 이해하고 채워준다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly focused on their partner's happiness and neglect their own needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーの幸せに過度に焦点を当て、自分のニーズを無視することがある。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 행복에 지나치게 몰두하여 자신의 필요를 잊을 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A surprise romantic getaway or volunteering together for a cause.</span>
+                            <span class="lang-content" data-lang="ja">サプライズのロマンチックな旅行や、一緒にボランティア活動をする。</span>
+                            <span class="lang-content" data-lang="ko">서로의 가치관을 공유할 수 있는 봉사 활동이나 문화 체험.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A thoughtful, authentic partner who values their contribution to the relationship.</span>
+                            <span class="lang-content" data-lang="ja">思慮深く、本物で、関係への彼らの貢献を評価してくれるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">진심으로 자신을 이해하고, 함께 성장하려는 의지가 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Ambitious Strategist"</span>
+                        <span class="lang-content" data-lang="ja">「野心的な戦略家」</span>
+                        <span class="lang-content" data-lang="ko">"야심찬 전략가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Confident, organized, and driven.</span>
+                            <span class="lang-content" data-lang="ja">自信があり、組織的で、意欲的。</span>
+                            <span class="lang-content" data-lang="ko">자신감 있고, 계획적이며, 관계를 발전시키는 데 적극적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Takes charge to create a thriving partnership.</span>
+                            <span class="lang-content" data-lang="ja">主導権を握り、繁栄するパートナーシップを築く。</span>
+                            <span class="lang-content" data-lang="ko">건강한 관계를 위해 주도적으로 문제를 해결한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly critical and emotionally distant.</span>
+                            <span class="lang-content" data-lang="ja">批判的すぎたり、感情的に距離を置くことがある。</span>
+                            <span class="lang-content" data-lang="ko">너무 비판적이거나 감정적인 부분을 간과할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">An exclusive restaurant with stimulating conversations about career and life goals.</span>
+                            <span class="lang-content" data-lang="ja">キャリアや人生の目標について刺激的な会話ができる高級レストラン。</span>
+                            <span class="lang-content" data-lang="ko">고급 레스토랑에서 커리어나 미래에 대한 진지한 대화를 나누는 시간.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A partner who is intelligent, ambitious, and can challenge their ideas.</span>
+                            <span class="lang-content" data-lang="ja">知的で野心的で、彼らのアイデアに挑戦できるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">지적이고, 야심 차며, 자신의 생각을 논리적으로 반박할 수 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESTJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Traditionalist"</span>
+                        <span class="lang-content" data-lang="ja">「伝統主義者」</span>
+                        <span class="lang-content" data-lang="ko">"전통주의자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Reliable, responsible, and committed.</span>
+                            <span class="lang-content" data-lang="ja">信頼でき、責任感があり、献身的。</span>
+                            <span class="lang-content" data-lang="ko">신뢰할 수 있고, 책임감이 강하며, 관계에 헌신적이다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Takes initiative and plans for the future.</span>
+                            <span class="lang-content" data-lang="ja">主導権を握り、将来のために計画を立てる。</span>
+                            <span class="lang-content" data-lang="ko">관계를 주도하고 미래를 위한 계획을 세운다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly rigid and struggle to adapt to change.</span>
+                            <span class="lang-content" data-lang="ja">厳格すぎたり、変化に適応するのが苦手。</span>
+                            <span class="lang-content" data-lang="ko">너무 경직되어 있고, 상대의 감정적인 면을 간과할 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A planned dinner at a high-end restaurant followed by an organized activity.</span>
+                            <span class="lang-content" data-lang="ja">高級レストランでの計画的なディナーの後、組織された活動。</span>
+                            <span class="lang-content" data-lang="ko">깔끔하고 전통적인 장소에서 미리 계획된 저녁 식사.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is reliable, respectful of tradition, and shares their values.</span>
+                            <span class="lang-content" data-lang="ja">信頼でき、伝統を尊重し、価値観を共有できる人。</span>
+                            <span class="lang-content" data-lang="ko">책임감이 강하고, 자신의 노력을 인정해주며, 안정감을 주는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ESFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Social Butterfly"</span>
+                        <span class="lang-content" data-lang="ja">「社交的な蝶」</span>
+                        <span class="lang-content" data-lang="ko">"사교적인 활동가"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Caring, attentive, and warm-hearted.</span>
+                            <span class="lang-content" data-lang="ja">思いやりがあり、気配りができ、心が温かい。</span>
+                            <span class="lang-content" data-lang="ko">상냥하고, 세심하며, 배려심이 깊다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Excels at creating a fun and social environment.</span>
+                            <span class="lang-content" data-lang="ja">楽しく社交的な環境を作り出すことに長けている。</span>
+                            <span class="lang-content" data-lang="ko">즐겁고 편안한 분위기를 잘 조성한다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly concerned with others' opinions and need approval.</span>
+                            <span class="lang-content" data-lang="ja">他人の意見を気にしすぎ、承認を求めることがある。</span>
+                            <span class="lang-content" data-lang="ko">다른 사람들의 시선을 의식하거나, 인정을 받으려는 경향이 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A group outing with friends or a lively dinner party.</span>
+                            <span class="lang-content" data-lang="ja">友達とのグループでの外出や賑やかなディナーパーティー。</span>
+                            <span class="lang-content" data-lang="ko">지인들과 함께 하는 모임이나 파티, 축제에 참가하는 것.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Someone who is kind, appreciative, and fits in well with their social circle.</span>
+                            <span class="lang-content" data-lang="ja">優しく、感謝の気持ちを表現し、彼らの社交界にうまく溶け込める人。</span>
+                            <span class="lang-content" data-lang="ko">따뜻하고, 자신을 이해해주며, 인간관계를 중요하게 생각하는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Inspiring Idealist"</span>
+                        <span class="lang-content" data-lang="ja">「感動的な理想主義者」</span>
+                        <span class="lang-content" data-lang="ko">"영감을 주는 이상주의자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Charismatic, empathetic, and intuitive.</span>
+                            <span class="lang-content" data-lang="ja">カリスマ性があり、共感力が高く、直感的。</span>
+                            <span class="lang-content" data-lang="ko">매력적이고, 공감 능력이 뛰어나며, 통찰력이 깊다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Naturally understands their partner's needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーのニーズを自然に理解する。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 필요를 자연스럽게 이해하고 채워준다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly focused on their partner's happiness and neglect their own needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーの幸せに過度に焦点を当て、自分のニーズを無視することがある。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 행복에 지나치게 몰두하여 자신의 필요를 잊을 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A surprise romantic getaway or volunteering together for a cause.</span>
+                            <span class="lang-content" data-lang="ja">サプライズのロマンチックな旅行や、一緒にボランティア活動をする。</span>
+                            <span class="lang-content" data-lang="ko">서로의 가치관을 공유할 수 있는 봉사 활동이나 문화 체험.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A thoughtful, authentic partner who values their contribution to the relationship.</span>
+                            <span class="lang-content" data-lang="ja">思慮深く、本物で、関係への彼らの貢献を評価してくれるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">진심으로 자신을 이해하고, 함께 성장하려는 의지가 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mbti-card">
+                    <h2 class="mbti-type">ENFJ</h2>
+                    <p class="mbti-summary">
+                        <span class="lang-content active" data-lang="en">"The Inspiring Idealist"</span>
+                        <span class="lang-content" data-lang="ja">「感動的な理想主義者」</span>
+                        <span class="lang-content" data-lang="ko">"영감을 주는 이상주의자"</span>
+                    </p>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Strengths</span>
+                        <span class="lang-content" data-lang="ja">デートの強み</span>
+                        <span class="lang-content" data-lang="ko">연애 강점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Charismatic, empathetic, and intuitive.</span>
+                            <span class="lang-content" data-lang="ja">カリスマ性があり、共感力が高く、直感的。</span>
+                            <span class="lang-content" data-lang="ko">매력적이고, 공감 능력이 뛰어나며, 통찰력이 깊다.</span>
+                        </li>
+                        <li>
+                            <span class="lang-content active" data-lang="en">Naturally understands their partner's needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーのニーズを自然に理解する。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 필요를 자연스럽게 이해하고 채워준다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Dating Weaknesses</span>
+                        <span class="lang-content" data-lang="ja">デートの弱点</span>
+                        <span class="lang-content" data-lang="ko">연애 약점</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">Can be overly focused on their partner's happiness and neglect their own needs.</span>
+                            <span class="lang-content" data-lang="ja">パートナーの幸せに過度に焦点を当て、自分のニーズを無視することがある。</span>
+                            <span class="lang-content" data-lang="ko">상대방의 행복에 지나치게 몰두하여 자신의 필요를 잊을 수 있다.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Ideal Date</span>
+                        <span class="lang-content" data-lang="ja">理想のデート</span>
+                        <span class="lang-content" data-lang="ko">이상적인 데이트</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A surprise romantic getaway or volunteering together for a cause.</span>
+                            <span class="lang-content" data-lang="ja">サプライズのロマンチックな旅行や、一緒にボランティア活動をする。</span>
+                            <span class="lang-content" data-lang="ko">서로의 가치관을 공유할 수 있는 봉사 활동이나 문화 체험.</span>
+                        </li>
+                    </ul>
+                    <h4 class="mbti-section-title">
+                        <span class="lang-content active" data-lang="en">Attracted to</span>
+                        <span class="lang-content" data-lang="ja">惹かれる相手</span>
+                        <span class="lang-content" data-lang="ko">끌리는 상대</span>
+                    </h4>
+                    <ul class="mbti-content-list">
+                        <li>
+                            <span class="lang-content active" data-lang="en">A thoughtful, authentic partner who values their contribution to the relationship.</span>
+                            <span class="lang-content" data-lang="ja">思慮深く、本物で、関係への彼らの貢献を評価してくれるパートナー。</span>
+                            <span class="lang-content" data-lang="ko">진심으로 자신을 이해하고, 함께 성장하려는 의지가 있는 사람.</span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
@@ -236,17 +1529,13 @@
     </footer>
     
     <script>
-        // Language switching functionality
-        let currentLanguage = 'en';
-        
         function changeLanguage(lang) {
-            currentLanguage = lang;
-            
-            // Update language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+            const targetBtn = document.querySelector(`[onclick="changeLanguage('${lang}')"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
             
-            // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
                 if (content.getAttribute('data-lang') === lang) {
                     content.classList.add('active');
@@ -257,16 +1546,11 @@
             
             localStorage.setItem('preferredLanguage', lang);
         }
-        
-        // Load language preference on page load
+
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            if (savedLang !== 'en') {
-                changeLanguage(savedLang);
-            }
+            changeLanguage(savedLang);
         });
-
-        // The old startQuiz() function that showed an alert is now gone, so the button will no longer show an alert.
     </script>
 </body>
 </html>
