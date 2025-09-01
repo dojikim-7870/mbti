@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Dating Style Quiz</title>
+    
+    <meta property="og:title" content="MBTI Dating Style Quiz - Find Your Unique Dating Approach">
+    <meta property="og:description" content="Take this quick quiz to discover your unique dating style and how your personality influences your relationships.">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="quiz-style.css">
+    
+    <style>
+        :root {
+            --romantic-rose: hsl(340, 75%, 52%);
+            --soft-pink: hsl(320, 100%, 96%);
+            --deep-purple: hsl(258, 62%, 45%);
+            --lavender: hsl(285, 56%, 89%);
+            --warm-coral: hsl(18, 100%, 62%);
+            --mbti-gold: hsl(45, 100%, 51%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        /* Header Styles (index.html 기반) */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        /* Footer (index.html 기반) */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <nav class="nav">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
+                <button class="lang-btn" onclick="changeLanguage('ko')">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="section quiz-main-section">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="lang-content active" data-lang="en">
+                    <h1 class="quiz-title font-poppins">MBTI Dating Style Quiz</h1>
+                    <p class="quiz-subtitle">Answer a few questions and find out your unique romantic personality!</p>
+                </div>
+                <div class="lang-content" data-lang="ja">
+                    <h1 class="quiz-title font-poppins">MBTIデートスタイルクイズ</h1>
+                    <p class="quiz-subtitle">いくつかの質問に答えて、あなたのユニークな恋愛タイプを見つけましょう！</p>
+                </div>
+                <div class="lang-content" data-lang="ko">
+                    <h1 class="quiz-title font-poppins">MBTI 데이트 스타일 퀴즈</h1>
+                    <p class="quiz-subtitle">몇 가지 질문에 답하고, 당신의 연애 성향을 알아보세요!</p>
+                </div>
+                
+                <div id="quiz-area">
+                    </div>
+                <div id="result-area" style="display: none;">
+                    </div>
+                
+                <button id="next-btn" style="display: none;">
+                    <span class="lang-content active" data-lang="en">Next</span>
+                    <span class="lang-content" data-lang="ja">次へ</span>
+                    <span class="lang-content" data-lang="ko">다음</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="quiz-script.js"></script>
+    <script>
+        // Language switching functionality (from dating-style.html)
+        let currentLanguage = 'en';
+        
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+            
+            document.querySelectorAll('.lang-content').forEach(content => {
+                if (content.getAttribute('data-lang') === lang) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (savedLang !== 'en') {
+                changeLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
