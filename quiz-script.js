@@ -33,156 +33,147 @@ const questions = [
         options: [
             {
                 text: {
-                    en: "I prefer to set specific plans. I feel a sense of security when things go according to the schedule.",
-                    ja: "具体的な場所や時間を決めておきたいです。計画通りに進むと安心します。",
-                    ko: "구체적인 장소와 시간, 할 일을 정해두는 것을 선호한다. 계획대로 진행될 때 안정감을 느낀다."
-                },
-                scores: { S: 1, N: 0 }
-            },
-            {
-                text: {
-                    en: "I prefer spontaneous dates. I want a free-flowing atmosphere rather than being tied to a plan.",
-                    ja: "サプライズや自由なデートが好きです。計画に縛られたくないです。",
-                    ko: "즉흥적으로 데이트를 즐기는 것이 좋다. 계획에 얽매이기보다 자유로운 분위기를 원한다."
-                },
-                scores: { S: 0, N: 1 }
-            }
-        ]
-    },
-    {
-        question: {
-            en: "When your date shares a concern, how do you react?",
-            ja: "デート相手が悩みを打ち明けたとき、どう反応しますか？",
-            ko: "데이트 상대가 고민을 털어놓을 때, 당신의 반응은?"
-        },
-        options: [
-            {
-                text: {
-                    en: "I empathize with their feelings and offer emotional support. I value harmony in the relationship.",
-                    ja: "相手の気持ちに共感し、慰めます。関係の調和を大切にします。",
-                    ko: "상대방의 감정에 공감하고 위로해준다. 관계의 조화를 중요하게 생각한다."
-                },
-                scores: { T: 0, F: 1 }
-            },
-            {
-                text: {
-                    en: "I try to find a logical solution and offer practical advice. I focus on problem-solving.",
-                    ja: "論理的な解決策を探し、現実的なアドバイスをします。問題解決に焦点を当てます。",
-                    ko: "논리적인 해결책을 찾아 제시한다. 문제 해결에 초점을 맞춘다."
-                },
-                scores: { T: 1, F: 0 }
-            }
-        ]
-    },
-    {
-        question: {
-            en: "After a date, what is your mindset?",
-            ja: "デートの後、あなたの考え方は？",
-            ko: "데이트 후 당신의 마음가짐은?"
-        },
-        options: [
-            {
-                text: {
-                    en: "I plan for our next meeting. I want the relationship to continuously grow.",
-                    ja: "次のデートの計画を立てます。関係が継続的に発展することを望みます。",
-                    ko: "데이트 후 다음 만남을 위한 계획을 세우는 편이다. 관계가 지속적으로 발전하길 바란다."
+                    en: "I carefully plan the date in advance, from the restaurant to the activities.",
+                    ja: "レストランからアクティビティまで、綿密に計画を立てます。",
+                    ko: "식당부터 활동까지, 미리 꼼꼼하게 계획을 세우는 편이다."
                 },
                 scores: { J: 1, P: 0 }
             },
             {
                 text: {
-                    en: "I don't make any specific plans. I just wait for the next time we naturally meet.",
-                    ja: "特に計画は立てません。自然な再会を待ちます。",
-                    ko: "딱히 계획을 세우지 않는다. 자연스러운 만남을 기다린다."
+                    en: "I prefer a spontaneous and flexible date, going with the flow.",
+                    ja: "その場の雰囲気に合わせて、柔軟で自発的なデートを好みます。",
+                    ko: "즉흥적이고 자유로운 데이트를 선호한다. 상황에 맞춰 움직이는 것이 좋다."
                 },
-                scores: { J: 0, P: P: 1 }
+                scores: { J: 0, P: 1 }
+            }
+        ]
+    },
+    {
+        question: {
+            en: "What attracts you more in a partner?",
+            ja: "パートナーに惹かれるのは、どんなところですか？",
+            ko: "파트너에게 더 매력을 느끼는 부분은?"
+        },
+        options: [
+            {
+                text: {
+                    en: "Their logical mind and ability to analyze situations objectively.",
+                    ja: "論理的な思考と客観的に状況を分析する能力です。",
+                    ko: "논리적으로 상황을 분석하고 문제를 해결하는 능력이다."
+                },
+                scores: { T: 1, F: 0 }
+            },
+            {
+                text: {
+                    en: "Their warm heart and ability to empathize with others' feelings.",
+                    ja: "温かい心と、他人の感情に共感する能力です。",
+                    ko: "따뜻한 마음과 타인의 감정에 공감하는 능력이다."
+                },
+                scores: { T: 0, F: 1 }
+            }
+        ]
+    },
+    {
+        question: {
+            en: "What's your focus when discussing a future date?",
+            ja: "将来のデートについて話すとき、あなたの焦点は？",
+            ko: "미래의 데이트에 대해 이야기할 때, 당신의 초점은?"
+        },
+        options: [
+            {
+                text: {
+                    en: "I focus on a realistic and practical plan, like location and budget.",
+                    ja: "場所や予算など、現実的で具体的な計画に焦点を当てます。",
+                    ko: "장소, 예산 등 현실적이고 구체적인 계획을 세우는 데 집중한다."
+                },
+                scores: { S: 1, N: 0 }
+            },
+            {
+                text: {
+                    en: "I imagine the possibilities and the overall feeling of the experience.",
+                    ja: "可能性やその経験の全体的な雰囲気を想像します。",
+                    ko: "경험이 줄 수 있는 가능성과 전체적인 느낌을 상상한다."
+                },
+                scores: { S: 0, N: 1 }
             }
         ]
     }
 ];
 
-// Language-specific texts for the result and start-over button
 const resultTexts = {
     en: {
-        title: "Your Dating Style is {mbti}!",
-        description: "The {mbti} type... (Add description for each type here)",
-        restart: "Start Over"
+        title: "Your MBTI Dating Style: {mbti}",
+        description: "Your personality type gives you a unique approach to love and relationships. Your dating style is characterized by your core preferences. Understanding your type is the first step to finding a compatible partner and building a strong, lasting relationship.",
+        restart: "Take the Quiz Again"
     },
     ja: {
-        title: "あなたのデートスタイルは{mbti}です！",
-        description: "{mbti}タイプは...（ここにタイプ別の説明を追加してください）",
-        restart: "もう一度始める"
+        title: "あなたのMBTIデートスタイル: {mbti}",
+        description: "あなたの性格タイプは、愛と人間関係への独自のアプローチを与えます。あなたのデートスタイルは、あなたのコアな好みに特徴づけられます。あなたのタイプを理解することは、相性の良いパートナーを見つけ、強固で長続きする関係を築くための第一歩です。",
+        restart: "もう一度クイズを受ける"
     },
     ko: {
-        title: "당신의 데이트 스타일은 {mbti}입니다!",
-        description: "{mbti} 유형은... (이곳에 유형별 설명을 추가하세요)",
-        restart: "다시 시작하기"
+        title: "당신의 MBTI 연애 스타일: {mbti}",
+        description: "당신의 성격 유형은 사랑과 관계에 대한 독특한 접근 방식을 제공합니다. 당신의 데이트 스타일은 핵심적인 선호도에 의해 특징지어집니다. 당신의 유형을 이해하는 것은 잘 맞는 파트너를 찾고, 강하고 오래가는 관계를 구축하는 첫걸음입니다.",
+        restart: "퀴즈 다시 하기"
     }
 };
 
 let currentQuestionIndex = 0;
 let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-let selectedOption = null;
 
 const quizArea = document.getElementById('quiz-area');
-const nextBtn = document.getElementById('next-btn');
 const resultArea = document.getElementById('result-area');
+const nextBtn = document.getElementById('next-btn');
+const langButtons = document.querySelectorAll('.lang-btn');
 
 function getCurrentLanguage() {
-    return localStorage.getItem('preferredLanguage') || 'en';
+    const activeLangBtn = document.querySelector('.lang-btn.active');
+    return activeLangBtn ? activeLangBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'en';
 }
 
-function showQuestion() {
-    quizArea.innerHTML = '';
-    resultArea.style.display = 'none';
-    
+function renderQuestion() {
+    if (currentQuestionIndex >= questions.length) {
+        showResult();
+        return;
+    }
+
+    const questionData = questions[currentQuestionIndex];
     const lang = getCurrentLanguage();
-    const currentQuestion = questions[currentQuestionIndex];
-    const questionElement = document.createElement('h3');
-    questionElement.className = 'question';
-    questionElement.textContent = currentQuestion.question[lang];
-    quizArea.appendChild(questionElement);
+
+    quizArea.innerHTML = ''; // Clear previous question
+    nextBtn.style.display = 'none';
+
+    const questionTitle = document.createElement('h3');
+    questionTitle.className = 'question';
+    questionTitle.textContent = questionData.question[lang];
+    quizArea.appendChild(questionTitle);
 
     const optionsContainer = document.createElement('div');
     optionsContainer.className = 'options-container';
-    
-    currentQuestion.options.forEach(option => {
-        const button = document.createElement('button');
-        button.className = 'option';
-        button.textContent = option.text[lang];
-        button.addEventListener('click', () => selectOption(button, option.scores));
-        optionsContainer.appendChild(button);
+
+    questionData.options.forEach((option, index) => {
+        const optionBtn = document.createElement('button');
+        optionBtn.className = 'option';
+        optionBtn.textContent = option.text[lang];
+        optionBtn.onclick = () => selectOption(option.scores);
+        optionsContainer.appendChild(optionBtn);
     });
 
     quizArea.appendChild(optionsContainer);
-    nextBtn.style.display = 'none';
 }
 
-function selectOption(button, optionScores) {
-    const options = document.querySelectorAll('.option');
-    options.forEach(opt => opt.classList.remove('selected'));
-    
-    button.classList.add('selected');
-    
-    selectedOption = optionScores;
-    nextBtn.style.display = 'block';
-}
-
-function handleNextButton() {
-    if (selectedOption) {
-        for (const [trait, value] of Object.entries(selectedOption)) {
-            scores[trait] += value;
-        }
-
-        selectedOption = null;
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < questions.length) {
-            showQuestion();
-        } else {
-            showResult();
-        }
+function selectOption(optionScores) {
+    // Add scores from the selected option
+    for (const key in optionScores) {
+        scores[key] += optionScores[key];
     }
+    
+    // Visually mark the selected option (optional)
+    const options = quizArea.querySelectorAll('.option');
+    options.forEach(opt => opt.style.pointerEvents = 'none'); // Disable clicking after selection
+    
+    nextBtn.style.display = 'block';
 }
 
 function calculateMBTI() {
@@ -220,12 +211,20 @@ function showResult() {
     restartBtn.addEventListener('click', () => {
         currentQuestionIndex = 0;
         scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-        quizArea.style.display = 'block';
         resultArea.innerHTML = '';
-        showQuestion();
+        resultArea.style.display = 'none';
+        quizArea.style.display = 'block';
+        renderQuestion();
     });
     resultArea.appendChild(restartBtn);
 }
 
-nextBtn.addEventListener('click', handleNextButton);
-document.addEventListener('DOMContentLoaded', showQuestion);
+// Event listeners to run the quiz
+document.addEventListener('DOMContentLoaded', () => {
+    nextBtn.addEventListener('click', () => {
+        currentQuestionIndex++;
+        renderQuestion();
+    });
+    
+    renderQuestion(); // Initial render
+});
