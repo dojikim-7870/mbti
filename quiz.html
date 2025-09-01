@@ -24,10 +24,15 @@
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Header Styles (index.html 기반) */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: linear-gradient(135deg, var(--soft-pink), var(--lavender)); 
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
         header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
@@ -44,11 +49,111 @@
         .language-switcher { display: flex; gap: 0.5rem; }
         .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
         .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
 
-        /* Footer (index.html 기반) */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .quiz-main-section {
+            padding: 4rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 120px);
+            padding-top: 120px;
+        }
+        
+        .quiz-container {
+            background: linear-gradient(135deg, var(--soft-pink), white);
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+        
+        .quiz-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .question {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--deep-purple);
+        }
+        
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option {
+            background: white;
+            border: 1px solid var(--lavender);
+            padding: 1.2rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: left;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .option:hover {
+            background-color: var(--soft-pink);
+            border-color: var(--romantic-rose);
+            transform: translateY(-2px);
+        }
+
+        .option:active {
+            transform: translateY(0);
+        }
+        
+        .option.selected {
+            background-color: var(--romantic-rose);
+            color: white;
+            border-color: var(--romantic-rose);
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(219, 73, 122, 0.3);
+        }
+
+        #next-btn, #start-over-btn {
+            background: var(--deep-purple);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        #next-btn:hover, #start-over-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-mbti {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--romantic-rose);
+        }
+        
+        /* Footer */
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; margin-top: auto; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
         .footer-section h3 { color: white; margin-bottom: 1rem; }
         .footer-section ul { list-style: none; }
@@ -56,6 +161,9 @@
         .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
         .footer-section ul li a:hover { color: var(--romantic-rose); }
         .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+        
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
     </style>
 </head>
 <body>
@@ -79,33 +187,32 @@
         </div>
     </header>
 
-    <section class="section quiz-main-section">
-        <div class="container">
-            <div class="quiz-container">
-                <div class="lang-content active" data-lang="en">
-                    <h1 class="quiz-title font-poppins">MBTI Dating Style Quiz</h1>
-                    <p class="quiz-subtitle">Answer a few questions and find out your unique romantic personality!</p>
+    <div class="adsense-banner">
+        <p>Advertisement</p>
+    </div>
+
+    <section class="quiz-main-section">
+        <div class="quiz-container">
+            <h1 class="quiz-title font-poppins">
+                <span class="lang-content active" data-lang="en">Dating Style Quiz</span>
+                <span class="lang-content" data-lang="ja">デートスタイルクイズ</span>
+                <span class="lang-content" data-lang="ko">데이트 스타일 퀴즈</span>
+            </h1>
+            <p class="quiz-subtitle">
+                <span class="lang-content active" data-lang="en">Find out your unique dating style in a few questions.</span>
+                <span class="lang-content" data-lang="ja">いくつかの質問であなたのユニークなデートスタイルを見つけましょう。</span>
+                <span class="lang-content" data-lang="ko">몇 가지 질문으로 당신의 고유한 데이트 스타일을 알아보세요.</span>
+            </p>
+            
+            <div id="quiz-area">
                 </div>
-                <div class="lang-content" data-lang="ja">
-                    <h1 class="quiz-title font-poppins">MBTIデートスタイルクイズ</h1>
-                    <p class="quiz-subtitle">いくつかの質問に答えて、あなたのユニークな恋愛タイプを見つけましょう！</p>
+            <div id="result-area" style="display: none;">
                 </div>
-                <div class="lang-content" data-lang="ko">
-                    <h1 class="quiz-title font-poppins">MBTI 데이트 스타일 퀴즈</h1>
-                    <p class="quiz-subtitle">몇 가지 질문에 답하고, 당신의 연애 성향을 알아보세요!</p>
-                </div>
-                
-                <div id="quiz-area">
-                    </div>
-                <div id="result-area" style="display: none;">
-                    </div>
-                
-                <button id="next-btn" style="display: none;">
-                    <span class="lang-content active" data-lang="en">Next</span>
-                    <span class="lang-content" data-lang="ja">次へ</span>
-                    <span class="lang-content" data-lang="ko">다음</span>
-                </button>
-            </div>
+            <button id="next-btn" style="display: none;">
+                <span class="lang-content active" data-lang="en">Next</span>
+                <span class="lang-content" data-lang="ja">次へ</span>
+                <span class="lang-content" data-lang="ko">다음</span>
+            </button>
         </div>
     </section>
 
@@ -141,9 +248,269 @@
         </div>
     </footer>
     
-    <script src="quiz-script.js"></script>
     <script>
-        // Language switching functionality (from dating-style.html)
+        const questions = [
+            // E/I questions
+            {
+                question: {
+                    en: "When meeting new people, what is your approach?",
+                    ja: "新しい人に会うとき、あなたのアプローチは？",
+                    ko: "새로운 사람을 만나는 자리에서 당신의 모습은 어떤가요?"
+                },
+                options: [
+                    { text: { en: "I love socializing and take the lead in conversations.", ja: "積極的に会話し、会話をリードするのが好きです。", ko: "대화를 주도하고 새로운 사람들과 어울리는 것을 즐긴다." }, scores: { E: 1, I: 0 } },
+                    { text: { en: "I prefer to listen quietly and observe. I am more comfortable with familiar people.", ja: "静かに耳を傾け、観察する方が好きです。慣れた人との方が楽です。", ko: "조용히 경청하며 관찰하는 편이다. 익숙한 사람들과 소통하는 것이 편하다." }, scores: { E: 0, I: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "After a long day, what makes you feel energized?",
+                    ja: "長い一日の後、何があなたを元気にしますか？",
+                    ko: "긴 하루를 보낸 후, 무엇을 할 때 에너지를 얻나요?"
+                },
+                options: [
+                    { text: { en: "Going out with friends and sharing stories.", ja: "友達と出かけて、話をする。", ko: "친구들과 밖에서 만나 수다를 떨며 시간을 보낸다." }, scores: { E: 1, I: 0 } },
+                    { text: { en: "Spending quiet time alone, maybe reading a book or watching a movie.", ja: "一人で静かに過ごし、本を読んだり映画を見たりする。", ko: "혼자 조용히 책을 읽거나 영화를 보며 시간을 보낸다." }, scores: { E: 0, I: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "What's your preferred communication style in a new relationship?",
+                    ja: "新しい関係での好みのコミュニケーションスタイルは？",
+                    ko: "새로운 관계에서 당신이 선호하는 소통 방식은?"
+                },
+                options: [
+                    { text: { en: "Frequent messages and calls, constant connection.", ja: "頻繁なメッセージや電話で、常に繋がっていたい。", ko: "자주 연락하고 만나면서 끊임없이 연결되어 있기를 원한다." }, scores: { E: 1, I: 0 } },
+                    { text: { en: "Meaningful, deep conversations when we are together.", ja: "一緒にいるときに意味のある深い会話をしたい。", ko: "함께 있을 때 깊고 의미 있는 대화를 하는 것을 선호한다." }, scores: { E: 0, I: 1 } }
+                ]
+            },
+            
+            // S/N questions
+            {
+                question: {
+                    en: "What's your focus when planning a date?",
+                    ja: "デートの計画を立てるときのあなたの焦点は？",
+                    ko: "데이트 계획을 세울 때, 당신의 초점은?"
+                },
+                options: [
+                    { text: { en: "A realistic and tangible plan with clear details like location and time.", ja: "場所や時間など、明確な詳細を含む現実的で具体的な計画。", ko: "장소와 시간 등 구체적인 세부사항이 포함된 현실적인 계획." }, scores: { S: 1, N: 0 } },
+                    { text: { en: "An imaginative and unique experience that might be surprising.", ja: "驚きがあるかもしれない、想像力豊かでユニークな体験。", ko: "색다르고 특별한 경험을 위한 상상력이 풍부한 계획." }, scores: { S: 0, N: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "What attracts you more in a partner?",
+                    ja: "パートナーに惹かれるのはどんなところ？",
+                    ko: "파트너에게 더 매력을 느끼는 부분은?"
+                },
+                options: [
+                    { text: { en: "Their practical skills and ability to manage real-life situations.", ja: "彼らの実践的なスキルと現実的な状況を管理する能力。", ko: "실용적인 능력과 현실적인 문제를 잘 처리하는 모습." }, scores: { S: 1, N: 0 } },
+                    { text: { en: "Their visionary ideas and potential for the future.", ja: "彼らの理想的な考えや将来の可能性。", ko: "미래에 대한 비전과 흥미로운 상상력." }, scores: { S: 0, N: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "When you receive a compliment, what do you notice first?",
+                    ja: "褒め言葉を言われたとき、最初に気づくことは？",
+                    ko: "칭찬을 들었을 때, 가장 먼저 눈에 들어오는 것은?"
+                },
+                options: [
+                    { text: { en: "The specific details of what you did well.", ja: "あなたがうまくやった具体的な詳細。", ko: "내가 잘한 행동이나 결과에 대한 구체적인 내용." }, scores: { S: 1, N: 0 } },
+                    { text: { en: "The underlying meaning and intention behind the words.", ja: "言葉の背後にある根本的な意味や意図。", ko: "그 말에 담긴 숨은 의미나 의도." }, scores: { S: 0, N: 1 } }
+                ]
+            },
+            
+            // T/F questions
+            {
+                question: {
+                    en: "How do you handle conflict in a relationship?",
+                    ja: "関係での衝突にどう対処しますか？",
+                    ko: "관계에서 갈등이 생겼을 때, 어떻게 대처하나요?"
+                },
+                options: [
+                    { text: { en: "I try to find a logical and fair solution for both parties.", ja: "両者にとって論理的で公平な解決策を見つけようとします。", ko: "논리적이고 공정한 해결책을 찾으려고 노력한다." }, scores: { T: 1, F: 0 } },
+                    { text: { en: "I focus on understanding the emotions involved and healing the relationship.", ja: "関わる感情を理解し、関係を修復することに焦点を当てます。", ko: "관련된 감정을 이해하고 관계 회복에 중점을 둔다." }, scores: { T: 0, F: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "When a partner is upset, what do you do?",
+                    ja: "パートナーが不機嫌なとき、どうしますか？",
+                    ko: "파트너가 기분이 좋지 않을 때, 당신은 어떻게 하나요?"
+                },
+                options: [
+                    { text: { en: "I provide an objective analysis to help them solve the problem.", ja: "問題を解決するために客観的な分析を提供します。", ko: "문제를 해결할 수 있도록 객관적으로 분석해 준다." }, scores: { T: 1, F: 0 } },
+                    { text: { en: "I offer emotional support and listen to their feelings.", ja: "感情的なサポートを提供し、彼らの話に耳を傾けます。", ko: "정서적인 지지를 표현하며 그들의 감정에 귀 기울여 준다." }, scores: { T: 0, F: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "Which matters more to you in a partner?",
+                    ja: "パートナーにどちらがより重要ですか？",
+                    ko: "파트너에게 어떤 점이 더 중요하게 느껴지나요?"
+                },
+                options: [
+                    { text: { en: "Their honesty and bluntness.", ja: "彼らの正直さと率直さ。", ko: "솔직하고 직설적인 태도." }, scores: { T: 1, F: 0 } },
+                    { text: { en: "Their kindness and consideration.", ja: "彼らの優しさと配慮。", ko: "친절하고 사려 깊은 태도." }, scores: { T: 0, F: 1 } }
+                ]
+            },
+
+            // J/P questions
+            {
+                question: {
+                    en: "When planning a date, what is your tendency?",
+                    ja: "デートの計画を立てるとき、あなたの傾向は？",
+                    ko: "데이트 계획을 세울 때, 당신의 성향은?"
+                },
+                options: [
+                    { text: { en: "I carefully plan the date in advance, from the restaurant to the activities.", ja: "レストランからアクティビティまで、綿密に計画を立てます。", ko: "식당부터 활동까지, 미리 꼼꼼하게 계획을 세우는 편이다." }, scores: { J: 1, P: 0 } },
+                    { text: { en: "I prefer a spontaneous and flexible date, going with the flow.", ja: "その場の雰囲気に合わせて、柔軟で自発的なデートを好みます。", ko: "즉흥적이고 자유로운 데이트를 선호한다. 상황에 맞춰 움직이는 것이 좋다." }, scores: { J: 0, P: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "How do you feel about last-minute changes to plans?",
+                    ja: "計画の直前の変更についてどう感じますか？",
+                    ko: "약속 직전에 계획이 변경되는 것에 대해 어떻게 생각하나요?"
+                },
+                options: [
+                    { text: { en: "It feels stressful and throws me off balance.", ja: "ストレスを感じ、バランスが崩れます。", ko: "스트레스를 받고 모든 것이 흐트러지는 기분이다." }, scores: { J: 1, P: 0 } },
+                    { text: { en: "I see it as an opportunity for a new adventure.", ja: "新しい冒険の機会だと考えます。", ko: "새로운 모험의 기회라고 생각한다." }, scores: { J: 0, P: 1 } }
+                ]
+            },
+            {
+                question: {
+                    en: "In a relationship, what do you value more?",
+                    ja: "関係でより価値を置くのはどちらですか？",
+                    ko: "관계에서 더 중요하게 생각하는 것은 무엇인가요?"
+                },
+                options: [
+                    { text: { en: "Having things settled and a clear direction for the future.", ja: "物事が定まり、将来の明確な方向性があること。", ko: "관계가 안정되고 미래에 대한 명확한 방향이 있는 것." }, scores: { J: 1, P: 0 } },
+                    { text: { en: "Having flexibility and the freedom to explore possibilities.", ja: "柔軟性があり、可能性を探求する自由があること。", ko: "유연성을 가지고 다양한 가능성을 탐색할 자유가 있는 것." }, scores: { J: 0, P: 1 } }
+                ]
+            }
+        ];
+
+        const resultTexts = {
+            en: {
+                title: "Your MBTI Dating Style: {mbti}",
+                description: "Your personality type gives you a unique approach to love and relationships. Your dating style is characterized by your core preferences. Understanding your type is the first step to finding a compatible partner and building a strong, lasting relationship.",
+                restart: "Take the Quiz Again"
+            },
+            ja: {
+                title: "あなたのMBTIデートスタイル: {mbti}",
+                description: "あなたの性格タイプは、愛と人間関係への独自のアプローチを与えます。あなたのデートスタイルは、あなたのコアな好みに特徴づけられます。あなたのタイプを理解することは、相性の良いパートナーを見つけ、強固で長続きする関係を築くための第一歩です。",
+                restart: "もう一度クイズを受ける"
+            },
+            ko: {
+                title: "당신의 MBTI 연애 스타일: {mbti}",
+                description: "당신의 성격 유형은 사랑과 관계에 대한 독특한 접근 방식을 제공합니다. 당신의 데이트 스타일은 핵심적인 선호도에 의해 특징지어집니다. 당신의 유형을 이해하는 것은 잘 맞는 파트너를 찾고, 강하고 오래가는 관계를 구축하는 첫걸음입니다.",
+                restart: "퀴즈 다시 하기"
+            }
+        };
+
+        let currentQuestionIndex = 0;
+        let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+        const quizArea = document.getElementById('quiz-area');
+        const resultArea = document.getElementById('result-area');
+        const nextBtn = document.getElementById('next-btn');
+        const langButtons = document.querySelectorAll('.lang-btn');
+
+        function getCurrentLanguage() {
+            const activeLangBtn = document.querySelector('.lang-btn.active');
+            return activeLangBtn ? activeLangBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'en';
+        }
+
+        function renderQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                showResult();
+                return;
+            }
+
+            const questionData = questions[currentQuestionIndex];
+            const lang = getCurrentLanguage();
+
+            quizArea.innerHTML = '';
+            nextBtn.style.display = 'none';
+
+            const questionTitle = document.createElement('h3');
+            questionTitle.className = 'question';
+            questionTitle.textContent = questionData.question[lang];
+            quizArea.appendChild(questionTitle);
+
+            const optionsContainer = document.createElement('div');
+            optionsContainer.className = 'options-container';
+
+            questionData.options.forEach((option, index) => {
+                const optionBtn = document.createElement('button');
+                optionBtn.className = 'option';
+                optionBtn.textContent = option.text[lang];
+                optionBtn.onclick = () => selectOption(optionBtn, option.scores);
+                optionsContainer.appendChild(optionBtn);
+            });
+
+            quizArea.appendChild(optionsContainer);
+        }
+
+        function selectOption(selectedOptionBtn, optionScores) {
+            const options = quizArea.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.classList.remove('selected');
+            });
+            selectedOptionBtn.classList.add('selected');
+            
+            for (const key in optionScores) {
+                scores[key] += optionScores[key];
+            }
+            
+            nextBtn.style.display = 'block';
+        }
+
+        function calculateMBTI() {
+            let mbti = '';
+            mbti += scores.E > scores.I ? 'E' : 'I';
+            mbti += scores.S > scores.N ? 'S' : 'N';
+            mbti += scores.T > scores.F ? 'T' : 'F';
+            mbti += scores.J > scores.P ? 'J' : 'P';
+            return mbti;
+        }
+
+        function showResult() {
+            quizArea.style.display = 'none';
+            nextBtn.style.display = 'none';
+            resultArea.style.display = 'block';
+            
+            const lang = getCurrentLanguage();
+            const mbtiType = calculateMBTI();
+            
+            const resultTitle = resultTexts[lang].title.replace('{mbti}', mbtiType);
+            const resultDescription = resultTexts[lang].description.replace('{mbti}', mbtiType);
+
+            const resultText = document.createElement('h2');
+            resultText.className = 'result-mbti';
+            resultText.textContent = resultTitle;
+            resultArea.appendChild(resultText);
+
+            const description = document.createElement('p');
+            description.textContent = resultDescription;
+            resultArea.appendChild(description);
+            
+            const restartBtn = document.createElement('button');
+            restartBtn.id = 'start-over-btn';
+            restartBtn.textContent = resultTexts[lang].restart;
+            restartBtn.addEventListener('click', () => {
+                currentQuestionIndex = 0;
+                scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+                resultArea.innerHTML = '';
+                resultArea.style.display = 'none';
+                quizArea.style.display = 'block';
+                renderQuestion();
+            });
+            resultArea.appendChild(restartBtn);
+        }
+
         let currentLanguage = 'en';
         
         function changeLanguage(lang) {
@@ -161,6 +528,7 @@
             });
             
             localStorage.setItem('preferredLanguage', lang);
+            renderQuestion();
         }
         
         document.addEventListener('DOMContentLoaded', function() {
@@ -168,6 +536,11 @@
             if (savedLang !== 'en') {
                 changeLanguage(savedLang);
             }
+            nextBtn.addEventListener('click', () => {
+                currentQuestionIndex++;
+                renderQuestion();
+            });
+            renderQuestion();
         });
     </script>
 </body>
