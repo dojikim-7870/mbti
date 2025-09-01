@@ -5,12 +5,10 @@
     <title>MBTI Dating Styles - Discover Your Unique Dating Approach | MBTILove</title>
     <meta name="description" content="Explore how your MBTI personality type influences your dating style, romance preferences, and relationship approach. Find your perfect dating match.">
     
-    <!-- Open Graph tags -->
     <meta property="og:title" content="MBTI Dating Styles - Discover Your Unique Dating Approach">
     <meta property="og:description" content="Every MBTI personality type has distinct preferences in dating and romance. Understanding your dating style helps you connect with compatible partners.">
     <meta property="og:type" content="website">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -45,38 +43,21 @@
         .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
         .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
         
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(135deg, var(--warm-coral), var(--romantic-rose)); 
-            padding: 5rem 1rem; color: white; text-align: center; 
-        }
-        .hero-content { max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
-        
-        /* Main Content */
+        /* General Styles */
         .section { padding: 4rem 1rem; }
         .container { max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
         
-        /* Dating Style Cards */
-        .style-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        /* Dating Style Grid */
+        .dating-style-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .style-card {
-            background: linear-gradient(135deg, var(--soft-pink), white);
-            padding: 2rem; border-radius: 1.5rem; border: 1px solid rgba(219, 73, 122, 0.2);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s;
+            background: #fff; padding: 2rem; border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s;
         }
-        .style-card:hover { transform: translateY(-8px); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
-        .style-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .style-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .style-types { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .type-badge { background: var(--lavender); color: var(--deep-purple); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 500; }
-        .style-description { color: #666; line-height: 1.6; margin-bottom: 1.5rem; }
-        .style-features { list-style: none; }
-        .style-features li { padding: 0.25rem 0; color: #555; }
-        .style-features li:before { content: '💕 '; margin-right: 0.5rem; }
+        .style-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .style-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
+        .style-description { color: #666; }
         
-        /* Interactive Quiz Section */
         .quiz-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center; }
         .quiz-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
         .quiz-btn { 
@@ -84,13 +65,7 @@
             font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 1rem 0;
         }
         .quiz-btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
-        
-        /* AdSense Banner */
-        .adsense-banner {
-            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
-            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
-        }
-        
+
         /* Footer */
         footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
@@ -106,12 +81,10 @@
         
         @media (max-width: 768px) {
             .nav { display: none; }
-            .style-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
@@ -132,383 +105,104 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <!-- English Content -->
-            <div class="lang-content active" data-lang="en">
-                <h1 class="hero-title font-poppins">MBTI Dating Styles</h1>
-                <p class="hero-subtitle">
-                    Every MBTI personality type has distinct preferences in dating, romance, and relationship building. 
-                    Understanding your dating style helps you connect with compatible partners and create meaningful 
-                    relationships that align with your authentic self.
-                </p>
-            </div>
-            
-            <!-- Japanese Content -->
-            <div class="lang-content" data-lang="ja">
-                <h1 class="hero-title font-poppins">MBTIデートスタイル</h1>
-                <p class="hero-subtitle">
-                    すべてのMBTI性格タイプには、デート、ロマンス、関係構築における独特の好みがあります。
-                    あなたのデートスタイルを理解することで、相性の良いパートナーとつながり、
-                    本物の自分に合った意味のある関係を築くことができます。
-                </p>
-            </div>
-            
-            <!-- Korean Content -->
-            <div class="lang-content" data-lang="ko">
-                <h1 class="hero-title font-poppins">MBTI 데이트 스타일</h1>
-                <p class="hero-subtitle">
-                    모든 MBTI 성격 유형은 데이트, 로맨스, 관계 구축에서 고유한 선호도를 가지고 있습니다.
-                    당신의 데이트 스타일을 이해하면 호환되는 파트너와 연결되고
-                    진정한 자아에 맞는 의미 있는 관계를 만들 수 있습니다.
-                </p>
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- AdSense Banner -->
-    <div class="adsense-banner">
-        <p>Advertisement</p>
-    </div>
-
-    <!-- Dating Styles Section -->
     <section class="section">
         <div class="container">
-            <!-- English Content -->
             <div class="lang-content active" data-lang="en">
-                <h2 class="section-title font-poppins">Dating Styles by Personality Group</h2>
+                <h2 class="section-title font-poppins">Dating Styles</h2>
+                <div class="dating-style-grid">
+                    <div class="style-card">
+                        <h3 class="style-title">Extroverted (E) vs Introverted (I)</h3>
+                        <p class="style-description">Extroverts get energy from social interactions and seek out dates that are active and engaging. Introverts find comfort in one-on-one time and prefer quiet, intimate settings to connect more deeply.</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">Sensing (S) vs Intuitive (N)</h3>
+                        <p class="style-description">Sensing types are practical and detail-oriented, focusing on realistic and tangible date experiences. Intuitive types are imaginative and future-focused, often seeking deeper meaning and intellectual connection in romance.</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">Thinking (T) vs Feeling (F)</h3>
+                        <p class="style-description">Thinking types prioritize logic and objective analysis, approaching dating with a direct and rational mindset. Feeling types make decisions based on values and emotions, focusing on emotional harmony and empathy in their relationships.</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">Judging (J) vs Perceiving (P)</h3>
+                        <p class="style-description">Judging types prefer structure and planning, wanting a clear sense of direction in dating. Perceiving types are flexible and spontaneous, enjoying an open-ended approach to dates and relationships.</p>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Japanese Content -->
+
             <div class="lang-content" data-lang="ja">
-                <h2 class="section-title font-poppins">性格グループ別デートスタイル</h2>
+                <h2 class="section-title font-poppins">デートスタイル</h2>
+                <div class="dating-style-grid">
+                    <div class="style-card">
+                        <h3 class="style-title">外向型 (E) vs 内向型 (I)</h3>
+                        <p class="style-description">外向型は社交的な交流からエネルギーを得て、活発で魅力的なデートを求めます。内向型は一対一の時間を快適に感じ、より深くつながるために静かで親密な環境を好みます。</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">感覚型 (S) vs 直観型 (N)</h3>
+                        <p class="style-description">感覚型は現実的で詳細志向で、具体的で目に見えるデート体験に焦点を当てます。直観型は想像力豊かで未来志向で、恋愛においてより深い意味や知的なつながりを求めることが多いです。</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">思考型 (T) vs 感情型 (F)</h3>
+                        <p class="style-description">思考型は論理と客観的な分析を優先し、直接的で合理的な考え方でデートに臨みます。感情型は価値観と感情に基づいて決断し、人間関係における感情的な調和と共感を重視します。</p>
+                    </div>
+                    <div class="style-card">
+                        <h3 class="style-title">判断型 (J) vs 知覚型 (P)</h3>
+                        <p class="style-description">判断型は計画性と構造を好み、デートにおいて明確な方向性を求めます。知覚型は柔軟で自発的で、オープンなアプローチでデートや関係を楽しむタイプです。</p>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Korean Content -->
+
             <div class="lang-content" data-lang="ko">
-                <h2 class="section-title font-poppins">성격 그룹별 데이트 스타일</h2>
-            </div>
-
-            <div class="style-grid">
-                <!-- Analysts Dating Style -->
-                <div class="style-card">
-                    <div class="style-icon">🧠</div>
-                    <!-- English Content -->
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="style-title">The Intellectual Romantics</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INTJ</span>
-                            <span class="type-badge">INTP</span>
-                            <span class="type-badge">ENTJ</span>
-                            <span class="type-badge">ENTP</span>
-                        </div>
-                        <p class="style-description">
-                            Analysts approach dating with curiosity and depth. They seek partners who can engage in meaningful conversations, 
-                            challenge their thinking, and share their passion for growth and understanding.
-                        </p>
-                        <ul class="style-features">
-                            <li>Deep, thought-provoking conversations</li>
-                            <li>Intellectual compatibility is essential</li>
-                            <li>Appreciate partners who respect independence</li>
-                            <li>Value quality time over grand gestures</li>
-                            <li>Prefer planned, purposeful dates</li>
-                        </ul>
+                <h2 class="section-title font-poppins">데이트 스타일</h2>
+                <div class="dating-style-grid">
+                    <div class="style-card">
+                        <h3 class="style-title">외향형 (E) vs 내향형 (I)</h3>
+                        <p class="style-description">외향형은 사회적 교류에서 에너지를 얻고 활발하고 매력적인 데이트를 추구합니다. 내향형은 일대일 시간을 편안하게 느끼며, 더 깊은 연결을 위해 조용하고 친밀한 환경을 선호합니다.</p>
                     </div>
-                    
-                    <!-- Japanese Content -->
-                    <div class="lang-content" data-lang="ja">
-                        <h3 class="style-title">知的ロマンティスト</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INTJ</span>
-                            <span class="type-badge">INTP</span>
-                            <span class="type-badge">ENTJ</span>
-                            <span class="type-badge">ENTP</span>
-                        </div>
-                        <p class="style-description">
-                            アナリストは好奇心と深さを持ってデートにアプローチします。意味のある会話ができ、
-                            思考に挑戦し、成長と理解への情熱を共有できるパートナーを求めています。
-                        </p>
-                        <ul class="style-features">
-                            <li>深く、考えさせられる会話</li>
-                            <li>知的相性が不可欠</li>
-                            <li>独立性を尊重するパートナーを高く評価</li>
-                            <li>壮大なジェスチャーよりも質の高い時間を重視</li>
-                            <li>計画的で目的のあるデートを好む</li>
-                        </ul>
+                    <div class="style-card">
+                        <h3 class="style-title">감각형 (S) vs 직관형 (N)</h3>
+                        <p class="style-description">감각형은 실용적이고 세부적인 것에 초점을 맞춰 현실적이고 구체적인 데이트 경험을 중시합니다. 직관형은 상상력이 풍부하고 미래 지향적이며, 종종 연애에서 더 깊은 의미와 지적인 연결을 찾습니다.</p>
                     </div>
-                    
-                    <!-- Korean Content -->
-                    <div class="lang-content" data-lang="ko">
-                        <h3 class="style-title">지적 로맨티스트</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INTJ</span>
-                            <span class="type-badge">INTP</span>
-                            <span class="type-badge">ENTJ</span>
-                            <span class="type-badge">ENTP</span>
-                        </div>
-                        <p class="style-description">
-                            분석가들은 호기심과 깊이를 가지고 데이트에 접근합니다. 의미 있는 대화를 나누고,
-                            사고에 도전하며, 성장과 이해에 대한 열정을 공유할 수 있는 파트너를 찾습니다.
-                        </p>
-                        <ul class="style-features">
-                            <li>깊고 생각을 자극하는 대화</li>
-                            <li>지적 호환성이 필수적</li>
-                            <li>독립성을 존중하는 파트너를 높이 평가</li>
-                            <li>거대한 제스처보다 질 높은 시간을 중시</li>
-                            <li>계획적이고 목적이 있는 데이트를 선호</li>
-                        </ul>
+                    <div class="style-card">
+                        <h3 class="style-title">사고형 (T) vs 감정형 (F)</h3>
+                        <p class="style-description">사고형은 논리와 객관적 분석을 우선시하며, 직접적이고 합리적인 사고방식으로 데이트에 임합니다. 감정형은 가치관과 감정을 바탕으로 결정하며, 관계에서 감정적 조화와 공감을 중요하게 생각합니다.</p>
                     </div>
-                </div>
-
-                <!-- Diplomats Dating Style -->
-                <div class="style-card">
-                    <div class="style-icon">❤️</div>
-                    <!-- English Content -->
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="style-title">The Emotional Connectors</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INFJ</span>
-                            <span class="type-badge">INFP</span>
-                            <span class="type-badge">ENFJ</span>
-                            <span class="type-badge">ENFP</span>
-                        </div>
-                        <p class="style-description">
-                            Diplomats bring warmth, authenticity, and deep emotional connection to dating. They seek soulmate-level 
-                            connections and value partners who share their values and vision for meaningful relationships.
-                        </p>
-                        <ul class="style-features">
-                            <li>Seeks deep emotional intimacy</li>
-                            <li>Values authenticity and vulnerability</li>
-                            <li>Romantic gestures and thoughtfulness</li>
-                            <li>Strong focus on shared values</li>
-                            <li>Enjoys creative and meaningful dates</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Japanese Content -->
-                    <div class="lang-content" data-lang="ja">
-                        <h3 class="style-title">感情的なつながりを重視する人</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INFJ</span>
-                            <span class="type-badge">INFP</span>
-                            <span class="type-badge">ENFJ</span>
-                            <span class="type-badge">ENFP</span>
-                        </div>
-                        <p class="style-description">
-                            外交官はデートに温かさ、真正性、そして深い感情的なつながりをもたらします。ソウルメイトレベルの
-                            つながりを求め、価値観と意味のある関係へのビジョンを共有するパートナーを重視します。
-                        </p>
-                        <ul class="style-features">
-                            <li>深い感情的親密さを求める</li>
-                            <li>真正性と脆弱性を重視</li>
-                            <li>ロマンチックなジェスチャーと思いやり</li>
-                            <li>共通の価値観に強く焦点を当てる</li>
-                            <li>創造的で意味のあるデートを楽しむ</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Korean Content -->
-                    <div class="lang-content" data-lang="ko">
-                        <h3 class="style-title">감정적 연결자</h3>
-                        <div class="style-types">
-                            <span class="type-badge">INFJ</span>
-                            <span class="type-badge">INFP</span>
-                            <span class="type-badge">ENFJ</span>
-                            <span class="type-badge">ENFP</span>
-                        </div>
-                        <p class="style-description">
-                            외교관들은 데이트에 따뜻함, 진정성, 깊은 감정적 연결을 가져옵니다. 소울메이트 수준의
-                            연결을 추구하며 가치관과 의미 있는 관계에 대한 비전을 공유하는 파트너를 중시합니다.
-                        </p>
-                        <ul class="style-features">
-                            <li>깊은 감정적 친밀감을 추구</li>
-                            <li>진정성과 취약성을 중시</li>
-                            <li>로맨틱한 제스처와 사려 깊음</li>
-                            <li>공유된 가치에 강한 초점</li>
-                            <li>창의적이고 의미 있는 데이트를 즐김</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Sentinels Dating Style -->
-                <div class="style-card">
-                    <div class="style-icon">🏡</div>
-                    <!-- English Content -->
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="style-title">The Steady Builders</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTJ</span>
-                            <span class="type-badge">ISFJ</span>
-                            <span class="type-badge">ESTJ</span>
-                            <span class="type-badge">ESFJ</span>
-                        </div>
-                        <p class="style-description">
-                            Sentinels approach dating with commitment and stability in mind. They value consistency, reliability, 
-                            and building solid foundations for long-term relationships. Traditional romantic gestures are appreciated.
-                        </p>
-                        <ul class="style-features">
-                            <li>Values stability and consistency</li>
-                            <li>Appreciates traditional romantic approaches</li>
-                            <li>Focuses on long-term compatibility</li>
-                            <li>Enjoys reliable, planned activities</li>
-                            <li>Shows love through acts of service</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Japanese Content -->
-                    <div class="lang-content" data-lang="ja">
-                        <h3 class="style-title">着実な構築者</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTJ</span>
-                            <span class="type-badge">ISFJ</span>
-                            <span class="type-badge">ESTJ</span>
-                            <span class="type-badge">ESFJ</span>
-                        </div>
-                        <p class="style-description">
-                            番人はコミットメントと安定性を念頭に置いてデートにアプローチします。一貫性、信頼性、
-                            そして長期的な関係のための確固たる基盤の構築を重視します。伝統的なロマンチックなジェスチャーが高く評価されます。
-                        </p>
-                        <ul class="style-features">
-                            <li>安定性と一貫性を重視</li>
-                            <li>伝統的なロマンチックなアプローチを高く評価</li>
-                            <li>長期的な相性に焦点を当てる</li>
-                            <li>信頼できる計画的な活動を楽しむ</li>
-                            <li>奉仕行為を通じて愛を示す</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Korean Content -->
-                    <div class="lang-content" data-lang="ko">
-                        <h3 class="style-title">꾸준한 건설자</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTJ</span>
-                            <span class="type-badge">ISFJ</span>
-                            <span class="type-badge">ESTJ</span>
-                            <span class="type-badge">ESFJ</span>
-                        </div>
-                        <p class="style-description">
-                            파수꾼들은 헌신과 안정성을 염두에 두고 데이트에 접근합니다. 일관성, 신뢰성,
-                            그리고 장기적인 관계를 위한 견고한 기반 구축을 중시합니다. 전통적인 로맨틱한 제스처를 높이 평가합니다.
-                        </p>
-                        <ul class="style-features">
-                            <li>안정성과 일관성을 중시</li>
-                            <li>전통적인 로맨틱 접근을 높이 평가</li>
-                            <li>장기적 호환성에 초점</li>
-                            <li>신뢰할 수 있고 계획된 활동을 즐김</li>
-                            <li>봉사 행위를 통해 사랑을 표현</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Explorers Dating Style -->
-                <div class="style-card">
-                    <div class="style-icon">🌟</div>
-                    <!-- English Content -->
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="style-title">The Spontaneous Adventurers</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTP</span>
-                            <span class="type-badge">ISFP</span>
-                            <span class="type-badge">ESTP</span>
-                            <span class="type-badge">ESFP</span>
-                        </div>
-                        <p class="style-description">
-                            Explorers bring excitement, spontaneity, and adventure to dating. They prefer to live in the moment, 
-                            enjoy new experiences, and value partners who can match their energy and enthusiasm for life.
-                        </p>
-                        <ul class="style-features">
-                            <li>Loves spontaneous adventures</li>
-                            <li>Values present-moment experiences</li>
-                            <li>Enjoys active and exciting dates</li>
-                            <li>Appreciates flexibility and freedom</li>
-                            <li>Shows affection through shared experiences</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Japanese Content -->
-                    <div class="lang-content" data-lang="ja">
-                        <h3 class="style-title">自発的な冒険者</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTP</span>
-                            <span class="type-badge">ISFP</span>
-                            <span class="type-badge">ESTP</span>
-                            <span class="type-badge">ESFP</span>
-                        </div>
-                        <p class="style-description">
-                            探検家はデートに興奮、自発性、冒険をもたらします。現在の瞬間を生き、
-                            新しい経験を楽しみ、彼らのエネルギーと人生への熱意に合わせることができるパートナーを重視します。
-                        </p>
-                        <ul class="style-features">
-                            <li>自発的な冒険を愛する</li>
-                            <li>現在の瞬間の経験を重視</li>
-                            <li>活発で刺激的なデートを楽しむ</li>
-                            <li>柔軟性と自由を高く評価</li>
-                            <li>共有体験を通じて愛情を示す</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Korean Content -->
-                    <div class="lang-content" data-lang="ko">
-                        <h3 class="style-title">자발적 모험가</h3>
-                        <div class="style-types">
-                            <span class="type-badge">ISTP</span>
-                            <span class="type-badge">ISFP</span>
-                            <span class="type-badge">ESTP</span>
-                            <span class="type-badge">ESFP</span>
-                        </div>
-                        <p class="style-description">
-                            탐험가들은 데이트에 흥미진진함, 자발성, 모험을 가져옵니다. 현재 순간을 살고,
-                            새로운 경험을 즐기며, 그들의 에너지와 삶에 대한 열정에 맞출 수 있는 파트너를 중시합니다.
-                        </p>
-                        <ul class="style-features">
-                            <li>자발적인 모험을 사랑</li>
-                            <li>현재 순간의 경험을 중시</li>
-                            <li>활동적이고 흥미진진한 데이트를 즐김</li>
-                            <li>유연성과 자유를 높이 평가</li>
-                            <li>공유 경험을 통해 애정을 표현</li>
-                        </ul>
+                    <div class="style-card">
+                        <h3 class="style-title">판단형 (J) vs 인식형 (P)</h3>
+                        <p class="style-description">판단형은 구조와 계획을 선호하며, 데이트에서 명확한 방향을 원합니다. 인식형은 유연하고 자발적이며, 정해지지 않은 자유로운 데이트를 즐기는 유형입니다.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Interactive Quiz Section -->
-    <section class="section">
-        <div class="container">
             <div class="quiz-section">
-                <!-- English Content -->
                 <div class="lang-content active" data-lang="en">
                     <h3 class="quiz-title">Discover Your Dating Style</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
                         Take our interactive quiz to understand how your personality type influences your approach to dating and relationships.
                     </p>
-                    <button class="quiz-btn" onclick="startQuiz()">Take Dating Style Quiz</button>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
                 </div>
                 
-                <!-- Japanese Content -->
                 <div class="lang-content" data-lang="ja">
                     <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
                         インタラクティブクイズに参加して、あなたの性格タイプがデートや関係への取り組みにどのように影響するかを理解してください。
                     </p>
-                    <button class="quiz-btn" onclick="startQuiz()">デートスタイルクイズに参加</button>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
                 </div>
                 
-                <!-- Korean Content -->
                 <div class="lang-content" data-lang="ko">
                     <h3 class="quiz-title">당신의 데이트 스타일 발견</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
                         인터랙티브 퀴즈에 참여하여 성격 유형이 데이트와 관계에 대한 접근 방식에 어떻게 영향을 미치는지 이해해보세요.
                     </p>
-                  <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -540,12 +234,8 @@
             <p>© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
-
+    
     <script>
-        function startQuiz() {
-            alert('Quiz feature coming soon! This would redirect to an interactive dating style assessment.');
-        }
-
         // Language switching functionality
         let currentLanguage = 'en';
         
@@ -554,7 +244,7 @@
             
             // Update language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
             
             // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
@@ -573,10 +263,10 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             if (savedLang !== 'en') {
                 changeLanguage(savedLang);
-                document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`).classList.add('active');
-                document.querySelector(`[onclick="changeLanguage('en')"]`).classList.remove('active');
             }
         });
+
+        // The old startQuiz() function that showed an alert is now gone, so the button will no longer show an alert.
     </script>
 </body>
 </html>
