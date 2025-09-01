@@ -2,17 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTILove - MBTI Personality Dating & Relationship Compatibility</title>
-    <meta name="description" content="Discover your perfect match through MBTI personality compatibility. Explore dating styles, ideal types, and relationship compatibility based on Myers-Briggs personality types.">
+    <title>MBTILove - Discover Your Love and Compatibility</title>
+    <meta name="description" content="Explore your personality type to find your ideal match, understand your dating style, and improve your relationships with our comprehensive MBTI resources.">
     
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="MBTILove - Find Your Perfect Personality Match">
-    <meta property="og:description" content="Discover deep compatibility through MBTI personality types. Explore dating styles, ideal matches, and build meaningful relationships.">
+    <meta property="og:title" content="MBTILove - Your Guide to Personality and Compatibility">
+    <meta property="og:description" content="Find your perfect partner and a deeper understanding of love with our MBTI-based quizzes and guides.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mbtilove.xyz">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -24,1363 +21,303 @@
             --mbti-gold: hsl(45, 100%, 51%);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
         .font-poppins { font-family: 'Poppins', sans-serif; }
-        .font-dancing { font-family: 'Dancing Script', cursive; }
         
         /* Header Styles */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
+            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
         }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--romantic-rose);
-            text-decoration: none;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav a:hover {
-            color: var(--romantic-rose);
-        }
-        
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .lang-btn {
-            background: none;
-            border: 1px solid #ddd;
-            padding: 0.3rem 0.8rem;
-            border-radius: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .lang-btn.active {
-            background: var(--romantic-rose);
-            color: white;
-            border-color: var(--romantic-rose);
-        }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--romantic-rose); }
+        .language-switcher { display: flex; gap: 0.5rem; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
         
         /* Hero Section */
-        .hero-bg {
-            background: linear-gradient(135deg, hsla(340, 75%, 52%, 0.8), hsla(258, 62%, 45%, 0.8));
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+        .hero { 
+            background: linear-gradient(135deg, var(--soft-pink), var(--lavender)); 
+            padding: 5rem 1rem; color: var(--deep-purple); text-align: center; 
         }
-        
-        .floating-heart {
-            position: absolute;
-            animation: floating 6s ease-in-out infinite;
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: bold; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.8; }
+        .btn-group { display: flex; justify-content: center; gap: 1rem; }
+        .btn { 
+            display: inline-block; padding: 0.75rem 2rem; border-radius: 2rem; text-decoration: none; 
+            font-weight: 600; transition: transform 0.3s; 
         }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .btn-primary { background: var(--romantic-rose); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.3); }
+        .btn-secondary { background: white; color: var(--romantic-rose); border: 2px solid var(--romantic-rose); }
+        .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.15); }
+
+        /* Feature Section */
+        .section { padding: 4rem 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .feature-card {
+            background: #fff; padding: 2rem; border-radius: 1rem; text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s;
         }
-        
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            z-index: 10;
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
+        .feature-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .feature-description { color: #666; }
+
+        /* Quiz Section */
+        .quiz-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center; }
+        .quiz-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
+        .quiz-btn { 
+            background: var(--romantic-rose); color: white; padding: 1rem 2rem; border: none; border-radius: 2rem; 
+            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 1rem 0;
         }
-        
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-accent {
-            color: var(--mbti-gold);
-            display: block;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--romantic-rose);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-primary:hover {
-            background: #f8f8f8;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--romantic-rose);
-        }
-        
-        /* Content Sections */
-        .section {
-            padding: 5rem 1rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: var(--soft-pink);
-            color: var(--romantic-rose);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
-        }
-        
-        .section-description {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-        
-        /* Card Grid */
-        .card-grid {
-            display: grid;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .card-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .card {
-            background: linear-gradient(135deg, var(--soft-pink), white);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            border: 1px solid rgba(219, 73, 122, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-image {
-            width: 100%;
-            height: 8rem;
-            background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 2rem;
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-        
-        .status-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .status-perfect {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .status-good {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .status-potential {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        /* AdSense Banner */
-        .adsense-banner {
-            background: #f8f9fa;
-            border: 1px dashed #ddd;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 0.5rem;
-        }
-        
+        .quiz-btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
+
         /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #ccc;
-            padding: 3rem 1rem 2rem;
-        }
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-section h3 { color: white; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: var(--romantic-rose); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section ul li a:hover {
-            color: var(--romantic-rose);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
         
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-        
-        /* Hidden content for different languages */
-        .lang-content {
-            display: none;
-        }
-        
-        .lang-content.active {
-            display: block;
+            .nav { display: none; }
+            .btn-group { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
-            
             <nav class="nav">
-                <a href="compatibility.html" data-translate="nav.compatibility">Compatibility</a>
-                <a href="dating-style.html" data-translate="nav.dating-style">Dating Style</a>
-                <a href="ideal-type.html" data-translate="nav.ideal-type">Ideal Type</a>
-                <a href="rankings.html" data-translate="nav.rankings">Rankings</a>
-                <a href="conversation.html" data-translate="nav.conversation">Conversation</a>
-                <a href="balance-game.html" data-translate="nav.balance-game">Balance Game</a>
-                <a href="about.html" data-translate="nav.about">About</a>
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
             </nav>
-            
             <div class="language-switcher">
                 <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
                 <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
                 <button class="lang-btn" onclick="changeLanguage('ko')">한국어</button>
             </div>
-            
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-bg">
-        <!-- Floating hearts decoration -->
-        <div style="position: absolute; inset: 0; pointer-events: none;">
-            <div class="floating-heart" style="top: 20%; left: 10%; animation-delay: 0s;">❤️</div>
-            <div class="floating-heart" style="top: 40%; right: 20%; animation-delay: 2s;">💕</div>
-            <div class="floating-heart" style="bottom: 32%; left: 20%; animation-delay: 4s;">💖</div>
-        </div>
-
+    <section class="hero">
         <div class="hero-content">
-            <!-- English Content -->
             <div class="lang-content active" data-lang="en">
-                <h1 class="hero-title font-poppins">
-                    Find Your Perfect
-                    <span class="hero-accent font-dancing">Personality</span>
-                    Match
-                </h1>
+                <h1 class="hero-title font-poppins">Your Guide to Love, Powered by MBTI</h1>
                 <p class="hero-subtitle">
-                    Discover deep compatibility through MBTI personality types. Explore dating styles, ideal matches, and build meaningful relationships based on psychological compatibility.
+                    Dive into the world of MBTI to find compatibility, understand dating styles, and build stronger, more meaningful relationships.
                 </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ Take MBTI Test
+                <div class="btn-group">
+                    <a href="dating-style.html" class="btn btn-primary">
+                        Find Your Dating Style
                     </a>
                     <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 Check Compatibility
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Don't know your MBTI type?</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        Take the official MBTI Test →
+                        Check Compatibility
                     </a>
                 </div>
             </div>
-
-            <!-- Japanese Content -->
+            
             <div class="lang-content" data-lang="ja">
-                <h1 class="hero-title font-poppins">
-                    完璧な
-                    <span class="hero-accent font-dancing">性格</span>
-                    マッチを見つけよう
-                </h1>
+                <h1 class="hero-title font-poppins">MBTIであなたの愛を導く</h1>
                 <p class="hero-subtitle">
-                    MBTI性格タイプを通じて深い相性を発見してください。デートスタイル、理想のマッチを探索し、心理的相性に基づいた意味のある関係を築きましょう。
+                    MBTIの世界に飛び込み、相性を探り、デートスタイルを理解し、より強く意味のある関係を築きましょう。
                 </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ MBTI診断を受ける
+                <div class="btn-group">
+                    <a href="dating-style.html" class="btn btn-primary">
+                        あなたのデートスタイルを見つける
                     </a>
                     <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 相性をチェック
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">MBTIタイプが分からない？</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        公式MBTI診断を受ける →
+                        相性度をチェック
                     </a>
                 </div>
             </div>
-
-            <!-- Korean Content -->
+            
             <div class="lang-content" data-lang="ko">
-                <h1 class="hero-title font-poppins">
-                    완벽한
-                    <span class="hero-accent font-dancing">성격</span>
-                    매치 찾기
-                </h1>
+                <h1 class="hero-title font-poppins">MBTI로 알아보는 당신의 사랑</h1>
                 <p class="hero-subtitle">
-                    MBTI 성격 유형을 통해 깊은 호환성을 발견하세요. 데이트 스타일, 이상적인 매치를 탐색하고 심리적 호환성을 바탕으로 의미 있는 관계를 구축하세요.
+                    MBTI의 세계에 뛰어들어, 당신의 이상형과 데이트 스타일을 찾고, 더 깊고 의미있는 관계를 만들어보세요.
                 </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ MBTI 테스트하기
+                <div class="btn-group">
+                    <a href="dating-style.html" class="btn btn-primary">
+                        당신의 데이트 스타일 찾기
                     </a>
                     <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 궁합 확인하기
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">MBTI 유형을 모르시나요?</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        공식 MBTI 테스트 받기 →
+                        궁합 확인하기
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AdSense Placement -->
     <div class="adsense-banner">
-        <p style="color: #666; font-size: 0.9rem;">Advertisement</p>
-        <!-- AdSense code will be placed here -->
+        <p>Advertisement</p>
     </div>
 
-    <!-- Compatibility Section -->
-    <section class="section" style="background: white;">
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <!-- English Content -->
-                <div class="lang-content active" data-lang="en">
-                    <span class="badge">COMPATIBILITY</span>
-                    <h2 class="section-title font-poppins">Perfect Personality Matches</h2>
-                    <p class="section-description">
-                        Discover which MBTI personality types are most compatible with yours. Our comprehensive compatibility analysis helps you understand relationship dynamics, communication styles, and potential challenges.
-                    </p>
-                </div>
-                
-                <!-- Japanese Content -->
-                <div class="lang-content" data-lang="ja">
-                    <span class="badge">相性診断</span>
-                    <h2 class="section-title font-poppins">完璧な性格マッチング</h2>
-                    <p class="section-description">
-                        あなたとどのMBTI性格タイプが最も相性が良いかを発見してください。包括的な相性分析により、異なる性格の組み合わせとの関係性、コミュニケーションスタイル、潜在的な課題を理解できます。
-                    </p>
-                </div>
-                
-                <!-- Korean Content -->
-                <div class="lang-content" data-lang="ko">
-                    <span class="badge">호환성</span>
-                    <h2 class="section-title font-poppins">완벽한 성격 매치</h2>
-                    <p class="section-description">
-                        귀하의 MBTI 성격 유형과 가장 호환되는 유형을 찾아보세요. 포괄적인 호환성 분석을 통해 다양한 성격 조합에서의 관계 역학, 소통 스타일, 잠재적 과제를 이해할 수 있습니다.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Compatibility Grid -->
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-image">❤️</div>
-                    <div class="card-header">
-                        <h3 class="card-title">ENFJ ❤️ INFP</h3>
-                        <span class="status-badge status-perfect">Perfect Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Teacher and Mediator create a harmonious relationship built on mutual understanding and shared values.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 92% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">💕</div>
-                    <div class="card-header">
-                        <h3 class="card-title">INTJ ❤️ ENFP</h3>
-                        <span class="status-badge status-perfect">Perfect Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Architect and Campaigner balance each other perfectly with complementary strengths and perspectives.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 89% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">💖</div>
-                    <div class="card-header">
-                        <h3 class="card-title">ISFJ ❤️ ESTP</h3>
-                        <span class="status-badge status-good">Good Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Protector and Entrepreneur offer each other stability and excitement in equal measure.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 78% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center;">
-                <!-- English Content -->
-                <div class="lang-content active" data-lang="en">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        View All Compatibility Matches
-                    </a>
-                </div>
-                
-                <!-- Japanese Content -->
-                <div class="lang-content" data-lang="ja">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        すべての相性マッチを見る
-                    </a>
-                </div>
-                
-                <!-- Korean Content -->
-                <div class="lang-content" data-lang="ko">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        모든 호환성 매치 보기
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Other sections would be similar with multi-language support -->
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTILove - MBTI Personality Dating & Relationship Compatibility</title>
-    <meta name="description" content="Discover your perfect match through MBTI personality compatibility. Explore dating styles, ideal types, and relationship compatibility based on Myers-Briggs personality types.">
-    
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="MBTILove - Find Your Perfect Personality Match">
-    <meta property="og:description" content="Discover deep compatibility through MBTI personality types. Explore dating styles, ideal matches, and build meaningful relationships.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mbtilove.xyz">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --romantic-rose: hsl(340, 75%, 52%);
-            --soft-pink: hsl(320, 100%, 96%);
-            --deep-purple: hsl(258, 62%, 45%);
-            --lavender: hsl(285, 56%, 89%);
-            --warm-coral: hsl(18, 100%, 62%);
-            --mbti-gold: hsl(45, 100%, 51%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        .font-dancing { font-family: 'Dancing Script', cursive; }
-        
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--romantic-rose);
-            text-decoration: none;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav a:hover {
-            color: var(--romantic-rose);
-        }
-        
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .lang-btn {
-            background: none;
-            border: 1px solid #ddd;
-            padding: 0.3rem 0.8rem;
-            border-radius: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .lang-btn.active {
-            background: var(--romantic-rose);
-            color: white;
-            border-color: var(--romantic-rose);
-        }
-        
-        /* Hero Section */
-        .hero-bg {
-            background: linear-gradient(135deg, hsla(340, 75%, 52%, 0.8), hsla(258, 62%, 45%, 0.8));
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .floating-heart {
-            position: absolute;
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-accent {
-            color: var(--mbti-gold);
-            display: block;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--romantic-rose);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-primary:hover {
-            background: #f8f8f8;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--romantic-rose);
-        }
-        
-        /* Content Sections */
-        .section {
-            padding: 5rem 1rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: var(--soft-pink);
-            color: var(--romantic-rose);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
-        }
-        
-        .section-description {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-        
-        /* Card Grid */
-        .card-grid {
-            display: grid;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .card-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .card {
-            background: linear-gradient(135deg, var(--soft-pink), white);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            border: 1px solid rgba(219, 73, 122, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-image {
-            width: 100%;
-            height: 8rem;
-            background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 2rem;
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-        
-        .status-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .status-perfect {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .status-good {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .status-potential {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        /* AdSense Banner */
-        .adsense-banner {
-            background: #f8f9fa;
-            border: 1px dashed #ddd;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 0.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #ccc;
-            padding: 3rem 1rem 2rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section ul li a:hover {
-            color: var(--romantic-rose);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-        
-        /* Hidden content for different languages */
-        .lang-content {
-            display: none;
-        }
-        
-        .lang-content.active {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo font-poppins">MBTILove</a>
-            
-            <nav class="nav">
-                <a href="compatibility.html" data-translate="nav.compatibility">Compatibility</a>
-                <a href="dating-style.html" data-translate="nav.dating-style">Dating Style</a>
-                <a href="ideal-type.html" data-translate="nav.ideal-type">Ideal Type</a>
-                <a href="rankings.html" data-translate="nav.rankings">Rankings</a>
-                <a href="conversation.html" data-translate="nav.conversation">Conversation</a>
-                <a href="balance-game.html" data-translate="nav.balance-game">Balance Game</a>
-                <a href="about.html" data-translate="nav.about">About</a>
-            </nav>
-            
-            <div class="language-switcher">
-                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
-                <button class="lang-btn" onclick="changeLanguage('ko')">한국어</button>
-            </div>
-            
-            <button class="mobile-menu-btn">☰</button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-bg">
-        <!-- Floating hearts decoration -->
-        <div style="position: absolute; inset: 0; pointer-events: none;">
-            <div class="floating-heart" style="top: 20%; left: 10%; animation-delay: 0s;">❤️</div>
-            <div class="floating-heart" style="top: 40%; right: 20%; animation-delay: 2s;">💕</div>
-            <div class="floating-heart" style="bottom: 32%; left: 20%; animation-delay: 4s;">💖</div>
-        </div>
-
-        <div class="hero-content">
-            <!-- English Content -->
             <div class="lang-content active" data-lang="en">
-                <h1 class="hero-title font-poppins">
-                    Find Your Perfect
-                    <span class="hero-accent font-dancing">Personality</span>
-                    Match
-                </h1>
-                <p class="hero-subtitle">
-                    Discover deep compatibility through MBTI personality types. Explore dating styles, ideal matches, and build meaningful relationships based on psychological compatibility.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ Take MBTI Test
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 Check Compatibility
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Don't know your MBTI type?</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        Take the official MBTI Test →
-                    </a>
+                <h2 class="section-title font-poppins">Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💕</div>
+                        <h3 class="feature-title">Compatibility Check</h3>
+                        <p class="feature-description">Discover your romantic compatibility with other MBTI types.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3 class="feature-title">Dating Styles</h3>
+                        <p class="feature-description">Explore unique dating styles and how your personality influences romance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💌</div>
+                        <h3 class="feature-title">Ideal Types</h3>
+                        <p class="feature-description">Find out what each MBTI type looks for in a partner.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Rankings</h3>
+                        <p class="feature-description">See how different MBTI types rank in various romantic scenarios.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Japanese Content -->
+            
             <div class="lang-content" data-lang="ja">
-                <h1 class="hero-title font-poppins">
-                    完璧な
-                    <span class="hero-accent font-dancing">性格</span>
-                    マッチを見つけよう
-                </h1>
-                <p class="hero-subtitle">
-                    MBTI性格タイプを通じて深い相性を発見してください。デートスタイル、理想のマッチを探索し、心理的相性に基づいた意味のある関係を築きましょう。
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ MBTI診断を受ける
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 相性をチェック
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">MBTIタイプが分からない？</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        公式MBTI診断を受ける →
-                    </a>
+                <h2 class="section-title font-poppins">特徴</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💕</div>
+                        <h3 class="feature-title">相性チェック</h3>
+                        <p class="feature-description">他のMBTIタイプとの恋愛相性を発見。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3 class="feature-title">デートスタイル</h3>
+                        <p class="feature-description">ユニークなデートスタイルと、あなたの性格が恋愛にどう影響するかを探る。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💌</div>
+                        <h3 class="feature-title">理想のタイプ</h3>
+                        <p class="feature-description">各MBTIタイプがパートナーに何を求めるかを知る。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">ランキング</h3>
+                        <p class="feature-description">様々な恋愛シーンでMBTIタイプがどうランク付けされるかを見る。</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Korean Content -->
+            
             <div class="lang-content" data-lang="ko">
-                <h1 class="hero-title font-poppins">
-                    완벽한
-                    <span class="hero-accent font-dancing">성격</span>
-                    매치 찾기
-                </h1>
-                <p class="hero-subtitle">
-                    MBTI 성격 유형을 통해 깊은 호환성을 발견하세요. 데이트 스타일, 이상적인 매치를 탐색하고 심리적 호환성을 바탕으로 의미 있는 관계를 구축하세요.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" class="btn btn-primary">
-                        ❤️ MBTI 테스트하기
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        🔍 궁합 확인하기
-                    </a>
-                </div>
-                <div style="text-align: center;">
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">MBTI 유형을 모르시나요?</p>
-                    <a href="https://www.16personalities.com/free-personality-test" target="_blank" style="color: var(--mbti-gold); text-decoration: none;">
-                        공식 MBTI 테스트 받기 →
-                    </a>
+                <h2 class="section-title font-poppins">주요 기능</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💕</div>
+                        <h3 class="feature-title">궁합 확인</h3>
+                        <p class="feature-description">다른 MBTI 유형과의 연애 궁합을 알아보세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3 class="feature-title">데이트 스타일</h3>
+                        <p class="feature-description">고유한 데이트 스타일과 당신의 성격이 연애에 어떻게 영향을 미치는지 탐색하세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💌</div>
+                        <h3 class="feature-title">이상형</h3>
+                        <p class="feature-description">각 MBTI 유형이 파트너에게서 무엇을 찾는지 알아보세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">랭킹</h3>
+                        <p class="feature-description">다양한 연애 시나리오에서 MBTI 유형들이 어떻게 순위를 차지하는지 확인하세요.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AdSense Placement -->
-    <div class="adsense-banner">
-        <p style="color: #666; font-size: 0.9rem;">Advertisement</p>
-        <!-- AdSense code will be placed here -->
-    </div>
-
-    <!-- Compatibility Section -->
-    <section class="section" style="background: white;">
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <!-- English Content -->
+            <div class="quiz-section">
                 <div class="lang-content active" data-lang="en">
-                    <span class="badge">COMPATIBILITY</span>
-                    <h2 class="section-title font-poppins">Perfect Personality Matches</h2>
-                    <p class="section-description">
-                        Discover which MBTI personality types are most compatible with yours. Our comprehensive compatibility analysis helps you understand relationship dynamics, communication styles, and potential challenges.
+                    <h3 class="quiz-title">Discover Your Dating Style</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                        Take our interactive quiz to understand how your personality type influences your approach to dating and relationships.
                     </p>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
                 </div>
                 
-                <!-- Japanese Content -->
                 <div class="lang-content" data-lang="ja">
-                    <span class="badge">相性診断</span>
-                    <h2 class="section-title font-poppins">完璧な性格マッチング</h2>
-                    <p class="section-description">
-                        あなたとどのMBTI性格タイプが最も相性が良いかを発見してください。包括的な相性分析により、異なる性格の組み合わせとの関係性、コミュニケーションスタイル、潜在的な課題を理解できます。
+                    <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                        インタラクティブクイズに参加して、あなたの性格タイプがデートや関係への取り組みにどのように影響するかを理解してください。
                     </p>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
                 </div>
                 
-                <!-- Korean Content -->
                 <div class="lang-content" data-lang="ko">
-                    <span class="badge">호환성</span>
-                    <h2 class="section-title font-poppins">완벽한 성격 매치</h2>
-                    <p class="section-description">
-                        귀하의 MBTI 성격 유형과 가장 호환되는 유형을 찾아보세요. 포괄적인 호환성 분석을 통해 다양한 성격 조합에서의 관계 역학, 소통 스타일, 잠재적 과제를 이해할 수 있습니다.
+                    <h3 class="quiz-title">당신의 데이트 스타일 발견</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                        인터랙티브 퀴즈에 참여하여 성격 유형이 데이트와 관계에 대한 접근 방식에 어떻게 영향을 미치는지 이해해보세요.
                     </p>
-                </div>
-            </div>
-
-            <!-- Compatibility Grid -->
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-image">❤️</div>
-                    <div class="card-header">
-                        <h3 class="card-title">ENFJ ❤️ INFP</h3>
-                        <span class="status-badge status-perfect">Perfect Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Teacher and Mediator create a harmonious relationship built on mutual understanding and shared values.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 92% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">💕</div>
-                    <div class="card-header">
-                        <h3 class="card-title">INTJ ❤️ ENFP</h3>
-                        <span class="status-badge status-perfect">Perfect Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Architect and Campaigner balance each other perfectly with complementary strengths and perspectives.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 89% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">💖</div>
-                    <div class="card-header">
-                        <h3 class="card-title">ISFJ ❤️ ESTP</h3>
-                        <span class="status-badge status-good">Good Match</span>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">The Protector and Entrepreneur offer each other stability and excitement in equal measure.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span>❤️ 78% Compatible</span>
-                        <span>💬 Great Communication</span>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center;">
-                <!-- English Content -->
-                <div class="lang-content active" data-lang="en">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        View All Compatibility Matches
-                    </a>
-                </div>
-                
-                <!-- Japanese Content -->
-                <div class="lang-content" data-lang="ja">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        すべての相性マッチを見る
-                    </a>
-                </div>
-                
-                <!-- Korean Content -->
-                <div class="lang-content" data-lang="ko">
-                    <a href="compatibility.html" class="btn" style="background: var(--romantic-rose); color: white;">
-                        모든 호환성 매치 보기
-                    </a>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Other sections would be similar with multi-language support -->
-
-<div style="text-align:center; margin:20px 0;">
-<p style="font-size: 18px; color: #007bff;">
-    To use more utilities, click the icon below.
-    </p>
-</div>
-<div class="banner-icon" style="text-align:center; margin:20px 0;">
-
- <!-- 아이콘 1 -->
- <a href="https://imagetool.info" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/imagetool.png"  alt="imagetool" style="width:100px; height:100px; margin:0 5px;">
-</a>
-  <!-- 아이콘 2 -->
-  <a href="https://petopia.icu" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/petopia.png"  alt="petopia" style="width:100px; height:100px; margin:0 5px;">
-</a>
-
-<!-- 아이콘 3 -->
- <a href="https://convertly.icu" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/convertly.png"  alt="convertly" style="width:100px; height:100px; margin:0 5px;">
-</a>
- 
-<!-- 아이콘 4 -->
-  <a href="https://promptbuilder.life" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/prompt.png"  alt="promptbuilder" style="width:100px; height:100px; margin:0 5px;">
-</a>
-
-<!-- 아이콘 5 -->
-  <a href="https://thinko.fun" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/thinko.png"  alt="thinko" style="width:100px; height:100px; margin:0 5px;">
-</a>
-
-<!-- 아이콘 6 -->
-  <a href="https://solvekit.info" target="_blank" class="icon-link" style="text-decoration: none; display: inline-block;">
-  <img src="images/solvekit.png"  alt="solvekit" style="width:100px; height:100px; margin:0 5px;">
-</a>
-
-</div>
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 data-translate="footer.explore">Explore</h3>
+                <h3>Explore</h3>
                 <ul>
-                    <li><a href="compatibility.html" data-translate="nav.compatibility">Compatibility</a></li>
-                    <li><a href="dating-style.html" data-translate="nav.dating-style">Dating Style</a></li>
-                    <li><a href="ideal-type.html" data-translate="nav.ideal-type">Ideal Type</a></li>
-                    <li><a href="rankings.html" data-translate="nav.rankings">Rankings</a></li>
-                    <li><a href="conversation.html" data-translate="nav.conversation">Conversation</a></li>
-                    <li><a href="balance-game.html" data-translate="nav.balance-game">Balance Game</a></li>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="dating-style.html">Dating Style</a></li>
+                    <li><a href="ideal-type.html">Ideal Type</a></li>
+                    <li><a href="rankings.html">Rankings</a></li>
                 </ul>
             </div>
-            
             <div class="footer-section">
-                <h3 data-translate="footer.resources">Resources</h3>
+                <h3>Resources</h3>
                 <ul>
-                    <li><a href="about.html" data-translate="nav.about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
                 </ul>
             </div>
-            
             <div class="footer-section">
-                <h3 data-translate="footer.legal">Legal</h3>
+                <h3>Legal</h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>MBTILove</h3>
-                <!-- English Content -->
-                <div class="lang-content active" data-lang="en">
-                    <p style="margin-bottom: 1rem;">Connecting hearts through personality psychology.</p>
-                </div>
-                
-                <!-- Japanese Content -->
-                <div class="lang-content" data-lang="ja">
-                    <p style="margin-bottom: 1rem;">性格心理学を通じて心をつなぐ。</p>
-                </div>
-                
-                <!-- Korean Content -->
-                <div class="lang-content" data-lang="ko">
-                    <p style="margin-bottom: 1rem;">성격 심리학을 통해 마음을 연결합니다.</p>
-                </div>
-            </div>
         </div>
-        
         <div class="footer-bottom">
-            <!-- English Content -->
-            <div class="lang-content active" data-lang="en">
-                <p>© 2024 MBTILove.xyz - All rights reserved. Understanding love through personality psychology.</p>
-            </div>
-            
-            <!-- Japanese Content -->
-            <div class="lang-content" data-lang="ja">
-                <p>© 2024 MBTILove.xyz - すべての権利予約。性格心理学を通じた愛の理解。</p>
-            </div>
-            
-            <!-- Korean Content -->
-            <div class="lang-content" data-lang="ko">
-                <p>© 2024 MBTILove.xyz - 모든 권리 보유. 성격 심리학을 통한 사랑의 이해.</p>
-            </div>
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
 
@@ -1392,10 +329,8 @@
             currentLanguage = lang;
             
             // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
             
             // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
@@ -1406,7 +341,6 @@
                 }
             });
             
-            // Store language preference
             localStorage.setItem('preferredLanguage', lang);
         }
         
@@ -1415,15 +349,7 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             if (savedLang !== 'en') {
                 changeLanguage(savedLang);
-                document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`).classList.add('active');
-                document.querySelector(`[onclick="changeLanguage('en')"]`).classList.remove('active');
             }
-        });
-        
-        // Mobile menu functionality
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('.nav');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
 </body>
