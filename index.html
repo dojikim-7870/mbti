@@ -13,95 +13,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --romantic-rose: hsl(340, 75%, 52%);
-            --soft-pink: hsl(320, 100%, 96%);
-            --deep-purple: hsl(258, 62%, 45%);
-            --lavender: hsl(285, 56%, 89%);
-            --warm-coral: hsl(18, 100%, 62%);
-            --mbti-gold: hsl(45, 100%, 51%);
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Header Styles */
-        header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        .header-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
-            display: flex; justify-content: space-between; align-items: center; height: 70px;
-        }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
-        .nav { display: flex; gap: 2rem; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(135deg, var(--soft-pink), var(--lavender)); 
-            padding: 5rem 1rem; color: var(--deep-purple); text-align: center; 
-        }
-        .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: bold; margin-bottom: 1rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.8; }
-        .btn-group { display: flex; justify-content: center; gap: 1rem; }
-        .btn { 
-            display: inline-block; padding: 0.75rem 2rem; border-radius: 2rem; text-decoration: none; 
-            font-weight: 600; transition: transform 0.3s; 
-        }
-        .btn-primary { background: var(--romantic-rose); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.3); }
-        .btn-secondary { background: white; color: var(--romantic-rose); border: 2px solid var(--romantic-rose); }
-        .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.15); }
+    :root {
+        --romantic-rose: hsl(340, 75%, 52%);
+        --soft-pink: hsl(320, 100%, 96%);
+        --deep-purple: hsl(258, 62%, 45%);
+        --lavender: hsl(285, 56%, 89%);
+        --warm-coral: hsl(18, 100%, 62%);
+        --mbti-gold: hsl(45, 100%, 51%);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    
+    /* Header Styles */
+    header {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+        background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .header-container {
+        max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+        display: flex; justify-content: space-between; align-items: center; height: 70px;
+    }
+    .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+    .nav { display: flex; gap: 2rem; }
+    .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+    .nav a:hover { color: var(--romantic-rose); }
+    .language-switcher { display: flex; gap: 0.5rem; }
+    .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
+    .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+    
+    /* Hero Section */
+    .hero { 
+        background: linear-gradient(135deg, var(--soft-pink), var(--lavender)); 
+        padding: 5rem 1rem; color: var(--deep-purple); text-align: center; 
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: bold; margin-bottom: 1rem; }
+    .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.8; }
+    .btn-group { display: flex; justify-content: center; gap: 1rem; }
+    .btn { 
+        display: inline-block; padding: 0.75rem 2rem; border-radius: 2rem; text-decoration: none; 
+        font-weight: 600; transition: transform 0.3s; 
+    }
+    .btn-primary { background: var(--romantic-rose); color: white; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.3); }
+    .btn-secondary { background: white; color: var(--romantic-rose); border: 2px solid var(--romantic-rose); }
+    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(219, 73, 122, 0.15); }
 
-        /* Feature Section */
-        .section { padding: 4rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .feature-card {
-            background: #fff; padding: 2rem; border-radius: 1rem; text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s;
-        }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-        .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
-        .feature-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
-        .feature-description { color: #666; }
+    /* Feature Section */
+    .section { padding: 4rem 1rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 명확하게 2x2 레이아웃을 지정 */
+        gap: 2rem;
+    }
+    .feature-card {
+        background: #fff; padding: 2rem; border-radius: 1rem; text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s;
+        text-decoration: none; /* 링크 밑줄 제거 */
+        color: #333; /* 링크 색상 유지 */
+    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
+    .feature-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .feature-description { color: #666; }
 
-        /* Quiz Section */
-        .quiz-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center; }
-        .quiz-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .quiz-btn { 
-            background: var(--romantic-rose); color: white; padding: 1rem 2rem; border: none; border-radius: 2rem; 
-            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 1rem 0;
-        }
-        .quiz-btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
+    /* Quiz Section */
+    .quiz-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; text-align: center; }
+    .quiz-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
+    .quiz-btn { 
+        background: var(--romantic-rose); color: white; padding: 1rem 2rem; border: none; border-radius: 2rem; 
+        font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 1rem 0;
+    }
+    .quiz-btn:hover { background: var(--deep-purple); transform: translateY(-2px); }
 
-        /* Footer */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        .footer-section h3 { color: white; margin-bottom: 1rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-section ul li a:hover { color: var(--romantic-rose); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-        
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        
-        @media (max-width: 768px) {
-            .nav { display: none; }
-            .btn-group { flex-direction: column; gap: 0.5rem; }
+    /* Footer */
+    footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .footer-section h3 { color: white; margin-bottom: 1rem; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 0.5rem; }
+    .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-section ul li a:hover { color: var(--romantic-rose); }
+    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+    
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+    
+    /* 반응형 레이아웃 수정 */
+    @media (max-width: 768px) {
+        .nav { display: none; }
+        .btn-group { flex-direction: column; gap: 0.5rem; }
+        .feature-grid { /* 작은 화면에서는 한 줄로 배치 */
+            grid-template-columns: 1fr;
         }
+    }
     </style>
 </head>
 <body>
@@ -145,7 +155,7 @@
             <div class="lang-content" data-lang="ja">
                 <h1 class="hero-title font-poppins">MBTIであなたの愛を導く</h1>
                 <p class="hero-subtitle">
-                    MBTIの世界に飛び込み、相性を探り、デートスタイルを理解し、より強く意味のある関係を築きましょう。
+                    MBTIの世界に飛び込み, 相性を探り, デートスタイルを理解し, より強く意味のある関係を築きましょう.
                 </p>
                 <div class="btn-group">
                     <a href="dating-style.html" class="btn btn-primary">
@@ -181,78 +191,78 @@
             <div class="lang-content active" data-lang="en">
                 <h2 class="section-title font-poppins">Features</h2>
                 <div class="feature-grid">
-                    <div class="feature-card">
+                    <a href="compatibility.html" class="feature-card">
                         <div class="feature-icon">💕</div>
                         <h3 class="feature-title">Compatibility Check</h3>
                         <p class="feature-description">Discover your romantic compatibility with other MBTI types.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="dating-style.html" class="feature-card">
                         <div class="feature-icon">🌟</div>
                         <h3 class="feature-title">Dating Styles</h3>
                         <p class="feature-description">Explore unique dating styles and how your personality influences romance.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="ideal-type.html" class="feature-card">
                         <div class="feature-icon">💌</div>
                         <h3 class="feature-title">Ideal Types</h3>
                         <p class="feature-description">Find out what each MBTI type looks for in a partner.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="rankings.html" class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">Rankings</h3>
                         <p class="feature-description">See how different MBTI types rank in various romantic scenarios.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
             
             <div class="lang-content" data-lang="ja">
                 <h2 class="section-title font-poppins">特徴</h2>
                 <div class="feature-grid">
-                    <div class="feature-card">
+                    <a href="compatibility.html" class="feature-card">
                         <div class="feature-icon">💕</div>
                         <h3 class="feature-title">相性チェック</h3>
-                        <p class="feature-description">他のMBTIタイプとの恋愛相性を発見。</p>
-                    </div>
-                    <div class="feature-card">
+                        <p class="feature-description">他のMBTIタイプとの恋愛相性を発見.</p>
+                    </a>
+                    <a href="dating-style.html" class="feature-card">
                         <div class="feature-icon">🌟</div>
                         <h3 class="feature-title">デートスタイル</h3>
-                        <p class="feature-description">ユニークなデートスタイルと、あなたの性格が恋愛にどう影響するかを探る。</p>
-                    </div>
-                    <div class="feature-card">
+                        <p class="feature-description">ユニークなデートスタイルと, あなたの性格が恋愛にどう 영향하는지 탐색.</p>
+                    </a>
+                    <a href="ideal-type.html" class="feature-card">
                         <div class="feature-icon">💌</div>
                         <h3 class="feature-title">理想のタイプ</h3>
-                        <p class="feature-description">各MBTIタイプがパートナーに何を求めるかを知る。</p>
-                    </div>
-                    <div class="feature-card">
+                        <p class="feature-description">各MBTIタイプがパートナーに何を求めるかを知る.</p>
+                    </a>
+                    <a href="rankings.html" class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">ランキング</h3>
-                        <p class="feature-description">様々な恋愛シーンでMBTIタイプがどうランク付けされるかを見る。</p>
-                    </div>
+                        <p class="feature-description">様々な恋愛シーンでMBTIタイプがどうランク付け되는지 보는.</p>
+                    </a>
                 </div>
             </div>
             
             <div class="lang-content" data-lang="ko">
                 <h2 class="section-title font-poppins">주요 기능</h2>
                 <div class="feature-grid">
-                    <div class="feature-card">
+                    <a href="compatibility.html" class="feature-card">
                         <div class="feature-icon">💕</div>
                         <h3 class="feature-title">궁합 확인</h3>
                         <p class="feature-description">다른 MBTI 유형과의 연애 궁합을 알아보세요.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="dating-style.html" class="feature-card">
                         <div class="feature-icon">🌟</div>
                         <h3 class="feature-title">데이트 스타일</h3>
                         <p class="feature-description">고유한 데이트 스타일과 당신의 성격이 연애에 어떻게 영향을 미치는지 탐색하세요.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="ideal-type.html" class="feature-card">
                         <div class="feature-icon">💌</div>
                         <h3 class="feature-title">이상형</h3>
                         <p class="feature-description">각 MBTI 유형이 파트너에게서 무엇을 찾는지 알아보세요.</p>
-                    </div>
-                    <div class="feature-card">
+                    </a>
+                    <a href="rankings.html" class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">랭킹</h3>
                         <p class="feature-description">다양한 연애 시나리오에서 MBTI 유형들이 어떻게 순위를 차지하는지 확인하세요.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -272,7 +282,7 @@
                 <div class="lang-content" data-lang="ja">
                     <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        インタラクティブクイズに参加して、あなたの性格タイプがデートや関係への取り組みにどのように影響するかを理解してください。
+                        インタラクティブクイズに参加して, あなたの性格タイプがデートや関係への取り組みにどのように 영향을 미치는지 이해してください.
                     </p>
                     <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
                 </div>
@@ -352,4 +362,5 @@
         });
     </script>
 </body>
+
 </html>
