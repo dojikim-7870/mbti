@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -303,6 +302,9 @@
         let gameStarted = false;
         let currentLanguage = 'ko';
 
+    document.addEventListener('DOMContentLoaded', () => {
+        updateContent('en');
+    });
         const translations = {
             'ko': {
                 'title_page': 'MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove',
