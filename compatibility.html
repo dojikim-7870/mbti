@@ -309,11 +309,11 @@
             <div id="results" class="results" style="display: none;">
                 <h3 class="results-title">Compatibility Results</h3>
                 <div id="results-grid" class="compatibility-grid">
-                </div>
+                    </div>
             </div>
 
             <div id="detailed-analysis" class="detailed-analysis-section" style="display: none;">
-            </div>
+                </div>
         </div>
     </section>
 
@@ -350,6 +350,7 @@
     </footer>
 
     <script>
+        // MBTI compatibility data
         const compatibilityData = {
             'INTJ': { 'ENFP': 92, 'ENTP': 89, 'INFP': 87, 'ISFP': 84, 'INTP': 82, 'ENFJ': 80, 'INFJ': 78, 'ISFJ': 75, 'ESFP': 72, 'ESTP': 70, 'ESFJ': 68, 'ESTJ': 65, 'ISTP': 63, 'ISTJ': 60, 'ENTJ': 58, 'INTJ': 55 },
             'INTP': { 'ENFJ': 90, 'INFJ': 88, 'ENTJ': 85, 'INTJ': 82, 'ENFP': 80, 'INFP': 78, 'ENTP': 75, 'ESFJ': 72, 'ISFJ': 70, 'ESTJ': 68, 'ISFP': 65, 'ESFP': 63, 'ESTP': 60, 'ISTP': 58, 'ISTJ': 55, 'INTP': 52 },
@@ -375,190 +376,19 @@
             'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
             'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
         };
-        
-        const detailedAnalysisData = {
-            'INTJ': {
-                perfect: {
-                    title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
-                    descriptions: {
-                        'ENFP': {
-                            title: 'INTJ ❤️ ENFP: 환상의 짝꿍',
-                            analysis: '두 유형은 내향-외향, 사고-감정의 차이에도 불구하고 서로에게 없는 부분을 채워주며 엄청난 시너지를 냅니다. INTJ의 비전이 ENFP의 무한한 아이디어를 만나면 그 어떤 프로젝트도 성공적으로 이끌 수 있습니다.',
-                            advice: 'INTJ는 ENFP의 자유분방함을 존중하고, ENFP는 INTJ의 깊은 생각을 이해하려 노력해야 합니다. 서로의 다름을 인정하고 존중하는 것이 관계의 핵심입니다.'
-                        },
-                        'INFP': {
-                            title: 'INTJ ❤️ INFP: 조용하지만 강력한 시너지',
-                            analysis: '두 유형 모두 내향적이고 이상주의적인 성향을 공유하여 서로의 내면 세계를 깊이 이해합니다. INTJ의 목표 지향적인 사고가 INFP의 감수성과 만나면, 현실적인 계획과 따뜻한 감정이 조화를 이룹니다.',
-                            advice: 'INFP는 INTJ에게 감정을 솔직하게 표현하는 연습을 하고, INTJ는 INFP의 섬세한 감정 변화에 조금 더 귀 기울이는 노력이 필요합니다.'
-                        }
-                    }
-                },
-                good: {
-                    title: '좋은 궁합: 안정적이고 편안한 관계',
-                    descriptions: {
-                        'ENTP': {
-                            title: 'INTJ ❤️ ENTP: 지적 동반자',
-                            analysis: '두 유형 모두 논리적이고 새로운 아이디어를 탐구하는 것을 좋아하여 지적으로 통하는 부분이 많습니다. 함께라면 흥미로운 대화가 끊이지 않습니다.',
-                            advice: 'ENTP의 즉흥적인 행동이 INTJ의 계획을 방해할 수 있습니다. ENTP는 때로 계획에서 벗어나는 것을 즐기고, ENTP는 INTJ의 계획을 존중하는 노력이 필요합니다.'
-                        },
-                        'INTP': {
-                            title: 'INTJ ❤️ INTP: 사색하는 짝꿍',
-                            analysis: '두 유형 모두 논리적이고 분석적이며, 혼자만의 시간을 소중히 여깁니다. 서로의 독립성을 존중해주는 관계라 편안함을 느낄 수 있습니다.',
-                            advice: '감정을 잘 표현하지 않는 두 유형이므로, 서로에게 마음을 열고 대화하는 시간이 꼭 필요합니다. 일상적인 대화를 통해 친밀감을 쌓는 것이 좋습니다.'
-                        },
-                        'ENFJ': {
-                            title: 'INTJ ❤️ ENFJ: 서로를 보완하는 관계',
-                            analysis: 'INTJ의 논리성과 ENFJ의 따뜻함이 만나 서로에게 부족한 점을 채워줍니다. ENFJ는 INTJ를 세상 밖으로 이끌어주고, INTJ는 ENFJ에게 현실적인 조언을 제공합니다.',
-                            advice: 'INTJ는 ENFJ의 감정적 요구에 조금 더 공감하려 노력하고, ENFJ는 INTJ의 논리적 사고를 이해하려는 노력이 필요합니다. 서로의 다름을 존중해야 관계가 발전합니다.'
-                        }
-                    }
-                },
-                potential: {
-                    title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
-                    descriptions: {
-                        'ISTP': {
-                            title: 'INTJ ❤️ ISTP: 조용한 관찰자들',
-                            analysis: '두 유형 모두 내향적이고 독립적인 성향을 가졌습니다. 서로에게 많은 개인 공간을 제공하지만, 감정을 표현하는 데 서툴러서 관계가 정체될 수 있습니다.',
-                            advice: '감정을 솔직하게 표현하고 대화의 양을 늘리려는 노력이 필요합니다. 서로의 취미를 함께 공유하며 관계의 깊이를 더할 수 있습니다.'
-                        },
-                        'ESTJ': {
-                            title: 'INTJ ❤️ ESTJ: 계획과 실행의 차이',
-                            analysis: 'INTJ는 미래의 가능성에 초점을 맞추고 ESTJ는 현실적인 실행을 중시합니다. 서로의 관점 차이가 충돌의 원인이 될 수 있습니다.',
-                            advice: '상대방의 접근 방식을 존중하고, 서로의 장점을 인정하는 대화가 중요합니다. INTJ의 장기적 비전과 ESTJ의 효율적 실행력을 결합하는 방법을 찾아보세요.'
-                        }
-                    }
-                },
-                challenging: {
-                    title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
-                    descriptions: {
-                        'ESFP': {
-                            title: 'INTJ ❤️ ESFP: 정반대의 끌림',
-                            analysis: 'INTJ는 계획적이고 내향적인 반면, ESFP는 즉흥적이고 외향적입니다. 서로의 세상이 너무나 달라 처음에는 신기함을 느끼지만, 시간이 지나면 소통의 어려움을 겪을 수 있습니다.',
-                            advice: '서로의 세계관을 이해하려는 열린 마음이 필요합니다. INTJ는 가끔 즉흥적으로 ESFP와 즐거운 시간을 보내고, ESFP는 INTJ의 깊은 생각을 존중해야 합니다.'
-                        }
-                    }
-                }
-            },
-            'INTP': {
-                perfect: {
-                    title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
-                    descriptions: {
-                        'ENFJ': {
-                            title: 'INTP ❤️ ENFJ: 서로에게 완벽한 멘토',
-                            analysis: 'INTP의 논리적인 분석력과 ENFJ의 따뜻한 감정적 지지가 만나 서로에게 부족한 부분을 완벽하게 채워줍니다. INTP는 ENFJ에게 새로운 관점을 제공하고, ENFJ는 INTP가 감정적으로 성장하도록 돕습니다.',
-                            advice: 'INTP는 가끔씩 자신의 감정을 ENFJ에게 표현하려 노력하고, ENFJ는 INTP의 개인 공간을 존중하며 강요하지 않는 것이 중요합니다.'
-                        }
-                    }
-                },
-                good: {
-                    title: '좋은 궁합: 안정적이고 편안한 관계',
-                    descriptions: {
-                        'INFJ': {
-                            title: 'INTP ❤️ INFJ: 지혜로운 동반자',
-                            analysis: '두 유형 모두 내향적이고 지적인 교류를 중시하여 깊은 대화를 나눌 수 있습니다. INFJ는 INTP의 아이디어에 영감을 주고, INTP는 INFJ의 비전을 논리적으로 뒷받침해줍니다.',
-                            advice: 'INFJ의 감정적 예민함을 INTP가 논리적으로만 접근하지 않도록 주의해야 합니다. 서로의 생각과 감정을 솔직하게 나누는 노력이 필요합니다.'
-                        },
-                         'ENTJ': {
-                            title: 'INTP ❤️ ENTJ: 계획을 현실로',
-                            analysis: 'INTP의 무궁무진한 아이디어와 ENTJ의 강력한 실행력이 만나면 그 어떤 목표도 이룰 수 있습니다. 서로의 능력에 깊은 존경심을 느낄 수 있는 관계입니다.',
-                            advice: 'INTP는 ENTJ의 리더십을 신뢰하고, ENTJ는 INTP가 자유롭게 생각할 수 있는 시간을 존중해야 합니다. 의견 충돌 시 논쟁보다는 해결책을 찾는 대화가 중요합니다.'
-                        }
-                    }
-                },
-                potential: {
-                    title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
-                    descriptions: {
-                        'ESFJ': {
-                            title: 'INTP ❤️ ESFJ: 정반대의 조화',
-                            analysis: 'INTP는 사실과 논리를, ESFJ는 감정과 관계를 중시합니다. 서로의 우선순위가 너무 달라 처음에는 혼란스러울 수 있지만, 서로에게 새로운 관점을 제공할 수 있습니다.',
-                            advice: 'INTP는 ESFJ의 감정적 요구에 조금 더 주의를 기울이고, ESFJ는 INTP의 독립적인 성향을 이해하고 존중해야 합니다.'
-                        },
-                         'ISTP': {
-                            title: 'INTP ❤️ ISTP: 조용한 경쟁자',
-                            analysis: '두 유형 모두 논리적이고 실용적이며, 개인적인 공간을 중요하게 생각합니다. 비슷한 성향 때문에 서로에게 별다른 노력을 하지 않을 수 있습니다.',
-                            advice: '가끔은 먼저 다가가 대화를 시도하고, 서로의 취미를 함께 공유하며 관계의 활력을 찾아야 합니다.'
-                        }
-                    }
-                },
-                challenging: {
-                    title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
-                    descriptions: {
-                        'ESFP': {
-                            title: 'INTP ❤️ ESFP: 즉흥적인 모험가와 사색가',
-                            analysis: 'INTP의 분석적이고 조용한 성향은 ESFP의 즉흥적이고 사교적인 성향과 충돌하기 쉽습니다. 서로의 삶의 방식이 너무 달라 이해하기 어려울 수 있습니다.',
-                            advice: '서로의 세계를 탐험하려는 열린 마음이 필요합니다. INTP는 ESFP와 함께 새로운 경험을 시도하고, ESFP는 INTP의 깊은 생각을 존중해야 합니다.'
-                        }
-                    }
-                }
-            },
-            'ENFJ': {
-                perfect: {
-                    title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
-                    descriptions: {
-                        'INFP': {
-                            title: 'ENFJ ❤️ INFP: 완벽한 힐링 관계',
-                            analysis: 'INFP의 이상주의와 ENFJ의 따뜻한 공감 능력은 환상의 조합입니다. INFP는 ENFJ의 열정에 영감을 받고, ENFJ는 INFP의 깊은 감수성을 존중하며 서로에게 안정감을 줍니다.',
-                            advice: 'ENFJ는 INFP의 개인적인 시간을 존중해야 하고, INFP는 자신의 생각과 감정을 ENFJ와 솔직하게 나누는 노력이 필요합니다.'
-                        },
-                        'ENFP': {
-                            title: 'ENFJ ❤️ ENFP: 에너지가 넘치는 관계',
-                            analysis: '두 유형 모두 활발하고 사교적이며, 사람들에게 긍정적인 영향을 미치는 것을 좋아합니다. 함께 있을 때 즐거운 에너지가 넘치고, 서로의 아이디어를 적극적으로 지지합니다.',
-                            advice: '감정에 따라 관계가 요동칠 수 있으므로, 주기적으로 차분하게 서로의 목표와 진심을 확인하는 대화가 필요합니다.'
-                        }
-                    }
-                },
-                good: {
-                    title: '좋은 궁합: 안정적이고 편안한 관계',
-                    descriptions: {
-                        'INFJ': {
-                            title: 'ENFJ ❤️ INFJ: 비전을 공유하는 관계',
-                            analysis: '두 유형 모두 타인의 성장을 돕고 세상을 더 나은 곳으로 만들고자 하는 비전을 공유합니다. 서로의 깊은 내면을 이해하며 강력한 유대감을 형성할 수 있습니다.',
-                            advice: 'ENFJ의 외향적인 리더십이 INFJ의 내향적인 성향을 압도하지 않도록 주의해야 합니다. 서로의 속도와 방식을 존중하는 것이 중요합니다.'
-                        },
-                         'INTP': {
-                            title: 'ENFJ ❤️ INTP: 지적 성장 파트너',
-                            analysis: 'ENFJ의 따뜻함과 INTP의 논리적 사고가 만나 서로에게 새로운 관점을 제공합니다. ENFJ는 INTP의 아이디어에 현실적인 실행력을 더해주고, INTP는 ENFJ의 결정을 논리적으로 분석해줍니다.',
-                            advice: '감정을 중요하게 생각하는 ENFJ와 논리를 중요하게 생각하는 INTP는 소통 방식을 맞춰가야 합니다. 서로의 관점을 이해하려는 노력이 필요합니다.'
-                        }
-                    }
-                },
-                potential: {
-                    title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
-                    descriptions: {
-                        'ISTJ': {
-                            title: 'ENFJ ❤️ ISTJ: 계획과 즉흥의 조화',
-                            analysis: 'ENFJ의 유연하고 감정적인 접근 방식은 ISTJ의 규칙적이고 논리적인 방식과 충돌할 수 있습니다. 하지만 서로의 장점을 이해한다면 훌륭한 파트너가 될 수 있습니다.',
-                            advice: 'ISTJ는 ENFJ의 감정적 필요를 이해하고, ENFJ는 ISTJ의 계획성과 질서를 존중하는 노력이 필요합니다.'
-                        },
-                         'ISTP': {
-                            title: 'ENFJ ❤️ ISTP: 관계의 균형 찾기',
-                            analysis: 'ENFJ는 타인과의 관계를 중시하는 반면, ISTP는 개인적인 자유와 독립을 선호합니다. 이 차이가 관계의 갈등 요인이 될 수 있습니다.',
-                            advice: 'ENFJ는 ISTP에게 충분한 개인 공간을 제공하고, ISTP는 가끔씩 ENFJ와 감정적인 교류를 나누는 노력이 필요합니다.'
-                        }
-                    }
-                },
-                challenging: {
-                    title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
-                    descriptions: {
-                        'ESTJ': {
-                            title: 'ENFJ ❤️ ESTJ: 다른 방향의 리더',
-                            analysis: '두 유형 모두 리더십이 강하지만, ENFJ는 사람들의 감정을, ESTJ는 효율성과 규칙을 우선시합니다. 이로 인해 목표 달성 방식에서 충돌이 발생할 수 있습니다.',
-                            advice: 'ENFJ는 ESTJ의 논리적 사고를 이해하려 노력하고, ESTJ는 ENFJ의 감정적 동기 부여를 존중해야 합니다. 서로의 리더십 스타일을 인정하는 것이 중요합니다.'
-                        }
-                    }
-                }
-            }
-        };
 
         function selectType(selectedType) {
+            // Update button selection
             document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
             event.target.closest('.type-btn').classList.add('selected');
 
+            // Show results section
             const resultsDiv = document.getElementById('results');
             const resultsGrid = document.getElementById('results-grid');
             resultsDiv.style.display = 'block';
             resultsGrid.innerHTML = '';
 
+            // Generate compatibility results
             const matches = compatibilityData[selectedType] ? Object.entries(compatibilityData[selectedType]) : [];
             const sortedMatches = matches.sort((a, b) => b[1] - a[1]);
 
@@ -584,6 +414,7 @@
                 resultsGrid.innerHTML += cardHTML;
             });
             
+            // Show and populate detailed analysis section
             displayDetailedAnalysis(selectedType);
         }
 
@@ -591,74 +422,155 @@
             const analysisDiv = document.getElementById('detailed-analysis');
             analysisDiv.style.display = 'block';
             analysisDiv.innerHTML = '';
-
-            const selectedData = detailedAnalysisData[selectedType];
-            if (!selectedData) return;
-
-            const allMatches = compatibilityData[selectedType];
             
-            const perfectTypes = Object.entries(allMatches).filter(([type, score]) => score >= 85).map(([type]) => type);
-            if (perfectTypes.length > 0) {
-                let html = `<div class="detailed-analysis-group"><h3>${selectedData.perfect.title}</h3>`;
-                perfectTypes.forEach(type => {
-                    const desc = selectedData.perfect.descriptions[type];
-                    if (desc) {
-                        html += `
-                            <div class="detailed-pair">
-                                <h4>${desc.title}</h4>
-                                <p><strong>관계 분석:</strong> ${desc.analysis}</p>
-                                <p><strong>실용적 조언:</strong> ${desc.advice}</p>
-                            </div>
-                        `;
-                    }
-                });
-                html += `</div>`;
-                analysisDiv.innerHTML += html;
-            }
+            // Group the compatibility data
+            const perfectMatches = [];
+            const goodMatches = [];
+            const potentialMatches = [];
+            const challengingMatches = [];
 
-            const goodTypes = Object.entries(allMatches).filter(([type, score]) => score >= 75 && score < 85).map(([type]) => type);
-            if (goodTypes.length > 0) {
-                let html = `<div class="detailed-analysis-group"><h3>${selectedData.good.title}</h3>`;
-                goodTypes.forEach(type => {
-                    const desc = selectedData.good.descriptions[type];
-                    if (desc) {
-                        html += `
-                            <div class="detailed-pair">
-                                <h4>${desc.title}</h4>
-                                <p><strong>관계 분석:</strong> ${desc.analysis}</p>
-                                <p><strong>실용적 조언:</strong> ${desc.advice}</p>
-                            </div>
-                        `;
-                    }
-                });
-                html += `</div>`;
-                analysisDiv.innerHTML += html;
-            }
+            const matches = compatibilityData[selectedType] ? Object.entries(compatibilityData[selectedType]) : [];
+            const sortedMatches = matches.sort((a, b) => b[1] - a[1]);
 
-            const potentialTypes = Object.entries(allMatches).filter(([type, score]) => score >= 65 && score < 75).map(([type]) => type);
-            if (potentialTypes.length > 0) {
-                let html = `<div class="detailed-analysis-group"><h3>${selectedData.potential.title}</h3>`;
-                potentialTypes.forEach(type => {
-                    const desc = selectedData.potential.descriptions[type];
-                    if (desc) {
-                        html += `
-                            <div class="detailed-pair">
-                                <h4>${desc.title}</h4>
-                                <p><strong>관계 분석:</strong> ${desc.analysis}</p>
-                                <p><strong>실용적 조언:</strong> ${desc.advice}</p>
-                            </div>
-                        `;
-                    }
-                });
-                html += `</div>`;
-                analysisDiv.innerHTML += html;
-            }
+            sortedMatches.forEach(([type, score]) => {
+                if (score >= 85) perfectMatches.push(type);
+                else if (score >= 75) goodMatches.push(type);
+                else if (score >= 65) potentialMatches.push(type);
+                else challengingMatches.push(type);
+            });
 
-            const challengingTypes = Object.entries(allMatches).filter(([type, score]) => score < 65).map(([type]) => type);
-            if (challengingTypes.length > 0) {
-                let html = `<div class="detailed-analysis-group"><h3>${selectedData.challenging.title}</h3>`;
-                challengingTypes.forEach(type => {
-                    const desc = selectedData.challenging.descriptions[type];
+            // Korean content for detailed analysis
+            const koContent = {
+                'INTJ': {
+                    perfect: {
+                        types: perfectMatches.filter(t => compatibilityData.INTJ[t] >= 85),
+                        title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
+                        descriptions: {
+                            'ENFP': {
+                                title: 'INTJ ❤️ ENFP: 환상의 짝꿍',
+                                analysis: '두 유형은 내향-외향, 사고-감정의 차이에도 불구하고 서로에게 없는 부분을 채워주며 엄청난 시너지를 냅니다. INTJ의 비전이 ENFP의 무한한 아이디어를 만나면 그 어떤 프로젝트도 성공적으로 이끌 수 있습니다.',
+                                advice: 'INTJ는 ENFP의 자유분방함을 존중하고, ENFP는 INTJ의 깊은 생각을 이해하려 노력해야 합니다. 서로의 다름을 인정하고 존중하는 것이 관계의 핵심입니다.'
+                            },
+                            'INFP': {
+                                title: 'INTJ ❤️ INFP: 조용하지만 강력한 시너지',
+                                analysis: '두 유형 모두 내향적이고 이상주의적인 성향을 공유하여 서로의 내면 세계를 깊이 이해합니다. INTJ의 목표 지향적인 사고가 INFP의 감수성과 만나면, 현실적인 계획과 따뜻한 감정이 조화를 이룹니다.',
+                                advice: 'INFP는 INTJ에게 감정을 솔직하게 표현하는 연습을 하고, INTJ는 INFP의 섬세한 감정 변화에 조금 더 귀 기울이는 노력이 필요합니다.'
+                            }
+                        }
+                    },
+                    good: {
+                        types: goodMatches.filter(t => compatibilityData.INTJ[t] >= 75 && compatibilityData.INTJ[t] < 85),
+                        title: '좋은 궁합: 안정적이고 편안한 관계',
+                        descriptions: {
+                            'ENTP': {
+                                title: 'INTJ ❤️ ENTP: 지적 동반자',
+                                analysis: '두 유형 모두 논리적이고 새로운 아이디어를 탐구하는 것을 좋아하여 지적으로 통하는 부분이 많습니다. 함께라면 흥미로운 대화가 끊이지 않습니다.',
+                                advice: 'ENTP의 즉흥적인 행동이 INTJ의 계획을 방해할 수 있습니다. ENTP는 때로 계획에서 벗어나는 것을 즐기고, ENTP는 INTJ의 계획을 존중하는 노력이 필요합니다.'
+                            },
+                            'INTP': {
+                                title: 'INTJ ❤️ INTP: 사색하는 짝꿍',
+                                analysis: '두 유형 모두 논리적이고 분석적이며, 혼자만의 시간을 소중히 여깁니다. 서로의 독립성을 존중해주는 관계라 편안함을 느낄 수 있습니다.',
+                                advice: '감정을 잘 표현하지 않는 두 유형이므로, 서로에게 마음을 열고 대화하는 시간이 꼭 필요합니다. 일상적인 대화를 통해 친밀감을 쌓는 것이 좋습니다.'
+                            },
+                            'ENFJ': {
+                                title: 'INTJ ❤️ ENFJ: 서로를 보완하는 관계',
+                                analysis: 'INTJ의 논리성과 ENFJ의 따뜻함이 만나 서로에게 부족한 점을 채워줍니다. ENFJ는 INTJ를 세상 밖으로 이끌어주고, INTJ는 ENFJ에게 현실적인 조언을 제공합니다.',
+                                advice: 'INTJ는 ENFJ의 감정적 요구에 조금 더 공감하려 노력하고, ENFJ는 INTJ의 논리적 사고를 이해하려는 노력이 필요합니다. 서로의 다름을 존중해야 관계가 발전합니다.'
+                            }
+                        }
+                    },
+                    potential: {
+                        types: potentialMatches.filter(t => compatibilityData.INTJ[t] >= 65 && compatibilityData.INTJ[t] < 75),
+                        title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
+                        descriptions: {
+                            'ISTP': {
+                                title: 'INTJ ❤️ ISTP: 조용한 관찰자들',
+                                analysis: '두 유형 모두 내향적이고 독립적인 성향을 가졌습니다. 서로에게 많은 개인 공간을 제공하지만, 감정을 표현하는 데 서툴러서 관계가 정체될 수 있습니다.',
+                                advice: '감정을 솔직하게 표현하고 대화의 양을 늘리려는 노력이 필요합니다. 서로의 취미를 함께 공유하며 관계의 깊이를 더할 수 있습니다.'
+                            },
+                            'ESTJ': {
+                                title: 'INTJ ❤️ ESTJ: 계획과 실행의 차이',
+                                analysis: 'INTJ는 미래의 가능성에 초점을 맞추고 ESTJ는 현실적인 실행을 중시합니다. 서로의 관점 차이가 충돌의 원인이 될 수 있습니다.',
+                                advice: '상대방의 접근 방식을 존중하고, 서로의 장점을 인정하는 대화가 중요합니다. INTJ의 장기적 비전과 ESTJ의 효율적 실행력을 결합하는 방법을 찾아보세요.'
+                            }
+                        }
+                    },
+                    challenging: {
+                        types: challengingMatches.filter(t => compatibilityData.INTJ[t] < 65),
+                        title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
+                        descriptions: {
+                            'ESFP': {
+                                title: 'INTJ ❤️ ESFP: 정반대의 끌림',
+                                analysis: 'INTJ는 계획적이고 내향적인 반면, ESFP는 즉흥적이고 외향적입니다. 서로의 세상이 너무나 달라 처음에는 신기함을 느끼지만, 시간이 지나면 소통의 어려움을 겪을 수 있습니다.',
+                                advice: '서로의 세계관을 이해하려는 열린 마음이 필요합니다. INTJ는 가끔 즉흥적으로 ESFP와 즐거운 시간을 보내고, ESFP는 INTJ의 깊은 생각을 존중해야 합니다.'
+                            }
+                        }
+                    }
+                },
+                'INTP': {
+                    perfect: {
+                        types: perfectMatches.filter(t => compatibilityData.INTP[t] >= 85),
+                        title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
+                        descriptions: {
+                            'ENFJ': {
+                                title: 'INTP ❤️ ENFJ: 서로에게 완벽한 멘토',
+                                analysis: 'INTP의 논리적인 분석력과 ENFJ의 따뜻한 감정적 지지가 만나 서로에게 부족한 부분을 완벽하게 채워줍니다. INTP는 ENFJ에게 새로운 관점을 제공하고, ENFJ는 INTP가 감정적으로 성장하도록 돕습니다.',
+                                advice: 'INTP는 가끔씩 자신의 감정을 ENFJ에게 표현하려 노력하고, ENFJ는 INTP의 개인 공간을 존중하며 강요하지 않는 것이 중요합니다.'
+                            }
+                        }
+                    },
+                    good: {
+                        types: goodMatches.filter(t => compatibilityData.INTP[t] >= 75 && compatibilityData.INTP[t] < 85),
+                        title: '좋은 궁합: 안정적이고 편안한 관계',
+                        descriptions: {
+                            'INFJ': {
+                                title: 'INTP ❤️ INFJ: 지혜로운 동반자',
+                                analysis: '두 유형 모두 내향적이고 지적인 교류를 중시하여 깊은 대화를 나눌 수 있습니다. INFJ는 INTP의 아이디어에 영감을 주고, INTP는 INFJ의 비전을 논리적으로 뒷받침해줍니다.',
+                                advice: 'INFJ의 감정적 예민함을 INTP가 논리적으로만 접근하지 않도록 주의해야 합니다. 서로의 생각과 감정을 솔직하게 나누는 노력이 필요합니다.'
+                            },
+                             'ENTJ': {
+                                title: 'INTP ❤️ ENTJ: 계획을 현실로',
+                                analysis: 'INTP의 무궁무진한 아이디어와 ENTJ의 강력한 실행력이 만나면 그 어떤 목표도 이룰 수 있습니다. 서로의 능력에 깊은 존경심을 느낄 수 있는 관계입니다.',
+                                advice: 'INTP는 ENTJ의 리더십을 신뢰하고, ENTJ는 INTP가 자유롭게 생각할 수 있는 시간을 존중해야 합니다. 의견 충돌 시 논쟁보다는 해결책을 찾는 대화가 중요합니다.'
+                            }
+                        }
+                    },
+                    potential: {
+                        types: potentialMatches.filter(t => compatibilityData.INTP[t] >= 65 && compatibilityData.INTP[t] < 75),
+                        title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
+                        descriptions: {
+                            'ESFJ': {
+                                title: 'INTP ❤️ ESFJ: 정반대의 조화',
+                                analysis: 'INTP는 사실과 논리를, ESFJ는 감정과 관계를 중시합니다. 서로의 우선순위가 너무 달라 처음에는 혼란스러울 수 있지만, 서로에게 새로운 관점을 제공할 수 있습니다.',
+                                advice: 'INTP는 ESFJ의 감정적 요구에 조금 더 주의를 기울이고, ESFJ는 INTP의 독립적인 성향을 이해하고 존중해야 합니다.'
+                            },
+                             'ISTP': {
+                                title: 'INTP ❤️ ISTP: 조용한 경쟁자',
+                                analysis: '두 유형 모두 논리적이고 실용적이며, 개인적인 공간을 중요하게 생각합니다. 비슷한 성향 때문에 서로에게 별다른 노력을 하지 않을 수 있습니다.',
+                                advice: '가끔은 먼저 다가가 대화를 시도하고, 서로의 취미를 함께 공유하며 관계의 활력을 찾아야 합니다.'
+                            }
+                        }
+                    },
+                    challenging: {
+                        types: challengingMatches.filter(t => compatibilityData.INTP[t] < 65),
+                        title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
+                        descriptions: {
+                            'ESFP': {
+                                title: 'INTP ❤️ ESFP: 즉흥적인 모험가와 사색가',
+                                analysis: 'INTP의 분석적이고 조용한 성향은 ESFP의 즉흥적이고 사교적인 성향과 충돌하기 쉽습니다. 서로의 삶의 방식이 너무 달라 이해하기 어려울 수 있습니다.',
+                                advice: '서로의 세계를 탐험하려는 열린 마음이 필요합니다. INTP는 ESFP와 함께 새로운 경험을 시도하고, ESFP는 INTP의 깊은 생각을 존중해야 합니다.'
+                            }
+                        }
+                    }
+                }
+            };
+            
+            // Function to generate HTML for a group
+            const generateGroupHTML = (group, lang) => {
+                if (group.types.length === 0) return '';
+                let html = `<div class="detailed-analysis-group"><h3>${group.title}</h3>`;
+                group.types.forEach(type => {
+                    const desc = group.descriptions[type];
                     if (desc) {
                         html += `
                             <div class="detailed-pair">
@@ -670,9 +582,49 @@
                     }
                 });
                 html += `</div>`;
-                analysisDiv.innerHTML += html;
+                return html;
+            };
+
+            const selectedKoContent = koContent[selectedType];
+            if (selectedKoContent) {
+                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.perfect);
+                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.good);
+                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.potential);
+                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.challenging);
             }
         }
+
+        // Language switching functionality
+        let currentLanguage = 'en';
+        
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide content based on language
+            document.querySelectorAll('.lang-content').forEach(content => {
+                if (content.getAttribute('data-lang') === lang) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Load language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (savedLang !== 'en') {
+                changeLanguage(savedLang);
+                document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`).classList.add('active');
+                document.querySelector(`[onclick="changeLanguage('en')"]`).classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
