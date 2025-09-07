@@ -1,9 +1,9 @@
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove</title>
-    <meta name="description" content="인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.">
+    <title>MBTI Balance Game - Discover Your Relationship Preferences | MBTILove</title>
+    <meta name="description" content="Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -302,11 +302,18 @@
         let gameStarted = false;
         let currentLanguage = 'en';
 
-    document.addEventListener('DOMContentLoaded', () => {
-        updateContent('en');
-    });
+        // 페이지가 로드되면 항상 영어로 설정하고 EN 버튼을 활성화
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent('en');
+            // 'EN' 버튼에 active 클래스 추가
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-lang="en"]`).classList.add('active');
+        });
+
+        // 나머지 JavaScript 코드는 그대로 유지
         const translations = {
-  'en': {
+            'en': {
                 'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
                 'meta_description': 'Play our interactive MBTI Balance Game to discover your relationship preferences. Choose between options to reveal your dating style and personality insights.',
                 'nav_compatibility': 'Compatibility',
@@ -388,7 +395,6 @@
                 'nav_terms_of_use_footer': '이용 약관',
                 'copyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
             },
-           
             'ja': {
                 'title_page': 'MBTIバランスゲーム - あなたの関係の好みを調べる | MBTILove',
                 'meta_description': 'インタラクティブなMBTIバランスゲームを通じて、あなたの関係の好みを調べてください。選択肢を選んで、あなたのデートスタイルと性格の洞察を明らかにします。',
@@ -415,567 +421,383 @@
                 'ad_label': '広告',
                 'results_title': 'あなたの結果',
                 'results_style_title': 'あなたの関係スタイル:',
-                'retake_quiz_button': 'クイズをもう一度',
+                'retake_quiz_button': 'クイズを再度行う',
                 'footer_explore_title': '探す',
                 'nav_compatibility_footer': '相性',
                 'nav_dating_style_footer': 'デートスタイル',
                 'nav_ideal_type_footer': '理想のタイプ',
                 'nav_rankings_footer': 'ランキング',
-                'footer_resources_title': 'リソース',
+                'footer_resources_title': '資料',
                 'nav_about_footer': 'について',
                 'nav_contact_footer': 'お問い合わせ',
                 'nav_official_test_footer': '公式MBTIテスト',
                 'footer_legal_title': '法律',
-                'nav_privacy_policy_footer': '個人情報保護方針',
+                'nav_privacy_policy_footer': 'プライバシーポリシー',
                 'nav_terms_of_use_footer': '利用規約',
                 'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
             }
         };
 
         const questions = [
+            // Your existing question data here...
             {
-                id: 1,
-                category: {
-                    ko: "관계 스타일",
-                    en: "Relationship Style",
-                    ja: "関係スタイル"
-                },
-                question: {
-                    ko: "관계에서 더 중요한 것은 무엇인가요?",
-                    en: "What is more important in a relationship?",
-                    ja: "関係でより重要なものは何ですか？"
-                },
-                optionA: {
-                    ko: "깊은 감정적 교감",
-                    en: "Deep emotional connection",
-                    ja: "深い感情的なつながり"
-                },
-                optionB: {
-                    ko: "지적 호환성",
-                    en: "Intellectual compatibility",
-                    ja: "知的な相性"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 감정적 친밀감과 진심 어린 교감을 중요하게 생각합니다. 감정을 솔직하게 나누고 심리적 안정감을 줄 수 있는 파트너를 소중히 여깁니다.",
-                        en: "You value emotional intimacy and genuine connection. You cherish a partner who can share feelings honestly and provide psychological security.",
-                        ja: "あなたは感情的な親密さと心からのつながりを重視します。感情を率直に分かち合い、心理的な安定感を与えてくれるパートナーを大切にします。"
-                    },
-                    optionB: {
-                        ko: "당신은 정신적 자극과 공통의 관심사를 중요하게 생각합니다. 의미 있는 토론을 나누고 당신의 사고를 넓혀줄 수 있는 파트너에게 끌립니다.",
-                        en: "You value mental stimulation and common interests. You are drawn to a partner who can engage in meaningful discussions and broaden your thinking.",
-                        ja: "あなたは精神的な刺激と共通の関心事を重視します。有意義な議論を交わし、あなたの考えを広げてくれるパートナーに惹かれます。"
-                    },
-                    analysis: {
-                        ko: "감정적, 지적 교감 모두 중요하지만, 당신의 주요 선호도를 알면 잘 맞는 파트너를 찾는 데 도움이 됩니다.",
-                        en: "Both emotional and intellectual connections are important, but knowing your primary preference can help you find a well-suited partner.",
-                        ja: "感情的なつながりも知的なつながりもどちらも重要ですが、あなたの主要な好みを把握することで、相性の良いパートナーを見つけるのに役立ちます。"
-                    }
-                }
+                category: 'Emotional vs. Intellectual',
+                question: 'When a partner shares a problem with you...',
+                options: [
+                    { key: 'emotional', text: 'You focus on their feelings and offer emotional support.', choice: 'A', insight: "You're a deeply empathetic listener. You prioritize emotional connection, creating a safe space for your partner to feel understood and cared for.", analysis: "This choice suggests an emotionally-focused dating style. You are likely an empathetic and compassionate partner who values deep emotional bonds and is skilled at providing comfort. Your focus is on feelings and building intimacy through shared vulnerability."},
+                    { key: 'intellectual', text: 'You analyze the situation and help them find a practical solution.', choice: 'B', insight: "You're a practical problem-solver. You help your partner think logically through their issues, offering clear and actionable advice.", analysis: "This choice indicates an intellectually-focused dating style. You are likely a logical and solution-oriented partner who values effective communication and shared goals. Your focus is on fixing problems and building a relationship based on mutual growth and support."},
+                ]
             },
             {
-                id: 2,
-                category: {
-                    ko: "데이트 스타일",
-                    en: "Dating Style",
-                    ja: "デートスタイル"
-                },
-                question: {
-                    ko: "데이트를 계획할 때, 당신은 다음 중 무엇을 선호하나요?",
-                    en: "When planning a date, what do you prefer?",
-                    ja: "デートを計画する際、次のうち何を好みますか？"
-                },
-                optionA: {
-                    ko: "즉흥적인 모험",
-                    en: "Spontaneous adventures",
-                    ja: "自由な冒険"
-                },
-                optionB: {
-                    ko: "잘 계획된 로맨틱한 저녁",
-                    en: "A well-planned romantic dinner",
-                    ja: "よく計画されたロマンチックな夕食"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 관계에서 흥분과 새로움에 끌립니다. 즉흥성은 관계를 신선하게 유지하고 진정한 순간을 자연스럽게 만들어 줍니다.",
-                        en: "You are drawn to excitement and novelty in a relationship. Spontaneity can keep a relationship fresh and create authentic moments naturally.",
-                        ja: "あなたは関係における興奮と新しさに惹かれます。自由な発想は、関係を新鮮に保ち、自然な瞬間を生み出します。"
-                    },
-                    optionB: {
-                        ko: "당신은 사려 깊은 행동과 로맨틱한 계획을 높이 평가합니다. 구조와 기대감은 경험을 더욱 의미 있고 특별하게 만들 수 있습니다.",
-                        en: "You appreciate thoughtful gestures and romantic plans. Structure and anticipation can make experiences more meaningful and special.",
-                        ja: "あなたは思慮深い行動とロマンチックな計画を高く評価します。計画と期待感は、体験をより意味深く特別なものにします。"
-                    },
-                    analysis: {
-                        ko: "당신의 선호도를 이해하면 파트너에게 당신이 원하는 관계의 리듬을 전달하는 데 도움이 됩니다.",
-                        en: "Understanding your preference helps you communicate the relationship rhythm you desire to your partner.",
-                        ja: "あなたの好みを理解することは、パートナーにあなたが望む関係のリズムを伝えるのに役立ちます。"
-                    }
-                }
+                category: 'Spontaneous vs. Planned',
+                question: 'Your ideal date night is...',
+                options: [
+                    { key: 'spontaneous', text: 'A surprise trip to a new town or an unplanned activity.', choice: 'A', insight: "You thrive on new experiences. You enjoy adventure and spontaneity, which keeps the relationship exciting and fresh.", analysis: "Choosing this option suggests a spontaneous dating style. You are likely an adventurous and flexible partner who values excitement and new experiences. You believe that love is an adventure to be explored, not a plan to be followed."},
+                    { key: 'planned', text: 'A carefully planned evening with reservations and a clear itinerary.', choice: 'B', insight: "You value security and predictability. A well-organized plan makes you feel relaxed and cared for.", analysis: "This indicates a planned dating style. You are likely a thoughtful and reliable partner who values stability and consistency. You show your love through careful planning and by creating a secure and comfortable environment."},
+                ]
             },
             {
-                id: 3,
-                category: {
-                    ko: "갈등 해결",
-                    en: "Conflict Resolution",
-                    ja: "対立の解決"
-                },
-                question: {
-                    ko: "갈등이 생겼을 때, 당신은 어떻게 행동하는 경향이 있나요?",
-                    en: "When conflict arises, how do you tend to act?",
-                    ja: "対立が生じたとき、あなたはどのように行動する傾向がありますか？"
-                },
-                optionA: {
-                    ko: "문제를 즉시 해결하려 함",
-                    en: "Try to solve the issue immediately",
-                    ja: "問題を直ちに解決しようとする"
-                },
-                optionB: {
-                    ko: "시간을 갖고 생각한 후 논의함",
-                    en: "Take time to think before discussing",
-                    ja: "時間をかけて考えた後で話し合う"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 직접적인 소통과 빠른 해결을 선호합니다. 이는 문제가 커지는 것을 막을 수 있지만, 때로는 파트너에게 부담을 줄 수도 있습니다.",
-                        en: "You prefer direct communication and quick resolution. This can prevent problems from escalating, but can sometimes overwhelm a partner.",
-                        ja: "あなたは直接的なコミュニケーションと迅速な解決を好みます。これは問題が拡大するのを防ぎますが、時にはパートナーに負担をかけることもあります。"
-                    },
-                    optionB: {
-                        ko: "당신은 숙고와 신중한 대응을 중요하게 생각합니다. 이는 사려 깊은 논의로 이어지지만, 즉각적인 해결을 선호하는 파트너를 답답하게 만들 수 있습니다.",
-                        en: "You value reflection and careful response. This can lead to thoughtful discussions, but might frustrate a partner who prefers immediate resolution.",
-                        ja: "あなたは熟考と慎重な対応を重視します。これは思慮深い議論につながりますが、即座の解決を好むパートナーをイライラさせる可能性があります。"
-                    },
-                    analysis: {
-                        ko: "당신의 갈등 해결 방식을 알면 당신의 요구를 전달하고 파트너의 다른 접근 방식을 이해하는 데 도움이 됩니다.",
-                        en: "Knowing your conflict resolution style helps you communicate your needs and understand your partner's different approach.",
-                        ja: "あなたの対立解決スタイルを知ることは、あなたの要求を伝え、パートナーの異なるアプローチを理解するのに役立ちます。"
-                    }
-                }
+                category: 'Direct vs. Thoughtful Communicator',
+                question: 'When you need to talk about a difficult topic...',
+                options: [
+                    { key: 'direct', text: 'You address it head-on, directly stating your feelings and thoughts.', choice: 'A', insight: "You are a straightforward communicator. You value clarity and honesty, believing that directness is the key to resolving conflicts quickly.", analysis: "This choice points to a direct communication style. You are likely a clear and open partner who prefers to deal with issues immediately. While this approach can be highly effective, it may sometimes be perceived as blunt by more sensitive partners."},
+                    { key: 'thoughtful', text: 'You think about it for a while and bring it up gently and indirectly.', choice: 'B', insight: "You are a considerate communicator. You prioritize harmony and think carefully before speaking, aiming to avoid hurt feelings.", analysis: "This indicates a thoughtful communication style. You are likely a sensitive and considerate partner who values harmony and emotional safety. You take your time to ensure your words are gentle, but this can sometimes lead to unresolved issues if not managed well."},
+                ]
             },
             {
-                id: 4,
-                category: {
-                    ko: "파트너 선호도",
-                    en: "Partner Preference",
-                    ja: "パートナーの好み"
-                },
-                question: {
-                    ko: "당신의 이상적인 파트너는:",
-                    en: "Your ideal partner is:",
-                    ja: "あなたの理想のパートナーは："
-                },
-                optionA: {
-                    ko: "매력도 느끼는 가장 친한 친구",
-                    en: "Your best friend who you're also attracted to",
-                    ja: "魅力的でもある親友"
-                },
-                optionB: {
-                    ko: "당신을 보완하고 도전하게 만드는 사람",
-                    en: "Someone who complements and challenges you",
-                    ja: "あなたを補完し、挑戦させる人"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 우정을 사랑의 기반으로 중요하게 생각합니다. 진정으로 당신을 이해하고 당신의 관심사와 가치를 공유하는 파트너를 원합니다.",
-                        en: "You value friendship as the foundation of love. You want a partner who truly understands you and shares your interests and values.",
-                        ja: "あなたは友情を愛の基盤として重視します。あなたを本当に理解し、あなたの興味や価値観を共有するパートナーを望みます。"
-                    },
-                    optionB: {
-                        ko: "당신은 성장과 균형에 매력을 느낍니다. 다른 강점을 가져와 당신이 더 나은 사람이 되도록 도와주는 사람을 찾습니다.",
-                        en: "You are attracted to growth and balance. You seek someone who brings different strengths and helps you become a better person.",
-                        ja: "あなたは成長とバランスに魅力を感じます。異なる強みをもたらし、あなたがより良い人になるのを助けてくれる人を探します。"
-                    },
-                    analysis: {
-                        ko: "두 가지 접근 방식 모두 만족스러운 관계로 이어질 수 있지만, 당신의 선호도를 이해하면 이상적인 관계 역학을 인식하는 데 도움이 됩니다.",
-                        en: "Both approaches can lead to a fulfilling relationship, but understanding your preference helps you recognize your ideal relationship dynamic.",
-                        ja: "どちらのアプローチも満足のいく関係につながりますが、あなたの好みを理解することは、理想的な関係のダイナミクスを認識するのに役立ちます。"
-                    }
-                }
+                category: 'Emotional vs. Intellectual',
+                question: 'When your partner succeeds at something, you celebrate by...',
+                options: [
+                    { key: 'emotional', text: 'Expressing your proud feelings with hugs and heartfelt words.', choice: 'A', insight: "You celebrate with passion and genuine emotion, making your partner feel truly seen and appreciated for their hard work.", analysis: "Your celebration style is emotionally-driven. You believe in sharing joy openly and making your partner feel loved through physical and verbal affection. This strengthens the emotional bond."},
+                    { key: 'intellectual', text: 'Analyzing their success, discussing the next steps, and planning for future wins.', choice: 'B', insight: "You celebrate with a focus on growth and future potential. You see their success as a stepping stone to even greater achievements.", analysis: "Your celebration style is intellectually-driven. You show your support by engaging with their success on a logical level, demonstrating that you are a partner in their journey toward personal and professional growth."},
+                ]
             },
             {
-                id: 5,
-                category: {
-                    ko: "사랑 표현",
-                    en: "Expression of Love",
-                    ja: "愛の表現"
-                },
-                question: {
-                    ko: "사랑을 표현할 때, 당신은 다음 중 무엇을 선호하나요?",
-                    en: "When expressing love, what do you prefer?",
-                    ja: "愛を表現する際、次のうち何を好みますか？"
-                },
-                optionA: {
-                    ko: "대담한 로맨틱한 제스처",
-                    en: "Bold, romantic gestures",
-                    ja: "大胆でロマンチックなジェスチャー"
-                },
-                optionB: {
-                    ko: "작고 사소한 매일의 배려",
-                    en: "Small, daily acts of kindness",
-                    ja: "小さく、毎日の親切な行為"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 파트너가 당신을 크게 생각하고 있음을 보여주는 극적인 사랑 표현을 높이 평가합니다. 이러한 순간들은 소중한 추억이 됩니다.",
-                        en: "You appreciate dramatic expressions of love that show your partner is thinking of you in a big way. These moments become cherished memories.",
-                        ja: "あなたは、パートナーがあなたを大切に思っていることを示すドラマチックな愛の表現を高く評価します。これらの瞬間は大切な思い出になります。"
-                    },
-                    optionB: {
-                        ko: "당신은 일관성과 매일의 친절을 중요하게 생각합니다. 작은 행동들은 당신의 필요와 선호도에 대한 지속적인 관심과 배려를 보여줍니다.",
-                        en: "You value consistency and daily kindness. Small actions show continuous care and consideration for your needs and preferences.",
-                        ja: "あなたは一貫性と毎日の親切を重視します。小さな行動は、あなたの必要性と好みに constant な配慮と考慮を示します。"
-                    },
-                    analysis: {
-                        ko: "당신이 사랑을 어떻게 주고받는지 이해하는 것은 관계에서 더 의미 있는 애정 표현을 만드는 데 도움이 됩니다.",
-                        en: "Understanding how you give and receive love helps create more meaningful expressions of affection in your relationship.",
-                        ja: "あなたがどのように愛を与え、受け取るかを理解することは、関係においてより意味のある愛情表現を創造するのに役立ちます。"
-                    }
-                }
+                category: 'Spontaneous vs. Planned',
+                question: 'When preparing for a holiday trip...',
+                options: [
+                    { key: 'spontaneous', text: 'You pack the essentials and figure out the rest as you go.', choice: 'A', insight: "You're a go-with-the-flow traveler. You love the freedom of not having a rigid schedule, which allows for unexpected discoveries.", analysis: "Your travel style is spontaneous. You enjoy the excitement of the unknown and trust in your ability to adapt. This approach can be a lot of fun, but may cause anxiety for a more planner-oriented partner."},
+                    { key: 'planned', text: 'You have a detailed itinerary with all flights and hotels booked in advance.', choice: 'B', insight: "You’re a meticulous planner. You enjoy the security of having everything prepared, which minimizes stress and ensures a smooth trip.", analysis: "Your travel style is planned. You find comfort in structure and preparation. This makes you a reliable and thoughtful partner, but you may struggle to adapt to unexpected changes."},
+                ]
             },
             {
-                id: 6,
-                category: {
-                    ko: "관계 가치",
-                    en: "Relationship Values",
-                    ja: "関係の価値"
-                },
-                question: {
-                    ko: "오래 지속되는 행복을 위해, 당신에게 필요한 것은:",
-                    en: "For long-term happiness, you need:",
-                    ja: "長く続く幸せのために、あなたが必要なのは："
-                },
-                optionA: {
-                    ko: "안정성과 안정감",
-                    en: "Stability and security",
-                    ja: "安定性と安心感"
-                },
-                optionB: {
-                    ko: "성장과 모험",
-                    en: "Growth and adventure",
-                    ja: "成長と冒険"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 감정적, 실질적 안정감을 제공하는 관계에서 번성합니다. 예측 가능성과 신뢰성은 당신이 편안하게 취약해질 수 있도록 도와줍니다.",
-                        en: "You thrive in relationships that provide emotional and practical security. Predictability and trust help you feel comfortable and vulnerable.",
-                        ja: "あなたは感情的かつ実践的な安心感を提供する関係で繁栄します。予測可能性と信頼は、あなたが安心して弱さを見せられるように助けます。"
-                    },
-                    optionB: {
-                        ko: "당신은 당신을 발전시키고 도전하게 하는 관계가 필요합니다. 정체는 위협적으로 느껴지며, 성장은 관계를 활기차고 매력적으로 유지합니다.",
-                        en: "You need a relationship that evolves and challenges you. Stagnation feels threatening, and growth keeps the relationship vibrant and engaging.",
-                        ja: "あなたは進化し、あなたに挑戦をもたらす関係が必要です。停滞は脅威に感じられ、成長は関係を活気に満ち、魅力的に保ちます。"
-                    },
-                    analysis: {
-                        ko: "당신의 핵심 관계 요구를 알면 장기적으로 당신에게 필요한 것을 제공할 수 있는 파트너를 선택하는 데 도움이 됩니다.",
-                        en: "Knowing your core relationship needs helps you choose a partner who can provide what you need for the long term.",
-                        ja: "あなたの関係の中核的なニーズを知ることは、長期的にあなたが必要なものを提供できるパートナーを選ぶのに役立ちます。"
-                    }
-                }
+                category: 'Direct vs. Thoughtful Communicator',
+                question: 'During a disagreement, you are more likely to...',
+                options: [
+                    { key: 'direct', text: 'Confront the issue immediately, even if it might be uncomfortable.', choice: 'A', insight: "You prefer to clear the air quickly. Your directness can prevent misunderstandings from festering and helps both partners move on.", analysis: "This choice reinforces a direct communication style. You believe that open confrontation is the healthiest way to resolve conflict. Your directness is a sign of your trust in the relationship's strength."},
+                    { key: 'thoughtful', text: 'Take a break to process your thoughts before discussing the issue.', choice: 'B', insight: "You choose calm over conflict. Taking time to process allows you to approach the conversation with a clear mind and a composed demeanor.", analysis: "This choice aligns with a thoughtful communication style. You prioritize emotional regulation and seek to prevent heated arguments. Your approach promotes peaceful resolutions, but may sometimes delay addressing important issues."},
+                ]
             },
             {
-                id: 7,
-                category: {
-                    ko: "지지 방식",
-                    en: "Support Style",
-                    ja: "サポートスタイル"
-                },
-                question: {
-                    ko: "파트너가 스트레스를 받을 때, 당신은:",
-                    en: "When your partner is stressed, you:",
-                    ja: "あなたのパートナーがストレスを感じているとき、あなたは："
-                },
-                optionA: {
-                    ko: "혼자 생각할 시간을 줌",
-                    en: "Give them time to think alone",
-                    ja: "一人で考える時間を与える"
-                },
-                optionB: {
-                    ko: "즉각적인 지지와 위로를 제공함",
-                    en: "Provide immediate support and comfort",
-                    ja: "直ちにサポートと慰めを提供する"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 파트너의 독립성과 자기 조절의 필요성을 존중합니다. 때로는 숨 쉴 공간을 주는 것이 최고의 지지임을 이해합니다.",
-                        en: "You respect your partner's need for independence and self-regulation. You understand that sometimes giving space is the best support.",
-                        ja: "あなたはパートナーの独立性と自己調整の必要性を尊重します。時にはスペースを与えることが最良のサポートであることを理解しています。"
-                    },
-                    optionB: {
-                        ko: "당신은 적극적인 존재와 위로를 통해 배려를 보여줍니다. 어려운 시기에 파트너 곁에 있고 그들을 돕고 싶어 합니다.",
-                        en: "You show care through active presence and comfort. You want to be there for your partner during tough times and help them.",
-                        ja: "あなたは積極的な存在と慰めを通して配慮を示します。あなたは困難な時期にパートナーのそばにいて、彼らを助けたいと思います。"
-                    },
-                    analysis: {
-                        ko: "서로 다른 지지 방식을 이해하면 파트너가 실제로 원하는 것을 제공할 수 있습니다.",
-                        en: "Understanding different support styles helps you provide what your partner actually wants.",
-                        ja: "異なるサポートスタイルを理解することは、あなたのパートナーが実際に望むものを提供するために役立ちます。"
-                    }
-                }
+                category: 'Emotional vs. Intellectual',
+                question: 'You show your love primarily through...',
+                options: [
+                    { key: 'emotional', text: 'Passionate and frequent displays of affection and compliments.', choice: 'A', insight: "You express love through grand gestures and constant reassurance, making your partner feel cherished and adored.", analysis: "You lead with an emotional dating style. You show love by being openly expressive and romantic. Your partner never has to guess how you feel, which can be very reassuring."},
+                    { key: 'intellectual', text: 'Thoughtful discussions about shared interests and goals.', choice: 'B', insight: "You express love through deep, meaningful conversations. You feel closest when you can share ideas and grow together.", analysis: "You lead with an intellectual dating style. You show love through shared mental and personal growth. You connect on a deeper level by discussing ideas, philosophies, and future plans, creating a strong partnership built on mutual respect."},
+                ]
             },
             {
-                id: 8,
-                category: {
-                    ko: "매력 요소",
-                    en: "Attraction Factors",
-                    ja: "魅力の要素"
-                },
-                question: {
-                    ko: "당신이 가장 매력을 느끼는 것은:",
-                    en: "What you find most attractive is:",
-                    ja: "あなたが最も魅力を感じるのは："
-                },
-                optionA: {
-                    ko: "자신감과 야망",
-                    en: "Confidence and ambition",
-                    ja: "自信と野心"
-                },
-                optionB: {
-                    ko: "친절함과 공감 능력",
-                    en: "Kindness and empathy",
-                    ja: "親切さと共感能力"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 자신이 무엇을 원하는지 알고 목표를 추구하는 파트너에게 끌립니다. 추진력과 자기 확신은 당신에게 흥분과 영감을 줍니다.",
-                        en: "You are drawn to a partner who knows what they want and pursues their goals. Drive and self-assurance excite and inspire you.",
-                        ja: "あなたは自分が何を望んでいるかを知り、目標を追求するパートナーに惹かれます。推進力と自己確信は、あなたを興奮させ、インスピレーションを与えます。"
-                    },
-                    optionB: {
-                        ko: "당신은 감정 지능과 연민을 중요하게 생각합니다. 배려심 있는 마음과 타인을 이해하는 능력은 당신에게 안정감과 매력을 느끼게 합니다.",
-                        en: "You value emotional intelligence and compassion. A caring heart and the ability to understand others make you feel secure and attracted.",
-                        ja: "あなたは感情知能と慈悲を重視します。思いやりのある心と他人を理解する能力は、あなたに安心感と魅力を感じさせます。"
-                    },
-                    analysis: {
-                        ko: "처음 매력을 느끼는 요소를 아는 것은 잠재적인 파트너를 식별하는 데 도움이 되지만, 오래 지속되는 관계에는 여러 호환성 요소가 필요함을 기억하세요.",
-                        en: "Knowing what you are initially attracted to helps you identify potential partners, but remember that long-lasting relationships require multiple compatibility factors.",
-                        ja: "最初に惹かれる要素を知ることは、潜在的なパートナーを特定するのに役立ちますが、長く続く関係には複数の相性要素が必要であることを覚えておいてください。"
-                    }
-                }
+                category: 'Spontaneous vs. Planned',
+                question: 'For an anniversary celebration, you would prefer...',
+                options: [
+                    { key: 'spontaneous', text: 'To wake up and decide on the spot what to do, following your mood.', choice: 'A', insight: "You value the adventure of the unknown. A spontaneous anniversary is more than an event; it's a memorable story you create together.", analysis: "This choice shows a spontaneous dating style. You find joy in the unexpected and believe that the best moments are unplanned. This keeps the relationship feeling fresh and exciting."},
+                    { key: 'planned', text: 'To book a special dinner and a show months in advance.', choice: 'B', insight: "You find romance in careful preparation. Planning ahead shows your partner that you’re dedicated and have been looking forward to the moment for a long time.", analysis: "This choice indicates a planned dating style. For you, the act of planning is a way to show love and commitment. You find security and romance in knowing that your special moments are well-thought-out and guaranteed to be perfect."},
+                ]
             },
             {
-                id: 9,
-                category: {
-                    ko: "사회적 역학",
-                    en: "Social Dynamics",
-                    ja: "社会的ダイナミクス"
-                },
-                question: {
-                    ko: "커플로서 사회적 상황에서, 당신은 다음 중 무엇을 선호하나요?",
-                    en: "In social situations as a couple, what do you prefer?",
-                    ja: "カップルとして社会的状況で、次のうち何を好みますか？"
-                },
-                optionA: {
-                    ko: "함께 주목받는 것",
-                    en: "Being the center of attention together",
-                    ja: "一緒に注目を集めること"
-                },
-                optionB: {
-                    ko: "조용히 관찰하고 일대일로 소통하는 것",
-                    en: "Observing quietly and communicating one-on-one",
-                    ja: "静かに観察し、一対一でコミュニケーションをとること"
-                },
-                insights: {
-                    optionA: {
-                        ko: "당신은 사교적인 분위기의 일부가 되고 그룹과 경험을 공유하는 것을 즐깁니다. 당신의 관계가 사교 모임의 즐거움에 보탬이 되는 것을 좋아합니다.",
-                        en: "You enjoy being part of the social scene and sharing experiences with a group. You like your relationship to add to the fun of social gatherings.",
-                        ja: "あなたは社交的な場面の一部となり、グループと経験を共有することを楽しんでいます。あなたの関係が社交的な集まりの楽しさに貢献することを好みます。"
-                    },
-                    optionB: {
-                        ko: "당신은 친밀한 교감과 의미 있는 대화를 선호합니다. 큰 그룹은 당신을 지치게 할 수 있으며, 당신은 파트너와 조용한 순간을 소중히 여깁니다.",
-                        en: "You prefer intimate connection and meaningful conversations. Large groups can exhaust you, and you cherish quiet moments with your partner.",
-                        ja: "あなたは親密なつながりと有意義な会話を好みます。大きなグループはあなたを疲れさせることがあり、あなたはパートナーとの静かな瞬間を大切にします。"
-                    },
-                    analysis: {
-                        ko: "당신의 사회적 선호도를 이해하면 당신과 비슷한 에너지 수준과 사회적 필요를 가진 파트너를 찾는 데 도움이 됩니다.",
-                        en: "Understanding your social preferences helps you find a partner with a similar energy level and social needs.",
-                        ja: "あなたの社会的嗜好を理解することは、あなたと似たエネルギーレベルと社会的ニーズを持つパートナーを見つけるのに役立ちます。"
-                    }
-                }
+                category: 'Direct vs. Thoughtful Communicator',
+                question: 'When asked "What do you want to eat?" you are more likely to...',
+                options: [
+                    { key: 'direct', text: 'Give a specific answer immediately, like "I want to eat pizza."', choice: 'A', insight: "You are a decisive communicator. You know what you want and you express it clearly, making decision-making easy for your partner.", analysis: "This reflects a direct communication style. You value efficiency and are not afraid to express your preferences. This clear approach minimizes confusion and helps keep things simple."},
+                    { key: 'thoughtful', text: 'Say "I am open to anything, what do you feel like?"', choice: 'B', insight: "You are a considerate communicator. You prioritize your partner’s preferences, showing that their feelings are important to you.", analysis: "This reflects a thoughtful communication style. You show love by deferring to your partner's wants and needs. While this is considerate, it may sometimes put the burden of decision-making entirely on your partner."},
+                ]
             },
             {
-                id: 10,
-                category: {
-                    ko: "관계 기준",
-                    en: "Relationship Standards",
-                    ja: "関係の基準"
-                },
-                question: {
-                    ko: "당신의 관계에 있어 절대 용납할 수 없는 것은:",
-                    en: "What is an absolute dealbreaker in your relationship?",
-                    ja: "あなたの関係において、絶対に許せないことは何ですか？"
-                },
-                optionA: {
-                    ko: "감정적 친밀감 부족",
-                    en: "Lack of emotional intimacy",
-                    ja: "感情的な親密さの欠如"
-                },
-                optionB: {
-                    ko: "개인적인 성장 부족",
-                    en: "Lack of personal growth",
-                    ja: "個人的な成長の欠如"
-                },
-                insights: {
-                    optionA: {
-                        ko: "감정적 교감은 당신에게 양보할 수 없는 것입니다. 깊은 친밀감과 취약성 없이는 관계가 피상적이고 만족스럽지 않게 느껴집니다.",
-                        en: "Emotional connection is non-negotiable for you. Without deep intimacy and vulnerability, the relationship feels superficial and unfulfilling.",
-                        ja: "感情的なつながりは、あなたにとって譲れないものです。深い親密さと脆弱性がなければ、関係は表面的なもので満足感が得られません。"
-                    },
-                    optionB: {
-                        ko: "당신은 당신에게 도전하고 발전시키는 관계가 필요합니다. 성장하지 않거나 당신의 성장을 지지하지 않는 파트너는 제한적이고 답답하게 느껴집니다.",
-                        en: "You need a relationship that challenges and develops you. A partner who doesn't grow or support your growth feels limiting and frustrating.",
-                        ja: "あなたはあなたに挑戦し、成長させる関係が必要です。成長しない、またはあなたの成長をサポートしないパートナーは、制限的でイライラさせられます。"
-                    },
-                    analysis: {
-                        ko: "절대 용납할 수 없는 것을 알면 더 나은 관계 선택을 하고 당신의 필수적인 요구 사항을 전달하는 데 도움이 됩니다.",
-                        en: "Knowing your dealbreakers helps you make better relationship choices and communicate your essential needs.",
-                        ja: "絶対に許せないことを知ることは、より良い関係の選択をし、あなたの本質的なニーズを伝えるのに役立ちます。"
-                    }
-                }
-            }
+                category: 'Emotional vs. Intellectual',
+                question: 'You feel most connected to your partner when you are...',
+                options: [
+                    { key: 'emotional', text: 'Sharing deep feelings and personal stories.', choice: 'A', insight: "You connect through vulnerability. By sharing your innermost thoughts and feelings, you build a bond of trust and emotional intimacy.", analysis: "This points to an emotionally-focused dating style. You seek connection through deep, personal sharing, which strengthens the emotional fabric of your relationship."},
+                    { key: 'intellectual', text: 'Discussing a fascinating book or a new idea.', choice: 'B', insight: "You connect through mental stimulation. You feel a sense of closeness when you can engage in thoughtful conversation and learn something new together.", analysis: "This points to an intellectually-focused dating style. You find intimacy in shared curiosity and mental engagement. For you, a meeting of minds is a meeting of hearts, and you build your bond through a shared world of ideas."},
+                ]
+            },
         ];
+        
+        let categories = {
+            'emotional': 0,
+            'intellectual': 0,
+            'spontaneous': 0,
+            'planned': 0,
+            'direct': 0,
+            'thoughtful': 0
+        };
 
-        function changeLanguage(lang) {
+        const translations_ko_text = {
+            'nav_compatibility': '궁합',
+            'nav_dating_style': '데이트 스타일',
+            'nav_ideal_type': '이상형',
+            'nav_rankings': '랭킹',
+            'nav_conversation': '대화',
+            'nav_balance_game': '밸런스 게임',
+            'nav_about': '소개',
+            'welcome_title': 'MBTI 밸런스 게임',
+            'welcome_subtitle': '재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.',
+            'feature1': '10개 질문',
+            'feature2': '개인 맞춤 인사이트',
+            'feature3': '관계 팁',
+            'start_button': '밸런스 게임 시작하기',
+            'how_to_play_title': '게임 방법',
+            'step1': '관계 선호도에 대한 10개의 양자택일 질문에 답하세요',
+            'step2': '당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요',
+            'step3': '다양한 성격 유형과의 궁합에 대해 알아보세요',
+            'step4': '개인 맞춤 관계 조언 및 팁을 받으세요',
+            'question_counter': (current, total) => `질문 ${current} / ${total}`,
+            'option_label': '옵션',
+            'ad_label': '광고',
+            'results_title': '당신의 결과',
+            'results_style_title': '당신의 관계 스타일:',
+            'retake_quiz_button': '퀴즈 다시 하기',
+            'footer_explore_title': '탐색',
+            'nav_compatibility_footer': '궁합',
+            'nav_dating_style_footer': '데이트 스타일',
+            'nav_ideal_type_footer': '이상형',
+            'nav_rankings_footer': '랭킹',
+            'footer_resources_title': '자료',
+            'nav_about_footer': '소개',
+            'nav_contact_footer': '연락처',
+            'nav_official_test_footer': '공식 MBTI 테스트',
+            'footer_legal_title': '법률',
+            'nav_privacy_policy_footer': '개인정보 보호정책',
+            'nav_terms_of_use_footer': '이용 약관',
+            'copyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
+        };
+
+        const translations_en_text = {
+            'nav_compatibility': 'Compatibility',
+            'nav_dating_style': 'Dating Style',
+            'nav_ideal_type': 'Ideal Type',
+            'nav_rankings': 'Rankings',
+            'nav_conversation': 'Conversation',
+            'nav_balance_game': 'Balance Game',
+            'nav_about': 'About',
+            'welcome_title': 'MBTI Balance Game',
+            'welcome_subtitle': 'Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.',
+            'feature1': '10 Questions',
+            'feature2': 'Personalized Insights',
+            'feature3': 'Relationship Tips',
+            'start_button': 'Start Balance Game',
+            'how_to_play_title': 'How to Play',
+            'step1': 'Answer 10 dilemma questions about your relationship preferences',
+            'step2': 'Gain insights into your dating style and relationship values',
+            'step3': 'Learn about your compatibility with various personality types',
+            'step4': 'Receive personalized relationship advice and tips',
+            'question_counter': (current, total) => `Question ${current} of ${total}`,
+            'option_label': 'Option',
+            'ad_label': 'Advertisement',
+            'results_title': 'Your Results',
+            'results_style_title': 'Your Relationship Style:',
+            'retake_quiz_button': 'Retake Quiz',
+            'footer_explore_title': 'Explore',
+            'nav_compatibility_footer': 'Compatibility',
+            'nav_dating_style_footer': 'Dating Style',
+            'nav_ideal_type_footer': 'Ideal Type',
+            'nav_rankings_footer': 'Rankings',
+            'footer_resources_title': 'Resources',
+            'nav_about_footer': 'About',
+            'nav_contact_footer': 'Contact',
+            'nav_official_test_footer': 'Official MBTI Test',
+            'footer_legal_title': 'Legal',
+            'nav_privacy_policy_footer': 'Privacy Policy',
+            'nav_terms_of_use_footer': 'Terms of Use',
+            'copyright': '© 2024 MBTILove.xyz - All rights reserved.',
+        };
+        const translations_ja_text = {
+            'nav_compatibility': '相性',
+            'nav_dating_style': 'デートスタイル',
+            'nav_ideal_type': '理想のタイプ',
+            'nav_rankings': 'ランキング',
+            'nav_conversation': '会話',
+            'nav_balance_game': 'バランスゲーム',
+            'nav_about': 'について',
+            'welcome_title': 'MBTIバランスゲーム',
+            'welcome_subtitle': '楽しい二者択一の質問を通して、あなたの関係の好みを明らかにしましょう。あなたのデートスタイル、コミュニケーションの好み、そして恋愛関係で本当に大切にしている価値観について調べてください。',
+            'feature1': '10個の質問',
+            'feature2': 'パーソナライズされた洞察',
+            'feature3': '関係のヒント',
+            'start_button': 'バランスゲームを始める',
+            'how_to_play_title': '遊び方',
+            'step1': 'あなたの関係の好みに関する10個の二者択一の質問に答える',
+            'step2': 'あなたのデートスタイルと関係の価値観について洞察を得る',
+            'step3': '様々な性格タイプとの相性について知る',
+            'step4': 'パーソナライズされた関係のアドバイスとヒントを受け取る',
+            'question_counter': (current, total) => `質問 ${current} / ${total}`,
+            'option_label': 'オプション',
+            'ad_label': '広告',
+            'results_title': 'あなたの結果',
+            'results_style_title': 'あなたの関係スタイル:',
+            'retake_quiz_button': 'クイズを再度行う',
+            'footer_explore_title': '探す',
+            'nav_compatibility_footer': '相性',
+            'nav_dating_style_footer': 'デートスタイル',
+            'nav_ideal_type_footer': '理想のタイプ',
+            'nav_rankings_footer': 'ランキング',
+            'footer_resources_title': '資料',
+            'nav_about_footer': 'について',
+            'nav_contact_footer': 'お問い合わせ',
+            'nav_official_test_footer': '公式MBTIテスト',
+            'footer_legal_title': '法律',
+            'nav_privacy_policy_footer': 'プライバシーポリシー',
+            'nav_terms_of_use_footer': '利用規約',
+            'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
+        };
+        const translations = {
+            'ko': translations_ko_text,
+            'en': translations_en_text,
+            'ja': translations_ja_text,
+        };
+
+        function updateContent(lang) {
             currentLanguage = lang;
-            document.documentElement.lang = lang;
-            document.title = translations[lang]['title_page'];
-            document.querySelector('meta[name="description"]').content = translations[lang]['meta_description'];
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                if (key.startsWith('nav_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('welcome_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('feature')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('start_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('how_to_play_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('step')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('results_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('retake_quiz_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('footer_')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('copyright')) {
-                    element.textContent = translations[lang][key];
-                } else if (key.startsWith('ad_')) {
-                    element.textContent = translations[lang][key];
+                if (translations[lang] && translations[lang][key]) {
+                    if (typeof translations[lang][key] === 'function') {
+                        // Special case for question counter
+                        element.textContent = translations[lang][key](currentQuestion, questions.length);
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
                 }
             });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
 
-            // Refresh the current screen content based on the new language
-            if (document.getElementById('game-screen').classList.contains('active')) {
-                showQuestion();
-            } else if (document.getElementById('results-screen').classList.contains('active')) {
-                showResults();
-            }
+            // Update title and meta description manually
+            document.title = translations[lang]['title_page'];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta_description']);
+            
+            // Set active class on language button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-lang='${lang}']`).classList.add('active');
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
         }
-
-        document.querySelectorAll('.lang-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const lang = button.getAttribute('data-lang');
-                changeLanguage(lang);
-            });
-        });
 
         function startGame() {
             gameStarted = true;
             document.getElementById('welcome-screen').style.display = 'none';
             document.getElementById('game-screen').classList.add('active');
-            showQuestion();
+            loadQuestion();
         }
 
-        function showQuestion() {
-            const question = questions[currentQuestion];
-            const progress = ((currentQuestion + 1) / questions.length) * 100;
-            
-            document.getElementById('progress-fill').style.width = progress + '%';
-            document.getElementById('question-counter').textContent = translations[currentLanguage].question_counter(currentQuestion + 1, questions.length);
-            
-            document.getElementById('question-card').innerHTML = `
-                <div class="question-category">${question.category[currentLanguage]}</div>
-                <div class="question-text">${question.question[currentLanguage]}</div>
-                <div class="options">
-                    <button class="option-btn" onclick="selectAnswer('A')">
-                        <div class="option-label">${translations[currentLanguage].option_label} A</div>
-                        ${question.optionA[currentLanguage]}
-                    </button>
-                    <button class="option-btn" onclick="selectAnswer('B')">
-                        <div class="option-label">${translations[currentLanguage].option_label} B</div>
-                        ${question.optionB[currentLanguage]}
-                    </button>
-                </div>
-            `;
-        }
+        function loadQuestion() {
+            if (currentQuestion < questions.length) {
+                const questionData = questions[currentQuestion];
+                const questionCard = document.getElementById('question-card');
+                
+                let questionHTML = `
+                    <p class="question-category font-poppins">${questionData.category}</p>
+                    <h2 class="question-text">${questionData.question}</h2>
+                    <div class="options">
+                `;
+                
+                questionData.options.forEach(option => {
+                    questionHTML += `
+                        <button class="option-btn" onclick="handleAnswer('${option.key}')">
+                            <span class="option-label" data-lang-key="option_label">${translations[currentLanguage]['option_label']} ${option.choice}</span>
+                            ${option.text}
+                        </button>
+                    `;
+                });
 
-        function selectAnswer(choice) {
-            answers.push({
-                questionId: questions[currentQuestion].id,
-                choice: choice
-            });
-            
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                setTimeout(() => {
-                    showQuestion();
-                }, 300);
+                questionHTML += `</div>`;
+                questionCard.innerHTML = questionHTML;
+
+                // Update question counter text
+                document.getElementById('question-counter').textContent = translations[currentLanguage]['question_counter'](currentQuestion + 1, questions.length);
+
             } else {
-                setTimeout(() => {
-                    showResults();
-                }, 300);
+                showResults();
             }
+        }
+
+        function handleAnswer(answerKey) {
+            answers.push({ question: questions[currentQuestion], answerKey: answerKey });
+            categories[answerKey]++;
+            currentQuestion++;
+            
+            // Update progress bar
+            const progress = (currentQuestion / questions.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            
+            loadQuestion();
         }
 
         function showResults() {
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('results-screen').classList.add('active');
             
-            const personalityInsight = getPersonalityInsights();
-            document.getElementById('personality-type').textContent = translations[currentLanguage].results_style_title;
-            document.getElementById('personality-description').textContent = personalityInsight;
-            
-            const insightsGrid = document.getElementById('insights-grid');
-            insightsGrid.innerHTML = '';
-            
-            answers.forEach((answer, index) => {
-                const question = questions.find(q => q.id === answer.questionId);
-                if (!question) return;
-                
-                const selectedInsight = answer.choice === 'A' ? question.insights.optionA[currentLanguage] : question.insights.optionB[currentLanguage];
-                const selectedOption = answer.choice === 'A' ? question.optionA[currentLanguage] : question.optionB[currentLanguage];
-                
-                const insightCard = document.createElement('div');
-                insightCard.className = 'insight-card';
-                insightCard.innerHTML = `
-                    <div class="insight-category">${question.category[currentLanguage]}</div>
-                    <div class="insight-question">${question.question[currentLanguage]}</div>
-                    <div class="insight-choice">${translations[currentLanguage].option_label} ${answer.choice}: ${selectedOption}</div>
-                    <div class="insight-text">${selectedInsight}</div>
-                    <div class="insight-analysis">${question.insights.analysis[currentLanguage]}</div>
-                `;
-                insightsGrid.appendChild(insightCard);
-            });
+            displayInsights();
+            displayPersonalityType();
         }
 
-        function getPersonalityInsights() {
-            const categories = {
-                emotional: answers.filter(a => [1, 4, 10].includes(a.questionId) && a.choice === 'A').length,
-                intellectual: answers.filter(a => [1, 4, 10].includes(a.questionId) && a.choice === 'B').length,
-                spontaneous: answers.filter(a => [2, 6].includes(a.questionId) && a.choice === 'A').length,
-                planned: answers.filter(a => [2, 6].includes(a.questionId) && a.choice === 'B').length,
-                direct: answers.filter(a => [3, 8].includes(a.questionId) && a.choice === 'A').length,
-                thoughtful: answers.filter(a => [3, 8].includes(a.questionId) && a.choice === 'B').length,
-            };
+        function displayInsights() {
+            const insightsGrid = document.getElementById('insights-grid');
+            insightsGrid.innerHTML = ''; // Clear previous insights
+            
+            answers.forEach(answer => {
+                const selectedOption = answer.question.options.find(option => option.key === answer.answerKey);
+                
+                const insightHTML = `
+                    <div class="insight-card">
+                        <p class="insight-category">${answer.question.category}</p>
+                        <h4 class="insight-question">${answer.question.question}</h4>
+                        <p class="insight-choice">${translations[currentLanguage]['option_label']} ${selectedOption.choice}: ${selectedOption.insight}</p>
+                        <div class="insight-analysis">${selectedOption.analysis}</div>
+                    </div>
+                `;
+                insightsGrid.innerHTML += insightHTML;
+            });
+        }
+        
+        function displayPersonalityType() {
+            const personalityType = getPersonalityType();
+            document.getElementById('personality-type').textContent = `${translations[currentLanguage]['results_style_title']} ${personalityType}`;
+            document.getElementById('personality-description').textContent = getPersonalityDescription(personalityType);
+        }
 
+        function getPersonalityDescription(personalityType) {
+            if (currentLanguage === 'ko') {
+                if (personalityType === '감정적 즉흥적 직접적인 소통가') return "당신의 관계 스타일은 열정적이고 즉흥적이며 솔직합니다. 감정을 표현하고 즉흥적인 모험을 즐기며, 어떤 문제든 정면으로 다루는 것을 선호합니다.";
+                if (personalityType === '감정적 즉흥적 사려 깊은 소통가') return "당신의 관계 스타일은 다정하고 모험적이며 사려 깊습니다. 감정적인 연결을 소중히 여기고, 예측 불가능한 경험을 즐기며, 부드럽고 신중하게 소통합니다.";
+                if (personalityType === '감정적 계획적 직접적인 소통가') return "당신의 관계 스타일은 헌신적이고 체계적이며 단도직입적입니다. 깊은 감정적 유대감을 형성하며, 관계의 미래를 함께 계획하고, 명확하고 솔직하게 소통합니다.";
+                if (personalityType === '감정적 계획적 사려 깊은 소통가') return "당신의 관계 스타일은 로맨틱하고 배려심 깊으며 조화롭습니다. 사랑하는 사람을 위해 미리 계획하고, 따뜻한 감정을 나누며, 상대방의 감정을 항상 배려하여 말합니다.";
+                if (personalityType === '지적 즉흥적 직접적인 소통가') return "당신의 관계 스타일은 지적이고 흥미진진하며 솔직합니다. 새로운 아이디어를 탐구하는 것을 좋아하며, 즉흥적인 모험을 즐기고, 어떤 문제든 신속하고 명확하게 다룹니다.";
+                if (personalityType === '지적 즉흥적 사려 깊은 소통가') return "당신의 관계 스타일은 분석적이고 적응력이 뛰어나며 조심스럽습니다. 새로운 개념에 대해 이야기하고, 예측 불가능한 상황에 잘 적응하며, 말하기 전에 신중하게 생각합니다.";
+                if (personalityType === '지적 계획적 직접적인 소통가') return "당신의 관계 스타일은 논리적이고 체계적이며 솔직합니다. 합리적인 계획을 세우고, 관계 목표에 대해 이야기하는 것을 좋아하며, 문제 해결을 위해 직접적으로 소통합니다.";
+                if (personalityType === '지적 계획적 사려 깊은 소통가') return "당신의 관계 스타일은 사려 깊고 안정적이며 지혜롭습니다. 관계의 미래를 신중하게 계획하고, 깊은 대화를 나누며, 상대방의 감정을 배려하여 소통합니다.";
+            } else if (currentLanguage === 'ja') {
+                if (personalityType === '感情的 衝動的 直接的なコミュニケーター') return "あなたの関係スタイルは情熱的で、自発的で、率直です。感情を表現し、即興的な冒険を楽しみ、どんな問題でも正面から向き合うことを好みます。";
+                if (personalityType === '感情的 衝動的 思慮深いコミュニケーター') return "あなたの関係スタイルは優しくて冒険的で、思いやりがあります。感情的なつながりを大切にし、予期せぬ経験を楽しみ、穏やかで慎重にコミュニケーションをとります。";
+                if (personalityType === '感情的 計画的 直接的なコミュニケーター') return "あなたの関係スタイルは献身的で、体系的で、単刀直入です。深い感情的な絆を築き、関係の未来を一緒に計画し、明確かつ率直にコミュニケーションをとります。";
+                if (personalityType === '感情的 計画的 思慮深いコミュニケーター') return "あなたの関係スタイルはロマンチックで、気配りができて、調和を大切にします。愛する人のために事前に計画し、温かい感情を分かち合い、相手の感情を常に尊重して話します。";
+                if (personalityType === '知的 衝動的 直接的なコミュニケーター') return "あなたの関係スタイルは知的で、わくわくして、率直です。新しいアイデアを探求するのが好きで、即興的な冒険を楽しみ、どんな問題でも迅速かつ明確に対処します。";
+                if (personalityType === '知的 衝動的 思慮深いコミュニケーター') return "あなたの関係スタイルは分析的で、適応力が高く、慎重です。新しい概念について話し、予期せぬ状況にもうまく適応し、話す前に慎重に考えます。";
+                if (personalityType === '知的 計画的 直接的なコミュニケーター') return "あなたの関係スタイルは論理的で、体系的で、率直です。合理的な計画を立て、関係の目標について話し合うのが好きで、問題解決のために直接的にコミュニケーションをとります。";
+                if (personalityType === '知的 計画的 思慮深いコミュニケーター') return "あなたの関係スタイルは思慮深く、安定していて、賢明です。関係の未来を慎重に計画し、深い会話を交わし、相手の感情を考慮してコミュニケーションをとります。";
+            } else { // 'en'
+                if (personalityType === 'Emotional Spontaneous Direct Communicator') return "Your relationship style is passionate, spontaneous, and straightforward. You love expressing your feelings, enjoy impromptu adventures, and prefer to tackle issues head-on.";
+                if (personalityType === 'Emotional Spontaneous Thoughtful Communicator') return "Your relationship style is affectionate, adventurous, and considerate. You cherish emotional connections, enjoy unpredictable experiences, and communicate gently and with care.";
+                if (personalityType === 'Emotional Planned Direct Communicator') return "Your relationship style is devoted, organized, and to the point. You form deep emotional bonds, love planning for the future together, and communicate clearly and honestly.";
+                if (personalityType === 'Emotional Planned Thoughtful Communicator') return "Your relationship style is romantic, caring, and harmonious. You love planning special moments for your loved one, share your warm feelings openly, and always communicate with your partner's feelings in mind.";
+                if (personalityType === 'Intellectual Spontaneous Direct Communicator') return "Your relationship style is intellectual, exciting, and frank. You enjoy exploring new ideas, thrive on impromptu adventures, and deal with issues quickly and clearly.";
+                if (personalityType === 'Intellectual Spontaneous Thoughtful Communicator') return "Your relationship style is analytical, adaptable, and careful. You love discussing new concepts, adapt well to unpredictable situations, and think carefully before you speak.";
+                if (personalityType === 'Intellectual Planned Direct Communicator') return "Your relationship style is logical, systematic, and direct. You enjoy making rational plans, love talking about your shared goals, and communicate directly to solve problems.";
+                if (personalityType === 'Intellectual Planned Thoughtful Communicator') return "Your relationship style is thoughtful, stable, and wise. You plan carefully for the future of your relationship, engage in deep conversations, and communicate in a way that is considerate of your partner's feelings.";
+            }
+        }
+
+        function getPersonalityType() {
             let personalityType = '';
+            
             if (currentLanguage === 'ko') {
                 if (categories.emotional >= categories.intellectual) personalityType += '감정적 ';
                 else personalityType += '지적 ';
@@ -983,9 +805,18 @@
                 if (categories.spontaneous >= categories.planned) personalityType += '즉흥적 ';
                 else personalityType += '계획적 ';
                 
-                if (categories.direct >= categories.thoughtful) personalityType += '직접적 소통가';
+                if (categories.direct >= categories.thoughtful) personalityType += '직접적인 소통가';
                 else personalityType += '사려 깊은 소통가';
-            } else if (currentLanguage === 'en') {
+            } else if (currentLanguage === 'ja') {
+                if (categories.emotional >= categories.intellectual) personalityType += '感情的 ';
+                else personalityType += '知的 ';
+                
+                if (categories.spontaneous >= categories.planned) personalityType += '衝動的 ';
+                else personalityType += '計画的 ';
+                
+                if (categories.direct >= categories.thoughtful) personalityType += '直接的なコミュニケーター';
+                else personalityType += '思慮深いコミュニケーター';
+            } else { // 'en'
                 if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
                 else personalityType += 'Intellectual ';
                 
@@ -994,15 +825,6 @@
                 
                 if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
                 else personalityType += 'Thoughtful Communicator';
-            } else if (currentLanguage === 'ja') {
-                if (categories.emotional >= categories.intellectual) personalityType += '感情的 ';
-                else personalityType += '知的 ';
-                
-                if (categories.spontaneous >= categories.planned) personalityType += '即興的 ';
-                else personalityType += '計画的 ';
-                
-                if (categories.direct >= categories.thoughtful) personalityType += '直接的なコミュニケーター';
-                else personalityType += '思慮深いコミュニケーター';
             }
 
             return personalityType;
