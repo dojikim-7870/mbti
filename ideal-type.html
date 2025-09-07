@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -140,8 +141,8 @@
 
     <section class="hero">
        <div class="hero-content">
-    <h1 class="hero-title font-poppins" data-i18n="heroTitle">Find Your Ideal MBTI Type</h1>
-    <p class="hero-subtitle" data-i18n="heroSubtitle">Based on psychological compatibility research...</p>
+    <h1 class="hero-title font-poppins" data-i18n="heroTitle"></h1>
+    <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
     <p class="hero-description" data-i18n="heroDescription" style="font-size: clamp(1rem, 2vw, 1.5rem); margin-top: 1rem; opacity: 0.9; color: white;">
     </p>
 </div>
@@ -151,10 +152,8 @@
     <section class="section">
         <div class="container">
             <div class="finder-section">
-                <h2 class="finder-title font-poppins" data-i18n="finderTitle">Interactive Ideal Type Finder</h2>
-                <p class="finder-subtitle" data-i18n="finderSubtitle">
-                    Select your MBTI type to discover your most compatible romantic partners
-                </p>
+                <h2 class="finder-title font-poppins" data-i18n="finderTitle"></h2>
+                <p class="finder-subtitle" data-i18n="finderSubtitle"></p>
                 
                 <div class="type-grid">
                     <button class="type-btn" onclick="findIdealTypes('INTJ')">
@@ -224,32 +223,32 @@
                 </div>
                 
                 <div id="results" class="results">
-                    <h3 class="results-title" data-i18n="resultsTitle">Your Ideal Romantic Matches</h3>
+                    <h3 class="results-title" data-i18n="resultsTitle"></h3>
                     <div id="ideal-types-grid" class="ideal-types-grid">
                         </div>
                     
                     <div class="insights-section">
-                        <h4 class="insights-title" data-i18n="insightsTitle">Why These Types Are Ideal for You</h4>
+                        <h4 class="insights-title" data-i18n="insightsTitle"></h4>
                         <div class="insights-grid">
                             <div class="insight-card">
                                 <div class="insight-icon">🧩</div>
-                                <h5 class="insight-title" data-i18n="insight1Title">Complementary Strengths</h5>
-                                <p class="insight-text" data-i18n="insight1Text">Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.</p>
+                                <h5 class="insight-title" data-i18n="insight1Title"></h5>
+                                <p class="insight-text" data-i18n="insight1Text"></p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">💬</div>
-                                <h5 class="insight-title" data-i18n="insight2Title">Communication Harmony</h5>
-                                <p class="insight-text" data-i18n="insight2Text">These types communicate in ways that resonate with your preferences, reducing misunderstandings.</p>
+                                <h5 class="insight-title" data-i18n="insight2Title"></h5>
+                                <p class="insight-text" data-i18n="insight2Text"></p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">🌱</div>
-                                <h5 class="insight-title" data-i18n="insight3Title">Growth Potential</h5>
-                                <p class="insight-text" data-i18n="insight3Text">Ideal matches challenge you to grow while providing the support you need to flourish.</p>
+                                <h5 class="insight-title" data-i18n="insight3Title"></h5>
+                                <p class="insight-text" data-i18n="insight3Text"></p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">❤️</div>
-                                <h5 class="insight-title" data-i18n="insight4Title">Emotional Connection</h5>
-                                <p class="insight-text" data-i18n="insight4Text">These personality types share values and emotional approaches that foster deep intimacy.</p>
+                                <h5 class="insight-title" data-i18n="insight4Title"></h5>
+                                <p class="insight-text" data-i18n="insight4Text"></p>
                             </div>
                         </div>
                     </div>
@@ -261,7 +260,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 data-i18n="footerExplore">Explore</h3>
+                <h3 data-i18n="footerExplore"></h3>
                 <ul>
                     <li><a href="compatibility.html">Compatibility</a></li>
                     <li><a href="dating-style.html">Dating Style</a></li>
@@ -270,7 +269,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerResources">Resources</h3>
+                <h3 data-i18n="footerResources"></h3>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -278,7 +277,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerLegal">Legal</h3>
+                <h3 data-i18n="footerLegal"></h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -355,7 +354,6 @@
         };
 
         function updateContent(lang) {
-            // Update all text elements based on the selected language
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -365,7 +363,6 @@
             });
         }
 
-        // Ideal type data
         const idealTypeData = {
             'INTJ': [
                 { type: 'ENFP', name: 'The Campaigner', compatibility: '95%', icon: '🌟', description: 'ENFPs bring spontaneity and warmth to balance INTJ\'s structured nature. Their enthusiasm inspires INTJs to explore new possibilities.' },
@@ -393,28 +390,23 @@
         };
 
         function findIdealTypes(selectedType) {
-            // Update button selection
             document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
             event.target.closest('.type-btn').classList.add('selected');
 
-            // Show results
             const resultsDiv = document.getElementById('results');
             const idealTypesGrid = document.getElementById('ideal-types-grid');
             
             resultsDiv.classList.add('show');
             idealTypesGrid.innerHTML = '';
 
-            // Get ideal types for selected type or use default data
             const idealTypes = idealTypeData[selectedType] || [
                 { type: 'ENFP', name: 'The Campaigner', compatibility: '92%', icon: '🌟', description: 'This type brings balance and complementary strengths to your personality.' },
                 { type: 'INFJ', name: 'The Advocate', compatibility: '88%', icon: '🌙', description: 'Shares your values and provides emotional depth in relationships.' },
                 { type: 'ISFJ', name: 'The Protector', compatibility: '85%', icon: '🛡️', description: 'Offers stability and caring support that complements your nature.' }
             ];
 
-            // Update results title
             document.querySelector('.results-title').textContent = `Ideal Types for ${selectedType} - ${typeNames[selectedType]}`;
 
-            // Generate ideal type cards
             idealTypes.forEach(idealType => {
                 const cardHTML = `
                     <div class="ideal-type-card">
@@ -428,6 +420,10 @@
                 idealTypesGrid.innerHTML += cardHTML;
             });
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent('en');
+        });
     </script>
 </body>
 </html>
