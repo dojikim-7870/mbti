@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -147,12 +146,14 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Personality Rankings</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">
-                Discover fascinating insights about MBTI personality types in relationships. From most romantic to best 
-                communication skills, explore comprehensive rankings based on relationship psychology research.
-            </p>
-        </div>
+    <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Personality Rankings</h1>
+    <p class="hero-subtitle" data-i18n="heroSubtitle">
+        Discover fascinating insights about MBTI personality types in relationships. From most romantic to best 
+        communication skills, explore comprehensive rankings based on relationship psychology research.
+    </p>
+    <p class="hero-description" data-i18n="heroDescription" style="font-size: clamp(1rem, 2vw, 1.5rem); margin-top: 1rem; opacity: 0.9; color: white;">
+    </p>
+</div>
     </section>
 
     <div class="adsense-banner">
@@ -536,10 +537,11 @@
     </footer>
 
     <script>
-        const translations = {
+       const translations = {
             'en': {
                 'heroTitle': 'MBTI Personality Rankings',
                 'heroSubtitle': 'Discover fascinating insights about MBTI personality types in relationships. From most romantic to best communication skills, explore comprehensive rankings based on relationship psychology research.',
+                'heroDescription': 'These rankings are based on observed behavioral patterns and common traits associated with each personality type, providing a unique perspective on love and relationships. While not definitive, they serve as a fascinating guide to understanding different relationship dynamics.',
                 'advertisement': 'Advertisement',
                 'sectionTitle': 'Relationship Rankings',
                 'mostRomanticBtn': 'Most Romantic',
@@ -592,6 +594,7 @@
             'ja': {
                 'heroTitle': 'MBTI性格ランキング',
                 'heroSubtitle': 'MBTIの性格タイプに関する魅力的な洞察を発見しましょう。最もロマンチックなタイプから最高のコミュニケーターまで、人間関係の心理学研究に基づいた包括的なランキングを探求します。',
+                'heroDescription': 'これらのランキングは、それぞれの性格タイプに関連する観察された行動パターンや共通の特性に基づいており、恋愛や人間関係に対するユニークな視点を提供します。これらは決定的ではありませんが、さまざまな関係のダイナミクスを理解するための魅力的なガイドとして役立ちます。',
                 'advertisement': '広告',
                 'sectionTitle': '恋愛ランキング',
                 'mostRomanticBtn': '最もロマンチック',
@@ -613,7 +616,7 @@
                 'istjLoyalDesc': 'ISTJは、コミットメントを尊重する信頼できる堅実なパートナーです。信頼、一貫性、相互の尊重に基づいて関係を築きます。',
                 'esfjLoyalDesc': 'ESFJは、人間関係の調和と安定を維持するために努力する献身的なパートナーです。彼らは長期的な関係にコミットします。',
                 'infjLoyalDesc': 'INFJは深く意味のあるつながりを形成し、彼らのコアとなる価値観と選ばれたパートナーに忠実です。彼らは信じる関係に全力で投資します。',
-                'estjLoyalDesc': 'ESTJは、人間関係の責任を真剣に受け止めるコミットしたパートナーです。彼らは安定性を提供し、長続きするパートナーシップを築くために働きます。',
+                'estjLoyalDesc': 'ESTJ는、人間関係の責任を真剣に受け止めるコミットしたパートナーです。彼らは安定性を提供し、長続きするパートナーシップを築くために働きます。',
                 'enfjCommunicationDesc': 'ENFJは、パートナーの感情を理解し、明確に自分自身を表現することに優れています。共感とスキルを持って難しい会話を乗り越えます。',
                 'esfjCommunicationDesc': 'ESFJは、調和と理解を優先する生来のコミュニケーターです。感情を表現し、平和的に対立を解決するのに長けています。',
                 'enfpCommunicationDesc': 'ENFPは、会話にエネルギーと開放性をもたらす熱心なコミュニケーターです。正直で本物の対話を促します。',
@@ -627,7 +630,7 @@
                 'isfjSupportiveDesc': 'ISFJは、愛する人のニーズを先読みし、揺るぎない感情的なサポートを提供する、信じられないほど思いやりのあるサポート的なパートナーです。',
                 'enfjSupportiveDesc': 'ENFJは、パートナーが夢を達成するのを助け、人生のあらゆる挑戦を通じて励ましを提供する献身的なサポーターです。',
                 'infjSupportiveDesc': 'INFJは、深い感情的なサポートと理解を提供します。パートナーが弱さを見せたり、本物であるための安全な空間を作り出します。',
-                'esfjSupportiveDesc': 'ESFJは、実践的および感情的なサポートを提供する思いやりのあるパートナーです。愛する人が最も必要と 할 때 언제나 곁에 있습니다.',
+                'esfjSupportiveDesc': 'ESFJ는、実践的および感情的なサポートを提供する思いやりのあるパートナーです。愛する人が最も必要と 할 때 언제나 곁에 있습니다.',
                 'infpSupportiveDesc': 'INFPは、思いやりのあるサポートを提供し、パートナーを無条件に受け入れます。優しく励まし、感情的な承認を与えます。',
                 'stat1Title': '平均的な関係満足度',
                 'stat1Desc': '互換性のあるMBTIタイプとマッチした場合',
@@ -636,7 +639,7 @@
                 'stat3Title': 'コミュニケーションの成功',
                 'stat3Desc': 'MBTIを理解した後、カップルの78%がより良いコミュニケーションを報告',
                 'stat4Title': '関係の持続性',
-                'stat4Desc': 'MBTIを意識したカップルの成功率は5.2倍高い',
+                'stat4Desc': 'MBTI를 아는 커플의 성공률이 5.2배 더 높음',
                 'footerExplore': '探す',
                 'footerResources': 'リソース',
                 'footerLegal': '法的'
@@ -644,6 +647,7 @@
             'ko': {
                 'heroTitle': 'MBTI 성격 순위',
                 'heroSubtitle': 'MBTI 성격 유형에 대한 흥미로운 통찰력을 발견하세요. 가장 낭만적인 유형부터 최고의 커뮤니케이터까지, 관계 심리학 연구를 기반으로 한 종합적인 순위를 탐색하세요.',
+                'heroDescription': '이 순위는 각 성격 유형과 관련된 행동 패턴 및 일반적인 특성을 기반으로 하며, 연애와 관계에 대한 독특한 관점을 제공합니다. 절대적인 기준은 아니지만, 다양한 관계 역학을 이해하는 흥미로운 가이드가 될 것입니다.',
                 'advertisement': '광고',
                 'sectionTitle': '연애 순위',
                 'mostRomanticBtn': '가장 로맨틱한',

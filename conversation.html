@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">MBTI 대화 가이드 - 모든 유형과 더 잘 소통하기 | MBTILove</title>
-    <meta name="description" data-i18n="pageDescription" content="다양한 MBTI 성격 유형과 효과적으로 소통하는 방법을 배워보세요. 데이트, 관계, 그리고 더 깊은 연결을 위한 대화 기술을 익히세요.">
+    <title data-i18n="pageTitle">MBTI Conversation Guide - Communicate Better with Every Type | MBTILove</title>
+    <meta name="description" data-i18n="pageDescription" content="Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -132,174 +132,179 @@
                 <a href="about.html" data-i18n="navAbout">About</a>
             </nav>
             <div class="language-switcher">
-                <button class="lang-btn active" onclick="updateContent('en')">EN</button>
-                <button class="lang-btn" onclick="updateContent('ja')">日本語</button>
-                <button class="lang-btn" onclick="updateContent('ko')">한국어</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+                <button class="lang-btn" data-lang="ko">한국어</button>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI 대화 가이드</h1>
+            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Conversation Guide</h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">
-                다양한 성격 유형과 효과적으로 소통하는 기술을 익혀보세요. 효과적인 대화를 통해 깊은 관계를 맺고, 오해를 피하며, 더 강력한 관계를 구축하는 방법을 배워보세요.
+                Master the art of communicating with different personality types. Learn how to connect deeply, 
+                avoid misunderstandings, and build stronger relationships through effective conversation.
             </p>
         </div>
     </section>
 
     <div class="adsense-banner">
-        <p data-i18n="advertisement">광고</p>
+        <p data-i18n="advertisement">Advertisement</p>
     </div>
 
     <section class="section">
         <div class="container">
-            <h2 class="section-title font-poppins" data-i18n="sectionTitle">성격 유형 선택하기</h2>
+            <h2 class="section-title font-poppins" data-i18n="sectionTitle">Choose a Personality Type</h2>
+            
             <div class="type-selector">
-                <h3 class="selector-title" data-i18n="selectorTitle">소통 전략을 배우고 싶은 MBTI 유형을 선택하세요</h3>
+                <h3 class="selector-title" data-i18n="selectorTitle">Select an MBTI Type to Learn Communication Strategies</h3>
                 <div class="type-grid">
-                    <button class="type-btn" onclick="showConversationGuide('INTJ')">
-                        <div style="font-size: 2.5rem;">🧠</div>
-                        <div>INTJ</div>
+                    <button class="type-btn" data-type="INTJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTJ">Architect</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('INTP')">
-                        <div style="font-size: 2.5rem;">💡</div>
-                        <div>INTP</div>
+                    <button class="type-btn" data-type="INTP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTP">Thinker</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ENTJ')">
-                        <div style="font-size: 2.5rem;">👑</div>
-                        <div>ENTJ</div>
+                    <button class="type-btn" data-type="ENTJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTJ">Commander</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ENTP')">
-                        <div style="font-size: 2.5rem;">🗣️</div>
-                        <div>ENTP</div>
+                    <button class="type-btn" data-type="ENTP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTP">Debater</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('INFJ')">
-                        <div style="font-size: 2.5rem;">✨</div>
-                        <div>INFJ</div>
+                    <button class="type-btn" data-type="INFJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFJ">Advocate</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('INFP')">
-                        <div style="font-size: 2.5rem;">💖</div>
-                        <div>INFP</div>
+                    <button class="type-btn" data-type="INFP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFP">Mediator</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ENFJ')">
-                        <div style="font-size: 2.5rem;">🤝</div>
-                        <div>ENFJ</div>
+                    <button class="type-btn" data-type="ENFJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFJ">Protagonist</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ENFP')">
-                        <div style="font-size: 2.5rem;">🌟</div>
-                        <div>ENFP</div>
+                    <button class="type-btn" data-type="ENFP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFP">Campaigner</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ISTJ')">
-                        <div style="font-size: 2.5rem;">🏛️</div>
-                        <div>ISTJ</div>
+                    <button class="type-btn" data-type="ISTJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTJ">Logistician</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ISFJ')">
-                        <div style="font-size: 2.5rem;">🛡️</div>
-                        <div>ISFJ</div>
+                    <button class="type-btn" data-type="ISFJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFJ">Protector</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ESTJ')">
-                        <div style="font-size: 2.5rem;">💼</div>
-                        <div>ESTJ</div>
+                    <button class="type-btn" data-type="ESTJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTJ">Executive</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ESFJ')">
-                        <div style="font-size: 2.5rem;">🎉</div>
-                        <div>ESFJ</div>
+                    <button class="type-btn" data-type="ESFJ">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFJ">Consul</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ISTP')">
-                        <div style="font-size: 2.5rem;">🔧</div>
-                        <div>ISTP</div>
+                    <button class="type-btn" data-type="ISTP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTP">Virtuoso</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ISFP')">
-                        <div style="font-size: 2.5rem;">🎨</div>
-                        <div>ISFP</div>
+                    <button class="type-btn" data-type="ISFP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFP">Adventurer</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ESTP')">
-                        <div style="font-size: 2.5rem;">🤸</div>
-                        <div>ESTP</div>
+                    <button class="type-btn" data-type="ESTP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTP">Entrepreneur</div>
                     </button>
-                    <button class="type-btn" onclick="showConversationGuide('ESFP')">
-                        <div style="font-size: 2.5rem;">🥳</div>
-                        <div>ESFP</div>
+                    <button class="type-btn" data-type="ESFP">
+                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFP">Entertainer</div>
                     </button>
                 </div>
             </div>
-
+            
             <div id="conversation-guide" class="conversation-guide">
                 </div>
-
-            <hr style="margin: 3rem 0; border: 1px dashed #ddd;">
-
+            
             <div class="tips-grid">
                 <div class="tip-card">
-                    <div class="tip-icon">✨</div>
-                    <h4 class="tip-title" data-i18n="tip1Title">진정성 있는 연결</h4>
-                    <p class="tip-description" data-i18n="tip1Desc">
-                        대화에서 진정성 있는 연결을 만드는 방법을 배우세요. 가식적인 대화는 피하고, 진심으로 소통하세요.
-                    </p>
+                    <div class="tip-icon">👂</div>
+                    <h3 class="tip-title" data-i18n="tips.title1">Active Listening</h3>
+                    <p class="tip-description" data-i18n="tips.desc1">Pay attention to both what they say and how they say it. Different types express themselves in unique ways.</p>
                 </div>
+                
                 <div class="tip-card">
-                    <div class="tip-icon">🧠</div>
-                    <h4 class="tip-title" data-i18n="tip2Title">경청의 힘</h4>
-                    <p class="tip-description" data-i18n="tip2Desc">
-                        경청은 모든 좋은 관계의 핵심입니다. 상대방의 말에 진심으로 귀 기울이고 그들의 관점을 이해하는 법을 배우세요.
-                    </p>
+                    <div class="tip-icon">🎯</div>
+                    <h3 class="tip-title" data-i18n="tips.title2">Adapt Your Style</h3>
+                    <p class="tip-description" data-i18n="tips.desc2">Adjust your communication approach based on their personality preferences and comfort zone.</p>
                 </div>
+                
                 <div class="tip-card">
-                    <div class="tip-icon">🤝</div>
-                    <h4 class="tip-title" data-i18n="tip3Title">공감 능력 향상</h4>
-                    <p class="tip-description" data-i18n="tip3Desc">
-                        서로의 감정을 인식하고 공유하며, 더욱 강하고 공감적인 관계를 형성하는 방법을 발견하세요.
-                    </p>
+                    <div class="tip-icon">❓</div>
+                    <h3 class="tip-title" data-i18n="tips.title3">Ask Open Questions</h3>
+                    <p class="tip-description" data-i18n="tips.desc3">Use questions that encourage deeper sharing and help you understand their perspective better.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">💝</div>
+                    <h3 class="tip-title" data-i18n="tips.title4">Show Appreciation</h3>
+                    <p class="tip-description" data-i18n="tips.desc4">Acknowledge their unique strengths and the value they bring to conversations and relationships.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">⚡</div>
+                    <h3 class="tip-title" data-i18n="tips.title5">Respect Energy Levels</h3>
+                    <p class="tip-description" data-i18n="tips.desc5">Introverts may need processing time, while extroverts often think out loud. Honor both styles.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🌱</div>
+                    <h3 class="tip-title" data-i18n="tips.title6">Create Safe Spaces</h3>
+                    <p class="tip-description" data-i18n="tips.desc6">Foster an environment where they feel comfortable being authentic and sharing their thoughts.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <div class="adsense-banner">
-        <p data-i18n="advertisement">광고</p>
+        <p data-i18n="advertisement">Advertisement</p>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 data-i18n="footerTypesTitle">MBTI 유형</h3>
+                <h3 data-i18n="footer.explore">Explore</h3>
                 <ul>
-                    <li><a href="#" data-i18n="footerTypesAnalyst">분석가 (Analyst)</a></li>
-                    <li><a href="#" data-i18n="footerTypesDiplomat">외교관 (Diplomat)</a></li>
-                    <li><a href="#" data-i18n="footerTypesSentinel">관리자 (Sentinel)</a></li>
-                    <li><a href="#" data-i18n="footerTypesExplorer">탐험가 (Explorer)</a></li>
+                    <li><a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a></li>
+                    <li><a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a></li>
+                    <li><a href="ideal-type.html" data-i18n="navIdealType">Ideal Type</a></li>
+                    <li><a href="rankings.html" data-i18n="navRankings">Rankings</a></li>
+                    <li><a href="conversation.html" data-i18n="navConversation">Conversation</a></li>
+                    <li><a href="balance-game.html" data-i18n="navBalanceGame">Balance Game</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerSiteTitle">사이트</h3>
+                <h3 data-i18n="footer.resources">Resources</h3>
                 <ul>
-                    <li><a href="compatibility.html" data-i18n="navCompatibility">호환성 (Compatibility)</a></li>
-                    <li><a href="dating-style.html" data-i18n="navDatingStyle">데이트 스타일 (Dating Style)</a></li>
-                    <li><a href="ideal-type.html" data-i18n="navIdealType">이상형 (Ideal Type)</a></li>
-                    <li><a href="rankings.html" data-i18n="navRankings">순위 (Rankings)</a></li>
-                    <li><a href="conversation.html" data-i18n="navConversation">대화 (Conversation)</a></li>
+                    <li><a href="about.html" data-i18n="navAbout">About</a></li>
+                    <li><a href="contact.html" data-i18n="footer.contact">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-i18n="footer.test">Official MBTI Test</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerResourcesTitle">리소스</h3>
+                <h3 data-i18n="footer.legal">Legal</h3>
                 <ul>
-                    <li><a href="about.html" data-i18n="navAbout">정보 (About)</a></li>
-                    <li><a href="contact.html" data-i18n="footerContact">문의 (Contact)</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-i18n="footerOfficialTest">공식 MBTI 테스트</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 data-i18n="footerLegalTitle">법적 고지</h3>
-                <ul>
-                    <li><a href="privacy-policy.html" data-i18n="footerPrivacy">개인정보 처리방침 (Privacy Policy)</a></li>
-                    <li><a href="terms-of-use.html" data-i18n="footerTerms">이용 약관 (Terms of Use)</a></li>
+                    <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html" data-i18n="footer.terms">Terms of Use</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footerCopyright">© 2024 MBTILove.xyz - 모든 권리 보유.</p>
+            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
 
@@ -316,1962 +321,628 @@
                 'navBalanceGame': 'Balance Game',
                 'navAbout': 'About',
                 'heroTitle': 'MBTI Conversation Guide',
-                'heroSubtitle': 'Master the art of effective communication with different personality types. Learn how to have better conversations, build stronger relationships, and avoid misunderstandings.',
+                'heroSubtitle': 'Master the art of communicating with different personality types. Learn how to connect deeply, avoid misunderstandings, and build stronger relationships through effective conversation.',
                 'advertisement': 'Advertisement',
-                'sectionTitle': 'Select a Personality Type',
-                'selectorTitle': 'Select an MBTI type to learn communication strategies for',
-                'tip1Title': 'Authentic Connection',
-                'tip1Desc': 'Learn how to create genuine connections in conversation. Avoid small talk and communicate from the heart.',
-                'tip2Title': 'The Power of Listening',
-                'tip2Desc': 'Listening is key to all good relationships. Learn to truly hear others and understand their perspective.',
-                'tip3Title': 'Improving Empathy',
-                'tip3Desc': 'Discover how to recognize and share each other\'s feelings to form stronger, more empathetic bonds.',
-                'footerTypesTitle': 'MBTI Types',
-                'footerTypesAnalyst': 'Analysts',
-                'footerTypesDiplomat': 'Diplomats',
-                'footerTypesSentinel': 'Sentinels',
-                'footerTypesExplorer': 'Explorers',
-                'footerSiteTitle': 'Site',
-                'footerResourcesTitle': 'Resources',
-                'footerContact': 'Contact',
-                'footerOfficialTest': 'Official MBTI Test',
-                'footerLegalTitle': 'Legal',
-                'footerPrivacy': 'Privacy Policy',
-                'footerTerms': 'Terms of Use',
-                'footerCopyright': '© 2024 MBTILove.xyz - All rights reserved.',
+                'sectionTitle': 'Choose a Personality Type',
+                'selectorTitle': 'Select an MBTI Type to Learn Communication Strategies',
+                'type.INTJ': 'Architect', 'type.INTP': 'Thinker', 'type.ENTJ': 'Commander', 'type.ENTP': 'Debater',
+                'type.INFJ': 'Advocate', 'type.INFP': 'Mediator', 'type.ENFJ': 'Protagonist', 'type.ENFP': 'Campaigner',
+                'type.ISTJ': 'Logistician', 'type.ISFJ': 'Protector', 'type.ESTJ': 'Executive', 'type.ESFJ': 'Consul',
+                'type.ISTP': 'Virtuoso', 'type.ISFP': 'Adventurer', 'type.ESTP': 'Entrepreneur', 'type.ESFP': 'Entertainer',
+                'tips.title1': 'Active Listening',
+                'tips.desc1': 'Pay attention to both what they say and how they say it. Different types express themselves in unique ways.',
+                'tips.title2': 'Adapt Your Style',
+                'tips.desc2': 'Adjust your communication approach based on their personality preferences and comfort zone.',
+                'tips.title3': 'Ask Open Questions',
+                'tips.desc3': 'Use questions that encourage deeper sharing and help you understand their perspective better.',
+                'tips.title4': 'Show Appreciation',
+                'tips.desc4': 'Acknowledge their unique strengths and the value they bring to conversations and relationships.',
+                'tips.title5': 'Respect Energy Levels',
+                'tips.desc5': 'Introverts may need processing time, while extroverts often think out loud. Honor both styles.',
+                'tips.title6': 'Create Safe Spaces',
+                'tips.desc6': 'Foster an environment where they feel comfortable being authentic and sharing their thoughts.',
+                'footer.explore': 'Explore',
+                'footer.resources': 'Resources',
+                'footer.legal': 'Legal',
+                'footer.contact': 'Contact',
+                'footer.test': 'Official MBTI Test',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Use',
+                'guide.title': 'Communicating with <span class="mbti-type"></span> - <span class="mbti-name"></span>',
+                'guide.subtitle': 'Understanding how to communicate effectively with this personality type.',
+                'guide.noGuide': 'No conversation guide available for this type yet. We will update it soon!',
+                'section.approach.title': 'Communication Approach',
+                'section.approach.content': 'Each personality type has unique communication preferences and styles.',
+                'section.approach.tips1': 'Observe their natural communication style',
+                'section.approach.tips2': 'Adapt your approach to match their preferences',
+                'section.approach.tips3': 'Be patient and understanding',
+                'section.approach.tips4': 'Focus on building genuine connection',
+                'section.topics.title': 'Preferred Topics',
+                'section.topics.content': 'Different types are energized by different kinds of conversations.',
+                'section.topics.tips1': 'Ask about their interests and passions',
+                'section.topics.tips2': 'Share relevant experiences',
+                'section.topics.tips3': 'Be genuinely curious about their perspective',
+                'section.topics.tips4': 'Find common ground in your interests',
+                'section.avoid.title': 'Communication Pitfalls',
+                'section.avoid.content': 'Be mindful of approaches that might not resonate with this type.',
+                'section.avoid.tips1': 'Avoid overwhelming them with your preferred style',
+                'section.avoid.tips2': 'Don\'t assume they communicate like you do',
+                'section.avoid.tips3': 'Respect their energy levels and boundaries',
+                'section.avoid.tips4': 'Be patient if they need time to process',
             },
             'ja': {
-                'pageTitle': 'MBTI会話ガイド - 全タイプとより良くコミュニケーションを取る | MBTILove',
-                'pageDescription': '様々なMBTI性格タイプと効果的にコミュニケーションする方法を学びましょう。デート、関係、そしてより深い繋がりを築くための会話テクニックを習得してください。',
+                'pageTitle': 'MBTI会話ガイド - 全タイプとより良くコミュニケーションする方法 | MBTILove',
+                'pageDescription': 'さまざまなMBTI性格タイプと効果的にコミュニケーションする方法を学びましょう。デートや人間関係、より深い繋がりを築くための会話術を身につけましょう。',
                 'navCompatibility': '相性',
                 'navDatingStyle': 'デートスタイル',
                 'navIdealType': '理想のタイプ',
                 'navRankings': 'ランキング',
                 'navConversation': '会話',
                 'navBalanceGame': 'バランスゲーム',
-                'navAbout': 'について',
+                'navAbout': 'About',
                 'heroTitle': 'MBTI会話ガイド',
-                'heroSubtitle': '様々な性格タイプと効果的にコミュニケーションを取る術を習得しましょう。より良い会話をし、深い関係を築き、誤解を避ける方法を学びます。',
+                'heroSubtitle': '様々な性格タイプと効果的にコミュニケーションする技術を習得しましょう。有意義な会話を通じて、深い繋がりを築き、誤解を避け、より強い関係を構築する方法を学びましょう。',
                 'advertisement': '広告',
-                'sectionTitle': '性格タイプを選択',
-                'selectorTitle': 'コミュニケーション戦略を学びたいMBTIタイプを選択してください',
-                'tip1Title': '真のつながり',
-                'tip1Desc': '会話で本物のつながりを築く方法を学びましょう。上辺だけの会話を避け、心からコミュニケーションを取ります。',
-                'tip2Title': '聞く力',
-                'tip2Desc': '傾聴はすべての良い関係の核心です。相手の言葉に心から耳を傾け、彼らの視点を理解する方法を学びましょう。',
-                'tip3Title': '共感能力の向上',
-                'tip3Desc': 'お互いの感情を認識し共有することで、より強く共感的な絆を築く方法を発見しましょう。',
-                'footerTypesTitle': 'MBTIタイプ',
-                'footerTypesAnalyst': 'アナリスト',
-                'footerTypesDiplomat': '外交官',
-                'footerTypesSentinel': '管理者',
-                'footerTypesExplorer': '探検家',
-                'footerSiteTitle': 'サイト',
-                'footerResourcesTitle': 'リソース',
-                'footerContact': 'お問い合わせ',
-                'footerOfficialTest': '公式MBTIテスト',
-                'footerLegalTitle': '法的',
-                'footerPrivacy': 'プライバシーポリシー',
-                'footerTerms': '利用規約',
-                'footerCopyright': '© 2024 MBTILove.xyz - 無断転載を禁じます。',
+                'sectionTitle': '性格タイプを選ぶ',
+                'selectorTitle': 'コミュニケーション戦略を学びたいMBTIタイプを選んでください',
+                'type.INTJ': '建築家', 'type.INTP': '論理学者', 'type.ENTJ': '指揮官', 'type.ENTP': '討論者',
+                'type.INFJ': '提唱者', 'type.INFP': '仲介者', 'type.ENFJ': '主人公', 'type.ENFP': '広報運動家',
+                'type.ISTJ': '管理者', 'type.ISFJ': '擁護者', 'type.ESTJ': '幹部', 'type.ESFJ': '領事',
+                'type.ISTP': '巨匠', 'type.ISFP': '冒険家', 'type.ESTP': '起業家', 'type.ESFP': 'エンターテイナー',
+                'tips.title1': '積極的な傾聴',
+                'tips.desc1': '相手が何を話すかだけでなく、どのように話すかにも注意を払ってください。タイプによって表現方法が異なります。',
+                'tips.title2': 'スタイルを合わせる',
+                'tips.desc2': '相手の性格の好みや快適なゾーンに合わせて、コミュニケーションのアプローチを調整してください。',
+                'tips.title3': '開かれた質問をする',
+                'tips.desc3': 'より深い共有を促し、相手の視点をよりよく理解するのに役立つ質問をしてください。',
+                'tips.title4': '感謝を示す',
+                'tips.desc4': '彼らのユニークな強みや、会話や関係にもたらす価値を認めましょう。',
+                'tips.title5': 'エネルギーレベルを尊重する',
+                'tips.desc5': '内向的な人は考える時間が必要な場合がありますが、外向的な人は声に出して考えることが多いです。両方のスタイルを尊重してください。',
+                'tips.title6': '安心できる空間を作る',
+                'tips.desc6': '彼らが本物であると感じ、自分の考えを共有するのに快適な環境を育ててください。',
+                'footer.explore': '探す',
+                'footer.resources': '資料',
+                'footer.legal': '法律',
+                'footer.contact': 'お問い合わせ',
+                'footer.test': '公式MBTIテスト',
+                'footer.privacy': 'プライバシーポリシー',
+                'footer.terms': '利用規約',
+                'guide.title': '<span class="mbti-type"></span>（<span class="mbti-name"></span>）とのコミュニケーション',
+                'guide.subtitle': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
+                'guide.noGuide': 'このタイプの会話ガイドはまだありません。近日中に更新します！',
+                'section.approach.title': 'コミュニケーションアプローチ',
+                'section.approach.content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
+                'section.approach.tips1': '彼らの自然なコミュニケーションスタイルを観察する',
+                'section.approach.tips2': '彼らの好みに合わせてアプローチを調整する',
+                'section.approach.tips3': '忍耐強く、理解を示す',
+                'section.approach.tips4': '本物のつながりを築くことに焦点を当てる',
+                'section.topics.title': '好まれる話題',
+                'section.topics.content': '異なるタイプは異なる種類の会話によって活気づきます。',
+                'section.topics.tips1': '彼らの興味や情熱について尋ねる',
+                'section.topics.tips2': '関連する経験を共有する',
+                'section.topics.tips3': '彼らの視点に心から興味を持つ',
+                'section.topics.tips4': '共通の興味を見つける',
+                'section.avoid.title': 'コミュニケーションの落とし穴',
+                'section.avoid.content': 'このタイプに響かないかもしれないアプローチに注意してください。',
+                'section.avoid.tips1': 'あなたの好みのスタイルで彼らを圧倒しないようにする',
+                'section.avoid.tips2': '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
+                'section.avoid.tips3': '彼らのエネルギーレベルと境界線を尊重する',
+                'section.avoid.tips4': '彼らが処理する時間が必要な場合は忍耐強く待つ',
             },
             'ko': {
                 'pageTitle': 'MBTI 대화 가이드 - 모든 유형과 더 잘 소통하기 | MBTILove',
                 'pageDescription': '다양한 MBTI 성격 유형과 효과적으로 소통하는 방법을 배워보세요. 데이트, 관계, 그리고 더 깊은 연결을 위한 대화 기술을 익히세요.',
-                'navCompatibility': '호환성',
-                'navDatingStyle': '데이트 스타일',
+                'navCompatibility': '궁합',
+                'navDatingStyle': '연애 스타일',
                 'navIdealType': '이상형',
-                'navRankings': '순위',
+                'navRankings': '랭킹',
                 'navConversation': '대화',
                 'navBalanceGame': '밸런스 게임',
-                'navAbout': '정보',
+                'navAbout': '소개',
                 'heroTitle': 'MBTI 대화 가이드',
-                'heroSubtitle': '다양한 성격 유형과 효과적으로 소통하는 기술을 익혀보세요. 효과적인 대화를 통해 깊은 관계를 맺고, 오해를 피하며, 더 강력한 관계를 구축하는 방법을 배워보세요.',
+                'heroSubtitle': '다양한 성격 유형과 소통하는 기술을 익혀보세요. 효과적인 대화를 통해 깊은 관계를 맺고, 오해를 피하며, 더 강력한 관계를 구축하는 방법을 배워보세요.',
                 'advertisement': '광고',
                 'sectionTitle': '성격 유형 선택하기',
                 'selectorTitle': '소통 전략을 배우고 싶은 MBTI 유형을 선택하세요',
-                'tip1Title': '진정성 있는 연결',
-                'tip1Desc': '대화에서 진정성 있는 연결을 만드는 방법을 배우세요. 가식적인 대화는 피하고, 진심으로 소통하세요.',
-                'tip2Title': '경청의 힘',
-                'tip2Desc': '경청은 모든 좋은 관계의 핵심입니다. 상대방의 말에 진심으로 귀 기울이고 그들의 관점을 이해하는 법을 배우세요.',
-                'tip3Title': '공감 능력 향상',
-                'tip3Desc': '서로의 감정을 인식하고 공유하며, 더욱 강하고 공감적인 관계를 형성하는 방법을 발견하세요.',
-                'footerTypesTitle': 'MBTI 유형',
-                'footerTypesAnalyst': '분석가 (Analyst)',
-                'footerTypesDiplomat': '외교관 (Diplomat)',
-                'footerTypesSentinel': '관리자 (Sentinel)',
-                'footerTypesExplorer': '탐험가 (Explorer)',
-                'footerSiteTitle': '사이트',
-                'footerResourcesTitle': '리소스',
-                'footerContact': '문의 (Contact)',
-                'footerOfficialTest': '공식 MBTI 테스트',
-                'footerLegalTitle': '법적 고지',
-                'footerPrivacy': '개인정보 처리방침 (Privacy Policy)',
-                'footerTerms': '이용 약관 (Terms of Use)',
-                'footerCopyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
+                'type.INTJ': '건축가', 'type.INTP': '논리주의자', 'type.ENTJ': '통솔자', 'type.ENTP': '변론가',
+                'type.INFJ': '옹호자', 'type.INFP': '중재자', 'type.ENFJ': '선도자', 'type.ENFP': '활동가',
+                'type.ISTJ': '현실주의자', 'type.ISFJ': '수호자', 'type.ESTJ': '경영자', 'type.ESFJ': '사교형',
+                'type.ISTP': '장인', 'type.ISFP': '모험가', 'type.ESTP': '사업가', 'type.ESFP': '연예인',
+                'tips.title1': '적극적으로 경청하기',
+                'tips.desc1': '상대방이 무엇을 말하는지, 그리고 어떻게 말하는지에 모두 주의를 기울이세요. 유형에 따라 자신을 표현하는 방식이 다릅니다.',
+                'tips.title2': '자신의 스타일 조정하기',
+                'tips.desc2': '상대방의 성격 선호도와 편안함을 느끼는 영역에 따라 대화 방식을 조절하세요.',
+                'tips.title3': '개방형 질문하기',
+                'tips.desc3': '더 깊은 공유를 유도하고 상대방의 관점을 더 잘 이해하는 데 도움이 되는 질문을 사용하세요.',
+                'tips.title4': '감사 표현하기',
+                'tips.desc4': '그들의 독특한 강점과 대화 및 관계에 가져오는 가치를 인정해주세요.',
+                'tips.title5': '에너지 수준 존중하기',
+                'tips.desc5': '내향적인 사람은 생각할 시간이 필요할 수 있으며, 외향적인 사람은 소리 내어 생각하는 경향이 있습니다. 두 가지 스타일을 모두 존중하세요.',
+                'tips.title6': '안전한 공간 만들기',
+                'tips.desc6': '상대방이 진솔하게 느끼고 자신의 생각을 편안하게 공유할 수 있는 환경을 조성하세요.',
+                'footer.explore': '탐색하기',
+                'footer.resources': '자료',
+                'footer.legal': '법률',
+                'footer.contact': '연락처',
+                'footer.test': '공식 MBTI 테스트',
+                'footer.privacy': '개인정보 처리방침',
+                'footer.terms': '이용약관',
+                'guide.title': '<span class="mbti-type"></span> (<span class="mbti-name"></span>)와 소통하기',
+                'guide.subtitle': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
+                'guide.noGuide': '아직 이 유형에 대한 대화 가이드는 준비되지 않았습니다. 곧 업데이트할 예정입니다!',
+                'section.approach.title': '소통 접근법',
+                'section.approach.content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
+                'section.approach.tips1': '그들의 자연스러운 소통 방식을 관찰하세요',
+                'section.approach.tips2': '그들의 선호도에 맞게 접근법을 조정하세요',
+                'section.approach.tips3': '인내심을 가지고 이해하세요',
+                'section.approach.tips4': '진정한 관계 구축에 집중하세요',
+                'section.topics.title': '선호하는 주제',
+                'section.topics.content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
+                'section.topics.tips1': '그들의 관심사와 열정에 대해 물어보세요',
+                'section.topics.tips2': '관련된 경험을 공유하세요',
+                'section.topics.tips3': '그들의 관점에 대해 진심으로 궁금해하세요',
+                'section.topics.tips4': '공통 관심사를 찾아보세요',
+                'section.avoid.title': '소통 시 주의할 점',
+                'section.avoid.content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
+                'section.avoid.tips1': '자신이 선호하는 방식으로 그들을 압도하지 마세요',
+                'section.avoid.tips2': '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
+                'section.avoid.tips3': '그들의 에너지 수준과 경계를 존중하세요',
+                'section.avoid.tips4': '처리할 시간이 필요하다면 인내심을 가지세요',
             }
         };
 
-        const conversationData = {
+        const typeNames = {
+            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
+            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
+            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
+            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+        };
+
+        const conversationGuides = {
+            'INTJ': {
+                'en': {
+                    'name': 'The Architect',
+                    'description': 'Strategic, independent thinkers who value competence and efficiency in communication.',
+                    'sections': {
+                        'approach': {
+                            'title': 'How to Approach INTJs',
+                            'content': 'INTJs appreciate direct, purposeful conversations. They value depth over small talk and prefer discussing ideas, future plans, and meaningful topics.',
+                            'tips': [
+                                'Be direct and get to the point quickly',
+                                'Come prepared with well-thought-out ideas',
+                                'Respect their need for processing time',
+                                'Focus on future possibilities and long-term thinking'
+                            ],
+                            'example': {
+                                'title': 'Good conversation starter:',
+                                'content': '"I\'ve been thinking about that project idea you mentioned. What do you see as the biggest challenges we might face?"'
+                            }
+                        },
+                        'topics': {
+                            'title': 'Best Conversation Topics',
+                            'content': 'INTJs thrive when discussing complex ideas, strategic planning, and conceptual frameworks.',
+                            'tips': [
+                                'Future plans and long-term goals',
+                                'Abstract theories and concepts',
+                                'Problem-solving strategies',
+                                'Books, documentaries, and learning experiences'
+                            ]
+                        },
+                        'avoid': {
+                            'title': 'What to Avoid',
+                            'content': 'Steer clear of superficial topics and overly emotional approaches that might make them uncomfortable.',
+                            'tips': [
+                                'Small talk about weather or celebrity gossip',
+                                'Overly emotional or dramatic expressions',
+                                'Interrupting their thought process',
+                                'Pushing for immediate decisions'
+                            ]
+                        }
+                    }
+                },
+                'ja': {
+                    'name': '建築家',
+                    'description': 'コミュニケーションにおいて能力と効率を重視する、戦略的で独立した思考家です。',
+                    'sections': {
+                        'approach': {
+                            'title': 'INTJへのアプローチ方法',
+                            'content': 'INTJは直接的で目的のある会話を好みます。世間話よりも深さを重んじ、アイデア、将来の計画、有意義な話題について議論することを好みます。',
+                            'tips': [
+                                '単刀直入に話し、素早く要点にたどり着く',
+                                'よく考えられたアイデアを準備する',
+                                '彼らが思考するのに必要な時間を尊重する',
+                                '将来の可能性と長期的な思考に焦点を当てる'
+                            ],
+                            'example': {
+                                'title': '良い会話のきっかけ:',
+                                'content': '"あなたが言及したプロジェクトのアイデアについて考えていました。私たちが直面する可能性のある最大の課題は何だと思いますか？"'
+                            }
+                        },
+                        'topics': {
+                            'title': '最適な会話の話題',
+                            'content': 'INTJは、複雑なアイデア、戦略的計画、概念的なフレームワークについて議論するときに活気づきます。',
+                            'tips': [
+                                '将来の計画と長期的な目標',
+                                '抽象的な理論と概念',
+                                '問題解決の戦略',
+                                '本、ドキュメンタリー、学習経験'
+                            ]
+                        },
+                        'avoid': {
+                            'title': '避けるべきこと',
+                            'content': '彼らを不快にさせる可能性のある表面的な話題や感情に偏ったアプローチを避けてください。',
+                            'tips': [
+                                '天気や有名人のゴシップのような世間話',
+                                '過度に感情的またはドラマチックな表現',
+                                '彼らの思考プロセスを遮る',
+                                '即座の決断を迫る'
+                            ]
+                        }
+                    }
+                },
+                'ko': {
+                    'name': '건축가',
+                    'description': '소통에 있어 능력과 효율성을 중요시하는 전략적이고 독립적인 사상가입니다.',
+                    'sections': {
+                        'approach': {
+                            'title': 'INTJ에게 접근하는 방법',
+                            'content': 'INTJ는 직접적이고 목적 있는 대화를 선호합니다. 잡담보다 깊이를 중시하며 아이디어, 미래 계획, 의미 있는 주제에 대해 토론하는 것을 좋아합니다.',
+                            'tips': [
+                                '직설적으로 말하고 빠르게 요점에 도달하세요',
+                                '잘 생각한 아이디어를 준비하세요',
+                                '그들이 생각할 시간을 존중하세요',
+                                '미래의 가능성과 장기적 사고에 집중하세요'
+                            ],
+                            'example': {
+                                'title': '좋은 대화 시작법:',
+                                'content': '"언급했던 프로젝트 아이디어에 대해 생각 중이었어요. 우리가 직면할 수 있는 가장 큰 과제는 무엇이라고 생각하세요?"'
+                            }
+                        },
+                        'topics': {
+                            'title': '최고의 대화 주제',
+                            'content': 'INTJ는 복잡한 아이디어, 전략적 계획, 개념적 틀에 대해 토론할 때 활기를 띱니다.',
+                            'tips': [
+                                '미래 계획 및 장기 목표',
+                                '추상적인 이론과 개념',
+                                '문제 해결 전략',
+                                '책, 다큐멘터리, 학습 경험'
+                            ]
+                        },
+                        'avoid': {
+                            'title': '피해야 할 것들',
+                            'content': '그들을 불편하게 만들 수 있는 피상적인 주제와 지나치게 감정적인 접근은 피하세요.',
+                            'tips': [
+                                '날씨나 유명인 가십 같은 잡담',
+                                '지나치게 감정적이거나 극적인 표현',
+                                '그들의 사고 과정을 방해하는 행위',
+                                '즉각적인 결정을 강요하는 것'
+                            ]
+                        }
+                    }
+                }
+            },
+            'ENFP': {
+                'en': {
+                    'name': 'The Campaigner',
+                    'description': 'Enthusiastic, creative communicators who love exploring ideas and connecting with others.',
+                    'sections': {
+                        'approach': {
+                            'title': 'How to Approach ENFPs',
+                            'content': 'ENFPs love animated, energetic conversations filled with possibilities and creative ideas. Show genuine interest in their thoughts and dreams.',
+                            'tips': [
+                                'Match their enthusiasm and energy',
+                                'Ask about their dreams and aspirations',
+                                'Be open to spontaneous conversation turns',
+                                'Show genuine interest in their ideas'
+                            ],
+                            'example': {
+                                'title': 'Good conversation starter:',
+                                'content': '"You always have such interesting perspectives! What\'s been inspiring you lately?"'
+                            }
+                        },
+                        'topics': {
+                            'title': 'Best Conversation Topics',
+                            'content': 'ENFPs enjoy discussing possibilities, personal growth, relationships, and creative projects.',
+                            'tips': [
+                                'Dreams and future possibilities',
+                                'Personal growth and self-improvement',
+                                'Relationships and human connections',
+                                'Creative projects and artistic expressions'
+                            ]
+                        },
+                        'avoid': {
+                            'title': 'What to Avoid',
+                            'content': 'Avoid being overly critical or focusing too heavily on mundane details and logistics.',
+                            'tips': [
+                                'Being overly critical or negative',
+                                'Focusing on mundane details',
+                                'Rigid schedules and strict rules',
+                                'Dismissing their ideas as unrealistic'
+                            ]
+                        }
+                    }
+                },
+                'ja': {
+                    'name': '広報運動家',
+                    'description': 'アイデアを探求し、他人とつながることを愛する、熱意にあふれた創造的なコミュニケーターです。',
+                    'sections': {
+                        'approach': {
+                            'title': 'ENFPへのアプローチ方法',
+                            'content': 'ENFPは可能性と創造的なアイデアに満ちた、活気に満ちたエネルギーのある会話を好みます。彼らの考えや夢に心からの興味を示してください。',
+                            'tips': [
+                                '彼らの熱意とエネルギーに合わせる',
+                                '彼らの夢や願望について尋ねる',
+                                '自発的な会話の展開にオープンになる',
+                                '彼らのアイデアに心からの興味を示す'
+                            ],
+                            'example': {
+                                'title': '良い会話のきっかけ:',
+                                'content': '"あなたはいつもとても興味深い視点を持っていますね！最近、あなたをインスパイアしたものは何ですか？"'
+                            }
+                        },
+                        'topics': {
+                            'title': '最適な会話の話題',
+                            'content': 'ENFPは、可能性、個人的な成長、人間関係、創造的なプロジェクトについて話すことを楽しみます。',
+                            'tips': [
+                                '夢と将来の可能性',
+                                '個人的な成長と自己改善',
+                                '人間関係と人とのつながり',
+                                '創造的なプロジェクトと芸術的表現'
+                            ]
+                        },
+                        'avoid': {
+                            'title': '避けるべきこと',
+                            'content': '過度に批判的になったり、ありふれた詳細やロジスティクスに過度に焦点を当てることを避けてください。',
+                            'tips': [
+                                '過度に批判的または否定的になること',
+                                'ありふれた詳細に焦点を当てること',
+                                '厳格なスケジュールや規則',
+                                '彼らのアイデアを非現実的だと却下すること'
+                            ]
+                        }
+                    }
+                },
+                'ko': {
+                    'name': '활동가',
+                    'description': '아이디어를 탐구하고 타인과 연결하는 것을 좋아하는, 열정적이고 창의적인 소통가입니다.',
+                    'sections': {
+                        'approach': {
+                            'title': 'ENFP에게 접근하는 방법',
+                            'content': 'ENFP는 가능성과 창의적인 아이디어로 가득 찬 활기차고 에너지 넘치는 대화를 좋아합니다. 그들의 생각과 꿈에 진정한 관심을 보여주세요.',
+                            'tips': [
+                                '그들의 열정과 에너지에 맞추세요',
+                                '그들의 꿈과 열망에 대해 물어보세요',
+                                '자발적인 대화의 흐름에 열린 태도를 가지세요',
+                                '그들의 아이디어에 진정한 관심을 보여주세요'
+                            ],
+                            'example': {
+                                'title': '좋은 대화 시작법:',
+                                'content': '"당신은 항상 흥미로운 관점을 가지고 있네요! 요즘 당신에게 영감을 주는 것은 무엇인가요?"'
+                            }
+                        },
+                        'topics': {
+                            'title': '최고의 대화 주제',
+                            'content': 'ENFP는 가능성, 개인적 성장, 관계, 창의적인 프로젝트에 대해 이야기하는 것을 즐깁니다.',
+                            'tips': [
+                                '꿈과 미래의 가능성',
+                                '개인적인 성장과 자기 계발',
+                                '인간관계와 사람과의 연결',
+                                '창의적인 프로젝트 및 예술적 표현'
+                            ]
+                        },
+                        'avoid': {
+                            'title': '피해야 할 것들',
+                            'content': '지나치게 비판적이거나 평범한 세부 사항과 실용적인 문제에 너무 집중하는 것을 피하세요.',
+                            'tips': [
+                                '지나치게 비판적이거나 부정적이 되는 것',
+                                '평범한 세부 사항에 집중하는 것',
+                                '엄격한 스케줄과 규칙',
+                                '그들의 아이디어를 비현실적이라고 치부하는 것'
+                            ]
+                        }
+                    }
+                }
+            }
+        };
+
+        const defaultGuide = {
             'en': {
-                INTJ: {
-                    title: 'How to Talk to an INTJ',
-                    subtitle: 'A guide to having meaningful conversations with an INTJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'INTJs are logical and strategic, and they love conversations about deep thoughts and concepts. When talking to them, it’s important to be concise, direct, and to stimulate their intellectual curiosity.',
-                            tips: [
-                                'Be clear and logical. Avoid verbose or emotional language.',
-                                'Focus on facts and data. Base your arguments on evidence.',
-                                'Acknowledge their intellectual insights and ask questions about them.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What complex problem are you currently interested in? What are your thoughts on a potential solution?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'INTJs enjoy discussing interesting ideas and future plans.',
-                            tips: [
-                                'Complex concepts like science, technology, and philosophy',
-                                'Analysis of future technological advancements or social changes',
-                                'Personal projects, goals, or innovative ideas'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'INTJs dislike inefficient conversations or emotional drama.',
-                            tips: [
-                                'Avoid small talk or frivolous gossip.',
-                                'Refrain from excessive emotional expression or drama.',
-                                'Avoid challenging or arguing with their opinions. Instead, try to understand their perspective by asking questions.'
-                            ],
-                        }
+                'name': 'Default Guide',
+                'description': 'Understanding how to communicate effectively with this personality type.',
+                'sections': {
+                    'approach': {
+                        'title': 'Communication Approach',
+                        'content': 'Each personality type has unique communication preferences and styles.',
+                        'tips': [
+                            'Observe their natural communication style',
+                            'Adapt your approach to match their preferences',
+                            'Be patient and understanding',
+                            'Focus on building genuine connection'
+                        ]
+                    },
+                    'topics': {
+                        'title': 'Preferred Topics',
+                        'content': 'Different types are energized by different kinds of conversations.',
+                        'tips': [
+                            'Ask about their interests and passions',
+                            'Share relevant experiences',
+                            'Be genuinely curious about their perspective',
+                            'Find common ground in your interests'
+                        ]
+                    },
+                    'avoid': {
+                        'title': 'Communication Pitfalls',
+                        'content': 'Be mindful of approaches that might not resonate with this type.',
+                        'tips': [
+                            'Avoid overwhelming them with your preferred style',
+                            'Don\'t assume they communicate like you do',
+                            'Respect their energy levels and boundaries',
+                            'Be patient if they need time to process'
+                        ]
                     }
-                },
-                // Add English translations for other MBTI types here...
-                INTP: {
-                    title: 'How to Talk to an INTP',
-                    subtitle: 'A guide to intellectually engaging with an INTP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'INTPs are analytical and original, and they enjoy conversations about ideas and theories. When talking to them, it’s important to focus on facts and logic, and to delve deep into their thoughts.',
-                            tips: [
-                                'Be logical and objective. Avoid emotional content.',
-                                'Ask open-ended questions to draw out their creative thoughts.',
-                                'Show genuine interest in their theories and perspectives.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What complex problem are you currently engrossed in? What is your solution?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'INTPs enjoy discussing theories, systems, and abstract concepts.',
-                            tips: [
-                                'Science, technology, mathematics, and logic',
-                                'Complex puzzles or problem-solving',
-                                'Analysis of new technologies or theories'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'INTPs dislike small talk or illogical conversations.',
-                            tips: [
-                                'Avoid overly personal or emotional questions.',
-                                'Don\'t criticize their ideas or engage in illogical arguments.',
-                                'Do not interrupt their time for solitary thinking.'
-                            ],
-                        }
-                    }
-                },
-                ENTJ: {
-                    title: 'How to Talk to an ENTJ',
-                    subtitle: 'A guide to strategically communicating with an ENTJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ENTJs are decisive and ambitious, and they love conversations about goals and efficiency. When talking to them, it’s important to be confident, direct, and to acknowledge their leadership and vision.',
-                            tips: [
-                                'Be direct and goal-oriented.',
-                                'Present logical arguments even if you disagree with their opinion.',
-                                'Ask them about their vision and goals.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What is the biggest challenge you face in achieving your goals? How do you plan to overcome it?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ENTJs enjoy discussing business, leadership, and future strategies.',
-                            tips: [
-                                'Career, ambition, and goals',
-                                'Business, politics, and social issues',
-                                'Future plans and strategies for success'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ENTJs dislike inefficient conversations or emotional drama.',
-                            tips: [
-                                'Avoid time-wasting small talk.',
-                                'Do not make emotional appeals or illogical arguments.',
-                                'Avoid persistently questioning or challenging their decisions.'
-                            ],
-                        }
-                    }
-                },
-                ENTP: {
-                    title: 'How to Talk to an ENTP',
-                    subtitle: 'A guide to having witty debates with an ENTP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ENTPs are intellectual and challenging, and they love new ideas and debates. When talking to them, it’s important to be witty, flexible, and to participate in their creative thinking.',
-                            tips: [
-                                'Enjoy the debate. Challenge their arguments and present new perspectives.',
-                                'Show your sense of humor. Respond to their jokes and share a laugh.',
-                                'Explore new ideas. Ask questions about the ideas they propose and develop them together.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What\'s the craziest idea you think could change the world?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ENTPs enjoy debating and exploring ideas on various topics.',
-                            tips: [
-                                'Future technology, social changes, philosophy',
-                                'Debates on controversial topics',
-                                'New ideas, projects, or business plans'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ENTPs dislike boring or emotional conversations.',
-                            tips: [
-                                'Avoid repetitive or boring stories.',
-                                'Do not make emotional appeals or illogical arguments.',
-                                'Do not ignore or laugh at their ideas.'
-                            ],
-                        }
-                    }
-                },
-                INFJ: {
-                    title: 'How to Talk to an INFJ',
-                    subtitle: 'A guide to having deep, meaningful conversations with an INFJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'INFJs are insightful and thoughtful, and they love deep, meaningful conversations. When talking to them, it’s important to be authentic, to empathize with their feelings, and to respect their vision and values.',
-                            tips: [
-                                'Be honest and authentic. Avoid being pretentious or fake.',
-                                'Empathize with their feelings and try to understand their perspective.',
-                                'Ask them about their vision and values.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What values are most important to you? How do you practice those values?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'INFJs enjoy discussing personal growth, relationships, and meaningful subjects.',
-                            tips: [
-                                'Personal values, beliefs, and goals',
-                                'Relationships, emotions, and mental health',
-                                'Future plans and personal growth'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'INFJs dislike superficial conversations or a critical attitude.',
-                            tips: [
-                                'Avoid small talk or superficial gossip.',
-                                'Do not be critical of their feelings or thoughts.',
-                                'Do not interrupt their time for solitary thinking.'
-                            ],
-                        }
-                    }
-                },
-                INFP: {
-                    title: 'How to Talk to an INFP',
-                    subtitle: 'A guide to having deep and genuine conversations with an INFP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'INFPs are idealistic and highly empathetic, and they love conversations about deep feelings and values. When talking to them, it’s important to be gentle and warm, and to respect their creativity and individuality.',
-                            tips: [
-                                'Be gentle and empathetic. Respect their feelings.',
-                                'Acknowledge and praise their creativity and ideas.',
-                                'Ask them about their values and beliefs.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What inspires you the most? What dreams do you have?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'INFPs enjoy conversations about art, personal growth, and meaningful subjects.',
-                            tips: [
-                                'Art, music, literature, and creative expression',
-                                'Personal values, beliefs, and dreams',
-                                'Relationships, emotions, and mental health'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'INFPs dislike a critical or aggressive attitude.',
-                            tips: [
-                                'Do not be critical of their feelings or thoughts.',
-                                'Do not laugh at or disregard their idealism.',
-                                'Avoid focusing too much on practical, real-world problems.'
-                            ],
-                        }
-                    }
-                },
-                ENFJ: {
-                    title: 'How to Talk to an ENFJ',
-                    subtitle: 'A guide to having warm and supportive conversations with an ENFJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ENFJs are warm and outgoing, and they love conversations about relationships and personal growth. When talking to them, it’s important to be positive and supportive, and to acknowledge their leadership and empathy.',
-                            tips: [
-                                'Be positive and enthusiastic. Match their energy.',
-                                'Ask them about their feelings and thoughts and empathize with them.',
-                                'Compliment their leadership and empathy.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What are you most proud of? Tell me about your community or team."'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ENFJs enjoy conversations about people, relationships, and social issues.',
-                            tips: [
-                                'Personal growth, dreams, and goals',
-                                'Relationships, friendships, and love',
-                                'Social issues, volunteer work, and leadership'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ENFJs dislike a critical or cynical attitude.',
-                            tips: [
-                                'Avoid being negative or critical.',
-                                'Do not disregard their efforts or feelings.',
-                                'Avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ENFP: {
-                    title: 'How to Talk to an ENFP',
-                    subtitle: 'A guide to building a genuine connection with an ENFP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ENFPs are passionate and imaginative, and they love exploring new ideas. When talking to them, it’s important to be open and positive.',
-                            tips: [
-                                'Match their energy. Empathize with their enthusiasm and don\'t hesitate to explore new ideas.',
-                                'Be honest and authentic. Avoid being fake or pretentious.',
-                                'Be spontaneous. Go with the flow rather than sticking to a rigid script.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What\'s your favorite book or movie? The story seems really interesting."'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ENFPs enjoy discussing interesting ideas and future plans.',
-                            tips: [
-                                'New ideas, projects, or business plans',
-                                'Personal dreams, passions, and goals',
-                                'Fun experiences, travels, or hobbies'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ENFPs dislike boring or critical attitudes.',
-                            tips: [
-                                'Avoid repetitive or boring stories.',
-                                'Do not disregard or criticize their feelings or ideas.',
-                                'Avoid overly personal or emotional questions.'
-                            ],
-                        }
-                    }
-                },
-                ISTJ: {
-                    title: 'How to Talk to an ISTJ',
-                    subtitle: 'A guide to having practical and logical conversations with an ISTJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ISTJs are realistic and responsible, and they prefer conversations focused on facts and logic. When talking to them, it’s important to be clear and specific, and to respect their experience and knowledge.',
-                            tips: [
-                                'Be concise and direct. Avoid unnecessary talk.',
-                                'Focus on facts and data. Base your arguments on evidence.',
-                                'Ask them about their experience and knowledge.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What do you think is the most important step to successfully completing this project?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ISTJs enjoy discussing practical matters, plans, and rules.',
-                            tips: [
-                                'Work, projects, and responsibilities',
-                                'Experiences, history, and traditions',
-                                'Plans, goals, and practical solutions'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ISTJs dislike unrealistic or illogical conversations.',
-                            tips: [
-                                'Avoid unrealistic ideas or abstract concepts.',
-                                'Do not make emotional appeals or illogical arguments.',
-                                'Do not disregard their experience or knowledge.'
-                            ],
-                        }
-                    }
-                },
-                ISFJ: {
-                    title: 'How to Talk to an ISFJ',
-                    subtitle: 'A guide to having warm and considerate conversations with an ISFJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ISFJs are warm and diligent, and they love conversations about relationships and feelings. When talking to them, it’s important to be gentle and supportive, and to acknowledge their consideration and dedication.',
-                            tips: [
-                                'Be warm and empathetic. Respect their feelings.',
-                                'Show appreciation for their efforts and dedication.',
-                                'Ask them about their relationships and feelings.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What has been your most rewarding experience recently? Have you had a chance to help others?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ISFJs enjoy discussing family, friends, and community.',
-                            tips: [
-                                'Family, friends, and community',
-                                'Personal experiences, feelings, and memories',
-                                'Hobbies, leisure activities, and everyday stories'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ISFJs dislike a critical or aggressive attitude.',
-                            tips: [
-                                'Do not be critical of their feelings or thoughts.',
-                                'Do not disregard or take their efforts and dedication for granted.',
-                                'Avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ESTJ: {
-                    title: 'How to Talk to an ESTJ',
-                    subtitle: 'A guide to having efficient and clear conversations with an ESTJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ESTJs are organized and practical, and they love conversations about goals and efficiency. When talking to them, it’s important to be concise and direct, and to acknowledge their leadership and abilities.',
-                            tips: [
-                                'Be clear and goal-oriented. Avoid unnecessary talk.',
-                                'Focus on facts and data. Base your arguments on evidence.',
-                                'Ask them about their leadership and abilities.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What do you think is the most efficient way to get things done? What is the secret to your success?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ESTJs enjoy discussing work, organization, and social issues.',
-                            tips: [
-                                'Work, projects, and responsibilities',
-                                'Organization, rules, and social order',
-                                'Future plans and strategies for success'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ESTJs dislike inefficient or emotional conversations.',
-                            tips: [
-                                'Avoid inefficient conversations or small talk.',
-                                'Do not make emotional appeals or illogical arguments.',
-                                'Do not challenge their decisions or abilities.'
-                            ],
-                        }
-                    }
-                },
-                ESFJ: {
-                    title: 'How to Talk to an ESFJ',
-                    subtitle: 'A guide to having warm and friendly conversations with an ESFJ: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ESFJs are friendly and social, and they love conversations about relationships and feelings. When talking to them, it’s important to be warm and positive, and to acknowledge their consideration and dedication.',
-                            tips: [
-                                'Be warm and friendly. Match their energy.',
-                                'Ask them about their feelings and thoughts and empathize with them.',
-                                'Compliment their consideration and dedication.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"Tell me about your friends or family. What is your happiest moment with them?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ESFJs enjoy discussing people, relationships, and everyday stories.',
-                            tips: [
-                                'Family, friends, and community',
-                                'Personal experiences, feelings, and memories',
-                                'Hobbies, leisure activities, and everyday stories'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ESFJs dislike a critical or cynical attitude.',
-                            tips: [
-                                'Avoid being negative or critical.',
-                                'Do not disregard their efforts or feelings.',
-                                'Avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ISTP: {
-                    title: 'How to Talk to an ISTP',
-                    subtitle: 'A guide to having practical and interesting conversations with an ISTP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ISTPs are practical and independent, and they love conversations about interesting activities and practical problem-solving. When talking to them, it’s important to be concise and direct, and to respect their skills and experience.',
-                            tips: [
-                                'Be clear and concise. Avoid unnecessary talk.',
-                                'Focus on practical problem-solving. Avoid abstract concepts.',
-                                'Ask them about their skills and experience.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What\'s the most recent thing you built or repaired? How did you do it?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ISTPs enjoy conversations about interesting activities, technology, and adventure.',
-                            tips: [
-                                'Hobbies, sports, and adventurous activities',
-                                'Technology, tools, and machinery',
-                                'Practical problem-solving, DIY projects, and repairs'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ISTPs dislike emotional or illogical conversations.',
-                            tips: [
-                                'Avoid emotional stories or drama.',
-                                'Do not make illogical arguments.',
-                                'Respect their independence and avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ISFP: {
-                    title: 'How to Talk to an ISFP',
-                    subtitle: 'A guide to having warm and creative conversations with an ISFP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ISFPs are artistic and sensitive, and they love conversations about personal experiences and values. When talking to them, it’s important to be gentle and warm, and to respect their creativity and individuality.',
-                            tips: [
-                                'Be gentle and empathetic. Respect their feelings.',
-                                'Acknowledge and praise their creativity and ideas.',
-                                'Ask them about their values and beliefs.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What is your favorite work of art or music? What emotions does it evoke?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ISFPs enjoy conversations about art, nature, and personal experiences.',
-                            tips: [
-                                'Art, music, fashion, and creative expression',
-                                'Nature, animals, and travel',
-                                'Personal experiences, feelings, and memories'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ISFPs dislike a critical or aggressive attitude.',
-                            tips: [
-                                'Do not be critical of their feelings or thoughts.',
-                                'Do not disregard their individuality or creativity.',
-                                'Avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ESTP: {
-                    title: 'How to Talk to an ESTP',
-                    subtitle: 'A guide to having interesting and active conversations with an ESTP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ESTPs are practical and active, and they love conversations about interesting experiences and adventures. When talking to them, it’s important to be enthusiastic and flexible, and to acknowledge their adventurous spirit.',
-                            tips: [
-                                'Be enthusiastic and spontaneous. Match their energy.',
-                                'Ask them about interesting activities or experiences.',
-                                'Compliment their adventurous spirit and courage.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What\'s the most exciting adventure you\'ve had recently? What are you planning next?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ESTPs enjoy conversations about sports, adventure, and interesting experiences.',
-                            tips: [
-                                'Sports, adventure, and travel',
-                                'Parties, events, and social activities',
-                                'Technology, tools, and machinery'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ESTPs dislike boring or emotional conversations.',
-                            tips: [
-                                'Avoid repetitive or boring stories.',
-                                'Avoid emotional stories or drama.',
-                                'Respect their independence and avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
-                ESFP: {
-                    title: 'How to Talk to an ESFP',
-                    subtitle: 'A guide to having lively and fun conversations with an ESFP: communication style, preferred topics, and what to avoid.',
-                    sections: {
-                        approach: {
-                            title: 'Approach',
-                            content: 'ESFPs are lively and social, and they love conversations about fun experiences and people. When talking to them, it’s important to be enthusiastic and positive, and to acknowledge their charm and energy.',
-                            tips: [
-                                'Be enthusiastic and positive. Match their energy.',
-                                'Ask them about fun experiences or stories.',
-                                'Compliment their charm and energy.'
-                            ],
-                            example: {
-                                title: 'Good conversation starters:',
-                                content: '"What\'s the most fun party or event you\'ve been to recently? What experience would you like to share?"'
-                            }
-                        },
-                        topics: {
-                            title: 'Good Conversation Topics',
-                            content: 'ESFPs enjoy conversations about people, experiences, and fun activities.',
-                            tips: [
-                                'Parties, events, and social activities',
-                                'Music, dance, and art',
-                                'Travel, sports, and adventurous activities'
-                            ],
-                        },
-                        avoid: {
-                            title: 'What to Avoid',
-                            content: 'ESFPs dislike boring or critical attitudes.',
-                            tips: [
-                                'Avoid repetitive or boring stories.',
-                                'Do not laugh at or disregard their fun.',
-                                'Avoid overly personal or sensitive questions.'
-                            ],
-                        }
-                    }
-                },
+                }
             },
             'ja': {
-                INTJ: {
-                    title: 'INTJと話す方法',
-                    subtitle: 'INTJと意味のある会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'INTJは論理的で戦略的で、深い思考や概念についての会話を好みます。彼らと話す際は、簡潔で直接的であること、そして彼らの知的探究心を刺激することが重要です。',
-                            tips: [
-                                '明確かつ論理的に話す。冗長な言葉や感情的な言葉は避ける。',
-                                '事実とデータに焦点を当てる。根拠に基づいて主張する。',
-                                '彼らの知的な洞察力を認め、それについて質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最近、興味を持っている複雑な問題は何ですか？その解決策について、あなたの考えはどうですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'INTJは興味深いアイデアや将来の計画について議論するのを楽しみます。',
-                            tips: [
-                                '科学、技術、哲学などの複雑な概念',
-                                '将来の技術進歩や社会変化に関する分析',
-                                '個人的なプロジェクト、目標、または革新的なアイデア'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'INTJは非効率な会話や感情的なドラマを好みません。',
-                            tips: [
-                                '雑談や軽薄なゴシップは避ける。',
-                                '過度な感情表現やドラマは控える。',
-                                '彼らの意見に異議を唱えたり、議論を始めたりするのではなく、質問を通じて彼らの視点を理解しようと努める。'
-                            ],
-                        }
+                'name': 'デフォルトガイド',
+                'description': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
+                'sections': {
+                    'approach': {
+                        'title': 'コミュニケーションアプローチ',
+                        'content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
+                        'tips': [
+                            '彼らの自然なコミュニケーションスタイルを観察する',
+                            '彼らの好みに合わせてアプローチを調整する',
+                            '忍耐強く、理解を示す',
+                            '本物のつながりを築くことに焦点を当てる'
+                        ]
+                    },
+                    'topics': {
+                        'title': '好まれる話題',
+                        'content': '異なるタイプは異なる種類の会話によって活気づきます。',
+                        'tips': [
+                            '彼らの興味や情熱について尋ねる',
+                            '関連する経験を共有する',
+                            '彼らの視点に心から興味を持つ',
+                            '共通の興味を見つける'
+                        ]
+                    },
+                    'avoid': {
+                        'title': 'コミュニケーションの落とし穴',
+                        'content': 'このタイプに響かないかもしれないアプローチに注意してください。',
+                        'tips': [
+                            'あなたの好みのスタイルで彼らを圧倒しないようにする',
+                            '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
+                            '彼らのエネルギーレベルと境界線を尊重する',
+                            '彼らが処理する時間が必要な場合は忍耐強く待つ'
+                        ]
                     }
-                },
-                // Add Japanese translations for other MBTI types here...
-                INTP: {
-                    title: 'INTPと話す方法',
-                    subtitle: 'INTPと知的に交流するためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'INTPは分析的で独創的で、アイデアや理論についての会話を楽しみます。彼らと話す際は、事実と論理に焦点を当て、彼らの思考を深く掘り下げることが重要です。',
-                            tips: [
-                                '論理的かつ客観的に話す。感情的な内容は避ける。',
-                                '開かれた質問を投げかけ、彼らの創造的な思考を引き出す。',
-                                '彼らの理論や視点に心から関心を示す。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"今、夢中になっている複雑な問題は何ですか？あなたの解決策は何ですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'INTPは理論、システム、そして抽象的な概念についての会話を楽しみます。',
-                            tips: [
-                                '科学、技術、数学、論理',
-                                '複雑なパズルや問題解決',
-                                '新しい技術や理論に関する分析'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'INTPは雑談や非論理的な会話を好みません。',
-                            tips: [
-                                '個人的すぎる、または感情的な質問は避ける。',
-                                '彼らのアイデアを批判したり、非論理的な議論を始めたりしない。',
-                                '彼らが一人で考える時間を邪魔しない。'
-                            ],
-                        }
-                    }
-                },
-                ENTJ: {
-                    title: 'ENTJと話す方法',
-                    subtitle: 'ENTJと戦略的にコミュニケーションを取るためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ENTJは断固として野心的で、目標と効率性についての会話を好みます。彼らと話す際は、自信を持って直接的であること、そして彼らのリーダーシップとビジョンを認めることが重要です。',
-                            tips: [
-                                '率直かつ目標志向的に話す。',
-                                '彼らの意見に同意しなくても、論理的な主張を展開する。',
-                                '彼らのビジョンや目標について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"あなたの目標を達成するために最も大きな課題は何ですか？どのように克服する計画ですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ENTJはビジネス、リーダーシップ、そして将来の戦略についての会話を楽しみます。',
-                            tips: [
-                                'キャリア、野心、そして目標',
-                                'ビジネス、政治、そして社会問題',
-                                '将来の計画と成功戦略'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ENTJは非効率な会話や感情的なドラマを好みません。',
-                            tips: [
-                                '時間の無駄な雑談は避ける。',
-                                '感情に訴えたり、非論理的な主張をしない。',
-                                '彼らの決定に執拗に質問したり、挑戦したりしない。'
-                            ],
-                        }
-                    }
-                },
-                ENTP: {
-                    title: 'ENTPと話す方法',
-                    subtitle: 'ENTPとウィットに富んだ議論を楽しむためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ENTPは知的で挑戦的で、新しいアイデアや議論を好みます。彼らと話す際は、機知に富み、柔軟で、彼らの創造的な思考に参加することが重要です。',
-                            tips: [
-                                '議論を楽しむ。彼らの主張に異議を唱え、新しい視点を提示する。',
-                                'ユーモアのセンスを見せる。彼らのユーモアに反応し、一緒に笑い合う。',
-                                '新しいアイデアを探求する。彼らが提案するアイデアについて質問し、一緒に発展させる。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"世界を変えられると思う最もクレイジーなアイデアは何ですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ENTPは様々な話題に関する議論やアイデアの探求を楽しみます。',
-                            tips: [
-                                '将来の技術、社会変化、哲学',
-                                '議論の余地がある話題',
-                                '新しいアイデア、プロジェクト、または事業計画'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ENTPは退屈な会話や感情的な会話を好みません。',
-                            tips: [
-                                '反復的または退屈な話は避ける。',
-                                '感情に訴えたり、非論理的な主張をしない。',
-                                '彼らのアイデアを無視したり、笑ったりしない。'
-                            ],
-                        }
-                    }
-                },
-                INFJ: {
-                    title: 'INFJと話す方法',
-                    subtitle: 'INFJと深く意味のある会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'INFJは洞察力があり思慮深く、深く意味のある会話を好みます。彼らと話す際は、誠実であること、彼らの感情に共感すること、そして彼らのビジョンや価値観を尊重することが重要です。',
-                            tips: [
-                                '率直かつ誠実に話す。上辺だけの態度は避ける。',
-                                '彼らの感情に共感し、彼らの視点を理解しようと努める。',
-                                '彼らのビジョンや価値観について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"あなたにとって最も重要な価値観は何ですか？その価値観をどのように実践していますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'INFJは個人的な成長、人間関係、そして意味のある話題についての会話を楽しみます。',
-                            tips: [
-                                '個人的な価値観、信念、そして目標',
-                                '人間関係、感情、そしてメンタルヘルス',
-                                '将来の計画と個人的な成長'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'INFJは表面的な会話や批判的な態度を好みません。',
-                            tips: [
-                                '雑談や軽薄なゴシップは避ける。',
-                                '彼らの感情や思考に対して批判的な態度を取らない。',
-                                '彼らが一人で考える時間を邪魔しない。'
-                            ],
-                        }
-                    }
-                },
-                INFP: {
-                    title: 'INFPと話す方法',
-                    subtitle: 'INFPと深く誠実な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'INFPは理想主義的で共感能力が高く、深い感情や価値観についての会話を好みます。彼らと話す際は、優しく温かく、そして彼らの創造性や個性を尊重することが重要です。',
-                            tips: [
-                                '優しく共感的に話す。彼らの感情を尊重する。',
-                                '彼らの創造性やアイデアを認め、褒める。',
-                                '彼らの価値観や信念について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"あなたに最もインスピレーションを与えるものは何ですか？どんな夢を見ていますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'INFPは芸術、個人的な成長、そして意味のある話題についての会話を楽しみます。',
-                            tips: [
-                                '芸術、音楽、文学、そして創造的な表現',
-                                '個人的な価値観、信念、そして夢',
-                                '人間関係、感情、そしてメンタルヘルス'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'INFPは批判的または攻撃的な態度を好みません。',
-                            tips: [
-                                '彼らの感情や思考に対して批判的な態度を取らない。',
-                                '彼らの理想主義を笑ったり、無視したりしない。',
-                                '現実的な問題に過度に集中しない。'
-                            ],
-                        }
-                    }
-                },
-                ENFJ: {
-                    title: 'ENFJと話す方法',
-                    subtitle: 'ENFJと温かく支え合う会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ENFJは温かく外向的で、人々との関係や成長についての会話を好みます。彼らと話す際は、前向きで支持的であること、そして彼らのリーダーシップと共感力を認めることが重要です。',
-                            tips: [
-                                '前向きで情熱的に話す。彼らのエネルギーに合わせる。',
-                                '彼らの感情や思考について質問し、共感する。',
-                                '彼らのリーダーシップと共感力を褒める。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"あなたが最も誇りに思っていることは何ですか？あなたのコミュニティやチームについて教えてください。"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ENFJは人、人間関係、そして社会問題についての会話を楽しみます。',
-                            tips: [
-                                '個人的な成長、夢、そして目標',
-                                '人間関係、友情、そして愛',
-                                '社会問題、ボランティア活動、そしてリーダーシップ'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ENFJは批判的または冷笑的な態度を好みません。',
-                            tips: [
-                                '否定的または批判的な態度を取らない。',
-                                '彼らの努力や感情を無視しない。',
-                                '個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ENFP: {
-                    title: 'ENFPと話す方法',
-                    subtitle: 'ENFPと本物のつながりを築くためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ENFPは情熱的で想像力豊かで、新しいアイデアを探求するのが大好きです。彼らと話す際は、開放的で前向きな態度を見せることが重要です。',
-                            tips: [
-                                'エネルギーを合わせる。彼らの情熱に共感し、新しいアイデアを探求するのをためらわない。',
-                                '率直で誠実に接する。取り繕ったり、偽りの態度を避ける。',
-                                '即興的にする。硬い台本に従うのではなく、気楽に流れに乗る。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"一番好きな本や映画は何ですか？ストーリーがとても面白そうです。"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ENFPは興味深いアイデアや将来の計画について議論するのを楽しみます。',
-                            tips: [
-                                '新しいアイデア、プロジェクト、または事業計画',
-                                '個人的な夢、情熱、そして目標',
-                                '楽しい経験、旅行、または趣味'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ENFPは退屈な態度や批判的な態度を好みません。',
-                            tips: [
-                                '反復的または退屈な話は避ける。',
-                                '彼らの感情やアイデアを無視したり、批判したりしない。',
-                                '個人的すぎる、または感情的な質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ISTJ: {
-                    title: 'ISTJと話す方法',
-                    subtitle: 'ISTJと実用的で論理的な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ISTJは現実的で責任感が強く、事実と論理に焦点を当てた会話を好みます。彼らと話す際は、明確で具体的であること、そして彼らの経験と知識を尊重することが重要です。',
-                            tips: [
-                                '簡潔かつ直接的に話す。不必要な話は避ける。',
-                                '事実とデータに焦点を当てる。根拠に基づいて主張する。',
-                                '彼らの経験と知識について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"このプロジェクトを成功させるために最も重要なステップは何だと思いますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ISTJは実用的な問題、計画、そしてルールについての会話を楽しみます。',
-                            tips: [
-                                '仕事、プロジェクト、そして責任',
-                                '経験、歴史、そして伝統',
-                                '計画、目標、そして実用的な解決策'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ISTJは非現実的または非論理的な会話を好みません。',
-                            tips: [
-                                '非現実的なアイデアや抽象的な概念は避ける。',
-                                '感情に訴えたり、非論理的な主張をしない。',
-                                '彼らの経験や知識を無視しない。'
-                            ],
-                        }
-                    }
-                },
-                ISFJ: {
-                    title: 'ISFJと話す方法',
-                    subtitle: 'ISFJと温かく思いやり深い会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ISFJは温かく誠実で、人々との関係や感情についての会話を好みます。彼らと話す際は、優しく支持的であること、そして彼らの思いやりと献身を認めることが重要です。',
-                            tips: [
-                                '温かく共感的に話す。彼らの感情を尊重する。',
-                                '彼らの努力と献身に感謝し、褒める。',
-                                '彼らの人間関係や感情について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最近、最もやりがいを感じたことは何ですか？誰かを助けた経験はありますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ISFJは家族、友人、そしてコミュニティについての会話を楽しみます。',
-                            tips: [
-                                '家族、友人、そしてコミュニティ',
-                                '個人的な経験、感情、そして思い出',
-                                '趣味、余暇活動、そして日常的な話'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ISFJは批判的または攻撃的な態度を好みません。',
-                            tips: [
-                                '彼らの感情や思考に対して批判的な態度を取らない。',
-                                '彼らの努力や献身を無視したり、当たり前だと思ったりしない。',
-                                '個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ESTJ: {
-                    title: 'ESTJと話す方法',
-                    subtitle: 'ESTJと効率的で明確な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ESTJは組織的で実用的で、目標と効率性についての会話を好みます。彼らと話す際は、簡潔で直接的であること、そして彼らのリーダーシップと能力を認めることが重要です。',
-                            tips: [
-                                '明確かつ目標志向的に話す。不必要な話は避ける。',
-                                '事実とデータに焦点を当てる。根拠に基づいて主張する。',
-                                '彼らのリーダーシップと能力について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最も効率的に仕事を処理する方法は何だと思いますか？あなたの成功の秘訣は何ですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ESTJは仕事、組織、そして社会問題についての会話を楽しみます。',
-                            tips: [
-                                '仕事、プロジェクト、そして責任',
-                                '組織、ルール、そして社会的秩序',
-                                '将来の計画と成功戦略'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ESTJは非効率的または感情的な会話を好みません。',
-                            tips: [
-                                '非効率的な会話や雑談は避ける。',
-                                '感情に訴えたり、非論理的な主張をしない。',
-                                '彼らの決定や能力に挑戦しない。'
-                            ],
-                        }
-                    }
-                },
-                ESFJ: {
-                    title: 'ESFJと話す方法',
-                    subtitle: 'ESFJと温かく友好的な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ESFJは友好的で社交的で、人々との関係や感情についての会話を好みます。彼らと話す際は、温かく前向きであること、そして彼らの思いやりと献身を認めることが重要です。',
-                            tips: [
-                                '温かく友好的に話す。彼らのエネルギーに合わせる。',
-                                '彼らの感情や思考について質問し、共感する。',
-                                '彼らの思いやりと献身を褒める。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"あなたの友人や家族について教えてください。彼らと一緒にする最も幸せな瞬間はいつですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ESFJは人、人間関係、そして日常的な話についての会話を楽しみます。',
-                            tips: [
-                                '家族、友人、そしてコミュニ티',
-                                '個人的な経験、感情、そして思い出',
-                                '趣味、余暇活動、そして日常的な話'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ESFJは批判的または冷笑的な態度を好みません。',
-                            tips: [
-                                '否定的または批判的な態度を取らない。',
-                                '彼らの努力や感情を無視しない。',
-                                '個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ISTP: {
-                    title: 'ISTPと話す方法',
-                    subtitle: 'ISTPと実用的で興味深い会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ISTPは現実的で独立しており、興味深い活動や実用的な問題解決についての会話を好みます。彼らと話す際は、簡潔で直接的であること、そして彼らの技術と経験を尊重することが重要です。',
-                            tips: [
-                                '明確かつ簡潔に話す。不必要な話は避ける。',
-                                '実用的な問題解決に焦点を当てる。抽象的な概念は避ける。',
-                                '彼らの技術と経験について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最近、何か作ったり修理したりしましたか？どうやってやりましたか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ISTPは興味深い活動、技術、そして冒険についての会話を楽しみます。',
-                            tips: [
-                                '趣味、スポーツ、そして冒険的な活動',
-                                '技術、道具、そして機械',
-                                '実用的な問題解決、DIYプロジェクト、そして修理'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ISTPは感情的または非論理的な会話を好みません。',
-                            tips: [
-                                '感情的な話やドラマは避ける。',
-                                '非論理的な主張をしない。',
-                                '彼らの独立性を尊重し、個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ISFP: {
-                    title: 'ISFPと話す方法',
-                    subtitle: 'ISFPと温かく創造的な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ISFPは芸術的で感性的で、個人的な経験や価値観についての会話を好みます。彼らと話す際は、優しく温かく、そして彼らの創造性や個性を尊重することが重要です。',
-                            tips: [
-                                '優しく共感的に話す。彼らの感情を尊重する。',
-                                '彼らの創造性やアイデアを認め、褒める。',
-                                '彼らの価値観や信念について質問する。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"一番好きな芸術作品や音楽は何ですか？どんな感情を呼び起こしますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ISFPは芸術、自然、そして個人的な経験についての会話を楽しみます。',
-                            tips: [
-                                '芸術、音楽、ファッション、そして創造的な表現',
-                                '自然、動物、そして旅行',
-                                '個人的な経験、感情、そして思い出'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ISFPは批判的または攻撃的な態度を好みません。',
-                            tips: [
-                                '彼らの感情や思考に対して批判的な態度を取らない。',
-                                '彼らの個性や創造性を無視しない。',
-                                '個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
-                ESTP: {
-                    title: 'ESTPと話す方法',
-                    subtitle: 'ESTPと興味深く活動的な会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ESTPは現実的で活動的で、興味深い経験や冒険についての会話を好みます。彼らと話す際は、情熱的で柔軟であること、そして彼らの冒険心を認めることが重要です。',
-                            tips: [
-                                '情熱的かつ即興的に話す。彼らのエネルギーに合わせる。',
-                                '興味深い活動や経験について質問する。',
-                                '彼らの冒険心と勇気を褒める。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最近、最もエキサイティングだった冒険は何ですか？次は何を計画していますか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ESTPはスポーツ、冒険、そして興味深い経験についての会話を楽しみます。',
-                            tips: [
-                                'スポーツ、冒険、そして旅行',
-                                'パーティー、イベント、そして社交活動',
-                                '技術、道具、そして機械'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ESTPは退屈な会話や感情的な会話を好みません。',
-                            tips: [
-                                '反復的または退屈な話は避ける。',
-                                '感情的な話やドラマは避ける。',
-                                '彼らの独立性を尊重し、個人的すぎる、またはデ리ケート한 질문은 피하세요。'
-                            ],
-                        }
-                    }
-                },
-                ESFP: {
-                    title: 'ESFPと話す方法',
-                    subtitle: 'ESFPと活気があり楽しい会話をするためのガイド：コミュニケーションスタイル、好きな話題、避けるべきこと。',
-                    sections: {
-                        approach: {
-                            title: 'アプローチ',
-                            content: 'ESFPは活気があり社交的で、楽しい経験や人々についての会話を好みます。彼らと話す際は、情熱的で前向きであること、そして彼らの魅力とエネルギーを認めることが重要です。',
-                            tips: [
-                                '情熱的かつ前向きに話す。彼らのエネルギーに合わせる。',
-                                '楽しい経験や話について質問する。',
-                                '彼らの魅力とエネルギーを褒める。'
-                            ],
-                            example: {
-                                title: '良い会話の始め方：',
-                                content: '"最近、最も楽しかったパーティーやイベントは何でしたか？どんな経験を共有したいですか？"'
-                            }
-                        },
-                        topics: {
-                            title: '良い会話の話題',
-                            content: 'ESFPは人、経験、そして楽しい活動についての会話を楽しみます。',
-                            tips: [
-                                'パーティー、イベント、そして社交活動',
-                                '音楽、ダンス、そして芸術',
-                                '旅行、スポーツ、そして冒険的な活動'
-                            ],
-                        },
-                        avoid: {
-                            title: '避けるべきこと',
-                            content: 'ESFPは退屈な態度や批判的な態度を好みません。',
-                            tips: [
-                                '反復的または退屈な話は避ける。',
-                                '彼らの楽しみを笑ったり、無視したりしない。',
-                                '個人的すぎる、またはデリケートな質問は避ける。'
-                            ],
-                        }
-                    }
-                },
+                }
             },
             'ko': {
-                INTJ: {
-                    title: 'INTJ와 대화하는 방법',
-                    subtitle: 'INTJ와 의미 있는 관계를 맺기 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'INTJ는 논리적이고 전략적이며, 깊은 생각과 개념에 대한 대화를 좋아합니다. 이들과 대화할 때는 간결하고 직접적이며, 지적 호기심을 자극하는 것이 중요합니다.',
-                            tips: [
-                                '명확하고 논리적으로 말하세요. 장황하거나 감정적인 언어는 피하세요.',
-                                '사실과 데이터에 집중하세요. 증거를 바탕으로 주장을 펼치세요.',
-                                '그들의 지적 통찰력에 대해 인정하고 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"최근에 흥미롭게 생각하고 있는 복잡한 문제는 무엇인가요? 그 해결책에 대한 당신의 생각은 어떤가요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'INTJ는 흥미로운 아이디어나 미래 계획에 대해 토론하는 것을 즐깁니다.',
-                            tips: [
-                                '과학, 기술, 철학 등 복잡한 개념',
-                                '미래 기술의 발전이나 사회적 변화에 대한 분석',
-                                '개인의 프로젝트, 목표, 또는 혁신적인 아이디어'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'INTJ는 비효율적인 대화나 감정적인 드라마를 좋아하지 않습니다.',
-                            tips: [
-                                '사소한 이야기나 가벼운 잡담은 피하세요.',
-                                '과도한 감정 표현이나 드라마는 자제하세요.',
-                                '그들의 의견에 대해 도전하거나 논쟁을 피하세요. 대신에 질문을 통해 그들의 관점을 이해하려 노력하세요.'
-                            ],
-                        }
+                'name': '기본 가이드',
+                'description': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
+                'sections': {
+                    'approach': {
+                        'title': '소통 접근법',
+                        'content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
+                        'tips': [
+                            '그들의 자연스러운 소통 방식을 관찰하세요',
+                            '그들의 선호도에 맞게 접근법을 조정하세요',
+                            '인내심을 가지고 이해하세요',
+                            '진정한 관계 구축에 집중하세요'
+                        ]
+                    },
+                    'topics': {
+                        'title': '선호하는 주제',
+                        'content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
+                        'tips': [
+                            '그들의 관심사와 열정에 대해 물어보세요',
+                            '관련된 경험을 공유하세요',
+                            '그들의 관점에 대해 진심으로 궁금해하세요',
+                            '공통 관심사를 찾아보세요'
+                        ]
+                    },
+                    'avoid': {
+                        'title': '소통 시 주의할 점',
+                        'content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
+                        'tips': [
+                            '자신이 선호하는 방식으로 그들을 압도하지 마세요',
+                            '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
+                            '그들의 에너지 수준과 경계를 존중하세요',
+                            '처리할 시간이 필요하다면 인내심을 가지세요'
+                        ]
                     }
-                },
-                INTP: {
-                    title: 'INTP와 대화하는 방법',
-                    subtitle: 'INTP와 지적으로 교류하기 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'INTP는 분석적이고 독창적이며, 아이디어와 이론에 대한 대화를 즐깁니다. 이들과 대화할 때는 사실과 논리에 초점을 맞추고, 그들의 생각에 대해 깊이 파고드는 것이 중요합니다.',
-                            tips: [
-                                '논리적이고 객관적으로 말하세요. 감정적인 내용은 피하세요.',
-                                '열린 질문을 던져 그들의 창의적인 생각을 끌어내세요.',
-                                '그들의 이론과 관점에 진정한 관심을 보이세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"어떤 복잡한 문제에 대해 몰입하고 있나요? 당신의 해결책은 무엇인가요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'INTP는 이론, 시스템, 그리고 추상적인 개념에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '과학, 기술, 수학, 논리',
-                                '복잡한 퍼즐이나 문제 해결',
-                                '새로운 기술이나 이론에 대한 분석'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'INTP는 잡담이나 비논리적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '너무 개인적이거나 감정적인 질문은 피하세요.',
-                                '그들의 아이디어를 비판하거나 비논리적인 논쟁을 벌이지 마세요.',
-                                '그들이 혼자 생각할 시간을 방해하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                ENTJ: {
-                    title: 'ENTJ와 대화하는 방법',
-                    subtitle: 'ENTJ와 전략적으로 소통하기 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ENTJ는 단호하고 야심적이며, 목표와 효율성에 대한 대화를 좋아합니다. 이들과 대화할 때는 자신감 있고 직접적이며, 그들의 리더십과 비전을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '직설적이고 목표 지향적으로 말하세요.',
-                                '그들의 의견에 동의하지 않더라도 논리적인 주장을 펼치세요.',
-                                '그들의 비전과 목표에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"당신의 목표를 달성하기 위해 가장 큰 도전 과제는 무엇인가요? 어떻게 극복할 계획인가요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ENTJ는 비즈니스, 리더십, 그리고 미래 전략에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '경력, 야망, 그리고 목표',
-                                '비즈니스, 정치, 그리고 사회적 문제',
-                                '미래 계획과 성공 전략'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ENTJ는 비효율적인 대화나 감정적인 드라마를 좋아하지 않습니다.',
-                            tips: [
-                                '시간 낭비적인 잡담은 피하세요.',
-                                '감정에 호소하거나 비논리적인 주장을 하지 마세요.',
-                                '그들의 결정에 대해 끈질기게 질문하거나 도전하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                ENTP: {
-                    title: 'ENTP와 대화하는 방법',
-                    subtitle: 'ENTP와 재치 있는 논쟁을 즐기기 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ENTP는 지적이고 도전적이며, 새로운 아이디어와 논쟁을 좋아합니다. 이들과 대화할 때는 재치 있고 유연하며, 그들의 창의적인 생각에 동참하는 것이 중요합니다.',
-                            tips: [
-                                '논쟁을 즐기세요. 그들의 주장에 이의를 제기하고 새로운 관점을 제시하세요.',
-                                '유머 감각을 보여주세요. 그들의 유머에 반응하고 웃음을 나누세요.',
-                                '새로운 아이디어를 탐구하세요. 그들이 제안하는 아이디어에 대해 질문하고 함께 발전시키세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"세상을 바꿀 수 있는 가장 미친 듯한 아이디어는 무엇이라고 생각하나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ENTP는 다양한 주제에 대한 논쟁과 아이디어 탐구를 즐깁니다.',
-                            tips: [
-                                '미래 기술, 사회적 변화, 철학',
-                                '논쟁적인 주제에 대한 토론',
-                                '새로운 아이디어, 프로젝트, 또는 사업 계획'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ENTP는 지루하거나 감정적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '반복적이거나 지루한 이야기는 피하세요.',
-                                '감정에 호소하거나 비논리적인 주장을 하지 마세요.',
-                                '그들의 아이디어를 무시하거나 비웃지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                INFJ: {
-                    title: 'INFJ와 대화하는 방법',
-                    subtitle: 'INFJ와 깊고 의미 있는 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'INFJ는 통찰력이 있고 사려 깊으며, 깊고 의미 있는 대화를 좋아합니다. 이들과 대화할 때는 진정성을 보이고, 그들의 감정에 공감하며, 그들의 비전과 가치를 존중하는 것이 중요합니다.',
-                            tips: [
-                                '진솔하고 진정성 있게 말하세요. 가식적인 태도는 피하세요.',
-                                '그들의 감정에 공감하고 그들의 관점을 이해하려 노력하세요.',
-                                '그들의 비전과 가치에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"당신에게 가장 중요한 가치는 무엇인가요? 그 가치를 어떻게 실천하고 있나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'INFJ는 개인적인 성장, 관계, 그리고 의미 있는 주제에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '개인적인 가치, 신념, 그리고 목표',
-                                '인간 관계, 감정, 그리고 정신 건강',
-                                '미래 계획과 개인적인 성장'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'INFJ는 표면적인 대화나 비판적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '사소한 이야기나 가벼운 잡담은 피하세요.',
-                                '그들의 감정이나 생각에 대해 비판적인 태도를 취하지 마세요.',
-                                '그들이 혼자 생각할 시간을 방해하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                INFP: {
-                    title: 'INFP와 대화하는 방법',
-                    subtitle: 'INFP와 깊고 진솔한 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'INFP는 이상주의적이고 공감 능력이 뛰어나며, 깊은 감정과 가치에 대한 대화를 좋아합니다. 이들과 대화할 때는 부드럽고 따뜻하며, 그들의 창의성과 개성을 존중하는 것이 중요합니다.',
-                            tips: [
-                                '부드럽고 공감적으로 말하세요. 그들의 감정을 존중하세요.',
-                                '그들의 창의성과 아이디어를 인정하고 칭찬하세요.',
-                                '그들의 가치와 신념에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"당신에게 가장 영감을 주는 것은 무엇인가요? 어떤 꿈을 꾸고 있나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'INFP는 예술, 개인적인 성장, 그리고 의미 있는 주제에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '예술, 음악, 문학, 그리고 창의적인 표현',
-                                '개인적인 가치, 신념, 그리고 꿈',
-                                '인간 관계, 감정, 그리고 정신 건강'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'INFP는 비판적이거나 공격적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '그들의 감정이나 생각에 대해 비판적인 태도를 취하지 마세요.',
-                                '그들의 이상주의를 비웃거나 무시하지 마세요.',
-                                '현실적인 문제에 대해 지나치게 집중하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                ENFJ: {
-                    title: 'ENFJ와 대화하는 방법',
-                    subtitle: 'ENFJ와 따뜻하고 지지적인 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ENFJ는 따뜻하고 외향적이며, 사람들과의 관계와 성장에 대한 대화를 좋아합니다. 이들과 대화할 때는 긍정적이고 지지적이며, 그들의 리더십과 공감 능력을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '긍정적이고 열정적으로 말하세요. 그들의 에너지를 맞추세요.',
-                                '그들의 감정과 생각에 대해 질문하고 공감하세요.',
-                                '그들의 리더십과 공감 능력을 칭찬하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"당신이 가장 자랑스럽게 생각하는 것은 무엇인가요? 당신의 커뮤니티나 팀에 대해 알려주세요."'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ENFJ는 사람, 관계, 그리고 사회적 문제에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '개인적인 성장, 꿈, 그리고 목표',
-                                '인간 관계, 우정, 그리고 사랑',
-                                '사회적 문제, 봉사 활동, 그리고 리더십'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ENFJ는 비판적이거나 냉소적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '부정적이거나 비판적인 태도를 취하지 마세요.',
-                                '그들의 노력이나 감정을 무시하지 마세요.',
-                                '너무 개인적이거나 감정적인 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ENFP: {
-                    title: 'ENFP와 대화하는 방법',
-                    subtitle: 'ENFP와 진정성 있는 관계를 맺기 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ENFP는 열정적이고 상상력이 풍부하며, 새로운 아이디어를 탐구하는 것을 좋아합니다. 이들과 대화할 때는 개방적이고 긍정적인 태도를 보이는 것이 중요합니다.',
-                            tips: [
-                                '에너지를 맞추세요. 그들의 열정에 공감하고 새로운 아이디어를 탐구하는 것을 주저하지 마세요.',
-                                '솔직하고 진정성 있게 다가가세요. 꾸미거나 가식적인 태도를 피하세요.',
-                                '즉흥적으로 하세요. 딱딱한 대본을 따르기보다는 편안하게 흐름을 타세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 좋아하는 책이나 영화는 뭐예요? 스토리가 정말 흥미로운 것 같아요."'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ENFP는 흥미로운 아이디어나 미래 계획에 대해 토론하는 것을 즐깁니다.',
-                            tips: [
-                                '새로운 아이디어, 프로젝트, 또는 사업 계획',
-                                '개인적인 꿈, 열정, 그리고 목표',
-                                '재미있는 경험, 여행, 또는 취미'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ENFP는 지루하거나 비판적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '반복적이거나 지루한 이야기는 피하세요.',
-                                '그들의 감정이나 아이디어를 무시하거나 비판하지 마세요.',
-                                '너무 개인적이거나 감정적인 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ISTJ: {
-                    title: 'ISTJ와 대화하는 방법',
-                    subtitle: 'ISTJ와 실용적이고 논리적인 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ISTJ는 현실적이고 책임감이 강하며, 사실과 논리에 초점을 맞춘 대화를 좋아합니다. 이들과 대화할 때는 명확하고 구체적이며, 그들의 경험과 지식을 존중하는 것이 중요합니다.',
-                            tips: [
-                                '간결하고 직접적으로 말하세요. 불필요한 이야기는 피하세요.',
-                                '사실과 데이터에 집중하세요. 증거를 바탕으로 주장을 펼치세요.',
-                                '그들의 경험과 지식에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"이 프로젝트를 성공적으로 완료하기 위해 가장 중요한 단계는 무엇이라고 생각하나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ISTJ는 실용적인 문제, 계획, 그리고 규칙에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '업무, 프로젝트, 그리고 책임',
-                                '경험, 역사, 그리고 전통',
-                                '계획, 목표, 그리고 실용적인 해결책'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ISTJ는 비현실적이거나 비논리적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '비현실적인 아이디어나 추상적인 개념은 피하세요.',
-                                '감정에 호소하거나 비논리적인 주장을 하지 마세요.',
-                                '그들의 경험이나 지식을 무시하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                ISFJ: {
-                    title: 'ISFJ와 대화하는 방법',
-                    subtitle: 'ISFJ와 따뜻하고 배려 있는 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ISFJ는 따뜻하고 성실하며, 사람들과의 관계와 감정에 대한 대화를 좋아합니다. 이들과 대화할 때는 부드럽고 지지적이며, 그들의 배려와 헌신을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '따뜻하고 공감적으로 말하세요. 그들의 감정을 존중하세요.',
-                                '그들의 노력과 헌신에 대해 감사하고 칭찬하세요.',
-                                '그들의 관계와 감정에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"최근에 가장 보람 있었던 일은 무엇인가요? 다른 사람을 도운 경험이 있나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ISFJ는 가족, 친구, 그리고 공동체에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '가족, 친구, 그리고 공동체',
-                                '개인적인 경험, 감정, 그리고 기억',
-                                '취미, 여가 활동, 그리고 일상적인 이야기'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ISFJ는 비판적이거나 공격적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '그들의 감정이나 생각에 대해 비판적인 태도를 취하지 마세요.',
-                                '그들의 노력이나 헌신을 무시하거나 당연하게 여기지 마세요.',
-                                '너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ESTJ: {
-                    title: 'ESTJ와 대화하는 방법',
-                    subtitle: 'ESTJ와 효율적이고 명확한 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ESTJ는 조직적이고 실용적이며, 목표와 효율성에 대한 대화를 좋아합니다. 이들과 대화할 때는 간결하고 직접적이며, 그들의 리더십과 능력을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '명확하고 목표 지향적으로 말하세요. 불필요한 이야기는 피하세요.',
-                                '사실과 데이터에 집중하세요. 증거를 바탕으로 주장을 펼치세요.',
-                                '그들의 리더십과 능력에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 효율적으로 일을 처리하는 방법은 무엇이라고 생각하나요? 당신의 성공 비결은 무엇인가요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ESTJ는 업무, 조직, 그리고 사회적 문제에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '업무, 프로젝트, 그리고 책임',
-                                '조직, 규칙, 그리고 사회적 질서',
-                                '미래 계획과 성공 전략'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ESTJ는 비효율적이거나 감정적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '비효율적인 대화나 잡담은 피하세요.',
-                                '감정에 호소하거나 비논리적인 주장을 하지 마세요.',
-                                '그들의 결정이나 능력에 대해 도전하지 마세요.'
-                            ],
-                        }
-                    }
-                },
-                ESFJ: {
-                    title: 'ESFJ와 대화하는 방법',
-                    subtitle: 'ESFJ와 따뜻하고 친근한 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ESFJ는 친근하고 사교적이며, 사람들과의 관계와 감정에 대한 대화를 좋아합니다. 이들과 대화할 때는 따뜻하고 긍정적이며, 그들의 배려와 헌신을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '따뜻하고 친근하게 말하세요. 그들의 에너지를 맞추세요.',
-                                '그들의 감정과 생각에 대해 질문하고 공감하세요.',
-                                '그들의 배려와 헌신을 칭찬하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"당신의 친구나 가족에 대해 알려주세요. 그들과 함께하는 가장 행복한 순간은 언제인가요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ESFJ는 사람, 관계, 그리고 일상적인 이야기에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '가족, 친구, 그리고 공동체',
-                                '개인적인 경험, 감정, 그리고 기억',
-                                '취미, 여가 활동, 그리고 일상적인 이야기'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ESFJ는 비판적이거나 냉소적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '부정적이거나 비판적인 태도를 취하지 마세요.',
-                                '그들의 노력이나 감정을 무시하지 마세요.',
-                                '너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ISTP: {
-                    title: 'ISTP와 대화하는 방법',
-                    subtitle: 'ISTP와 실용적이고 흥미로운 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ISTP는 현실적이고 독립적이며, 흥미로운 활동과 실용적인 문제 해결에 대한 대화를 좋아합니다. 이들과 대화할 때는 간결하고 직접적이며, 그들의 기술과 경험을 존중하는 것이 중요합니다.',
-                            tips: [
-                                '명확하고 간결하게 말하세요. 불필요한 이야기는 피하세요.',
-                                '실용적인 문제 해결에 집중하세요. 추상적인 개념은 피하세요.',
-                                '그들의 기술과 경험에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 최근에 어떤 것을 만들거나 수리했나요? 어떻게 했는지 알려주세요."'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ISTP는 흥미로운 활동, 기술, 그리고 모험에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '취미, 스포츠, 그리고 모험적인 활동',
-                                '기술, 도구, 그리고 기계',
-                                '실용적인 문제 해결, DIY 프로젝트, 그리고 수리'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ISTP는 감정적이거나 비논리적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '감정적인 이야기나 드라마는 피하세요.',
-                                '비논리적인 주장을 하지 마세요.',
-                                '그들의 독립성을 존중하고 너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ISFP: {
-                    title: 'ISFP와 대화하는 방법',
-                    subtitle: 'ISFP와 따뜻하고 창의적인 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ISFP는 예술적이고 감성적이며, 개인적인 경험과 가치에 대한 대화를 좋아합니다. 이들과 대화할 때는 부드럽고 따뜻하며, 그들의 창의성과 개성을 존중하는 것이 중요합니다.',
-                            tips: [
-                                '부드럽고 공감적으로 말하세요. 그들의 감정을 존중하세요.',
-                                '그들의 창의성과 아이디어를 인정하고 칭찬하세요.',
-                                '그들의 가치와 신념에 대해 질문하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 좋아하는 예술 작품이나 음악은 뭐예요? 어떤 감정을 불러일으키나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ISFP는 예술, 자연, 그리고 개인적인 경험에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '예술, 음악, 패션, 그리고 창의적인 표현',
-                                '자연, 동물, 그리고 여행',
-                                '개인적인 경험, 감정, 그리고 기억'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ISFP는 비판적이거나 공격적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '그들의 감정이나 생각에 대해 비판적인 태도를 취하지 마세요.',
-                                '그들의 개성이나 창의성을 무시하지 마세요.',
-                                '너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ESTP: {
-                    title: 'ESTP와 대화하는 방법',
-                    subtitle: 'ESTP와 흥미롭고 활동적인 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ESTP는 현실적이고 활동적이며, 흥미로운 경험과 모험에 대한 대화를 좋아합니다. 이들과 대화할 때는 열정적이고 유연하며, 그들의 모험심을 인정하는 것이 중요합니다.',
-                            tips: [
-                                '열정적이고 즉흥적으로 말하세요. 그들의 에너지를 맞추세요.',
-                                '흥미로운 활동이나 경험에 대해 질문하세요.',
-                                '그들의 모험심과 용기를 칭찬하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 최근에 경험한 가장 흥미로운 모험은 무엇인가요? 다음에는 무엇을 계획하고 있나요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ESTP는 스포츠, 모험, 그리고 흥미로운 경험에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '스포츠, 모험, 그리고 여행',
-                                '파티, 이벤트, 그리고 사교 활동',
-                                '기술, 도구, 그리고 기계'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ESTP는 지루하거나 감정적인 대화를 좋아하지 않습니다.',
-                            tips: [
-                                '반복적이거나 지루한 이야기는 피하세요.',
-                                '감정적인 이야기나 드라마는 피하세요.',
-                                '그들의 독립성을 존중하고 너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
-                ESFP: {
-                    title: 'ESFP와 대화하는 방법',
-                    subtitle: 'ESFP와 활기차고 즐거운 대화를 위한 가이드: 소통 방식, 좋아하는 대화 주제, 피해야 할 점.',
-                    sections: {
-                        approach: {
-                            title: '접근 방법',
-                            content: 'ESFP는 활기차고 사교적이며, 즐거운 경험과 사람들에 대한 대화를 좋아합니다. 이들과 대화할 때는 열정적이고 긍정적이며, 그들의 매력과 에너지를 인정하는 것이 중요합니다.',
-                            tips: [
-                                '열정적이고 긍정적으로 말하세요. 그들의 에너지를 맞추세요.',
-                                '재미있는 경험이나 이야기에 대해 질문하세요.',
-                                '그들의 매력과 에너지를 칭찬하세요.'
-                            ],
-                            example: {
-                                title: '좋은 시작 방법:',
-                                content: '"가장 최근에 경험한 가장 즐거운 파티나 이벤트는 무엇이었나요? 어떤 경험을 공유하고 싶으세요?"'
-                            }
-                        },
-                        topics: {
-                            title: '좋은 대화 주제',
-                            content: 'ESFP는 사람, 경험, 그리고 즐거운 활동에 대한 대화를 즐깁니다.',
-                            tips: [
-                                '파티, 이벤트, 그리고 사교 활동',
-                                '음악, 춤, 그리고 예술',
-                                '여행, 스포츠, 그리고 모험적인 활동'
-                            ],
-                        },
-                        avoid: {
-                            title: '피해야 할 점',
-                            content: 'ESFP는 지루하거나 비판적인 태도를 좋아하지 않습니다.',
-                            tips: [
-                                '반복적이거나 지루한 이야기는 피하세요.',
-                                '그들의 즐거움을 비웃거나 무시하지 마세요.',
-                                '너무 개인적이거나 민감한 질문은 피하세요.'
-                            ],
-                        }
-                    }
-                },
+                }
             }
         };
 
-        let currentLang = 'ko'; // Set initial language to Korean
+        // Function to get the current language
+        function getCurrentLanguage() {
+            const activeLangButton = document.querySelector('.lang-btn.active');
+            return activeLangButton ? activeLangButton.dataset.lang : 'ko';
+        }
 
+        // Function to update static text based on language
         function updateContent(lang) {
-            currentLang = lang;
-            
-            // Update all text elements based on the selected language
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'META') {
-                        element.setAttribute('content', translations[lang][key]);
+                const translation = translations[lang][key];
+                if (translation) {
+                    // Use textContent for simple text, innerHTML for potential tags
+                    if (element.hasAttribute('data-i18n-html')) {
+                        element.innerHTML = translation;
                     } else {
-                        element.textContent = translations[lang][key];
+                        element.textContent = translation;
                     }
                 }
             });
 
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 
-            // Re-render the conversation guide if one is selected
-            const selectedBtn = document.querySelector('.type-btn.selected');
-            if (selectedBtn) {
-                showConversationGuide(selectedBtn.textContent.trim());
+            // Re-render the guide if a type is currently selected
+            const selectedButton = document.querySelector('.type-btn.selected');
+            if (selectedButton) {
+                showConversationGuide(selectedButton.dataset.type);
             }
         }
-        
+
+        function getGuideContent(mbtiType, lang) {
+            const guide = conversationGuides[mbtiType] || {};
+            const content = guide[lang];
+            return content || defaultGuide[lang];
+        }
+
+        // Function to show the conversation guide for a selected MBTI type
         function showConversationGuide(selectedType) {
             const guideDiv = document.getElementById('conversation-guide');
-            const guide = conversationData[currentLang][selectedType];
-
-            // Update button states
-            document.querySelectorAll('.type-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            event.target.classList.add('selected');
-
-            // Hide the ad banner and show the guide
-            guideDiv.classList.add('show');
+            const currentLang = getCurrentLanguage();
+            const guide = getGuideContent(selectedType, currentLang);
+            const mbtiName = typeNames[selectedType];
             
-            // Update the guide content
+            // Update button selection
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
+            document.querySelector(`[data-type="${selectedType}"]`).classList.add('selected');
+
+            // Show guide container
+            guideDiv.classList.add('show');
+
             let html = `
                 <div class="guide-header">
-                    <h3 class="guide-title font-poppins">${guide.title}</h3>
-                    <p class="guide-subtitle">${guide.subtitle}</p>
+                    <h3 class="guide-title">${translations[currentLang]['guide.title'].replace('<span class="mbti-type"></span>', selectedType).replace('<span class="mbti-name"></span>', mbtiName)}</h3>
+                    <p class="guide-subtitle">${translations[currentLang]['guide.subtitle']}</p>
                 </div>
                 <div class="guide-sections">
             `;
 
-            Object.entries(guide.sections).forEach(([key, section]) => {
-                html += `
-                    <div class="guide-section">
-                        <h4 class="guide-section-title">
-                            ${getIconForSection(key)} ${section.title}
-                        </h4>
-                        <div class="guide-section-content">
-                            <p>${section.content}</p>
-                            <ul class="tip-list">
-                                ${section.tips.map(tip => `<li>${tip}</li>`).join('')}
-                            </ul>
-                            ${section.example ? `
-                                <div class="example-box">
-                                    <div class="example-title">${section.example.title}</div>
-                                    <div class="example-content">${section.example.content}</div>
-                                </div>
-                            ` : ''}
+            // Use the data-driven approach to populate sections
+            const sectionOrder = ['approach', 'topics', 'avoid'];
+            sectionOrder.forEach(key => {
+                const section = guide.sections[key];
+                if (section) {
+                    html += `
+                        <div class="guide-section">
+                            <h4 class="guide-section-title">
+                                ${getIconForSection(key)} ${section.title}
+                            </h4>
+                            <div class="guide-section-content">
+                                <p>${section.content}</p>
+                                <ul class="tip-list">
+                                    ${section.tips.map(tip => `<li>${tip}</li>`).join('')}
+                                </ul>
+                                ${section.example ? `
+                                    <div class="example-box">
+                                        <div class="example-title">${section.example.title}</div>
+                                        <div class="example-content">${section.example.content}</div>
+                                    </div>
+                                ` : ''}
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
             });
 
             html += '</div>';
@@ -2287,9 +958,23 @@
             return icons[sectionKey] || '📝';
         }
 
-        // Initial content load
         document.addEventListener('DOMContentLoaded', () => {
-            updateContent('en');
+            // Add event listeners to MBTI buttons
+            document.querySelectorAll('.type-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    showConversationGuide(button.dataset.type);
+                });
+            });
+
+            // Add event listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    updateContent(button.dataset.lang);
+                });
+            });
+
+            // Set initial active language and content
+            updateContent('ko');
         });
     </script>
 </body>
