@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -302,20 +303,14 @@
         let gameStarted = false;
         let currentLanguage = 'en';
 
-        // 페이지가 로드되면 항상 영어로 설정하고 EN 버튼을 활성화
         document.addEventListener('DOMContentLoaded', () => {
             updateContent('en');
-            // 'EN' 버튼에 active 클래스 추가
-            const langButtons = document.querySelectorAll('.lang-btn');
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang="en"]`).classList.add('active');
         });
 
-        // 나머지 JavaScript 코드는 그대로 유지
         const translations = {
             'en': {
                 'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
-                'meta_description': 'Play our interactive MBTI Balance Game to discover your relationship preferences. Choose between options to reveal your dating style and personality insights.',
+                'meta_description': 'Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.',
                 'nav_compatibility': 'Compatibility',
                 'nav_dating_style': 'Dating Style',
                 'nav_ideal_type': 'Ideal Type',
@@ -452,7 +447,7 @@
                 category: 'Spontaneous vs. Planned',
                 question: 'Your ideal date night is...',
                 options: [
-                    { key: 'spontaneous', text: 'A surprise trip to a new town or an unplanned activity.', choice: 'A', insight: "You thrive on new experiences. You enjoy adventure and spontaneity, which keeps the relationship exciting and fresh.", analysis: "Choosing this option suggests a spontaneous dating style. You are likely an adventurous and flexible partner who values excitement and new experiences. You believe that love is an adventure to be explored, not a plan to be followed."},
+                    { key: 'spontaneous', text: 'A surprise trip to a new town or an unplanned activity.', choice: 'A', insight: "You thrive on new experiences. You enjoy adventure and spontaneity, which keeps the relationship exciting and fresh.", analysis: "Choosing this option suggests a spontaneous dating style. You are likely an adventurous and flexible partner who values excitement and new experiences. You believe that love is an anventure to be explored, not a plan to be followed."},
                     { key: 'planned', text: 'A carefully planned evening with reservations and a clear itinerary.', choice: 'B', insight: "You value security and predictability. A well-organized plan makes you feel relaxed and cared for.", analysis: "This indicates a planned dating style. You are likely a thoughtful and reliable partner who values stability and consistency. You show your love through careful planning and by creating a secure and comfortable environment."},
                 ]
             },
@@ -646,15 +641,16 @@
             'nav_official_test_footer': '公式MBTIテスト',
             'footer_legal_title': '法律',
             'nav_privacy_policy_footer': 'プライバシーポリシー',
-            'nav_terms_of_use_footer': '利用規約',
+            'nav_terms_of_use_footer': '利用規약',
             'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
+            }
         };
         const translations = {
             'ko': translations_ko_text,
             'en': translations_en_text,
             'ja': translations_ja_text,
         };
-
+        
         function updateContent(lang) {
             currentLanguage = lang;
             document.querySelectorAll('[data-lang-key]').forEach(element => {
@@ -662,13 +658,13 @@
                 if (translations[lang] && translations[lang][key]) {
                     if (typeof translations[lang][key] === 'function') {
                         // Special case for question counter
-                        element.textContent = translations[lang][key](currentQuestion, questions.length);
+                        element.textContent = translations[lang][key](currentQuestion + 1, questions.length);
                     } else {
                         element.textContent = translations[lang][key];
                     }
                 }
             });
-
+        
             // Update title and meta description manually
             document.title = translations[lang]['title_page'];
             document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta_description']);
