@@ -164,18 +164,18 @@
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
             <nav class="nav">
-                <a href="compatibility.html" data-lang-key="nav_compatibility">궁합</a>
-                <a href="dating-style.html" data-lang-key="nav_dating_style">데이트 스타일</a>
-                <a href="ideal-type.html" data-lang-key="nav_ideal_type">이상형</a>
-                <a href="rankings.html" data-lang-key="nav_rankings">랭킹</a>
-                <a href="conversation.html" data-lang-key="nav_conversation">대화</a>
-                <a href="balance-game.html" data-lang-key="nav_balance_game">밸런스 게임</a>
-                <a href="about.html" data-lang-key="nav_about">소개</a>
+                <a href="compatibility.html" data-lang-key="nav_compatibility">Compatibility</a>
+                <a href="dating-style.html" data-lang-key="nav_dating_style">Dating Style</a>
+                <a href="ideal-type.html" data-lang-key="nav_ideal_type">Ideal Type</a>
+                <a href="rankings.html" data-lang-key="nav_rankings">Rankings</a>
+                <a href="conversation.html" data-lang-key="nav_conversation">Conversation</a>
+                <a href="balance-game.html" data-lang-key="nav_balance_game">Balance Game</a>
+                <a href="about.html" data-lang-key="nav_about">About</a>
             </nav>
             <div class="language-switcher">
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="ja">日本語</button>
-                <button class="lang-btn active" data-lang="ko">한국어</button>
+                <button class="lang-btn" data-lang="ko">한국어</button>
             </div>
         </div>
     </header>
@@ -183,47 +183,46 @@
     <div class="game-container">
         <div id="welcome-screen" class="welcome-screen">
             <div class="welcome-content">
-                <h1 class="welcome-title font-poppins" data-lang-key="welcome_title">MBTI 밸런스 게임</h1>
+                <h1 class="welcome-title font-poppins" data-lang-key="welcome_title">MBTI Balance Game</h1>
                 <p class="welcome-subtitle" data-lang-key="welcome_subtitle">
-                    재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 
-                    연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.
+                    Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.
                 </p>
                 
                 <div class="welcome-features">
                     <div class="feature-item">
                         <span>❤️</span>
-                        <span data-lang-key="feature1">10개 질문</span>
+                        <span data-lang-key="feature1">10 Questions</span>
                     </div>
                     <div class="feature-item">
                         <span>👥</span>
-                        <span data-lang-key="feature2">개인 맞춤 인사이트</span>
+                        <span data-lang-key="feature2">Personalized Insights</span>
                     </div>
                     <div class="feature-item">
                         <span>✨</span>
-                        <span data-lang-key="feature3">관계 팁</span>
+                        <span data-lang-key="feature3">Relationship Tips</span>
                     </div>
                 </div>
                 
-                <button class="start-btn" onclick="startGame()" data-lang-key="start_button">밸런스 게임 시작하기</button>
+                <button class="start-btn" onclick="startGame()" data-lang-key="start_button">Start Balance Game</button>
                 
                 <div class="how-it-works">
-                    <h3 class="font-poppins" data-lang-key="how_to_play_title">게임 방법</h3>
+                    <h3 class="font-poppins" data-lang-key="how_to_play_title">How to Play</h3>
                     <div class="steps-grid">
                         <div class="step">
                             <div class="step-number">1</div>
-                            <span data-lang-key="step1">관계 선호도에 대한 10개의 양자택일 질문에 답하세요</span>
+                            <span data-lang-key="step1">Answer 10 dilemma questions about your relationship preferences</span>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
-                            <span data-lang-key="step2">당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요</span>
+                            <span data-lang-key="step2">Gain insights into your dating style and relationship values</span>
                         </div>
                         <div class="step">
                             <div class="step-number">3</div>
-                            <span data-lang-key="step3">다양한 성격 유형과의 궁합에 대해 알아보세요</span>
+                            <span data-lang-key="step3">Learn about your compatibility with various personality types</span>
                         </div>
                         <div class="step">
                             <div class="step-number">4</div>
-                            <span data-lang-key="step4">개인 맞춤 관계 조언 및 팁을 받으세요</span>
+                            <span data-lang-key="step4">Receive personalized relationship advice and tips</span>
                         </div>
                     </div>
                 </div>
@@ -246,13 +245,13 @@
         <div id="results-screen" class="results-screen">
             <div class="results-content">
                 <div class="adsense-banner">
-                    <p data-lang-key="ad_label">광고</p>
+                    <p data-lang-key="ad_label">Advertisement</p>
                 </div>
                 
                 <div class="results-header">
-                    <h2 class="results-title font-poppins" data-lang-key="results_title">당신의 결과</h2>
+                    <h2 class="results-title font-poppins" data-lang-key="results_title">Your Results</h2>
                     <div class="personality-result">
-                        <h3 class="personality-type" id="personality-type" data-lang-key="results_style_title">당신의 관계 스타일:</h3>
+                        <h3 class="personality-type" id="personality-type" data-lang-key="results_style_title">Your Relationship Style:</h3>
                         <p class="personality-description" id="personality-description"></p>
                     </div>
                 </div>
@@ -260,7 +259,7 @@
                 <div id="insights-grid" class="insights-grid">
                     </div>
                 
-                <button class="reset-btn" onclick="resetGame()" data-lang-key="retake_quiz_button">퀴즈 다시 하기</button>
+                <button class="reset-btn" onclick="resetGame()" data-lang-key="retake_quiz_button">Retake Quiz</button>
             </div>
         </div>
     </div>
@@ -268,32 +267,32 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 data-lang-key="footer_explore_title">탐색</h3>
+                <h3 data-lang-key="footer_explore_title">Explore</h3>
                 <ul>
-                    <li><a href="compatibility.html" data-lang-key="nav_compatibility_footer">궁합</a></li>
-                    <li><a href="dating-style.html" data-lang-key="nav_dating_style_footer">데이트 스타일</a></li>
-                    <li><a href="ideal-type.html" data-lang-key="nav_ideal_type_footer">이상형</a></li>
-                    <li><a href="rankings.html" data-lang-key="nav_rankings_footer">랭킹</a></li>
+                    <li><a href="compatibility.html" data-lang-key="nav_compatibility_footer">Compatibility</a></li>
+                    <li><a href="dating-style.html" data-lang-key="nav_dating_style_footer">Dating Style</a></li>
+                    <li><a href="ideal-type.html" data-lang-key="nav_ideal_type_footer">Ideal Type</a></li>
+                    <li><a href="rankings.html" data-lang-key="nav_rankings_footer">Rankings</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-lang-key="footer_resources_title">자료</h3>
+                <h3 data-lang-key="footer_resources_title">Resources</h3>
                 <ul>
-                    <li><a href="about.html" data-lang-key="nav_about_footer">소개</a></li>
-                    <li><a href="contact.html" data-lang-key="nav_contact_footer">연락처</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-lang-key="nav_official_test_footer">공식 MBTI 테스트</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about_footer">About</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact_footer">Contact</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-lang-key="nav_official_test_footer">Official MBTI Test</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-lang-key="footer_legal_title">법률</h3>
+                <h3 data-lang-key="footer_legal_title">Legal</h3>
                 <ul>
-                    <li><a href="privacy-policy.html" data-lang-key="nav_privacy_policy_footer">개인정보 보호정책</a></li>
-                    <li><a href="terms-of-use.html" data-lang-key="nav_terms_of_use_footer">이용 약관</a></li>
+                    <li><a href="privacy-policy.html" data-lang-key="nav_privacy_policy_footer">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html" data-lang-key="nav_terms_of_use_footer">Terms of Use</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p data-lang-key="copyright">© 2024 MBTILove.xyz - 모든 권리 보유.</p>
+            <p data-lang-key="copyright">© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
 
@@ -302,10 +301,6 @@
         let answers = [];
         let gameStarted = false;
         let currentLanguage = 'en';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateContent('en');
-        });
 
         const translations = {
             'en': {
@@ -527,6 +522,8 @@
         };
 
         const translations_ko_text = {
+            'title_page': 'MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove',
+            'meta_description': '인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.',
             'nav_compatibility': '궁합',
             'nav_dating_style': '데이트 스타일',
             'nav_ideal_type': '이상형',
@@ -567,6 +564,8 @@
         };
 
         const translations_en_text = {
+            'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
+            'meta_description': 'Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.',
             'nav_compatibility': 'Compatibility',
             'nav_dating_style': 'Dating Style',
             'nav_ideal_type': 'Ideal Type',
@@ -606,6 +605,8 @@
             'copyright': '© 2024 MBTILove.xyz - All rights reserved.',
         };
         const translations_ja_text = {
+            'title_page': 'MBTIバランスゲーム - あなたの関係の好みを調べる | MBTILove',
+            'meta_description': 'インタラクティブなMBTIバランスゲームを通じて、あなたの関係の好みを調べてください。選択肢を選んで、あなたのデートスタイルと性格の洞察を明らかにします。',
             'nav_compatibility': '相性',
             'nav_dating_style': 'デートスタイル',
             'nav_ideal_type': '理想のタイプ',
@@ -641,11 +642,11 @@
             'nav_official_test_footer': '公式MBTIテスト',
             'footer_legal_title': '法律',
             'nav_privacy_policy_footer': 'プライバシーポリシー',
-            'nav_terms_of_use_footer': '利用規약',
+            'nav_terms_of_use_footer': '利用規約',
             'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
             }
         };
-        const translations = {
+        const translations_all = {
             'ko': translations_ko_text,
             'en': translations_en_text,
             'ja': translations_ja_text,
@@ -655,19 +656,19 @@
             currentLanguage = lang;
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                if (translations[lang] && translations[lang][key]) {
-                    if (typeof translations[lang][key] === 'function') {
+                if (translations_all[lang] && translations_all[lang][key]) {
+                    if (typeof translations_all[lang][key] === 'function') {
                         // Special case for question counter
-                        element.textContent = translations[lang][key](currentQuestion + 1, questions.length);
+                        element.textContent = translations_all[lang][key](currentQuestion + 1, questions.length);
                     } else {
-                        element.textContent = translations[lang][key];
+                        element.textContent = translations_all[lang][key];
                     }
                 }
             });
         
             // Update title and meta description manually
-            document.title = translations[lang]['title_page'];
-            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta_description']);
+            document.title = translations_all[lang]['title_page'];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations_all[lang]['meta_description']);
             
             // Set active class on language button
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -698,7 +699,7 @@
                 questionData.options.forEach(option => {
                     questionHTML += `
                         <button class="option-btn" onclick="handleAnswer('${option.key}')">
-                            <span class="option-label" data-lang-key="option_label">${translations[currentLanguage]['option_label']} ${option.choice}</span>
+                            <span class="option-label" data-lang-key="option_label">${translations_all[currentLanguage]['option_label']} ${option.choice}</span>
                             ${option.text}
                         </button>
                     `;
@@ -708,7 +709,7 @@
                 questionCard.innerHTML = questionHTML;
 
                 // Update question counter text
-                document.getElementById('question-counter').textContent = translations[currentLanguage]['question_counter'](currentQuestion + 1, questions.length);
+                document.getElementById('question-counter').textContent = translations_all[currentLanguage]['question_counter'](currentQuestion + 1, questions.length);
 
             } else {
                 showResults();
@@ -746,7 +747,7 @@
                     <div class="insight-card">
                         <p class="insight-category">${answer.question.category}</p>
                         <h4 class="insight-question">${answer.question.question}</h4>
-                        <p class="insight-choice">${translations[currentLanguage]['option_label']} ${selectedOption.choice}: ${selectedOption.insight}</p>
+                        <p class="insight-choice">${translations_all[currentLanguage]['option_label']} ${selectedOption.choice}: ${selectedOption.insight}</p>
                         <div class="insight-analysis">${selectedOption.analysis}</div>
                     </div>
                 `;
@@ -756,7 +757,7 @@
         
         function displayPersonalityType() {
             const personalityType = getPersonalityType();
-            document.getElementById('personality-type').textContent = `${translations[currentLanguage]['results_style_title']} ${personalityType}`;
+            document.getElementById('personality-type').textContent = `${translations_all[currentLanguage]['results_style_title']} ${personalityType}`;
             document.getElementById('personality-description').textContent = getPersonalityDescription(personalityType);
         }
 
@@ -834,6 +835,18 @@
             document.getElementById('results-screen').classList.remove('active');
             document.getElementById('welcome-screen').style.display = 'flex';
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            updateContent(savedLang);
+        });
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (event) => {
+                const lang = event.target.getAttribute('data-lang');
+                updateContent(lang);
+            });
+        });
     </script>
 </body>
 </html>
