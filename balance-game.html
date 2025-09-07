@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTI Balance Game - Discover Your Relationship Preferences | MBTILove</title>
-    <meta name="description" content="Play our interactive MBTI Balance Game to discover your relationship preferences. Choose between options to reveal your dating style and personality insights.">
+    <title>MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove</title>
+    <meta name="description" content="인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -161,79 +160,76 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
             <nav class="nav">
-                <a href="compatibility.html">Compatibility</a>
-                <a href="dating-style.html">Dating Style</a>
-                <a href="ideal-type.html">Ideal Type</a>
-                <a href="rankings.html">Rankings</a>
-                <a href="conversation.html">Conversation</a>
-                <a href="balance-game.html">Balance Game</a>
-                <a href="about.html">About</a>
+                <a href="compatibility.html" data-lang-key="nav_compatibility">궁합</a>
+                <a href="dating-style.html" data-lang-key="nav_dating_style">데이트 스타일</a>
+                <a href="ideal-type.html" data-lang-key="nav_ideal_type">이상형</a>
+                <a href="rankings.html" data-lang-key="nav_rankings">랭킹</a>
+                <a href="conversation.html" data-lang-key="nav_conversation">대화</a>
+                <a href="balance-game.html" data-lang-key="nav_balance_game">밸런스 게임</a>
+                <a href="about.html" data-lang-key="nav_about">소개</a>
             </nav>
             <div class="language-switcher">
-                <button class="lang-btn active">EN</button>
-                <button class="lang-btn">日本語</button>
-                <button class="lang-btn">한국어</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+                <button class="lang-btn active" data-lang="ko">한국어</button>
             </div>
         </div>
     </header>
 
     <div class="game-container">
-        <!-- Welcome Screen -->
         <div id="welcome-screen" class="welcome-screen">
             <div class="welcome-content">
-                <h1 class="welcome-title font-poppins">MBTI Balance Game</h1>
-                <p class="welcome-subtitle">
-                    Discover your relationship preferences through fun either/or questions. Learn about your dating style, 
-                    communication preferences, and what you truly value in romantic partnerships.
+                <h1 class="welcome-title font-poppins" data-lang-key="welcome_title">MBTI 밸런스 게임</h1>
+                <p class="welcome-subtitle" data-lang-key="welcome_subtitle">
+                    재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 
+                    연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.
                 </p>
                 
                 <div class="welcome-features">
                     <div class="feature-item">
                         <span>❤️</span>
-                        <span>10 Questions</span>
+                        <span data-lang-key="feature1">10개 질문</span>
                     </div>
                     <div class="feature-item">
                         <span>👥</span>
-                        <span>Personal Insights</span>
+                        <span data-lang-key="feature2">개인 맞춤 인사이트</span>
                     </div>
                     <div class="feature-item">
                         <span>✨</span>
-                        <span>Relationship Tips</span>
+                        <span data-lang-key="feature3">관계 팁</span>
                     </div>
                 </div>
                 
-                <button class="start-btn" onclick="startGame()">Start the Balance Game</button>
+                <button class="start-btn" onclick="startGame()" data-lang-key="start_button">밸런스 게임 시작하기</button>
                 
                 <div class="how-it-works">
-                    <h3 class="font-poppins">How It Works</h3>
+                    <h3 class="font-poppins" data-lang-key="how_to_play_title">게임 방법</h3>
                     <div class="steps-grid">
                         <div class="step">
                             <div class="step-number">1</div>
-                            <span>Answer 10 either/or questions about your relationship preferences</span>
+                            <span data-lang-key="step1">관계 선호도에 대한 10개의 양자택일 질문에 답하세요</span>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
-                            <span>Get insights into your dating style and relationship values</span>
+                            <span data-lang-key="step2">당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요</span>
                         </div>
                         <div class="step">
                             <div class="step-number">3</div>
-                            <span>Learn about your compatibility with different personality types</span>
+                            <span data-lang-key="step3">다양한 성격 유형과의 궁합에 대해 알아보세요</span>
                         </div>
                         <div class="step">
                             <div class="step-number">4</div>
-                            <span>Get personalized relationship advice and tips</span>
+                            <span data-lang-key="step4">개인 맞춤 관계 조언 및 팁을 받으세요</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Game Screen -->
         <div id="game-screen" class="game-screen">
             <div class="game-content">
                 <div class="progress-bar">
@@ -243,197 +239,649 @@
                 <div id="question-counter" class="question-counter">Question 1 of 10</div>
                 
                 <div id="question-card" class="question-card">
-                    <!-- Question content will be populated by JavaScript -->
-                </div>
+                    </div>
             </div>
         </div>
 
-        <!-- Results Screen -->
         <div id="results-screen" class="results-screen">
             <div class="results-content">
-                <!-- AdSense Banner -->
                 <div class="adsense-banner">
-                    <p>Advertisement</p>
+                    <p data-lang-key="ad_label">광고</p>
                 </div>
                 
                 <div class="results-header">
-                    <h2 class="results-title font-poppins">Your Results</h2>
+                    <h2 class="results-title font-poppins" data-lang-key="results_title">당신의 결과</h2>
                     <div class="personality-result">
-                        <h3 class="personality-type" id="personality-type">Your Relationship Style:</h3>
+                        <h3 class="personality-type" id="personality-type" data-lang-key="results_style_title">당신의 관계 스타일:</h3>
                         <p class="personality-description" id="personality-description"></p>
                     </div>
                 </div>
                 
                 <div id="insights-grid" class="insights-grid">
-                    <!-- Insights will be populated by JavaScript -->
-                </div>
+                    </div>
                 
-                <button class="reset-btn" onclick="resetGame()">Take the Quiz Again</button>
+                <button class="reset-btn" onclick="resetGame()" data-lang-key="retake_quiz_button">퀴즈 다시 하기</button>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Explore</h3>
+                <h3 data-lang-key="footer_explore_title">탐색</h3>
                 <ul>
-                    <li><a href="compatibility.html">Compatibility</a></li>
-                    <li><a href="dating-style.html">Dating Style</a></li>
-                    <li><a href="ideal-type.html">Ideal Type</a></li>
-                    <li><a href="rankings.html">Rankings</a></li>
+                    <li><a href="compatibility.html" data-lang-key="nav_compatibility_footer">궁합</a></li>
+                    <li><a href="dating-style.html" data-lang-key="nav_dating_style_footer">데이트 스타일</a></li>
+                    <li><a href="ideal-type.html" data-lang-key="nav_ideal_type_footer">이상형</a></li>
+                    <li><a href="rankings.html" data-lang-key="nav_rankings_footer">랭킹</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3 data-lang-key="footer_resources_title">자료</h3>
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about_footer">소개</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contact_footer">연락처</a></li>
+                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-lang-key="nav_official_test_footer">공식 MBTI 테스트</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3 data-lang-key="footer_legal_title">법률</h3>
                 <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="privacy-policy.html" data-lang-key="nav_privacy_policy_footer">개인정보 보호정책</a></li>
+                    <li><a href="terms-of-use.html" data-lang-key="nav_terms_of_use_footer">이용 약관</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+            <p data-lang-key="copyright">© 2024 MBTILove.xyz - 모든 권리 보유.</p>
         </div>
     </footer>
 
     <script>
-        // Balance Game Questions
+        let currentQuestion = 0;
+        let answers = [];
+        let gameStarted = false;
+        let currentLanguage = 'ko';
+
+        const translations = {
+            'ko': {
+                'title_page': 'MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove',
+                'meta_description': '인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.',
+                'nav_compatibility': '궁합',
+                'nav_dating_style': '데이트 스타일',
+                'nav_ideal_type': '이상형',
+                'nav_rankings': '랭킹',
+                'nav_conversation': '대화',
+                'nav_balance_game': '밸런스 게임',
+                'nav_about': '소개',
+                'welcome_title': 'MBTI 밸런스 게임',
+                'welcome_subtitle': '재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.',
+                'feature1': '10개 질문',
+                'feature2': '개인 맞춤 인사이트',
+                'feature3': '관계 팁',
+                'start_button': '밸런스 게임 시작하기',
+                'how_to_play_title': '게임 방법',
+                'step1': '관계 선호도에 대한 10개의 양자택일 질문에 답하세요',
+                'step2': '당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요',
+                'step3': '다양한 성격 유형과의 궁합에 대해 알아보세요',
+                'step4': '개인 맞춤 관계 조언 및 팁을 받으세요',
+                'question_counter': (current, total) => `질문 ${current} / ${total}`,
+                'option_label': '옵션',
+                'ad_label': '광고',
+                'results_title': '당신의 결과',
+                'results_style_title': '당신의 관계 스타일:',
+                'retake_quiz_button': '퀴즈 다시 하기',
+                'footer_explore_title': '탐색',
+                'nav_compatibility_footer': '궁합',
+                'nav_dating_style_footer': '데이트 스타일',
+                'nav_ideal_type_footer': '이상형',
+                'nav_rankings_footer': '랭킹',
+                'footer_resources_title': '자료',
+                'nav_about_footer': '소개',
+                'nav_contact_footer': '연락처',
+                'nav_official_test_footer': '공식 MBTI 테스트',
+                'footer_legal_title': '법률',
+                'nav_privacy_policy_footer': '개인정보 보호정책',
+                'nav_terms_of_use_footer': '이용 약관',
+                'copyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
+            },
+            'en': {
+                'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
+                'meta_description': 'Play our interactive MBTI Balance Game to discover your relationship preferences. Choose between options to reveal your dating style and personality insights.',
+                'nav_compatibility': 'Compatibility',
+                'nav_dating_style': 'Dating Style',
+                'nav_ideal_type': 'Ideal Type',
+                'nav_rankings': 'Rankings',
+                'nav_conversation': 'Conversation',
+                'nav_balance_game': 'Balance Game',
+                'nav_about': 'About',
+                'welcome_title': 'MBTI Balance Game',
+                'welcome_subtitle': 'Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.',
+                'feature1': '10 Questions',
+                'feature2': 'Personalized Insights',
+                'feature3': 'Relationship Tips',
+                'start_button': 'Start Balance Game',
+                'how_to_play_title': 'How to Play',
+                'step1': 'Answer 10 dilemma questions about your relationship preferences',
+                'step2': 'Gain insights into your dating style and relationship values',
+                'step3': 'Learn about your compatibility with various personality types',
+                'step4': 'Receive personalized relationship advice and tips',
+                'question_counter': (current, total) => `Question ${current} of ${total}`,
+                'option_label': 'Option',
+                'ad_label': 'Advertisement',
+                'results_title': 'Your Results',
+                'results_style_title': 'Your Relationship Style:',
+                'retake_quiz_button': 'Retake Quiz',
+                'footer_explore_title': 'Explore',
+                'nav_compatibility_footer': 'Compatibility',
+                'nav_dating_style_footer': 'Dating Style',
+                'nav_ideal_type_footer': 'Ideal Type',
+                'nav_rankings_footer': 'Rankings',
+                'footer_resources_title': 'Resources',
+                'nav_about_footer': 'About',
+                'nav_contact_footer': 'Contact',
+                'nav_official_test_footer': 'Official MBTI Test',
+                'footer_legal_title': 'Legal',
+                'nav_privacy_policy_footer': 'Privacy Policy',
+                'nav_terms_of_use_footer': 'Terms of Use',
+                'copyright': '© 2024 MBTILove.xyz - All rights reserved.',
+            },
+            'ja': {
+                'title_page': 'MBTIバランスゲーム - あなたの関係の好みを調べる | MBTILove',
+                'meta_description': 'インタラクティブなMBTIバランスゲームを通じて、あなたの関係の好みを調べてください。選択肢を選んで、あなたのデートスタイルと性格の洞察を明らかにします。',
+                'nav_compatibility': '相性',
+                'nav_dating_style': 'デートスタイル',
+                'nav_ideal_type': '理想のタイプ',
+                'nav_rankings': 'ランキング',
+                'nav_conversation': '会話',
+                'nav_balance_game': 'バランスゲーム',
+                'nav_about': 'について',
+                'welcome_title': 'MBTIバランスゲーム',
+                'welcome_subtitle': '楽しい二者択一の質問を通して、あなたの関係の好みを明らかにしましょう。あなたのデートスタイル、コミュニケーションの好み、そして恋愛関係で本当に大切にしている価値観について調べてください。',
+                'feature1': '10個の質問',
+                'feature2': 'パーソナライズされた洞察',
+                'feature3': '関係のヒント',
+                'start_button': 'バランスゲームを始める',
+                'how_to_play_title': '遊び方',
+                'step1': 'あなたの関係の好みに関する10個の二者択一の質問に答える',
+                'step2': 'あなたのデートスタイルと関係の価値観について洞察を得る',
+                'step3': '様々な性格タイプとの相性について知る',
+                'step4': 'パーソナライズされた関係のアドバイスとヒントを受け取る',
+                'question_counter': (current, total) => `質問 ${current} / ${total}`,
+                'option_label': 'オプション',
+                'ad_label': '広告',
+                'results_title': 'あなたの結果',
+                'results_style_title': 'あなたの関係スタイル:',
+                'retake_quiz_button': 'クイズをもう一度',
+                'footer_explore_title': '探す',
+                'nav_compatibility_footer': '相性',
+                'nav_dating_style_footer': 'デートスタイル',
+                'nav_ideal_type_footer': '理想のタイプ',
+                'nav_rankings_footer': 'ランキング',
+                'footer_resources_title': 'リソース',
+                'nav_about_footer': 'について',
+                'nav_contact_footer': 'お問い合わせ',
+                'nav_official_test_footer': '公式MBTIテスト',
+                'footer_legal_title': '法律',
+                'nav_privacy_policy_footer': '個人情報保護方針',
+                'nav_terms_of_use_footer': '利用規約',
+                'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
+            }
+        };
+
         const questions = [
             {
                 id: 1,
-                category: "Connection Style",
-                question: "In a relationship, what's more important?",
-                optionA: "Deep emotional connection",
-                optionB: "Intellectual compatibility",
+                category: {
+                    ko: "관계 스타일",
+                    en: "Relationship Style",
+                    ja: "関係スタイル"
+                },
+                question: {
+                    ko: "관계에서 더 중요한 것은 무엇인가요?",
+                    en: "What is more important in a relationship?",
+                    ja: "関係でより重要なものは何ですか？"
+                },
+                optionA: {
+                    ko: "깊은 감정적 교감",
+                    en: "Deep emotional connection",
+                    ja: "深い感情的なつながり"
+                },
+                optionB: {
+                    ko: "지적 호환성",
+                    en: "Intellectual compatibility",
+                    ja: "知的な相性"
+                },
                 insights: {
-                    optionA: "You prioritize emotional intimacy and heart-to-heart connections. You value partners who can share feelings openly and create emotional safety.",
-                    optionB: "You value mental stimulation and shared interests. You're drawn to partners who can engage in meaningful discussions and challenge your thinking.",
-                    analysis: "Both emotional and intellectual connections are important, but knowing your primary preference helps identify compatible partners."
+                    optionA: {
+                        ko: "당신은 감정적 친밀감과 진심 어린 교감을 중요하게 생각합니다. 감정을 솔직하게 나누고 심리적 안정감을 줄 수 있는 파트너를 소중히 여깁니다.",
+                        en: "You value emotional intimacy and genuine connection. You cherish a partner who can share feelings honestly and provide psychological security.",
+                        ja: "あなたは感情的な親密さと心からのつながりを重視します。感情を率直に分かち合い、心理的な安定感を与えてくれるパートナーを大切にします。"
+                    },
+                    optionB: {
+                        ko: "당신은 정신적 자극과 공통의 관심사를 중요하게 생각합니다. 의미 있는 토론을 나누고 당신의 사고를 넓혀줄 수 있는 파트너에게 끌립니다.",
+                        en: "You value mental stimulation and common interests. You are drawn to a partner who can engage in meaningful discussions and broaden your thinking.",
+                        ja: "あなたは精神的な刺激と共通の関心事を重視します。有意義な議論を交わし、あなたの考えを広げてくれるパートナーに惹かれます。"
+                    },
+                    analysis: {
+                        ko: "감정적, 지적 교감 모두 중요하지만, 당신의 주요 선호도를 알면 잘 맞는 파트너를 찾는 데 도움이 됩니다.",
+                        en: "Both emotional and intellectual connections are important, but knowing your primary preference can help you find a well-suited partner.",
+                        ja: "感情的なつながりも知的なつながりもどちらも重要ですが、あなたの主要な好みを把握することで、相性の良いパートナーを見つけるのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 2,
-                category: "Dating Style",
-                question: "When planning dates, you prefer:",
-                optionA: "Spontaneous adventures",
-                optionB: "Well-planned romantic evenings",
+                category: {
+                    ko: "데이트 스타일",
+                    en: "Dating Style",
+                    ja: "デートスタイル"
+                },
+                question: {
+                    ko: "데이트를 계획할 때, 당신은 다음 중 무엇을 선호하나요?",
+                    en: "When planning a date, what do you prefer?",
+                    ja: "デートを計画する際、次のうち何を好みますか？"
+                },
+                optionA: {
+                    ko: "즉흥적인 모험",
+                    en: "Spontaneous adventures",
+                    ja: "自由な冒険"
+                },
+                optionB: {
+                    ko: "잘 계획된 로맨틱한 저녁",
+                    en: "A well-planned romantic dinner",
+                    ja: "よく計画されたロマンチックな夕食"
+                },
                 insights: {
-                    optionA: "You're drawn to excitement and novelty in relationships. Spontaneity keeps things fresh and allows for authentic moments to unfold naturally.",
-                    optionB: "You appreciate thoughtful gestures and romantic planning. Structure and anticipation can make experiences more meaningful and special.",
-                    analysis: "Understanding your preference helps communicate your ideal relationship rhythm to your partner."
+                    optionA: {
+                        ko: "당신은 관계에서 흥분과 새로움에 끌립니다. 즉흥성은 관계를 신선하게 유지하고 진정한 순간을 자연스럽게 만들어 줍니다.",
+                        en: "You are drawn to excitement and novelty in a relationship. Spontaneity can keep a relationship fresh and create authentic moments naturally.",
+                        ja: "あなたは関係における興奮と新しさに惹かれます。自由な発想は、関係を新鮮に保ち、自然な瞬間を生み出します。"
+                    },
+                    optionB: {
+                        ko: "당신은 사려 깊은 행동과 로맨틱한 계획을 높이 평가합니다. 구조와 기대감은 경험을 더욱 의미 있고 특별하게 만들 수 있습니다.",
+                        en: "You appreciate thoughtful gestures and romantic plans. Structure and anticipation can make experiences more meaningful and special.",
+                        ja: "あなたは思慮深い行動とロマンチックな計画を高く評価します。計画と期待感は、体験をより意味深く特別なものにします。"
+                    },
+                    analysis: {
+                        ko: "당신의 선호도를 이해하면 파트너에게 당신이 원하는 관계의 리듬을 전달하는 데 도움이 됩니다.",
+                        en: "Understanding your preference helps you communicate the relationship rhythm you desire to your partner.",
+                        ja: "あなたの好みを理解することは、パートナーにあなたが望む関係のリズムを伝えるのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 3,
-                category: "Conflict Resolution",
-                question: "In conflicts, you tend to:",
-                optionA: "Address issues immediately",
-                optionB: "Take time to think before discussing",
+                category: {
+                    ko: "갈등 해결",
+                    en: "Conflict Resolution",
+                    ja: "対立の解決"
+                },
+                question: {
+                    ko: "갈등이 생겼을 때, 당신은 어떻게 행동하는 경향이 있나요?",
+                    en: "When conflict arises, how do you tend to act?",
+                    ja: "対立が生じたとき、あなたはどのように行動する傾向がありますか？"
+                },
+                optionA: {
+                    ko: "문제를 즉시 해결하려 함",
+                    en: "Try to solve the issue immediately",
+                    ja: "問題を直ちに解決しようとする"
+                },
+                optionB: {
+                    ko: "시간을 갖고 생각한 후 논의함",
+                    en: "Take time to think before discussing",
+                    ja: "時間をかけて考えた後で話し合う"
+                },
                 insights: {
-                    optionA: "You prefer direct communication and quick resolution. This can prevent issues from festering but might sometimes feel overwhelming to your partner.",
-                    optionB: "You value reflection and measured responses. This leads to thoughtful discussions but might frustrate partners who prefer immediate resolution.",
-                    analysis: "Knowing your conflict style helps you communicate your needs and understand your partner's different approach."
+                    optionA: {
+                        ko: "당신은 직접적인 소통과 빠른 해결을 선호합니다. 이는 문제가 커지는 것을 막을 수 있지만, 때로는 파트너에게 부담을 줄 수도 있습니다.",
+                        en: "You prefer direct communication and quick resolution. This can prevent problems from escalating, but can sometimes overwhelm a partner.",
+                        ja: "あなたは直接的なコミュニケーションと迅速な解決を好みます。これは問題が拡大するのを防ぎますが、時にはパートナーに負担をかけることもあります。"
+                    },
+                    optionB: {
+                        ko: "당신은 숙고와 신중한 대응을 중요하게 생각합니다. 이는 사려 깊은 논의로 이어지지만, 즉각적인 해결을 선호하는 파트너를 답답하게 만들 수 있습니다.",
+                        en: "You value reflection and careful response. This can lead to thoughtful discussions, but might frustrate a partner who prefers immediate resolution.",
+                        ja: "あなたは熟考と慎重な対応を重視します。これは思慮深い議論につながりますが、即座の解決を好むパートナーをイライラさせる可能性があります。"
+                    },
+                    analysis: {
+                        ko: "당신의 갈등 해결 방식을 알면 당신의 요구를 전달하고 파트너의 다른 접근 방식을 이해하는 데 도움이 됩니다.",
+                        en: "Knowing your conflict resolution style helps you communicate your needs and understand your partner's different approach.",
+                        ja: "あなたの対立解決スタイルを知ることは、あなたの要求を伝え、パートナーの異なるアプローチを理解するのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 4,
-                category: "Partner Preference",
-                question: "Your ideal partner is:",
-                optionA: "Your best friend who you're also attracted to",
-                optionB: "Someone who complements and challenges you",
+                category: {
+                    ko: "파트너 선호도",
+                    en: "Partner Preference",
+                    ja: "パートナーの好み"
+                },
+                question: {
+                    ko: "당신의 이상적인 파트너는:",
+                    en: "Your ideal partner is:",
+                    ja: "あなたの理想のパートナーは："
+                },
+                optionA: {
+                    ko: "매력도 느끼는 가장 친한 친구",
+                    en: "Your best friend who you're also attracted to",
+                    ja: "魅力的でもある親友"
+                },
+                optionB: {
+                    ko: "당신을 보완하고 도전하게 만드는 사람",
+                    en: "Someone who complements and challenges you",
+                    ja: "あなたを補完し、挑戦させる人"
+                },
                 insights: {
-                    optionA: "You value friendship as the foundation of love. You want a partner who truly gets you and shares your interests and values.",
-                    optionB: "You're attracted to growth and balance. You seek someone who brings different strengths and helps you become a better person.",
-                    analysis: "Both approaches can lead to fulfilling relationships, but understanding your preference helps you recognize your ideal dynamic."
+                    optionA: {
+                        ko: "당신은 우정을 사랑의 기반으로 중요하게 생각합니다. 진정으로 당신을 이해하고 당신의 관심사와 가치를 공유하는 파트너를 원합니다.",
+                        en: "You value friendship as the foundation of love. You want a partner who truly understands you and shares your interests and values.",
+                        ja: "あなたは友情を愛の基盤として重視します。あなたを本当に理解し、あなたの興味や価値観を共有するパートナーを望みます。"
+                    },
+                    optionB: {
+                        ko: "당신은 성장과 균형에 매력을 느낍니다. 다른 강점을 가져와 당신이 더 나은 사람이 되도록 도와주는 사람을 찾습니다.",
+                        en: "You are attracted to growth and balance. You seek someone who brings different strengths and helps you become a better person.",
+                        ja: "あなたは成長とバランスに魅力を感じます。異なる強みをもたらし、あなたがより良い人になるのを助けてくれる人を探します。"
+                    },
+                    analysis: {
+                        ko: "두 가지 접근 방식 모두 만족스러운 관계로 이어질 수 있지만, 당신의 선호도를 이해하면 이상적인 관계 역학을 인식하는 데 도움이 됩니다.",
+                        en: "Both approaches can lead to a fulfilling relationship, but understanding your preference helps you recognize your ideal relationship dynamic.",
+                        ja: "どちらのアプローチも満足のいく関係につながりますが、あなたの好みを理解することは、理想的な関係のダイナミクスを認識するのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 5,
-                category: "Love Expression",
-                question: "When showing love, you prefer:",
-                optionA: "Grand romantic gestures",
-                optionB: "Small daily acts of care",
+                category: {
+                    ko: "사랑 표현",
+                    en: "Expression of Love",
+                    ja: "愛の表現"
+                },
+                question: {
+                    ko: "사랑을 표현할 때, 당신은 다음 중 무엇을 선호하나요?",
+                    en: "When expressing love, what do you prefer?",
+                    ja: "愛を表現する際、次のうち何を好みますか？"
+                },
+                optionA: {
+                    ko: "대담한 로맨틱한 제스처",
+                    en: "Bold, romantic gestures",
+                    ja: "大胆でロマンチックなジェスチャー"
+                },
+                optionB: {
+                    ko: "작고 사소한 매일의 배려",
+                    en: "Small, daily acts of kindness",
+                    ja: "小さく、毎日の親切な行為"
+                },
                 insights: {
-                    optionA: "You appreciate dramatic expressions of love that show your partner is thinking of you in big ways. These moments become cherished memories.",
-                    optionB: "You value consistency and daily kindness. Small gestures show ongoing care and attention to your needs and preferences.",
-                    analysis: "Understanding how you give and receive love helps create more meaningful expressions of affection in your relationships."
+                    optionA: {
+                        ko: "당신은 파트너가 당신을 크게 생각하고 있음을 보여주는 극적인 사랑 표현을 높이 평가합니다. 이러한 순간들은 소중한 추억이 됩니다.",
+                        en: "You appreciate dramatic expressions of love that show your partner is thinking of you in a big way. These moments become cherished memories.",
+                        ja: "あなたは、パートナーがあなたを大切に思っていることを示すドラマチックな愛の表現を高く評価します。これらの瞬間は大切な思い出になります。"
+                    },
+                    optionB: {
+                        ko: "당신은 일관성과 매일의 친절을 중요하게 생각합니다. 작은 행동들은 당신의 필요와 선호도에 대한 지속적인 관심과 배려를 보여줍니다.",
+                        en: "You value consistency and daily kindness. Small actions show continuous care and consideration for your needs and preferences.",
+                        ja: "あなたは一貫性と毎日の親切を重視します。小さな行動は、あなたの必要性と好みに constant な配慮と考慮を示します。"
+                    },
+                    analysis: {
+                        ko: "당신이 사랑을 어떻게 주고받는지 이해하는 것은 관계에서 더 의미 있는 애정 표현을 만드는 데 도움이 됩니다.",
+                        en: "Understanding how you give and receive love helps create more meaningful expressions of affection in your relationship.",
+                        ja: "あなたがどのように愛を与え、受け取るかを理解することは、関係においてより意味のある愛情表現を創造するのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 6,
-                category: "Relationship Values",
-                question: "For long-term happiness, you need:",
-                optionA: "Stability and security",
-                optionB: "Growth and adventure",
+                category: {
+                    ko: "관계 가치",
+                    en: "Relationship Values",
+                    ja: "関係の価値"
+                },
+                question: {
+                    ko: "오래 지속되는 행복을 위해, 당신에게 필요한 것은:",
+                    en: "For long-term happiness, you need:",
+                    ja: "長く続く幸せのために、あなたが必要なのは："
+                },
+                optionA: {
+                    ko: "안정성과 안정감",
+                    en: "Stability and security",
+                    ja: "安定性と安心感"
+                },
+                optionB: {
+                    ko: "성장과 모험",
+                    en: "Growth and adventure",
+                    ja: "成長と冒険"
+                },
                 insights: {
-                    optionA: "You thrive in relationships that provide emotional and practical security. Predictability and reliability help you feel safe to be vulnerable.",
-                    optionB: "You need relationships that evolve and challenge you. Stagnation feels threatening, while growth keeps the relationship vibrant and engaging.",
-                    analysis: "Knowing your core relationship needs helps you choose partners who can provide what you need to thrive long-term."
+                    optionA: {
+                        ko: "당신은 감정적, 실질적 안정감을 제공하는 관계에서 번성합니다. 예측 가능성과 신뢰성은 당신이 편안하게 취약해질 수 있도록 도와줍니다.",
+                        en: "You thrive in relationships that provide emotional and practical security. Predictability and trust help you feel comfortable and vulnerable.",
+                        ja: "あなたは感情的かつ実践的な安心感を提供する関係で繁栄します。予測可能性と信頼は、あなたが安心して弱さを見せられるように助けます。"
+                    },
+                    optionB: {
+                        ko: "당신은 당신을 발전시키고 도전하게 하는 관계가 필요합니다. 정체는 위협적으로 느껴지며, 성장은 관계를 활기차고 매력적으로 유지합니다.",
+                        en: "You need a relationship that evolves and challenges you. Stagnation feels threatening, and growth keeps the relationship vibrant and engaging.",
+                        ja: "あなたは進化し、あなたに挑戦をもたらす関係が必要です。停滞は脅威に感じられ、成長は関係を活気に満ち、魅力的に保ちます。"
+                    },
+                    analysis: {
+                        ko: "당신의 핵심 관계 요구를 알면 장기적으로 당신에게 필요한 것을 제공할 수 있는 파트너를 선택하는 데 도움이 됩니다.",
+                        en: "Knowing your core relationship needs helps you choose a partner who can provide what you need for the long term.",
+                        ja: "あなたの関係の中核的なニーズを知ることは、長期的にあなたが必要なものを提供できるパートナーを選ぶのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 7,
-                category: "Support Style",
-                question: "When your partner is stressed, you:",
-                optionA: "Give them space to process",
-                optionB: "Offer immediate support and comfort",
+                category: {
+                    ko: "지지 방식",
+                    en: "Support Style",
+                    ja: "サポートスタイル"
+                },
+                question: {
+                    ko: "파트너가 스트레스를 받을 때, 당신은:",
+                    en: "When your partner is stressed, you:",
+                    ja: "あなたのパートナーがストレスを感じているとき、あなたは："
+                },
+                optionA: {
+                    ko: "혼자 생각할 시간을 줌",
+                    en: "Give them time to think alone",
+                    ja: "一人で考える時間を与える"
+                },
+                optionB: {
+                    ko: "즉각적인 지지와 위로를 제공함",
+                    en: "Provide immediate support and comfort",
+                    ja: "直ちにサポートと慰めを提供する"
+                },
                 insights: {
-                    optionA: "You respect your partner's need for independence and self-regulation. You understand that sometimes the best support is giving someone room to breathe.",
-                    optionB: "You show care through active presence and comfort. You want to be there for your partner and help them through difficult times.",
-                    analysis: "Understanding different support styles helps you give your partner what they actually need, not just what you would want."
+                    optionA: {
+                        ko: "당신은 파트너의 독립성과 자기 조절의 필요성을 존중합니다. 때로는 숨 쉴 공간을 주는 것이 최고의 지지임을 이해합니다.",
+                        en: "You respect your partner's need for independence and self-regulation. You understand that sometimes giving space is the best support.",
+                        ja: "あなたはパートナーの独立性と自己調整の必要性を尊重します。時にはスペースを与えることが最良のサポートであることを理解しています。"
+                    },
+                    optionB: {
+                        ko: "당신은 적극적인 존재와 위로를 통해 배려를 보여줍니다. 어려운 시기에 파트너 곁에 있고 그들을 돕고 싶어 합니다.",
+                        en: "You show care through active presence and comfort. You want to be there for your partner during tough times and help them.",
+                        ja: "あなたは積極的な存在と慰めを通して配慮を示します。あなたは困難な時期にパートナーのそばにいて、彼らを助けたいと思います。"
+                    },
+                    analysis: {
+                        ko: "서로 다른 지지 방식을 이해하면 파트너가 실제로 원하는 것을 제공할 수 있습니다.",
+                        en: "Understanding different support styles helps you provide what your partner actually wants.",
+                        ja: "異なるサポートスタイルを理解することは、あなたのパートナーが実際に望むものを提供するために役立ちます。"
+                    }
                 }
             },
             {
                 id: 8,
-                category: "Attraction Factors",
-                question: "You're most attracted to:",
-                optionA: "Confidence and ambition",
-                optionB: "Kindness and empathy",
+                category: {
+                    ko: "매력 요소",
+                    en: "Attraction Factors",
+                    ja: "魅力の要素"
+                },
+                question: {
+                    ko: "당신이 가장 매력을 느끼는 것은:",
+                    en: "What you find most attractive is:",
+                    ja: "あなたが最も魅力を感じるのは："
+                },
+                optionA: {
+                    ko: "자신감과 야망",
+                    en: "Confidence and ambition",
+                    ja: "自信と野心"
+                },
+                optionB: {
+                    ko: "친절함과 공감 능력",
+                    en: "Kindness and empathy",
+                    ja: "親切さと共感能力"
+                },
                 insights: {
-                    optionA: "You're drawn to partners who know what they want and pursue their goals. Drive and self-assurance are exciting and inspiring to you.",
-                    optionB: "You value emotional intelligence and compassion. A caring heart and ability to understand others feels safe and attractive to you.",
-                    analysis: "Recognizing what initially attracts you helps identify potential partners, but remember that lasting relationships need multiple compatibility factors."
+                    optionA: {
+                        ko: "당신은 자신이 무엇을 원하는지 알고 목표를 추구하는 파트너에게 끌립니다. 추진력과 자기 확신은 당신에게 흥분과 영감을 줍니다.",
+                        en: "You are drawn to a partner who knows what they want and pursues their goals. Drive and self-assurance excite and inspire you.",
+                        ja: "あなたは自分が何を望んでいるかを知り、目標を追求するパートナーに惹かれます。推進力と自己確信は、あなたを興奮させ、インスピレーションを与えます。"
+                    },
+                    optionB: {
+                        ko: "당신은 감정 지능과 연민을 중요하게 생각합니다. 배려심 있는 마음과 타인을 이해하는 능력은 당신에게 안정감과 매력을 느끼게 합니다.",
+                        en: "You value emotional intelligence and compassion. A caring heart and the ability to understand others make you feel secure and attracted.",
+                        ja: "あなたは感情知能と慈悲を重視します。思いやりのある心と他人を理解する能力は、あなたに安心感と魅力を感じさせます。"
+                    },
+                    analysis: {
+                        ko: "처음 매력을 느끼는 요소를 아는 것은 잠재적인 파트너를 식별하는 데 도움이 되지만, 오래 지속되는 관계에는 여러 호환성 요소가 필요함을 기억하세요.",
+                        en: "Knowing what you are initially attracted to helps you identify potential partners, but remember that long-lasting relationships require multiple compatibility factors.",
+                        ja: "最初に惹かれる要素を知ることは、潜在的なパートナーを特定するのに役立ちますが、長く続く関係には複数の相性要素が必要であることを覚えておいてください。"
+                    }
                 }
             },
             {
                 id: 9,
-                category: "Social Dynamics",
-                question: "In social situations as a couple, you prefer:",
-                optionA: "Being the center of attention together",
-                optionB: "Quietly observing and connecting one-on-one",
+                category: {
+                    ko: "사회적 역학",
+                    en: "Social Dynamics",
+                    ja: "社会的ダイナミクス"
+                },
+                question: {
+                    ko: "커플로서 사회적 상황에서, 당신은 다음 중 무엇을 선호하나요?",
+                    en: "In social situations as a couple, what do you prefer?",
+                    ja: "カップルとして社会的状況で、次のうち何を好みますか？"
+                },
+                optionA: {
+                    ko: "함께 주목받는 것",
+                    en: "Being the center of attention together",
+                    ja: "一緒に注目を集めること"
+                },
+                optionB: {
+                    ko: "조용히 관찰하고 일대일로 소통하는 것",
+                    en: "Observing quietly and communicating one-on-one",
+                    ja: "静かに観察し、一対一でコミュニケーションをとること"
+                },
                 insights: {
-                    optionA: "You enjoy being part of the social energy and sharing experiences with groups. You like when your relationship adds to the fun of social gatherings.",
-                    optionB: "You prefer intimate connections and meaningful conversations. Large groups can feel draining, and you value quiet moments with your partner.",
-                    analysis: "Understanding your social preferences helps you find partners with compatible energy levels and social needs."
+                    optionA: {
+                        ko: "당신은 사교적인 분위기의 일부가 되고 그룹과 경험을 공유하는 것을 즐깁니다. 당신의 관계가 사교 모임의 즐거움에 보탬이 되는 것을 좋아합니다.",
+                        en: "You enjoy being part of the social scene and sharing experiences with a group. You like your relationship to add to the fun of social gatherings.",
+                        ja: "あなたは社交的な場面の一部となり、グループと経験を共有することを楽しんでいます。あなたの関係が社交的な集まりの楽しさに貢献することを好みます。"
+                    },
+                    optionB: {
+                        ko: "당신은 친밀한 교감과 의미 있는 대화를 선호합니다. 큰 그룹은 당신을 지치게 할 수 있으며, 당신은 파트너와 조용한 순간을 소중히 여깁니다.",
+                        en: "You prefer intimate connection and meaningful conversations. Large groups can exhaust you, and you cherish quiet moments with your partner.",
+                        ja: "あなたは親密なつながりと有意義な会話を好みます。大きなグループはあなたを疲れさせることがあり、あなたはパートナーとの静かな瞬間を大切にします。"
+                    },
+                    analysis: {
+                        ko: "당신의 사회적 선호도를 이해하면 당신과 비슷한 에너지 수준과 사회적 필요를 가진 파트너를 찾는 데 도움이 됩니다.",
+                        en: "Understanding your social preferences helps you find a partner with a similar energy level and social needs.",
+                        ja: "あなたの社会的嗜好を理解することは、あなたと似たエネルギーレベルと社会的ニーズを持つパートナーを見つけるのに役立ちます。"
+                    }
                 }
             },
             {
                 id: 10,
-                category: "Relationship Standards",
-                question: "Your relationship deal-breaker is:",
-                optionA: "Lack of emotional intimacy",
-                optionB: "Lack of personal growth",
+                category: {
+                    ko: "관계 기준",
+                    en: "Relationship Standards",
+                    ja: "関係の基準"
+                },
+                question: {
+                    ko: "당신의 관계에 있어 절대 용납할 수 없는 것은:",
+                    en: "What is an absolute dealbreaker in your relationship?",
+                    ja: "あなたの関係において、絶対に許せないことは何ですか？"
+                },
+                optionA: {
+                    ko: "감정적 친밀감 부족",
+                    en: "Lack of emotional intimacy",
+                    ja: "感情的な親密さの欠如"
+                },
+                optionB: {
+                    ko: "개인적인 성장 부족",
+                    en: "Lack of personal growth",
+                    ja: "個人的な成長の欠如"
+                },
                 insights: {
-                    optionA: "Emotional connection is non-negotiable for you. Without deep intimacy and vulnerability, relationships feel shallow and unsatisfying.",
-                    optionB: "You need relationships that challenge and develop you. Partners who don't grow or support your growth feel limiting and frustrating.",
-                    analysis: "Knowing your deal-breakers helps you make better relationship choices and communicate your non-negotiable needs."
+                    optionA: {
+                        ko: "감정적 교감은 당신에게 양보할 수 없는 것입니다. 깊은 친밀감과 취약성 없이는 관계가 피상적이고 만족스럽지 않게 느껴집니다.",
+                        en: "Emotional connection is non-negotiable for you. Without deep intimacy and vulnerability, the relationship feels superficial and unfulfilling.",
+                        ja: "感情的なつながりは、あなたにとって譲れないものです。深い親密さと脆弱性がなければ、関係は表面的なもので満足感が得られません。"
+                    },
+                    optionB: {
+                        ko: "당신은 당신에게 도전하고 발전시키는 관계가 필요합니다. 성장하지 않거나 당신의 성장을 지지하지 않는 파트너는 제한적이고 답답하게 느껴집니다.",
+                        en: "You need a relationship that challenges and develops you. A partner who doesn't grow or support your growth feels limiting and frustrating.",
+                        ja: "あなたはあなたに挑戦し、成長させる関係が必要です。成長しない、またはあなたの成長をサポートしないパートナーは、制限的でイライラさせられます。"
+                    },
+                    analysis: {
+                        ko: "절대 용납할 수 없는 것을 알면 더 나은 관계 선택을 하고 당신의 필수적인 요구 사항을 전달하는 데 도움이 됩니다.",
+                        en: "Knowing your dealbreakers helps you make better relationship choices and communicate your essential needs.",
+                        ja: "絶対に許せないことを知ることは、より良い関係の選択をし、あなたの本質的なニーズを伝えるのに役立ちます。"
+                    }
                 }
             }
         ];
 
-        let currentQuestion = 0;
-        let answers = [];
-        let gameStarted = false;
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            document.title = translations[lang]['title_page'];
+            document.querySelector('meta[name="description"]').content = translations[lang]['meta_description'];
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (key.startsWith('nav_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('welcome_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('feature')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('start_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('how_to_play_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('step')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('results_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('retake_quiz_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('footer_')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('copyright')) {
+                    element.textContent = translations[lang][key];
+                } else if (key.startsWith('ad_')) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+
+            // Refresh the current screen content based on the new language
+            if (document.getElementById('game-screen').classList.contains('active')) {
+                showQuestion();
+            } else if (document.getElementById('results-screen').classList.contains('active')) {
+                showResults();
+            }
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
 
         function startGame() {
             gameStarted = true;
@@ -447,19 +895,19 @@
             const progress = ((currentQuestion + 1) / questions.length) * 100;
             
             document.getElementById('progress-fill').style.width = progress + '%';
-            document.getElementById('question-counter').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            document.getElementById('question-counter').textContent = translations[currentLanguage].question_counter(currentQuestion + 1, questions.length);
             
             document.getElementById('question-card').innerHTML = `
-                <div class="question-category">${question.category}</div>
-                <div class="question-text">${question.question}</div>
+                <div class="question-category">${question.category[currentLanguage]}</div>
+                <div class="question-text">${question.question[currentLanguage]}</div>
                 <div class="options">
                     <button class="option-btn" onclick="selectAnswer('A')">
-                        <div class="option-label">Option A</div>
-                        ${question.optionA}
+                        <div class="option-label">${translations[currentLanguage].option_label} A</div>
+                        ${question.optionA[currentLanguage]}
                     </button>
                     <button class="option-btn" onclick="selectAnswer('B')">
-                        <div class="option-label">Option B</div>
-                        ${question.optionB}
+                        <div class="option-label">${translations[currentLanguage].option_label} B</div>
+                        ${question.optionB[currentLanguage]}
                     </button>
                 </div>
             `;
@@ -487,12 +935,10 @@
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('results-screen').classList.add('active');
             
-            // Calculate personality insights
             const personalityInsight = getPersonalityInsights();
-            document.getElementById('personality-type').textContent = 'Your Relationship Style:';
+            document.getElementById('personality-type').textContent = translations[currentLanguage].results_style_title;
             document.getElementById('personality-description').textContent = personalityInsight;
             
-            // Generate question-by-question analysis
             const insightsGrid = document.getElementById('insights-grid');
             insightsGrid.innerHTML = '';
             
@@ -500,17 +946,17 @@
                 const question = questions.find(q => q.id === answer.questionId);
                 if (!question) return;
                 
-                const selectedInsight = answer.choice === 'A' ? question.insights.optionA : question.insights.optionB;
-                const selectedOption = answer.choice === 'A' ? question.optionA : question.optionB;
+                const selectedInsight = answer.choice === 'A' ? question.insights.optionA[currentLanguage] : question.insights.optionB[currentLanguage];
+                const selectedOption = answer.choice === 'A' ? question.optionA[currentLanguage] : question.optionB[currentLanguage];
                 
                 const insightCard = document.createElement('div');
                 insightCard.className = 'insight-card';
                 insightCard.innerHTML = `
-                    <div class="insight-category">${question.category}</div>
-                    <div class="insight-question">${question.question}</div>
-                    <div class="insight-choice">Your choice: ${selectedOption}</div>
+                    <div class="insight-category">${question.category[currentLanguage]}</div>
+                    <div class="insight-question">${question.question[currentLanguage]}</div>
+                    <div class="insight-choice">${translations[currentLanguage].option_label} ${answer.choice}: ${selectedOption}</div>
                     <div class="insight-text">${selectedInsight}</div>
-                    <div class="insight-analysis">${question.insights.analysis}</div>
+                    <div class="insight-analysis">${question.insights.analysis[currentLanguage]}</div>
                 `;
                 insightsGrid.appendChild(insightCard);
             });
@@ -527,14 +973,34 @@
             };
 
             let personalityType = '';
-            if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
-            else personalityType += 'Intellectual ';
-            
-            if (categories.spontaneous >= categories.planned) personalityType += 'Spontaneous ';
-            else personalityType += 'Planned ';
-            
-            if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
-            else personalityType += 'Thoughtful Communicator';
+            if (currentLanguage === 'ko') {
+                if (categories.emotional >= categories.intellectual) personalityType += '감정적 ';
+                else personalityType += '지적 ';
+                
+                if (categories.spontaneous >= categories.planned) personalityType += '즉흥적 ';
+                else personalityType += '계획적 ';
+                
+                if (categories.direct >= categories.thoughtful) personalityType += '직접적 소통가';
+                else personalityType += '사려 깊은 소통가';
+            } else if (currentLanguage === 'en') {
+                if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
+                else personalityType += 'Intellectual ';
+                
+                if (categories.spontaneous >= categories.planned) personalityType += 'Spontaneous ';
+                else personalityType += 'Planned ';
+                
+                if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
+                else personalityType += 'Thoughtful Communicator';
+            } else if (currentLanguage === 'ja') {
+                if (categories.emotional >= categories.intellectual) personalityType += '感情的 ';
+                else personalityType += '知的 ';
+                
+                if (categories.spontaneous >= categories.planned) personalityType += '即興的 ';
+                else personalityType += '計画的 ';
+                
+                if (categories.direct >= categories.thoughtful) personalityType += '直接的なコミュニケーター';
+                else personalityType += '思慮深いコミュニケーター';
+            }
 
             return personalityType;
         }

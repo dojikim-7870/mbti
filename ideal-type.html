@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Ideal MBTI Type - Perfect Personality Match | MBTILove</title>
     <meta name="description" content="Discover your ideal MBTI personality type match for romantic relationships. Based on psychological compatibility research and personality complementarity.">
+
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -119,7 +119,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
@@ -133,35 +132,26 @@
                 <a href="about.html">About</a>
             </nav>
             <div class="language-switcher">
-                <button class="lang-btn active">EN</button>
-                <button class="lang-btn">日本語</button>
-                <button class="lang-btn">한국어</button>
+                <button class="lang-btn active" onclick="updateContent('en')">EN</button>
+                <button class="lang-btn" onclick="updateContent('ja')">日本語</button>
+                <button class="lang-btn" onclick="updateContent('ko')">한국어</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title font-poppins">Find Your Ideal MBTI Type</h1>
-            <p class="hero-subtitle">
-                Based on psychological compatibility research, discover which MBTI personality types complement your strengths, 
-                balance your weaknesses, and create the most harmonious romantic relationships.
-            </p>
+            <h1 class="hero-title font-poppins" data-i18n="heroTitle">Find Your Ideal MBTI Type</h1>
+<p class="hero-subtitle" data-i18n="heroSubtitle">Based on psychological compatibility research...</p>
         </div>
     </section>
 
-    <!-- AdSense Banner -->
-    <div class="adsense-banner">
-        <p>Advertisement</p>
-    </div>
-
-    <!-- Interactive Ideal Type Finder -->
+    
     <section class="section">
         <div class="container">
             <div class="finder-section">
-                <h2 class="finder-title font-poppins">Interactive Ideal Type Finder</h2>
-                <p class="finder-subtitle">
+                <h2 class="finder-title font-poppins" data-i18n="finderTitle">Interactive Ideal Type Finder</h2>
+                <p class="finder-subtitle" data-i18n="finderSubtitle">
                     Select your MBTI type to discover your most compatible romantic partners
                 </p>
                 
@@ -232,35 +222,33 @@
                     </button>
                 </div>
                 
-                <!-- Results Section -->
                 <div id="results" class="results">
-                    <h3 class="results-title">Your Ideal Romantic Matches</h3>
+                    <h3 class="results-title" data-i18n="resultsTitle">Your Ideal Romantic Matches</h3>
                     <div id="ideal-types-grid" class="ideal-types-grid">
-                        <!-- Results will be populated by JavaScript -->
-                    </div>
+                        </div>
                     
                     <div class="insights-section">
-                        <h4 class="insights-title">Why These Types Are Ideal for You</h4>
+                        <h4 class="insights-title" data-i18n="insightsTitle">Why These Types Are Ideal for You</h4>
                         <div class="insights-grid">
                             <div class="insight-card">
                                 <div class="insight-icon">🧩</div>
-                                <h5 class="insight-title">Complementary Strengths</h5>
-                                <p class="insight-text">Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.</p>
+                                <h5 class="insight-title" data-i18n="insight1Title">Complementary Strengths</h5>
+                                <p class="insight-text" data-i18n="insight1Text">Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">💬</div>
-                                <h5 class="insight-title">Communication Harmony</h5>
-                                <p class="insight-text">These types communicate in ways that resonate with your preferences, reducing misunderstandings.</p>
+                                <h5 class="insight-title" data-i18n="insight2Title">Communication Harmony</h5>
+                                <p class="insight-text" data-i18n="insight2Text">These types communicate in ways that resonate with your preferences, reducing misunderstandings.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">🌱</div>
-                                <h5 class="insight-title">Growth Potential</h5>
-                                <p class="insight-text">Ideal matches challenge you to grow while providing the support you need to flourish.</p>
+                                <h5 class="insight-title" data-i18n="insight3Title">Growth Potential</h5>
+                                <p class="insight-text" data-i18n="insight3Text">Ideal matches challenge you to grow while providing the support you need to flourish.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">❤️</div>
-                                <h5 class="insight-title">Emotional Connection</h5>
-                                <p class="insight-text">These personality types share values and emotional approaches that foster deep intimacy.</p>
+                                <h5 class="insight-title" data-i18n="insight4Title">Emotional Connection</h5>
+                                <p class="insight-text" data-i18n="insight4Text">These personality types share values and emotional approaches that foster deep intimacy.</p>
                             </div>
                         </div>
                     </div>
@@ -269,11 +257,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Explore</h3>
+                <h3 data-i18n="footerExplore">Explore</h3>
                 <ul>
                     <li><a href="compatibility.html">Compatibility</a></li>
                     <li><a href="dating-style.html">Dating Style</a></li>
@@ -282,7 +269,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3 data-i18n="footerResources">Resources</h3>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -290,7 +277,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3 data-i18n="footerLegal">Legal</h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -301,8 +288,79 @@
             <p>© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
-
+<script src="js/global.js"></script>
     <script>
+        const translations = {
+            'en': {
+                'heroTitle': 'Find Your Ideal MBTI Type',
+                'heroSubtitle': 'Based on psychological compatibility research, discover which MBTI personality types complement your strengths, balance your weaknesses, and create the most harmonious romantic relationships.',
+                'finderTitle': 'Interactive Ideal Type Finder',
+                'finderSubtitle': 'Select your MBTI type to discover your most compatible romantic partners',
+                'resultsTitle': 'Your Ideal Romantic Matches',
+                'insightsTitle': 'Why These Types Are Ideal for You',
+                'insight1Title': 'Complementary Strengths',
+                'insight1Text': 'Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.',
+                'insight2Title': 'Communication Harmony',
+                'insight2Text': 'These types communicate in ways that resonate with your preferences, reducing misunderstandings.',
+                'insight3Title': 'Growth Potential',
+                'insight3Text': 'Ideal matches challenge you to grow while providing the support you need to flourish.',
+                'insight4Title': 'Emotional Connection',
+                'insight4Text': 'These personality types share values and emotional approaches that foster deep intimacy.',
+                'footerExplore': 'Explore',
+                'footerResources': 'Resources',
+                'footerLegal': 'Legal'
+            },
+            'ja': {
+                'heroTitle': 'あなたの理想のMBTIタイプを見つけよう',
+                'heroSubtitle': '心理的な相性の研究に基づき、あなたの長所を補い、短所のバランスを取り、最も調和の取れた恋愛関係を築けるMBTIタイプを見つけましょう。',
+                'finderTitle': 'インタラクティブ理想タイプ検索',
+                'finderSubtitle': 'あなたのMBTIタイプを選んで、最も相性の良い恋愛パートナーを見つけましょう',
+                'resultsTitle': 'あなたの理想的な恋愛相手',
+                'insightsTitle': 'なぜこれらのタイプがあなたにとって理想的なのか',
+                'insight1Title': '補完的な強み',
+                'insight1Text': 'あなたの理想のタイプは、あなたの本来の能力を補う強みを持っており、バランスの取れたパートナーシップを築きます。',
+                'insight2Title': 'コミュニケーションの調和',
+                'insight2Text': 'これらのタイプはあなたの好みに合った方法でコミュニケーションを取り、誤解を減らします。',
+                'insight3Title': '成長の可能性',
+                'insight3Text': '理想の相手は、あなたが成長するために必要なサポートを提供しながら、あなたに挑戦を促します。',
+                'insight4Title': '感情的なつながり',
+                'insight4Text': 'これらの性格タイプは、深い親密さを育む価値観や感情的なアプローチを共有しています。',
+                'footerExplore': '探す',
+                'footerResources': 'リソース',
+                'footerLegal': '法的'
+            },
+            'ko': {
+                'heroTitle': '당신의 이상적인 MBTI 유형 찾기',
+                'heroSubtitle': '심리적 궁합 연구를 바탕으로, 당신의 강점을 보완하고 약점의 균형을 맞춰주며 가장 조화로운 관계를 만들어 줄 MBTI 성격 유형을 찾아보세요.',
+                'finderTitle': '이상형 찾기',
+                'finderSubtitle': '당신의 MBTI 유형을 선택하여 가장 잘 맞는 연애 파트너를 찾아보세요',
+                'resultsTitle': '당신의 이상적인 연애 상대',
+                'insightsTitle': '이 유형들이 당신에게 이상적인 이유',
+                'insight1Title': '상호 보완적인 강점',
+                'insight1Text': '당신의 이상형은 당신의 본래 능력을 보완하는 강점을 가지고 있어 균형 잡힌 관계를 만들어 줍니다.',
+                'insight2Title': '소통의 조화',
+                'insight2Text': '이 유형들은 당신의 선호도에 맞춰 소통하여 오해를 줄여줍니다.',
+                'insight3Title': '성장 가능성',
+                'insight3Text': '이상적인 상대는 당신이 성장하도록 도전하게 하면서도, 당신이 성공하는 데 필요한 지원을 제공합니다.',
+                'insight4Title': '정서적 연결',
+                'insight4Text': '이러한 성격 유형들은 깊은 친밀감을 형성하는 가치관과 감정적 접근 방식을 공유합니다.',
+                'footerExplore': '탐색하기',
+                'footerResources': '자료',
+                'footerLegal': '법률'
+            }
+        };
+
+        function updateContent(lang) {
+            // Update all text elements based on the selected language
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
         // Ideal type data
         const idealTypeData = {
             'INTJ': [

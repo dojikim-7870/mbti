@@ -6,7 +6,6 @@
     <title>MBTI Personality Rankings - Love & Relationship Statistics | MBTILove</title>
     <meta name="description" content="Discover MBTI personality rankings for love and relationships. From most romantic to best communicators, explore comprehensive personality statistics.">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -126,7 +125,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
@@ -140,47 +138,42 @@
                 <a href="about.html">About</a>
             </nav>
             <div class="language-switcher">
-                <button class="lang-btn active">EN</button>
-                <button class="lang-btn">日本語</button>
-                <button class="lang-btn">한국어</button>
+                <button class="lang-btn active" onclick="updateContent('en')">EN</button>
+                <button class="lang-btn" onclick="updateContent('ja')">日本語</button>
+                <button class="lang-btn" onclick="updateContent('ko')">한국어</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title font-poppins">MBTI Personality Rankings</h1>
-            <p class="hero-subtitle">
+            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Personality Rankings</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">
                 Discover fascinating insights about MBTI personality types in relationships. From most romantic to best 
                 communication skills, explore comprehensive rankings based on relationship psychology research.
             </p>
         </div>
     </section>
 
-    <!-- AdSense Banner -->
     <div class="adsense-banner">
-        <p>Advertisement</p>
+        <p data-i18n="advertisement">Advertisement</p>
     </div>
 
-    <!-- Main Content -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title font-poppins">Relationship Rankings</h2>
+            <h2 class="section-title font-poppins" data-i18n="sectionTitle">Relationship Rankings</h2>
             
-            <!-- Category Navigation -->
             <div class="categories-nav">
-                <button class="category-btn active" onclick="showCategory('romantic')">Most Romantic</button>
-                <button class="category-btn" onclick="showCategory('loyal')">Most Loyal</button>
-                <button class="category-btn" onclick="showCategory('communication')">Best Communicators</button>
-                <button class="category-btn" onclick="showCategory('adventurous')">Most Adventurous</button>
-                <button class="category-btn" onclick="showCategory('supportive')">Most Supportive</button>
+                <button class="category-btn active" onclick="showCategory('romantic')" data-i18n="mostRomanticBtn">Most Romantic</button>
+                <button class="category-btn" onclick="showCategory('loyal')" data-i18n="mostLoyalBtn">Most Loyal</button>
+                <button class="category-btn" onclick="showCategory('communication')" data-i18n="bestCommunicatorsBtn">Best Communicators</button>
+                <button class="category-btn" onclick="showCategory('adventurous')" data-i18n="mostAdventurousBtn">Most Adventurous</button>
+                <button class="category-btn" onclick="showCategory('supportive')" data-i18n="mostSupportiveBtn">Most Supportive</button>
             </div>
 
-            <!-- Most Romantic Ranking -->
             <div id="romantic" class="ranking-category active">
                 <div class="ranking-section">
-                    <h3 class="ranking-title">Most Romantic Personality Types</h3>
+                    <h3 class="ranking-title" data-i18n="romanticTitle">Most Romantic Personality Types</h3>
                     <div class="ranking-list">
                         <div class="ranking-item">
                             <div class="ranking-position">1</div>
@@ -188,7 +181,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFP</div>
                                 <div class="ranking-name">The Campaigner</div>
-                                <div class="ranking-description">ENFPs are natural romantics who put their heart and soul into relationships. They love grand gestures, spontaneous adventures, and creating magical moments with their partners.</div>
+                                <div class="ranking-description" data-i18n="enfpRomanticDesc">ENFPs are natural romantics who put their heart and soul into relationships. They love grand gestures, spontaneous adventures, and creating magical moments with their partners.</div>
                             </div>
                             <div class="ranking-score">95/100</div>
                         </div>
@@ -199,7 +192,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">INFP</div>
                                 <div class="ranking-name">The Mediator</div>
-                                <div class="ranking-description">INFPs bring deep emotional connection and poetic soul to romance. They express love through meaningful gestures and create intimate, authentic relationships.</div>
+                                <div class="ranking-description" data-i18n="infpRomanticDesc">INFPs bring deep emotional connection and poetic soul to romance. They express love through meaningful gestures and create intimate, authentic relationships.</div>
                             </div>
                             <div class="ranking-score">92/100</div>
                         </div>
@@ -210,7 +203,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFJ</div>
                                 <div class="ranking-name">The Protagonist</div>
-                                <div class="ranking-description">ENFJs are devoted partners who anticipate their loved one's needs. They create romantic atmospheres and make their partners feel truly cherished.</div>
+                                <div class="ranking-description" data-i18n="enfjRomanticDesc">ENFJs are devoted partners who anticipate their loved one's needs. They create romantic atmospheres and make their partners feel truly cherished.</div>
                             </div>
                             <div class="ranking-score">89/100</div>
                         </div>
@@ -220,7 +213,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESFP</div>
                                 <div class="ranking-name">The Entertainer</div>
-                                <div class="ranking-description">ESFPs bring fun, excitement, and spontaneity to romance. They love to surprise their partners and create joyful, memorable experiences together.</div>
+                                <div class="ranking-description" data-i18n="esfpRomanticDesc">ESFPs bring fun, excitement, and spontaneity to romance. They love to surprise their partners and create joyful, memorable experiences together.</div>
                             </div>
                             <div class="ranking-score">85/100</div>
                         </div>
@@ -230,7 +223,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ISFP</div>
                                 <div class="ranking-name">The Adventurer</div>
-                                <div class="ranking-description">ISFPs express romance through artistic and thoughtful gestures. They create beautiful, personalized experiences that show their deep care.</div>
+                                <div class="ranking-description" data-i18n="isfpRomanticDesc">ISFPs express romance through artistic and thoughtful gestures. They create beautiful, personalized experiences that show their deep care.</div>
                             </div>
                             <div class="ranking-score">82/100</div>
                         </div>
@@ -238,10 +231,9 @@
                 </div>
             </div>
 
-            <!-- Most Loyal Ranking -->
             <div id="loyal" class="ranking-category">
                 <div class="ranking-section">
-                    <h3 class="ranking-title">Most Loyal Personality Types</h3>
+                    <h3 class="ranking-title" data-i18n="loyalTitle">Most Loyal Personality Types</h3>
                     <div class="ranking-list">
                         <div class="ranking-item">
                             <div class="ranking-position">1</div>
@@ -249,7 +241,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ISFJ</div>
                                 <div class="ranking-name">The Protector</div>
-                                <div class="ranking-description">ISFJs are incredibly loyal and devoted partners who prioritize their relationship above all else. They provide unwavering support and commitment.</div>
+                                <div class="ranking-description" data-i18n="isfjLoyalDesc">ISFJs are incredibly loyal and devoted partners who prioritize their relationship above all else. They provide unwavering support and commitment.</div>
                             </div>
                             <div class="ranking-score">98/100</div>
                         </div>
@@ -260,7 +252,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ISTJ</div>
                                 <div class="ranking-name">The Logistician</div>
-                                <div class="ranking-description">ISTJs are reliable and steadfast partners who honor their commitments. They build relationships on trust, consistency, and mutual respect.</div>
+                                <div class="ranking-description" data-i18n="istjLoyalDesc">ISTJs are reliable and steadfast partners who honor their commitments. They build relationships on trust, consistency, and mutual respect.</div>
                             </div>
                             <div class="ranking-score">96/100</div>
                         </div>
@@ -271,7 +263,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESFJ</div>
                                 <div class="ranking-name">The Consul</div>
-                                <div class="ranking-description">ESFJs are dedicated partners who work hard to maintain harmony and stability in their relationships. They're committed for the long haul.</div>
+                                <div class="ranking-description" data-i18n="esfjLoyalDesc">ESFJs are dedicated partners who work hard to maintain harmony and stability in their relationships. They're committed for the long haul.</div>
                             </div>
                             <div class="ranking-score">94/100</div>
                         </div>
@@ -281,7 +273,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">INFJ</div>
                                 <div class="ranking-name">The Advocate</div>
-                                <div class="ranking-description">INFJs form deep, meaningful connections and are loyal to their core values and chosen partners. They invest fully in relationships they believe in.</div>
+                                <div class="ranking-description" data-i18n="infjLoyalDesc">INFJs form deep, meaningful connections and are loyal to their core values and chosen partners. They invest fully in relationships they believe in.</div>
                             </div>
                             <div class="ranking-score">91/100</div>
                         </div>
@@ -291,7 +283,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESTJ</div>
                                 <div class="ranking-name">The Executive</div>
-                                <div class="ranking-description">ESTJs are committed partners who take their relationship responsibilities seriously. They provide stability and work to build lasting partnerships.</div>
+                                <div class="ranking-description" data-i18n="estjLoyalDesc">ESTJs are committed partners who take their relationship responsibilities seriously. They provide stability and work to build lasting partnerships.</div>
                             </div>
                             <div class="ranking-score">88/100</div>
                         </div>
@@ -299,10 +291,9 @@
                 </div>
             </div>
 
-            <!-- Best Communicators Ranking -->
             <div id="communication" class="ranking-category">
                 <div class="ranking-section">
-                    <h3 class="ranking-title">Best Communicators in Relationships</h3>
+                    <h3 class="ranking-title" data-i18n="communicationTitle">Best Communicators in Relationships</h3>
                     <div class="ranking-list">
                         <div class="ranking-item">
                             <div class="ranking-position">1</div>
@@ -310,7 +301,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFJ</div>
                                 <div class="ranking-name">The Protagonist</div>
-                                <div class="ranking-description">ENFJs excel at understanding their partner's feelings and expressing themselves clearly. They navigate difficult conversations with empathy and skill.</div>
+                                <div class="ranking-description" data-i18n="enfjCommunicationDesc">ENFJs excel at understanding their partner's feelings and expressing themselves clearly. They navigate difficult conversations with empathy and skill.</div>
                             </div>
                             <div class="ranking-score">96/100</div>
                         </div>
@@ -321,7 +312,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESFJ</div>
                                 <div class="ranking-name">The Consul</div>
-                                <div class="ranking-description">ESFJs are natural communicators who prioritize harmony and understanding. They're skilled at expressing emotions and resolving conflicts peacefully.</div>
+                                <div class="ranking-description" data-i18n="esfjCommunicationDesc">ESFJs are natural communicators who prioritize harmony and understanding. They're skilled at expressing emotions and resolving conflicts peacefully.</div>
                             </div>
                             <div class="ranking-score">93/100</div>
                         </div>
@@ -332,7 +323,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFP</div>
                                 <div class="ranking-name">The Campaigner</div>
-                                <div class="ranking-description">ENFPs are enthusiastic communicators who bring energy and openness to conversations. They encourage honest, authentic dialogue.</div>
+                                <div class="ranking-description" data-i18n="enfpCommunicationDesc">ENFPs are enthusiastic communicators who bring energy and openness to conversations. They encourage honest, authentic dialogue.</div>
                             </div>
                             <div class="ranking-score">90/100</div>
                         </div>
@@ -342,7 +333,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENTP</div>
                                 <div class="ranking-name">The Debater</div>
-                                <div class="ranking-description">ENTPs enjoy deep discussions and can articulate complex ideas well. They bring intellectual stimulation to relationship conversations.</div>
+                                <div class="ranking-description" data-i18n="entpCommunicationDesc">ENTPs enjoy deep discussions and can articulate complex ideas well. They bring intellectual stimulation to relationship conversations.</div>
                             </div>
                             <div class="ranking-score">87/100</div>
                         </div>
@@ -352,7 +343,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">INFJ</div>
                                 <div class="ranking-name">The Advocate</div>
-                                <div class="ranking-description">INFJs are insightful communicators who understand underlying emotions and motivations. They create safe spaces for meaningful dialogue.</div>
+                                <div class="ranking-description" data-i18n="infjCommunicationDesc">INFJs are insightful communicators who understand underlying emotions and motivations. They create safe spaces for meaningful dialogue.</div>
                             </div>
                             <div class="ranking-score">85/100</div>
                         </div>
@@ -360,10 +351,9 @@
                 </div>
             </div>
 
-            <!-- Most Adventurous Ranking -->
             <div id="adventurous" class="ranking-category">
                 <div class="ranking-section">
-                    <h3 class="ranking-title">Most Adventurous in Relationships</h3>
+                    <h3 class="ranking-title" data-i18n="adventurousTitle">Most Adventurous in Relationships</h3>
                     <div class="ranking-list">
                         <div class="ranking-item">
                             <div class="ranking-position">1</div>
@@ -371,7 +361,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESTP</div>
                                 <div class="ranking-name">The Entrepreneur</div>
-                                <div class="ranking-description">ESTPs thrive on excitement and spontaneity in relationships. They love trying new experiences and keeping the romance alive with adventures.</div>
+                                <div class="ranking-description" data-i18n="estpAdventurousDesc">ESTPs thrive on excitement and spontaneity in relationships. They love trying new experiences and keeping the romance alive with adventures.</div>
                             </div>
                             <div class="ranking-score">97/100</div>
                         </div>
@@ -382,7 +372,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFP</div>
                                 <div class="ranking-name">The Campaigner</div>
-                                <div class="ranking-description">ENFPs bring enthusiasm and curiosity to relationships. They love exploring new places, ideas, and experiences with their partners.</div>
+                                <div class="ranking-description" data-i18n="enfpAdventurousDesc">ENFPs bring enthusiasm and curiosity to relationships. They love exploring new places, ideas, and experiences with their partners.</div>
                             </div>
                             <div class="ranking-score">94/100</div>
                         </div>
@@ -393,7 +383,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESFP</div>
                                 <div class="ranking-name">The Entertainer</div>
-                                <div class="ranking-description">ESFPs are spontaneous and fun-loving partners who enjoy trying new activities and creating memorable moments together.</div>
+                                <div class="ranking-description" data-i18n="esfpAdventurousDesc">ESFPs are spontaneous and fun-loving partners who enjoy trying new activities and creating memorable moments together.</div>
                             </div>
                             <div class="ranking-score">91/100</div>
                         </div>
@@ -403,7 +393,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENTP</div>
                                 <div class="ranking-name">The Debater</div>
-                                <div class="ranking-description">ENTPs enjoy intellectual adventures and exploring new possibilities with their partners. They bring innovation to relationship experiences.</div>
+                                <div class="ranking-description" data-i18n="entpAdventurousDesc">ENTPs enjoy intellectual adventures and exploring new possibilities with their partners. They bring innovation to relationship experiences.</div>
                             </div>
                             <div class="ranking-score">88/100</div>
                         </div>
@@ -413,7 +403,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ISTP</div>
                                 <div class="ranking-name">The Virtuoso</div>
-                                <div class="ranking-description">ISTPs enjoy hands-on adventures and practical experiences. They bring a sense of exploration and discovery to relationships.</div>
+                                <div class="ranking-description" data-i18n="istpAdventurousDesc">ISTPs enjoy hands-on adventures and practical experiences. They bring a sense of exploration and discovery to relationships.</div>
                             </div>
                             <div class="ranking-score">84/100</div>
                         </div>
@@ -421,10 +411,9 @@
                 </div>
             </div>
 
-            <!-- Most Supportive Ranking -->
             <div id="supportive" class="ranking-category">
                 <div class="ranking-section">
-                    <h3 class="ranking-title">Most Supportive Partners</h3>
+                    <h3 class="ranking-title" data-i18n="supportiveTitle">Most Supportive Partners</h3>
                     <div class="ranking-list">
                         <div class="ranking-item">
                             <div class="ranking-position">1</div>
@@ -432,7 +421,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ISFJ</div>
                                 <div class="ranking-name">The Protector</div>
-                                <div class="ranking-description">ISFJs are incredibly nurturing and supportive partners who anticipate their loved one's needs and provide unwavering emotional support.</div>
+                                <div class="ranking-description" data-i18n="isfjSupportiveDesc">ISFJs are incredibly nurturing and supportive partners who anticipate their loved one's needs and provide unwavering emotional support.</div>
                             </div>
                             <div class="ranking-score">98/100</div>
                         </div>
@@ -443,7 +432,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ENFJ</div>
                                 <div class="ranking-name">The Protagonist</div>
-                                <div class="ranking-description">ENFJs are devoted supporters who help their partners achieve their dreams and provide encouragement through all of life's challenges.</div>
+                                <div class="ranking-description" data-i18n="enfjSupportiveDesc">ENFJs are devoted supporters who help their partners achieve their dreams and provide encouragement through all of life's challenges.</div>
                             </div>
                             <div class="ranking-score">95/100</div>
                         </div>
@@ -454,7 +443,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">INFJ</div>
                                 <div class="ranking-name">The Advocate</div>
-                                <div class="ranking-description">INFJs offer deep emotional support and understanding. They create safe spaces where their partners can be vulnerable and authentic.</div>
+                                <div class="ranking-description" data-i18n="infjSupportiveDesc">INFJs offer deep emotional support and understanding. They create safe spaces where their partners can be vulnerable and authentic.</div>
                             </div>
                             <div class="ranking-score">92/100</div>
                         </div>
@@ -464,7 +453,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">ESFJ</div>
                                 <div class="ranking-name">The Consul</div>
-                                <div class="ranking-description">ESFJs are caring partners who provide practical and emotional support. They're always there when their loved ones need them most.</div>
+                                <div class="ranking-description" data-i18n="esfjSupportiveDesc">ESFJs are caring partners who provide practical and emotional support. They're always there when their loved ones need them most.</div>
                             </div>
                             <div class="ranking-score">89/100</div>
                         </div>
@@ -474,7 +463,7 @@
                             <div class="ranking-content">
                                 <div class="ranking-type">INFP</div>
                                 <div class="ranking-name">The Mediator</div>
-                                <div class="ranking-description">INFPs offer compassionate support and accept their partners unconditionally. They provide gentle encouragement and emotional validation.</div>
+                                <div class="ranking-description" data-i18n="infpSupportiveDesc">INFPs offer compassionate support and accept their partners unconditionally. They provide gentle encouragement and emotional validation.</div>
                             </div>
                             <div class="ranking-score">86/100</div>
                         </div>
@@ -482,44 +471,42 @@
                 </div>
             </div>
 
-            <!-- Statistics Section -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">💕</div>
-                    <div class="stat-title">Average Relationship Satisfaction</div>
+                    <div class="stat-title" data-i18n="stat1Title">Average Relationship Satisfaction</div>
                     <div class="stat-value">87%</div>
-                    <div class="stat-description">When matched with compatible MBTI types</div>
+                    <div class="stat-description" data-i18n="stat1Desc">When matched with compatible MBTI types</div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">🎯</div>
-                    <div class="stat-title">Ideal Compatibility</div>
+                    <div class="stat-title" data-i18n="stat2Title">Ideal Compatibility</div>
                     <div class="stat-value">92%</div>
-                    <div class="stat-description">Perfect MBTI matches show this compatibility rate</div>
+                    <div class="stat-description" data-i18n="stat2Desc">Perfect MBTI matches show this compatibility rate</div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">💬</div>
-                    <div class="stat-title">Communication Success</div>
+                    <div class="stat-title" data-i18n="stat3Title">Communication Success</div>
                     <div class="stat-value">78%</div>
-                    <div class="stat-description">Of couples report better communication after understanding MBTI</div>
+                    <div class="stat-description" data-i18n="stat3Desc">Of couples report better communication after understanding MBTI</div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">⚡</div>
-                    <div class="stat-title">Relationship Longevity</div>
+                    <div class="stat-title" data-i18n="stat4Title">Relationship Longevity</div>
                     <div class="stat-value">5.2x</div>
-                    <div class="stat-description">Higher success rate for MBTI-aware couples</div>
+                    <div class="stat-description" data-i18n="stat4Desc">Higher success rate for MBTI-aware couples</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Explore</h3>
+                <h3 data-i18n="footerExplore">Explore</h3>
                 <ul>
                     <li><a href="compatibility.html">Compatibility</a></li>
                     <li><a href="dating-style.html">Dating Style</a></li>
@@ -528,7 +515,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3 data-i18n="footerResources">Resources</h3>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -536,7 +523,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3 data-i18n="footerLegal">Legal</h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -549,6 +536,176 @@
     </footer>
 
     <script>
+        const translations = {
+            'en': {
+                'heroTitle': 'MBTI Personality Rankings',
+                'heroSubtitle': 'Discover fascinating insights about MBTI personality types in relationships. From most romantic to best communication skills, explore comprehensive rankings based on relationship psychology research.',
+                'advertisement': 'Advertisement',
+                'sectionTitle': 'Relationship Rankings',
+                'mostRomanticBtn': 'Most Romantic',
+                'mostLoyalBtn': 'Most Loyal',
+                'bestCommunicatorsBtn': 'Best Communicators',
+                'mostAdventurousBtn': 'Most Adventurous',
+                'mostSupportiveBtn': 'Most Supportive',
+                'romanticTitle': 'Most Romantic Personality Types',
+                'loyalTitle': 'Most Loyal Personality Types',
+                'communicationTitle': 'Best Communicators in Relationships',
+                'adventurousTitle': 'Most Adventurous in Relationships',
+                'supportiveTitle': 'Most Supportive Partners',
+                'enfpRomanticDesc': 'ENFPs are natural romantics who put their heart and soul into relationships. They love grand gestures, spontaneous adventures, and creating magical moments with their partners.',
+                'infpRomanticDesc': 'INFPs bring deep emotional connection and poetic soul to romance. They express love through meaningful gestures and create intimate, authentic relationships.',
+                'enfjRomanticDesc': 'ENFJs are devoted partners who anticipate their loved one\'s needs. They create romantic atmospheres and make their partners feel truly cherished.',
+                'esfpRomanticDesc': 'ESFPs bring fun, excitement, and spontaneity to romance. They love to surprise their partners and create joyful, memorable experiences together.',
+                'isfpRomanticDesc': 'ISFPs express romance through artistic and thoughtful gestures. They create beautiful, personalized experiences that show their deep care.',
+                'isfjLoyalDesc': 'ISFJs are incredibly loyal and devoted partners who prioritize their relationship above all else. They provide unwavering support and commitment.',
+                'istjLoyalDesc': 'ISTJs are reliable and steadfast partners who honor their commitments. They build relationships on trust, consistency, and mutual respect.',
+                'esfjLoyalDesc': 'ESFJs are dedicated partners who work hard to maintain harmony and stability in their relationships. They\'re committed for the long haul.',
+                'infjLoyalDesc': 'INFJs form deep, meaningful connections and are loyal to their core values and chosen partners. They invest fully in relationships they believe in.',
+                'estjLoyalDesc': 'ESTJs are committed partners who take their relationship responsibilities seriously. They provide stability and work to build lasting partnerships.',
+                'enfjCommunicationDesc': 'ENFJs excel at understanding their partner\'s feelings and expressing themselves clearly. They navigate difficult conversations with empathy and skill.',
+                'esfjCommunicationDesc': 'ESFJs are natural communicators who prioritize harmony and understanding. They\'re skilled at expressing emotions and resolving conflicts peacefully.',
+                'enfpCommunicationDesc': 'ENFPs are enthusiastic communicators who bring energy and openness to conversations. They encourage honest, authentic dialogue.',
+                'entpCommunicationDesc': 'ENTPs enjoy deep discussions and can articulate complex ideas well. They bring intellectual stimulation to relationship conversations.',
+                'infjCommunicationDesc': 'INFJs are insightful communicators who understand underlying emotions and motivations. They create safe spaces for meaningful dialogue.',
+                'estpAdventurousDesc': 'ESTPs thrive on excitement and spontaneity in relationships. They love trying new experiences and keeping the romance alive with adventures.',
+                'enfpAdventurousDesc': 'ENFPs bring enthusiasm and curiosity to relationships. They love exploring new places, ideas, and experiences with their partners.',
+                'esfpAdventurousDesc': 'ESFPs are spontaneous and fun-loving partners who enjoy trying new activities and creating memorable moments together.',
+                'entpAdventurousDesc': 'ENTPs enjoy intellectual adventures and exploring new possibilities with their partners. They bring innovation to relationship experiences.',
+                'istpAdventurousDesc': 'ISTPs enjoy hands-on adventures and practical experiences. They bring a sense of exploration and discovery to relationships.',
+                'isfjSupportiveDesc': 'ISFJs are incredibly nurturing and supportive partners who anticipate their loved one\'s needs and provide unwavering emotional support.',
+                'enfjSupportiveDesc': 'ENFJs are devoted supporters who help their partners achieve their dreams and provide encouragement through all of life\'s challenges.',
+                'infjSupportiveDesc': 'INFJs offer deep emotional support and understanding. They create safe spaces where their partners can be vulnerable and authentic.',
+                'esfjSupportiveDesc': 'ESFJs are caring partners who provide practical and emotional support. They\'re always there when their loved ones need them most.',
+                'infpSupportiveDesc': 'INFPs offer compassionate support and accept their partners unconditionally. They provide gentle encouragement and emotional validation.',
+                'stat1Title': 'Average Relationship Satisfaction',
+                'stat1Desc': 'When matched with compatible MBTI types',
+                'stat2Title': 'Ideal Compatibility',
+                'stat2Desc': 'Perfect MBTI matches show this compatibility rate',
+                'stat3Title': 'Communication Success',
+                'stat3Desc': 'Of couples report better communication after understanding MBTI',
+                'stat4Title': 'Relationship Longevity',
+                'stat4Desc': 'Higher success rate for MBTI-aware couples',
+                'footerExplore': 'Explore',
+                'footerResources': 'Resources',
+                'footerLegal': 'Legal'
+            },
+            'ja': {
+                'heroTitle': 'MBTI性格ランキング',
+                'heroSubtitle': 'MBTIの性格タイプに関する魅力的な洞察を発見しましょう。最もロマンチックなタイプから最高のコミュニケーターまで、人間関係の心理学研究に基づいた包括的なランキングを探求します。',
+                'advertisement': '広告',
+                'sectionTitle': '恋愛ランキング',
+                'mostRomanticBtn': '最もロマンチック',
+                'mostLoyalBtn': '最も忠実',
+                'bestCommunicatorsBtn': '最高のコミュニケーター',
+                'mostAdventurousBtn': '最も冒険的',
+                'mostSupportiveBtn': '最もサポート的',
+                'romanticTitle': '最もロマンチックな性格タイプ',
+                'loyalTitle': '最も忠実な性格タイプ',
+                'communicationTitle': '人間関係における最高のコミュニケーター',
+                'adventurousTitle': '恋愛において最も冒険的なタイプ',
+                'supportiveTitle': '最もサポート的なパートナー',
+                'enfpRomanticDesc': 'ENFPは生来のロマンチストで、恋愛に心血を注ぎます。壮大なジェスチャーや自発的な冒険、パートナーとの魔法のような瞬間を創り出すことを愛します。',
+                'infpRomanticDesc': 'INFPは深い感情的なつながりと詩的な魂をロマンスにもたらします。意味のあるジェスチャーを通じて愛を表現し、親密で本物の関係を築きます。',
+                'enfjRomanticDesc': 'ENFJは、愛する人のニーズを先読みする献身的なパートナーです。ロマンチックな雰囲気を作り出し、パートナーを心から大切にされていると感じさせます。',
+                'esfpRomanticDesc': 'ESFPは、楽しさ、興奮、そして自発性をロマンスにもたらします。パートナーを驚かせたり、一緒に楽しく忘れられない経験を創り出すことを愛します。',
+                'isfpRomanticDesc': 'ISFPは、芸術的で思慮深いジェスチャーを通じてロマンスを表現します。深い思いやりを示す美しく、パーソナライズされた経験を創り出します。',
+                'isfjLoyalDesc': 'ISFJは信じられないほど忠実で献身的なパートナーで、何よりも関係を優先します。揺るぎないサポートとコミットメントを提供します。',
+                'istjLoyalDesc': 'ISTJは、コミットメントを尊重する信頼できる堅実なパートナーです。信頼、一貫性、相互の尊重に基づいて関係を築きます。',
+                'esfjLoyalDesc': 'ESFJは、人間関係の調和と安定を維持するために努力する献身的なパートナーです。彼らは長期的な関係にコミットします。',
+                'infjLoyalDesc': 'INFJは深く意味のあるつながりを形成し、彼らのコアとなる価値観と選ばれたパートナーに忠実です。彼らは信じる関係に全力で投資します。',
+                'estjLoyalDesc': 'ESTJは、人間関係の責任を真剣に受け止めるコミットしたパートナーです。彼らは安定性を提供し、長続きするパートナーシップを築くために働きます。',
+                'enfjCommunicationDesc': 'ENFJは、パートナーの感情を理解し、明確に自分自身を表現することに優れています。共感とスキルを持って難しい会話を乗り越えます。',
+                'esfjCommunicationDesc': 'ESFJは、調和と理解を優先する生来のコミュニケーターです。感情を表現し、平和的に対立を解決するのに長けています。',
+                'enfpCommunicationDesc': 'ENFPは、会話にエネルギーと開放性をもたらす熱心なコミュニケーターです。正直で本物の対話を促します。',
+                'entpCommunicationDesc': 'ENTPは、深い議論を楽しみ、複雑なアイデアをうまく表現できます。人間関係の会話に知的な刺激をもたらします。',
+                'infjCommunicationDesc': 'INFJは、根底にある感情や動機を理解する洞察力のあるコミュニケーターです。意味のある対話のための安全な空間を作り出します。',
+                'estpAdventurousDesc': 'ESTPは、恋愛における興奮と自発性を活気づけます。新しい経験を試したり、冒険を通じてロマンスを生き生きとさせることを愛します。',
+                'enfpAdventurousDesc': 'ENFPは、人間関係に熱意と好奇心をもたらします。パートナーと新しい場所、アイデア、経験を探求することを愛します。',
+                'esfpAdventurousDesc': 'ESFPは、自発的で楽しいことが好きなパートナーで、新しい活動を試したり、一緒に忘れられない瞬間を創り出すことを楽しみます。',
+                'entpAdventurousDesc': 'ENTPは、知的な冒険を楽しみ、パートナーと新しい可能性を探求します。人間関係の経験に革新をもたらします。',
+                'istpAdventurousDesc': 'ISTPは、実践的な冒険や経験を楽しみます。人間関係に探検と発見の感覚をもたらします。',
+                'isfjSupportiveDesc': 'ISFJは、愛する人のニーズを先読みし、揺るぎない感情的なサポートを提供する、信じられないほど思いやりのあるサポート的なパートナーです。',
+                'enfjSupportiveDesc': 'ENFJは、パートナーが夢を達成するのを助け、人生のあらゆる挑戦を通じて励ましを提供する献身的なサポーターです。',
+                'infjSupportiveDesc': 'INFJは、深い感情的なサポートと理解を提供します。パートナーが弱さを見せたり、本物であるための安全な空間を作り出します。',
+                'esfjSupportiveDesc': 'ESFJは、実践的および感情的なサポートを提供する思いやりのあるパートナーです。愛する人が最も必要と 할 때 언제나 곁에 있습니다.',
+                'infpSupportiveDesc': 'INFPは、思いやりのあるサポートを提供し、パートナーを無条件に受け入れます。優しく励まし、感情的な承認を与えます。',
+                'stat1Title': '平均的な関係満足度',
+                'stat1Desc': '互換性のあるMBTIタイプとマッチした場合',
+                'stat2Title': '理想的な互換性',
+                'stat2Desc': '完璧なMBTIマッチは、この互換性率を示します',
+                'stat3Title': 'コミュニケーションの成功',
+                'stat3Desc': 'MBTIを理解した後、カップルの78%がより良いコミュニケーションを報告',
+                'stat4Title': '関係の持続性',
+                'stat4Desc': 'MBTIを意識したカップルの成功率は5.2倍高い',
+                'footerExplore': '探す',
+                'footerResources': 'リソース',
+                'footerLegal': '法的'
+            },
+            'ko': {
+                'heroTitle': 'MBTI 성격 순위',
+                'heroSubtitle': 'MBTI 성격 유형에 대한 흥미로운 통찰력을 발견하세요. 가장 낭만적인 유형부터 최고의 커뮤니케이터까지, 관계 심리학 연구를 기반으로 한 종합적인 순위를 탐색하세요.',
+                'advertisement': '광고',
+                'sectionTitle': '연애 순위',
+                'mostRomanticBtn': '가장 로맨틱한',
+                'mostLoyalBtn': '가장 충성스러운',
+                'bestCommunicatorsBtn': '최고의 소통가',
+                'mostAdventurousBtn': '가장 모험적인',
+                'mostSupportiveBtn': '가장 지지적인',
+                'romanticTitle': '가장 로맨틱한 성격 유형',
+                'loyalTitle': '가장 충성스러운 성격 유형',
+                'communicationTitle': '관계에서 최고의 소통가',
+                'adventurousTitle': '연애에서 가장 모험적인 유형',
+                'supportiveTitle': '가장 지지적인 파트너',
+                'enfpRomanticDesc': 'ENFP는 관계에 자신의 마음과 영혼을 쏟아붓는 타고난 로맨티스트입니다. 그들은 멋진 몸짓, 즉흥적인 모험, 그리고 파트너와 마법 같은 순간을 만드는 것을 사랑합니다.',
+                'infpRomanticDesc': 'INFP는 로맨스에 깊은 감정적 연결과 시적인 영혼을 가져옵니다. 그들은 의미 있는 몸짓을 통해 사랑을 표현하고 친밀하고 진정한 관계를 만듭니다.',
+                'enfjRomanticDesc': 'ENFJ는 사랑하는 사람의 필요를 예측하는 헌신적인 파트너입니다. 그들은 로맨틱한 분위기를 만들고 파트너가 진정으로 소중히 여겨지고 있다는 느낌을 받게 합니다.',
+                'esfpRomanticDesc': 'ESFP는 로맨스에 재미, 흥분, 그리고 즉흥성을 가져옵니다. 그들은 파트너를 놀라게 하고 즐겁고 기억에 남는 경험을 함께 만드는 것을 좋아합니다.',
+                'isfpRomanticDesc': 'ISFP는 예술적이고 사려 깊은 몸짓을 통해 로맨스를 표현합니다. 그들은 그들의 깊은 배려를 보여주는 아름답고 개인화된 경험을 만듭니다.',
+                'isfjLoyalDesc': 'ISFJ는 관계를 다른 무엇보다 우선시하는 믿을 수 없을 정도로 충성스럽고 헌신적인 파트너입니다. 그들은 변함없는 지지와 헌신을 제공합니다.',
+                'istjLoyalDesc': 'ISTJ는 약속을 지키는 신뢰할 수 있고 확고한 파트너입니다. 그들은 신뢰, 일관성, 그리고 상호 존중을 바탕으로 관계를 구축합니다.',
+                'esfjLoyalDesc': 'ESFJ는 관계의 조화와 안정을 유지하기 위해 열심히 노력하는 헌신적인 파트너입니다. 그들은 장기적인 관계에 전념합니다.',
+                'infjLoyalDesc': 'INFJ는 깊고 의미 있는 연결을 형성하고 그들의 핵심 가치와 선택된 파트너에게 충성합니다. 그들은 믿는 관계에 온전히 투자합니다.',
+                'estjLoyalDesc': 'ESTJ는 관계의 책임을 진지하게 받아들이는 헌신적인 파트너입니다. 그들은 안정성을 제공하고 지속적인 파트너십을 구축하기 위해 노력합니다.',
+                'enfjCommunicationDesc': 'ENFJ는 파트너의 감정을 이해하고 자신을 명확하게 표현하는 데 탁월합니다. 그들은 공감과 기술로 어려운 대화를 헤쳐나갑니다.',
+                'esfjCommunicationDesc': 'ESFJ는 조화와 이해를 우선시하는 타고난 소통가입니다. 그들은 감정을 표현하고 갈등을 평화롭게 해결하는 데 능숙합니다.',
+                'enfpCommunicationDesc': 'ENFP는 대화에 에너지와 개방성을 가져오는 열정적인 소통가입니다. 그들은 솔직하고 진정한 대화를 장려합니다.',
+                'entpCommunicationDesc': 'ENTP는 깊은 토론을 즐기고 복잡한 아이디어를 잘 표현할 수 있습니다. 그들은 관계 대화에 지적인 자극을 가져옵니다.',
+                'infjCommunicationDesc': 'INFJ는 근본적인 감정과 동기를 이해하는 통찰력 있는 소통가입니다. 그들은 의미 있는 대화를 위한 안전한 공간을 만듭니다.',
+                'estpAdventurousDesc': 'ESTP는 관계에서 흥분과 즉흥성을 중요하게 생각합니다. 그들은 새로운 경험을 시도하고 모험을 통해 로맨스를 살아있게 하는 것을 좋아합니다.',
+                'enfpAdventurousDesc': 'ENFP는 관계에 열정과 호기심을 가져옵니다. 그들은 파트너와 새로운 장소, 아이디어, 경험을 탐험하는 것을 좋아합니다.',
+                'esfpAdventurousDesc': 'ESFP는 즉흥적이고 재미를 사랑하는 파트너로, 새로운 활동을 시도하고 함께 기억에 남는 순간을 만드는 것을 즐깁니다.',
+                'entpAdventurousDesc': 'ENTP는 지적인 모험을 즐기고 파트너와 새로운 가능성을 탐험합니다. 그들은 관계 경험에 혁신을 가져옵니다.',
+                'istpAdventurousDesc': 'ISTP는 실질적인 모험과 경험을 즐깁니다. 그들은 관계에 탐험과 발견의 감각을 가져옵니다.',
+                'isfjSupportiveDesc': 'ISFJ는 사랑하는 사람의 필요를 예측하고 변함없는 정서적 지원을 제공하는 믿을 수 없을 정도로 보살피고 지지적인 파트너입니다.',
+                'enfjSupportiveDesc': 'ENFJ는 파트너가 꿈을 이루도록 돕고 삶의 모든 도전을 통해 격려를 제공하는 헌신적인 지지자입니다.',
+                'infjSupportiveDesc': 'INFJ는 깊은 정서적 지원과 이해를 제공합니다. 그들은 파트너가 취약하고 진정으로 있을 수 있는 안전한 공간을 만듭니다.',
+                'esfjSupportiveDesc': 'ESFJ는 실질적이고 정서적인 지원을 제공하는 다정한 파트너입니다. 그들은 사랑하는 사람이 가장 필요로 할 때 항상 곁에 있습니다.',
+                'infpSupportiveDesc': 'INFP는 자비로운 지원을 제공하고 파트너를 무조건적으로 받아들입니다. 그들은 부드러운 격려와 정서적 유효성을 제공합니다.',
+                'stat1Title': '평균 관계 만족도',
+                'stat1Desc': '호환 가능한 MBTI 유형과 일치할 때',
+                'stat2Title': '이상적인 호환성',
+                'stat2Desc': '완벽한 MBTI 일치는 이 호환성 비율을 보여줍니다',
+                'stat3Title': '소통 성공률',
+                'stat3Desc': 'MBTI를 이해한 후 더 나은 소통을 보고한 커플의 78%',
+                'stat4Title': '관계 지속성',
+                'stat4Desc': 'MBTI를 아는 커플의 성공률이 5.2배 더 높음',
+                'footerExplore': '탐색하기',
+                'footerResources': '자료',
+                'footerLegal': '법률'
+            }
+        };
+
+        function updateContent(lang) {
+            // Update all text elements based on the selected language
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+        
         function showCategory(categoryId) {
             // Hide all categories
             document.querySelectorAll('.ranking-category').forEach(cat => {
