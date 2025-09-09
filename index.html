@@ -40,9 +40,25 @@
     .nav { display: flex; gap: 2rem; }
     .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
     .nav a:hover { color: var(--romantic-rose); }
-    .language-switcher { display: flex; gap: 0.5rem; }
-    .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-    .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+    .language-switcher { 
+        display: flex; gap: 0.5rem; 
+    }
+    .lang-label {
+        padding: 0.3rem 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+    }
+    .lang-input:checked + .lang-label {
+        background: var(--romantic-rose);
+        color: white;
+        border-color: var(--romantic-rose);
+    }
+    .lang-input {
+        display: none; /* 실제 라디오 버튼 숨기기 */
+    }
     
     /* Hero Section */
     .hero { 
@@ -77,7 +93,7 @@
         text-decoration: none; /* 링크 밑줄 제거 */
         color: #333; /* 링크 색상 유지 */
     }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 6px 20px rgba(0,0,0,0.1); }
     .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
     .feature-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
     .feature-description { color: #666; }
@@ -111,6 +127,48 @@
         .feature-grid { /* 작은 화면에서는 한 줄로 배치 */
             grid-template-columns: 1fr;
         }
+        
+        /* 햄버거 버튼과 모바일 메뉴 스타일 */
+        .hamburger-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+        .hamburger-btn .bar {
+            width: 2rem;
+            height: 3px;
+            background-color: var(--romantic-rose);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+        
+        /* 모바일 메뉴 스타일 (초기에는 숨김) */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px; /* 헤더 높이만큼 아래에 위치 */
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 9;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+        
+        /* 메뉴가 열렸을 때 */
+        .mobile-nav.open {
+            display: flex;
+        }
     }
     </style>
 </head>
@@ -118,6 +176,11 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
+            <button class="hamburger-btn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <nav class="nav">
                 <a href="compatibility.html">Compatibility</a>
                 <a href="dating-style.html">Dating Style</a>
@@ -127,10 +190,21 @@
                 <a href="balance-game.html">Balance Game</a>
                 <a href="about.html">About</a>
             </nav>
+            <div class="mobile-nav">
+                <a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a>
+                <a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a>
+                <a href="ideal-type.html" data-i18n="navIdealType">Ideal Type</a>
+                <a href="rankings.html" data-i118n="navRankings">Rankings</a>
+                <a href="conversation.html" data-i18n="navConversation">Conversation</a>
+                <a href="balance-game.html" data-i18n="navBalance">Balance Game</a>
+            </div>
             <div class="language-switcher">
-                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
-                <button class="lang-btn" onclick="changeLanguage('ko')">한국어</button>
+                <input type="radio" id="lang-en" name="language" value="en" class="lang-input" checked>
+                <label for="lang-en" class="lang-label">EN</label>
+                <input type="radio" id="lang-ja" name="language" value="ja" class="lang-input">
+                <label for="lang-ja" class="lang-label">日本語</label>
+                <input type="radio" id="lang-ko" name="language" value="ko" class="lang-input">
+                <label for="lang-ko" class="lang-label">한국어</label>
             </div>
         </div>
     </header>
@@ -225,17 +299,17 @@
                     <a href="dating-style.html" class="feature-card">
                         <div class="feature-icon">🌟</div>
                         <h3 class="feature-title">デートスタイル</h3>
-                        <p class="feature-description">ユニークなデートスタイルと, あなたの性格が恋愛にどう 영향하는지 탐색.</p>
+                        <p class="feature-description">ユニークなデートスタイルと, 당신의 성격이 연애에 어떻게 영향을 미치는지 탐색.</p>
                     </a>
                     <a href="ideal-type.html" class="feature-card">
                         <div class="feature-icon">💌</div>
                         <h3 class="feature-title">理想のタイプ</h3>
-                        <p class="feature-description">各MBTIタイプがパートナーに何を求めるかを知る.</p>
+                        <p class="feature-description">각 MBTI 타입이 파트너에게 무엇을 찾는지를 알 수 있다.</p>
                     </a>
                     <a href="rankings.html" class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">ランキング</h3>
-                        <p class="feature-description">様々な恋愛シーンでMBTIタイプがどうランク付け되는지 보는.</p>
+                        <p class="feature-description">다양한 연애 시나리오에서 MBTI 타입들이 어떻게 순위를 차지하는지 확인.</p>
                     </a>
                 </div>
             </div>
@@ -337,10 +411,6 @@
         function changeLanguage(lang) {
             currentLanguage = lang;
             
-            // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[onclick="changeLanguage('${lang}')"]`).classList.add('active');
-            
             // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
                 if (content.getAttribute('data-lang') === lang) {
@@ -357,10 +427,27 @@
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             if (savedLang !== 'en') {
+                const radioBtn = document.querySelector(`.lang-input[value='${savedLang}']`);
+                if (radioBtn) {
+                    radioBtn.checked = true;
+                }
                 changeLanguage(savedLang);
             }
+
+            const languageInputs = document.querySelectorAll('.lang-input');
+            languageInputs.forEach(input => {
+                input.addEventListener('change', (event) => {
+                    changeLanguage(event.target.value);
+                });
+            });
+
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const mobileNav = document.querySelector('.mobile-nav');
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('open');
+            });
         });
     </script>
 </body>
-
 </html>
