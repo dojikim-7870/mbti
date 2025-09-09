@@ -146,10 +146,8 @@
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
 
-            <!-- 햄버거 버튼 -->
             <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-            <!-- 네비게이션 -->
             <nav class="nav" id="nav-menu">
                 <a href="compatibility.html">Compatibility</a>
                 <a href="dating-style.html">Dating Style</a>
@@ -160,7 +158,6 @@
                 <a href="about.html">About</a>
             </nav>
 
-            <!-- 언어 드롭다운 -->
             <select class="lang-dropdown" onchange="changeLanguage(this.value)">
                 <option value="en" selected>English</option>
                 <option value="ja">日本語</option>
@@ -169,7 +166,6 @@
         </div>
     </header>
 
-    <!-- ===== Hero Section ===== -->
     <section class="hero">
         <div class="hero-content">
             <div class="lang-content active" data-lang="en">
@@ -207,7 +203,6 @@
         </div>
     </section>
 
-    <!-- ===== Features Section ===== -->
     <section class="section">
         <div class="container">
             <div class="lang-content active" data-lang="en">
@@ -290,7 +285,6 @@
         </div>
     </section>
 
-    <!-- ===== Quiz Section ===== -->
     <section class="section">
         <div class="container">
             <div class="quiz-section">
@@ -321,7 +315,6 @@
         </div>
     </section>
 
-    <!-- ===== Footer ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -354,11 +347,17 @@
         </div>
     </footer>
 
-    <!-- ===== Scripts ===== -->
     <script>
         // Language switching functionality
         let currentLanguage = 'en';
         
+        // 언어에 따른 제목 목록
+        const heroTitles = {
+          en: 'Your Guide to Love, Powered by MBTI',
+          ja: 'MBTIであなたの愛を導く',
+          ko: 'MBTI로 알아보는 당신의 사랑'
+        };
+
         function changeLanguage(lang) {
             currentLanguage = lang;
             
@@ -370,6 +369,9 @@
                     content.classList.remove('active');
                 }
             });
+            
+            // H1 태그 업데이트
+            document.querySelector('.hero-title').textContent = heroTitles[lang];
             
             localStorage.setItem('preferredLanguage', lang);
         }
