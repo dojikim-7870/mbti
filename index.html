@@ -37,27 +37,60 @@
         display: flex; justify-content: space-between; align-items: center; height: 70px;
     }
     .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
+    
+    /* Desktop Navigation */
     .nav { display: flex; gap: 2rem; }
     .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
     .nav a:hover { color: var(--romantic-rose); }
-    .language-switcher { 
-        display: flex; gap: 0.5rem; 
+    
+    /* Mobile-only elements initially hidden */
+    .mobile-nav, .hamburger-btn, .language-switcher { display: none; }
+    
+    /* Language Dropdown Styles */
+    .language-switcher {
+        position: relative;
     }
-    .lang-label {
-        padding: 0.3rem 0.8rem;
+    .lang-btn {
+        background: none;
         border: 1px solid #ddd;
+        padding: 0.3rem 0.8rem;
         border-radius: 1rem;
         cursor: pointer;
         transition: all 0.3s;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-    .lang-input:checked + .lang-label {
-        background: var(--romantic-rose);
-        color: white;
-        border-color: var(--romantic-rose);
+    .lang-btn:hover {
+        background-color: #f0f0f0;
     }
-    .lang-input {
-        display: none; /* 실제 라디오 버튼 숨기기 */
+    .lang-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 20;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        white-space: nowrap;
+    }
+    .lang-dropdown a {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.2s;
+    }
+    .lang-dropdown a:hover {
+        background-color: #f0f0f0;
+    }
+    .lang-dropdown.open {
+        display: block;
     }
     
     /* Hero Section */
@@ -93,7 +126,7 @@
         text-decoration: none; /* 링크 밑줄 제거 */
         color: #333; /* 링크 색상 유지 */
     }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 6px 20px rgba(0,0,0,0.1); }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
     .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
     .feature-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
     .feature-description { color: #666; }
@@ -120,17 +153,14 @@
     .lang-content { display: none; }
     .lang-content.active { display: block; }
     
-    /* 반응형 레이아웃 수정 */
+    /* Responsive Layout */
     @media (max-width: 768px) {
-        .nav { display: none; }
+        .nav { display: none; } /* Hide desktop nav */
+        .mobile-nav, .hamburger-btn, .language-switcher { display: flex; } /* Show mobile elements */
         .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { /* 작은 화면에서는 한 줄로 배치 */
-            grid-template-columns: 1fr;
-        }
+        .feature-grid { grid-template-columns: 1fr; }
         
-        /* 햄버거 버튼과 모바일 메뉴 스타일 */
         .hamburger-btn {
-            display: flex;
             flex-direction: column;
             justify-content: space-around;
             width: 2rem;
@@ -148,12 +178,21 @@
             border-radius: 10px;
             transition: all 0.3s linear;
         }
+
+        .language-switcher {
+            position: relative;
+            margin-right: 1rem;
+        }
+        .lang-dropdown {
+            left: auto;
+            right: 0;
+        }
         
-        /* 모바일 메뉴 스타일 (초기에는 숨김) */
+        /* Mobile menu styles */
         .mobile-nav {
             display: none;
             position: fixed;
-            top: 70px; /* 헤더 높이만큼 아래에 위치 */
+            top: 70px;
             left: 0;
             width: 100%;
             background: white;
@@ -165,7 +204,6 @@
             text-align: center;
         }
         
-        /* 메뉴가 열렸을 때 */
         .mobile-nav.open {
             display: flex;
         }
@@ -176,11 +214,7 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
-            <button class="hamburger-btn" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            
             <nav class="nav">
                 <a href="compatibility.html">Compatibility</a>
                 <a href="dating-style.html">Dating Style</a>
@@ -190,6 +224,24 @@
                 <a href="balance-game.html">Balance Game</a>
                 <a href="about.html">About</a>
             </nav>
+            
+            <div style="display: none; align-items: center; gap: 1rem;" class="mobile-controls">
+                <div class="language-switcher">
+                    <button id="current-lang-btn" class="lang-btn">EN</button>
+                    <div id="lang-dropdown-menu" class="lang-dropdown">
+                        <a href="#" data-lang="en">EN</a>
+                        <a href="#" data-lang="ja">日本語</a>
+                        <a href="#" data-lang="ko">한국어</a>
+                    </div>
+                </div>
+                
+                <button class="hamburger-btn" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
             <div class="mobile-nav">
                 <a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a>
                 <a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a>
@@ -197,14 +249,6 @@
                 <a href="rankings.html" data-i118n="navRankings">Rankings</a>
                 <a href="conversation.html" data-i18n="navConversation">Conversation</a>
                 <a href="balance-game.html" data-i18n="navBalance">Balance Game</a>
-            </div>
-            <div class="language-switcher">
-                <input type="radio" id="lang-en" name="language" value="en" class="lang-input" checked>
-                <label for="lang-en" class="lang-label">EN</label>
-                <input type="radio" id="lang-ja" name="language" value="ja" class="lang-input">
-                <label for="lang-ja" class="lang-label">日本語</label>
-                <input type="radio" id="lang-ko" name="language" value="ko" class="lang-input">
-                <label for="lang-ko" class="lang-label">한국어</label>
             </div>
         </div>
     </header>
@@ -257,8 +301,6 @@
             </div>
         </div>
     </section>
-
-    
 
     <section class="section">
         <div class="container">
@@ -356,7 +398,7 @@
                 <div class="lang-content" data-lang="ja">
                     <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        インタラクティブクイズに参加して, あなたの性格タイプがデートや関係への取り組みにどのように 영향을 미치는지 이해してください.
+                        インタ랙티브 퀴즈에 참여하여, あなたの性格タイプがデートや関係への取り組みにどのように 영향을 미치는지 이해하세요.
                     </p>
                     <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
                 </div>
@@ -411,6 +453,13 @@
         function changeLanguage(lang) {
             currentLanguage = lang;
             
+            const langMap = {
+                'en': 'EN',
+                'ja': '日本語',
+                'ko': '한국어'
+            };
+            document.getElementById('current-lang-btn').textContent = langMap[lang];
+
             // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
                 if (content.getAttribute('data-lang') === lang) {
@@ -426,21 +475,36 @@
         // Load language preference on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            if (savedLang !== 'en') {
-                const radioBtn = document.querySelector(`.lang-input[value='${savedLang}']`);
-                if (radioBtn) {
-                    radioBtn.checked = true;
-                }
-                changeLanguage(savedLang);
-            }
+            changeLanguage(savedLang);
 
-            const languageInputs = document.querySelectorAll('.lang-input');
-            languageInputs.forEach(input => {
-                input.addEventListener('change', (event) => {
-                    changeLanguage(event.target.value);
-                });
+            // Toggle language dropdown
+            const langBtn = document.getElementById('current-lang-btn');
+            const langDropdown = document.getElementById('lang-dropdown-menu');
+            const mobileControls = document.querySelector('.mobile-controls');
+            
+            // Add click event for the language button
+            langBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+            
+            // Add click event for the dropdown items
+            langDropdown.addEventListener('click', (event) => {
+                if (event.target.tagName === 'A') {
+                    event.preventDefault();
+                    changeLanguage(event.target.dataset.lang);
+                    langDropdown.classList.remove('open');
+                }
+            });
+            
+            // Hide dropdown when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!langBtn.contains(event.target) && !langDropdown.contains(event.target)) {
+                    langDropdown.classList.remove('open');
+                }
             });
 
+            // Toggle hamburger menu
             const hamburgerBtn = document.querySelector('.hamburger-btn');
             const mobileNav = document.querySelector('.mobile-nav');
 
