@@ -39,6 +39,26 @@
         .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
         .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
         
+ /* 햄버거 버튼 */
+    .hamburger {
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none; /* 데스크탑에서는 숨김 */
+        margin-left: 1rem;
+    }
+
+    /* 언어 드롭다운 */
+    .lang-dropdown {
+        padding: 0.3rem 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        background: white;
+        cursor: pointer;
+    }
+
         /* Hero Section */
         .hero { background: linear-gradient(135deg, var(--deep-purple), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }
         .hero-content { max-width: 1000px; margin: 0 auto; }
@@ -110,33 +130,54 @@
         .footer-section ul li a:hover { color: var(--romantic-rose); }
         .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
         
-        @media (max-width: 768px) {
-            .nav { display: none; }
-            .type-grid { grid-template-columns: repeat(2, 1fr); }
-            .tips-grid { grid-template-columns: 1fr; }
+         /* 반응형 레이아웃 수정 */
+    @media (max-width: 768px) {
+        .hamburger { display: block; }
+        .nav { 
+            display: none; 
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+            top: 70px; right: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+        .nav.active { display: flex; }
+        .btn-group { flex-direction: column; gap: 0.5rem; }
+        .feature-grid { grid-template-columns: 1fr; }
+    }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo font-poppins">MBTILove</a>
-            <nav class="nav">
-                <a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a>
-                <a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a>
-                <a href="ideal-type.html" data-i18n="navIdealType">Ideal Type</a>
-                <a href="rankings.html" data-i18n="navRankings">Rankings</a>
-                <a href="conversation.html" data-i18n="navConversation">Conversation</a>
-                <a href="balance-game.html" data-i18n="navBalanceGame">Balance Game</a>
-                <a href="about.html" data-i18n="navAbout">About</a>
-            </nav>
-            <div class="language-switcher">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="ja">日本語</button>
-                <button class="lang-btn" data-lang="ko">한국어</button>
-            </div>
-        </div>
-    </header>
+    <div class="header-container">
+        <a href="index.html" class="logo font-poppins">MBTILove</a>
+
+        <!-- 햄버거 버튼 -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <!-- 네비게이션 -->
+        <nav class="nav" id="nav-menu">
+            <a href="compatibility.html">Compatibility</a>
+            <a href="dating-style.html">Dating Style</a>
+            <a href="ideal-type.html">Ideal Type</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="conversation.html">Conversation</a>
+            <a href="balance-game.html">Balance Game</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <!-- 언어 드롭다운 -->
+        <select class="lang-dropdown" onchange="changeLanguage(this.value)">
+            <option value="en" selected>English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+        </select>
+    </div>
+</header>
+
 
     <section class="hero">
         <div class="hero-content">
@@ -976,5 +1017,10 @@
             updateContent('en');
         });
     </script>
+<script>
+function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('active');
+}
+</script>
 </body>
 </html>
