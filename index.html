@@ -37,60 +37,28 @@
         display: flex; justify-content: space-between; align-items: center; height: 70px;
     }
     .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
-    
-    /* Desktop Navigation */
     .nav { display: flex; gap: 2rem; }
     .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
     .nav a:hover { color: var(--romantic-rose); }
-    
-    /* Mobile-only elements initially hidden */
-    .mobile-nav, .hamburger-btn, .language-switcher { display: none; }
-    
-    /* Language Dropdown Styles */
-    .language-switcher {
-        position: relative;
-    }
-    .lang-btn {
+
+    /* 햄버거 버튼 */
+    .hamburger {
+        font-size: 1.8rem;
         background: none;
-        border: 1px solid #ddd;
-        padding: 0.3rem 0.8rem;
-        border-radius: 1rem;
+        border: none;
         cursor: pointer;
-        transition: all 0.3s;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+        display: none; /* 데스크탑에서는 숨김 */
+        margin-left: 1rem;
     }
-    .lang-btn:hover {
-        background-color: #f0f0f0;
-    }
+
+    /* 언어 드롭다운 */
     .lang-dropdown {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: white;
-        border: 1px solid #ccc;
+        padding: 0.3rem 0.8rem;
+        border: 1px solid #ddd;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 20;
-        padding: 0.5rem;
-        margin-top: 0.5rem;
-        white-space: nowrap;
-    }
-    .lang-dropdown a {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: #333;
-        transition: background-color 0.2s;
-    }
-    .lang-dropdown a:hover {
-        background-color: #f0f0f0;
-    }
-    .lang-dropdown.open {
-        display: block;
+        font-size: 0.9rem;
+        background: white;
+        cursor: pointer;
     }
     
     /* Hero Section */
@@ -117,14 +85,14 @@
     .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
     .feature-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 명확하게 2x2 레이아웃을 지정 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
     .feature-card {
         background: #fff; padding: 2rem; border-radius: 1rem; text-align: center;
         box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s;
-        text-decoration: none; /* 링크 밑줄 제거 */
-        color: #333; /* 링크 색상 유지 */
+        text-decoration: none;
+        color: #333;
     }
     .feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
     .feature-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--deep-purple); }
@@ -153,60 +121,23 @@
     .lang-content { display: none; }
     .lang-content.active { display: block; }
     
-    /* Responsive Layout */
+    /* 반응형 레이아웃 수정 */
     @media (max-width: 768px) {
-        .nav { display: none; } /* Hide desktop nav */
-        .mobile-nav, .hamburger-btn, .language-switcher { display: flex; } /* Show mobile elements */
+        .hamburger { display: block; }
+        .nav { 
+            display: none; 
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+            top: 70px; right: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .nav.active { display: flex; }
         .btn-group { flex-direction: column; gap: 0.5rem; }
         .feature-grid { grid-template-columns: 1fr; }
-        
-        .hamburger-btn {
-            flex-direction: column;
-            justify-content: space-around;
-            width: 2rem;
-            height: 2rem;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 10;
-        }
-        .hamburger-btn .bar {
-            width: 2rem;
-            height: 3px;
-            background-color: var(--romantic-rose);
-            border-radius: 10px;
-            transition: all 0.3s linear;
-        }
-
-        .language-switcher {
-            position: relative;
-            margin-right: 1rem;
-        }
-        .lang-dropdown {
-            left: auto;
-            right: 0;
-        }
-        
-        /* Mobile menu styles */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 9;
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1.5rem;
-            text-align: center;
-        }
-        
-        .mobile-nav.open {
-            display: flex;
-        }
     }
     </style>
 </head>
@@ -214,8 +145,12 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo font-poppins">MBTILove</a>
-            
-            <nav class="nav">
+
+            <!-- 햄버거 버튼 -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+            <!-- 네비게이션 -->
+            <nav class="nav" id="nav-menu">
                 <a href="compatibility.html">Compatibility</a>
                 <a href="dating-style.html">Dating Style</a>
                 <a href="ideal-type.html">Ideal Type</a>
@@ -224,35 +159,17 @@
                 <a href="balance-game.html">Balance Game</a>
                 <a href="about.html">About</a>
             </nav>
-            
-            <div style="display: none; align-items: center; gap: 1rem;" class="mobile-controls">
-                <div class="language-switcher">
-                    <button id="current-lang-btn" class="lang-btn">EN</button>
-                    <div id="lang-dropdown-menu" class="lang-dropdown">
-                        <a href="#" data-lang="en">EN</a>
-                        <a href="#" data-lang="ja">日本語</a>
-                        <a href="#" data-lang="ko">한국어</a>
-                    </div>
-                </div>
-                
-                <button class="hamburger-btn" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
 
-            <div class="mobile-nav">
-                <a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a>
-                <a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a>
-                <a href="ideal-type.html" data-i18n="navIdealType">Ideal Type</a>
-                <a href="rankings.html" data-i118n="navRankings">Rankings</a>
-                <a href="conversation.html" data-i18n="navConversation">Conversation</a>
-                <a href="balance-game.html" data-i18n="navBalance">Balance Game</a>
-            </div>
+            <!-- 언어 드롭다운 -->
+            <select class="lang-dropdown" onchange="changeLanguage(this.value)">
+                <option value="en" selected>English</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+            </select>
         </div>
     </header>
 
+    <!-- ===== Hero Section ===== -->
     <section class="hero">
         <div class="hero-content">
             <div class="lang-content active" data-lang="en">
@@ -261,12 +178,8 @@
                     Dive into the world of MBTI to find compatibility, understand dating styles, and build stronger, more meaningful relationships.
                 </p>
                 <div class="btn-group">
-                    <a href="dating-style.html" class="btn btn-primary">
-                        Find Your Dating Style
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        Check Compatibility
-                    </a>
+                    <a href="dating-style.html" class="btn btn-primary">Find Your Dating Style</a>
+                    <a href="compatibility.html" class="btn btn-secondary">Check Compatibility</a>
                 </div>
             </div>
             
@@ -276,12 +189,8 @@
                     MBTIの世界に飛び込み, 相性を探り, デートスタイルを理解し, より強く意味のある関係を築きましょう.
                 </p>
                 <div class="btn-group">
-                    <a href="dating-style.html" class="btn btn-primary">
-                        あなたのデートスタイルを見つける
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        相性度をチェック
-                    </a>
+                    <a href="dating-style.html" class="btn btn-primary">あなたのデートスタイルを見つける</a>
+                    <a href="compatibility.html" class="btn btn-secondary">相性度をチェック</a>
                 </div>
             </div>
             
@@ -291,17 +200,14 @@
                     MBTI의 세계에 뛰어들어, 당신의 이상형과 데이트 스타일을 찾고, 더 깊고 의미있는 관계를 만들어보세요.
                 </p>
                 <div class="btn-group">
-                    <a href="dating-style.html" class="btn btn-primary">
-                        당신의 데이트 스타일 찾기
-                    </a>
-                    <a href="compatibility.html" class="btn btn-secondary">
-                        궁합 확인하기
-                    </a>
+                    <a href="dating-style.html" class="btn btn-primary">당신의 데이트 스타일 찾기</a>
+                    <a href="compatibility.html" class="btn btn-secondary">궁합 확인하기</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== Features Section ===== -->
     <section class="section">
         <div class="container">
             <div class="lang-content active" data-lang="en">
@@ -341,17 +247,17 @@
                     <a href="dating-style.html" class="feature-card">
                         <div class="feature-icon">🌟</div>
                         <h3 class="feature-title">デートスタイル</h3>
-                        <p class="feature-description">ユニークなデートスタイルと, 당신의 성격이 연애에 어떻게 영향을 미치는지 탐색.</p>
+                        <p class="feature-description">ユニークなデートスタイルと, あなたの性格が恋愛にどう影響するか探る.</p>
                     </a>
                     <a href="ideal-type.html" class="feature-card">
                         <div class="feature-icon">💌</div>
                         <h3 class="feature-title">理想のタイプ</h3>
-                        <p class="feature-description">각 MBTI 타입이 파트너에게 무엇을 찾는지를 알 수 있다.</p>
+                        <p class="feature-description">各MBTIタイプがパートナーに何を求めるかを知る.</p>
                     </a>
                     <a href="rankings.html" class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">ランキング</h3>
-                        <p class="feature-description">다양한 연애 시나리오에서 MBTI 타입들이 어떻게 순위를 차지하는지 확인.</p>
+                        <p class="feature-description">様々な恋愛シーンでMBTIタイプがどうランク付けされるかを見る.</p>
                     </a>
                 </div>
             </div>
@@ -384,6 +290,7 @@
         </div>
     </section>
 
+    <!-- ===== Quiz Section ===== -->
     <section class="section">
         <div class="container">
             <div class="quiz-section">
@@ -398,7 +305,7 @@
                 <div class="lang-content" data-lang="ja">
                     <h3 class="quiz-title">あなたのデートスタイルを発見</h3>
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                        インタ랙티브 퀴즈에 참여하여, あなたの性格タイプがデートや関係への取り組みにどのように 영향을 미치는지 이해하세요.
+                        インタラクティブクイズに参加して, あなたの性格タイプがデートや関係への取り組みにどのように影響するか理解してください.
                     </p>
                     <button class="quiz-btn" onclick="window.location.href='quiz.html';">デートスタイルクイズに参加</button>
                 </div>
@@ -408,12 +315,13 @@
                     <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
                         인터랙티브 퀴즈에 참여하여 성격 유형이 데이트와 관계에 대한 접근 방식에 어떻게 영향을 미치는지 이해해보세요.
                     </p>
-                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">Take Dating Style Quiz</button>
+                    <button class="quiz-btn" onclick="window.location.href='quiz.html';">데이트 스타일 퀴즈 풀기</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== Footer ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -446,6 +354,7 @@
         </div>
     </footer>
 
+    <!-- ===== Scripts ===== -->
     <script>
         // Language switching functionality
         let currentLanguage = 'en';
@@ -453,13 +362,6 @@
         function changeLanguage(lang) {
             currentLanguage = lang;
             
-            const langMap = {
-                'en': 'EN',
-                'ja': '日本語',
-                'ko': '한국어'
-            };
-            document.getElementById('current-lang-btn').textContent = langMap[lang];
-
             // Show/hide content based on language
             document.querySelectorAll('.lang-content').forEach(content => {
                 if (content.getAttribute('data-lang') === lang) {
@@ -476,42 +378,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             changeLanguage(savedLang);
-
-            // Toggle language dropdown
-            const langBtn = document.getElementById('current-lang-btn');
-            const langDropdown = document.getElementById('lang-dropdown-menu');
-            const mobileControls = document.querySelector('.mobile-controls');
-            
-            // Add click event for the language button
-            langBtn.addEventListener('click', (event) => {
-                event.stopPropagation();
-                langDropdown.classList.toggle('open');
-            });
-            
-            // Add click event for the dropdown items
-            langDropdown.addEventListener('click', (event) => {
-                if (event.target.tagName === 'A') {
-                    event.preventDefault();
-                    changeLanguage(event.target.dataset.lang);
-                    langDropdown.classList.remove('open');
-                }
-            });
-            
-            // Hide dropdown when clicking outside
-            document.addEventListener('click', (event) => {
-                if (!langBtn.contains(event.target) && !langDropdown.contains(event.target)) {
-                    langDropdown.classList.remove('open');
-                }
-            });
-
-            // Toggle hamburger menu
-            const hamburgerBtn = document.querySelector('.hamburger-btn');
-            const mobileNav = document.querySelector('.mobile-nav');
-
-            hamburgerBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('open');
-            });
+            document.querySelector('.lang-dropdown').value = savedLang;
         });
+
+        // 햄버거 메뉴 토글
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
     </script>
 </body>
 </html>
