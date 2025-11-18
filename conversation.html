@@ -1,951 +1,1184 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57524D22');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-57524D22');</script>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pageTitle">MBTI Conversation Guide - Communicate Better with Every Type | MBTILove</title>
     <meta name="description" data-i18n="pageDescription" content="Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
+        /* Reset and Base Styles */
         :root {
-            --romantic-rose: hsl(340, 75%, 52%);
-            --soft-pink: hsl(320, 100%, 96%);
-            --deep-purple: hsl(258, 62%, 45%);
-            --lavender: hsl(285, 56%, 89%);
-            --warm-coral: hsl(18, 100%, 62%);
-            --mbti-gold: hsl(45, 100%, 51%);
+            --color-primary: #8e44ad; /* Dark Purple */
+            --color-secondary: #f39c12; /* Orange/Yellow for accent */
+            --color-text: #333333;
+            --color-light: #f8f8f8;
+            --color-white: #ffffff;
+            --color-gray: #cccccc;
+            --color-dark-gray: #666666;
+            --color-shadow: rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Header Styles */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-light);
+            padding-top: 60px; /* Space for fixed header */
+        }
+
+        /* Header and Navigation */
         header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: var(--color-white);
+            box-shadow: 0 2px 4px var(--color-shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
+
         .header-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
-            display: flex; justify-content: space-between; align-items: center; height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
-        .nav { display: flex; gap: 2rem; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
- /* 햄버거 버튼 */
-    .hamburger {
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: none; /* 데스크탑에서는 숨김 */
-        margin-left: 1rem;
-    }
 
-    /* 언어 드롭다운 */
-    .lang-dropdown {
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        background: white;
-        cursor: pointer;
-    }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
 
-        /* Hero Section */
-        .hero { background: linear-gradient(135deg, var(--deep-purple), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }
-        .hero-content { max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .lang-dropdown {
+            padding: 5px 10px;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
         
-        /* Main Content */
-        .section { padding: 4rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
-        
-        /* Type Selector */
-        .type-selector { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin-bottom: 3rem; }
-        .selector-title { text-align: center; margin-bottom: 2rem; font-size: 1.5rem; font-weight: bold; color: var(--deep-purple); }
-        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; }
+        /* Language buttons (kept for old styling reference but now using dropdown) */
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--color-dark-gray);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        /* Main Content Layout */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px var(--color-shadow);
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--color-dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* MBTI Type Selector */
+        .type-selector {
+            background: var(--color-white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px var(--color-shadow);
+            margin-bottom: 30px;
+        }
+
+        .type-selector h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        .type-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
         .type-btn {
-            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
-            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
+            background-color: var(--color-light);
+            border: 1px solid var(--color-gray);
+            color: var(--color-text);
+            padding: 10px 5px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.1s;
+            text-align: center;
         }
-        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
-        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
+
+        .type-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .type-btn.selected {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px var(--color-shadow);
+        }
+
+        /* Conversation Guide Display */
+        #conversation-guide {
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px var(--color-shadow);
+            min-height: 400px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        #conversation-guide.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
-        /* Conversation Guide */
-        .conversation-guide { background: white; border-radius: 2rem; padding: 3rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 3rem; display: none; }
-        .conversation-guide.show { display: block; }
-        .guide-header { text-align: center; margin-bottom: 3rem; }
-        .guide-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .guide-subtitle { color: #666; font-size: 1.1rem; }
-        
-        .guide-sections { display: grid; gap: 2rem; }
+        .guide-header {
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .guide-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        .guide-subtitle {
+            color: var(--color-dark-gray);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .mbti-type {
+            font-weight: 700;
+        }
+
+        .guide-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
         .guide-section {
-            background: linear-gradient(135deg, var(--soft-pink), white); padding: 2rem; border-radius: 1.5rem;
-            border: 1px solid rgba(219, 73, 122, 0.2);
+            padding: 20px;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius);
+            background-color: var(--color-light);
         }
-        .guide-section-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); display: flex; align-items: center; gap: 0.5rem; }
-        .guide-section-content { color: #555; }
-        .tip-list { list-style: none; margin: 1rem 0; }
-        .tip-list li { padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
-        .tip-list li:before { content: '💡'; font-size: 1rem; flex-shrink: 0; }
-        
-        .example-box { background: var(--lavender); padding: 1.5rem; border-radius: 1rem; margin: 1rem 0; }
-        .example-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--deep-purple); }
-        .example-content { font-style: italic; color: #555; }
-        
-        /* Conversation Tips */
-        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .tip-card {
-            background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0; text-align: center; transition: all 0.3s;
+
+        .guide-section-title {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
         }
-        .tip-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-        .tip-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .tip-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .tip-description { color: #666; line-height: 1.5; }
-        
-       
-        /* Footer */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        .footer-section h3 { color: white; margin-bottom: 1rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-section ul li a:hover { color: var(--romantic-rose); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-        
-         /* 반응형 레이아웃 수정 */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-        .nav { 
-            display: none; 
-            flex-direction: column;
-            gap: 1rem;
+
+        .guide-section-content p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .tip-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tip-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .tip-list li::before {
+            content: '✓';
+            color: var(--color-secondary);
+            font-weight: 700;
             position: absolute;
-            top: 70px; right: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            left: 0;
         }
-        .nav.active { display: flex; }
-        .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { grid-template-columns: 1fr; }
-    }
+        
+        .example-box {
+            background-color: var(--color-white);
+            border: 1px dashed var(--color-secondary);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-bottom: 5px;
+        }
+
+        .example-content {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--color-dark-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-text);
+            color: var(--color-white);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Adjustments */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 900px) {
+            .guide-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Below header */
+                left: 0;
+                width: 100%;
+                background-color: var(--color-white);
+                box-shadow: 0 4px 8px var(--color-shadow);
+                padding: 10px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a, .lang-dropdown {
+                margin: 5px 20px;
+                padding: 10px 0;
+                border-bottom: 1px solid var(--color-light);
+            }
+            
+            .lang-dropdown {
+                width: calc(100% - 40px);
+            }
+
+            .header-container {
+                padding: 10px 15px;
+            }
+
+            .hero {
+                padding: 40px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .type-buttons {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            }
+            
+            .type-btn {
+                font-size: 0.8rem;
+                padding: 8px 3px;
+            }
+            
+            #conversation-guide {
+                padding: 20px;
+            }
+
+            .guide-title {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <header>
-    <div class="header-container">
-        <a href="index.html" class="logo font-poppins">MBTILove</a>
-
-        <!-- 햄버거 버튼 -->
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-        <!-- 네비게이션 -->
-        <nav class="nav" id="nav-menu">
-            <a href="compatibility.html">Compatibility</a>
-            <a href="dating-style.html">Dating Style</a>
-            <a href="ideal-type.html">Ideal Type</a>
-            <a href="rankings.html">Rankings</a>
-            <a href="conversation.html">Conversation</a>
-            <a href="balance-game.html">Balance Game</a>
-            <a href="about.html">About</a>
-        </nav>
-
-        <!-- 언어 드롭다운 -->
-        <select class="lang-dropdown" onchange="changeLanguage(this.value)">
-            <option value="en" selected>English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-        </select>
-    </div>
-</header>
-
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Conversation Guide</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">
-                Master the art of communicating with different personality types. Learn how to connect deeply, 
-                avoid misunderstandings, and build stronger relationships through effective conversation.
-            </p>
+<header>
+        <div class="header-container">
+            <a href="#" class="logo">MBTILove</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <nav id="nav-menu">
+                <a href="#" data-i18n="nav.home">Home</a>
+                <a href="#" data-i18n="nav.about">About</a>
+                <a href="#" data-i18n="nav.contact">Contact</a>
+                <select class="lang-dropdown" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="ko">한국어</option>
+                    <option value="ja">日本語</option>
+                </select>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    
+    <main>
+        <section class="hero">
+            <h1 data-i18n="hero.title">Master the Art of MBTI Conversation</h1>
+            <p data-i18n="hero.subtitle">Unlock personalized conversation strategies for dating, work, and friendships by understanding every personality type.</p>
+        </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title font-poppins" data-i18n="sectionTitle">Choose a Personality Type</h2>
-            
-            <div class="type-selector">
-                <h3 class="selector-title" data-i18n="selectorTitle">Select an MBTI Type to Learn Communication Strategies</h3>
-                <div class="type-grid">
-                    <button class="type-btn" data-type="INTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTJ">Architect</div>
-                    </button>
-                    <button class="type-btn" data-type="INTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTP">Thinker</div>
-                    </button>
-                    <button class="type-btn" data-type="ENTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTJ">Commander</div>
-                    </button>
-                    <button class="type-btn" data-type="ENTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTP">Debater</div>
-                    </button>
-                    <button class="type-btn" data-type="INFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFJ">Advocate</div>
-                    </button>
-                    <button class="type-btn" data-type="INFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFP">Mediator</div>
-                    </button>
-                    <button class="type-btn" data-type="ENFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFJ">Protagonist</div>
-                    </button>
-                    <button class="type-btn" data-type="ENFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFP">Campaigner</div>
-                    </button>
-                    <button class="type-btn" data-type="ISTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTJ">Logistician</div>
-                    </button>
-                    <button class="type-btn" data-type="ISFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFJ">Protector</div>
-                    </button>
-                    <button class="type-btn" data-type="ESTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTJ">Executive</div>
-                    </button>
-                    <button class="type-btn" data-type="ESFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFJ">Consul</div>
-                    </button>
-                    <button class="type-btn" data-type="ISTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTP">Virtuoso</div>
-                    </button>
-                    <button class="type-btn" data-type="ISFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFP">Adventurer</div>
-                    </button>
-                    <button class="type-btn" data-type="ESTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTP">Entrepreneur</div>
-                    </button>
-                    <button class="type-btn" data-type="ESFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFP">Entertainer</div>
-                    </button>
-                </div>
+        <section class="type-selector">
+            <h2 data-i18n="selector.title">Select an MBTI Type to See the Guide</h2>
+            <div class="type-buttons">
+                <button class="type-btn" data-type="ISTJ">ISTJ</button>
+                <button class="type-btn" data-type="ISFJ">ISFJ</button>
+                <button class="type-btn" data-type="INFJ">INFJ</button>
+                <button class="type-btn" data-type="INTJ">INTJ</button>
+                <button class="type-btn" data-type="ISTP">ISTP</button>
+                <button class="type-btn" data-type="ISFP">ISFP</button>
+                <button class="type-btn" data-type="INFP">INFP</button>
+                <button class="type-btn" data-type="INTP">INTP</button>
+                <button class="type-btn" data-type="ESTP">ESTP</button>
+                <button class="type-btn" data-type="ESFP">ESFP</button>
+                <button class="type-btn" data-type="ENFP">ENFP</button>
+                <button class="type-btn" data-type="ENTP">ENTP</button>
+                <button class="type-btn" data-type="ESTJ">ESTJ</button>
+                <button class="type-btn" data-type="ESFJ">ESFJ</button>
+                <button class="type-btn" data-type="ENFJ">ENFJ</button>
+                <button class="type-btn" data-type="ENTJ">ENTJ</button>
             </div>
-            
-            <div id="conversation-guide" class="conversation-guide">
-                </div>
-            
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <div class="tip-icon">👂</div>
-                    <h3 class="tip-title" data-i18n="tips.title1">Active Listening</h3>
-                    <p class="tip-description" data-i18n="tips.desc1">Pay attention to both what they say and how they say it. Different types express themselves in unique ways.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <div class="tip-icon">🎯</div>
-                    <h3 class="tip-title" data-i18n="tips.title2">Adapt Your Style</h3>
-                    <p class="tip-description" data-i18n="tips.desc2">Adjust your communication approach based on their personality preferences and comfort zone.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <div class="tip-icon">❓</div>
-                    <h3 class="tip-title" data-i18n="tips.title3">Ask Open Questions</h3>
-                    <p class="tip-description" data-i18n="tips.desc3">Use questions that encourage deeper sharing and help you understand their perspective better.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <div class="tip-icon">💝</div>
-                    <h3 class="tip-title" data-i18n="tips.title4">Show Appreciation</h3>
-                    <p class="tip-description" data-i18n="tips.desc4">Acknowledge their unique strengths and the value they bring to conversations and relationships.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <div class="tip-icon">⚡</div>
-                    <h3 class="tip-title" data-i18n="tips.title5">Respect Energy Levels</h3>
-                    <p class="tip-description" data-i18n="tips.desc5">Introverts may need processing time, while extroverts often think out loud. Honor both styles.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <div class="tip-icon">🌱</div>
-                    <h3 class="tip-title" data-i18n="tips.title6">Create Safe Spaces</h3>
-                    <p class="tip-description" data-i18n="tips.desc6">Foster an environment where they feel comfortable being authentic and sharing their thoughts.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    
+        <section id="conversation-guide" style="opacity:0; transform:translateY(20px);">
+            <div style="text-align:center; padding: 50px;">
+                <h3 data-i18n="guide.placeholder.title" style="color:var(--color-dark-gray);">Ready to Connect?</h3>
+                <p data-i18n="guide.placeholder.subtitle" style="margin-top:15px; font-size:1.1rem;">Click on any of the 16 personality types above to reveal your personalized conversation strategy.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 data-i18n="footer.explore">Explore</h3>
-                <ul>
-                    <li><a href="compatibility.html" data-i18n="navCompatibility">Compatibility</a></li>
-                    <li><a href="dating-style.html" data-i18n="navDatingStyle">Dating Style</a></li>
-                    <li><a href="ideal-type.html" data-i18n="navIdealType">Ideal Type</a></li>
-                    <li><a href="rankings.html" data-i18n="navRankings">Rankings</a></li>
-                    <li><a href="conversation.html" data-i18n="navConversation">Conversation</a></li>
-                    <li><a href="balance-game.html" data-i18n="navBalanceGame">Balance Game</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 data-i18n="footer.resources">Resources</h3>
-                <ul>
-                    <li><a href="about.html" data-i18n="navAbout">About</a></li>
-                    <li><a href="contact.html" data-i18n="footer.contact">Contact</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank" data-i18n="footer.test">Official MBTI Test</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 data-i18n="footer.legal">Legal</h3>
-                <ul>
-                    <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
-                    <li><a href="terms-of-use.html" data-i18n="footer.terms">Terms of Use</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 MBTILove. All rights reserved.</p>
     </footer>
 
     <script>
         const translations = {
-            'en': {
-                'pageTitle': 'MBTI Conversation Guide - Communicate Better with Every Type | MBTILove',
-                'pageDescription': 'Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.',
-                'navCompatibility': 'Compatibility',
-                'navDatingStyle': 'Dating Style',
-                'navIdealType': 'Ideal Type',
-                'navRankings': 'Rankings',
-                'navConversation': 'Conversation',
-                'navBalanceGame': 'Balance Game',
-                'navAbout': 'About',
-                'heroTitle': 'MBTI Conversation Guide',
-                'heroSubtitle': 'Master the art of communicating with different personality types. Learn how to connect deeply, avoid misunderstandings, and build stronger relationships through effective conversation.',
-                'advertisement': 'Advertisement',
-                'sectionTitle': 'Choose a Personality Type',
-                'selectorTitle': 'Select an MBTI Type to Learn Communication Strategies',
-                'type.INTJ': 'Architect', 'type.INTP': 'Thinker', 'type.ENTJ': 'Commander', 'type.ENTP': 'Debater',
-                'type.INFJ': 'Advocate', 'type.INFP': 'Mediator', 'type.ENFJ': 'Protagonist', 'type.ENFP': 'Campaigner',
-                'type.ISTJ': 'Logistician', 'type.ISFJ': 'Protector', 'type.ESTJ': 'Executive', 'type.ESFJ': 'Consul',
-                'type.ISTP': 'Virtuoso', 'type.ISFP': 'Adventurer', 'type.ESTP': 'Entrepreneur', 'type.ESFP': 'Entertainer',
-                'tips.title1': 'Active Listening',
-                'tips.desc1': 'Pay attention to both what they say and how they say it. Different types express themselves in unique ways.',
-                'tips.title2': 'Adapt Your Style',
-                'tips.desc2': 'Adjust your communication approach based on their personality preferences and comfort zone.',
-                'tips.title3': 'Ask Open Questions',
-                'tips.desc3': 'Use questions that encourage deeper sharing and help you understand their perspective better.',
-                'tips.title4': 'Show Appreciation',
-                'tips.desc4': 'Acknowledge their unique strengths and the value they bring to conversations and relationships.',
-                'tips.title5': 'Respect Energy Levels',
-                'tips.desc5': 'Introverts may need processing time, while extroverts often think out loud. Honor both styles.',
-                'tips.title6': 'Create Safe Spaces',
-                'tips.desc6': 'Foster an environment where they feel comfortable being authentic and sharing their thoughts.',
-                'footer.explore': 'Explore',
-                'footer.resources': 'Resources',
-                'footer.legal': 'Legal',
-                'footer.contact': 'Contact',
-                'footer.test': 'Official MBTI Test',
-                'footer.privacy': 'Privacy Policy',
-                'footer.terms': 'Terms of Use',
-                'guide.title': 'Communicating with <span class="mbti-type"></span> - <span class="mbti-name"></span>',
-                'guide.subtitle': 'Understanding how to communicate effectively with this personality type.',
-                'guide.noGuide': 'No conversation guide available for this type yet. We will update it soon!',
-                'section.approach.title': 'Communication Approach',
-                'section.approach.content': 'Each personality type has unique communication preferences and styles.',
-                'section.approach.tips1': 'Observe their natural communication style',
-                'section.approach.tips2': 'Adapt your approach to match their preferences',
-                'section.approach.tips3': 'Be patient and understanding',
-                'section.approach.tips4': 'Focus on building genuine connection',
-                'section.topics.title': 'Preferred Topics',
-                'section.topics.content': 'Different types are energized by different kinds of conversations.',
-                'section.topics.tips1': 'Ask about their interests and passions',
-                'section.topics.tips2': 'Share relevant experiences',
-                'section.topics.tips3': 'Be genuinely curious about their perspective',
-                'section.topics.tips4': 'Find common ground in your interests',
-                'section.avoid.title': 'Communication Pitfalls',
-                'section.avoid.content': 'Be mindful of approaches that might not resonate with this type.',
-                'section.avoid.tips1': 'Avoid overwhelming them with your preferred style',
-                'section.avoid.tips2': 'Don\'t assume they communicate like you do',
-                'section.avoid.tips3': 'Respect their energy levels and boundaries',
-                'section.avoid.tips4': 'Be patient if they need time to process',
+            en: {
+                pageTitle: "MBTI Conversation Guide - Communicate Better with Every Type | MBTILove",
+                pageDescription: "Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.",
+                nav: { home: "Home", about: "About", contact: "Contact" },
+                hero: { title: "Master the Art of MBTI Conversation", subtitle: "Unlock personalized conversation strategies for dating, work, and friendships by understanding every personality type." },
+                selector: { title: "Select an MBTI Type to See the Guide" },
+                guide: {
+                    title: "Conversation Guide for the <span class=\"mbti-type\"></span> (<span class=\"mbti-name\"></span>)",
+                    subtitle: "Personalized tips for making a genuine connection.",
+                    approach: "Best Approach", topics: "Great Conversation Topics", avoid: "Things to Avoid",
+                    placeholder: { title: "Ready to Connect?", subtitle: "Click on any of the 16 personality types above to reveal your personalized conversation strategy." }
+                },
+                example: { title: "Example Dialogue" }
             },
-            'ja': {
-                'pageTitle': 'MBTI会話ガイド - 全タイプとより良くコミュニケーションする方法 | MBTILove',
-                'pageDescription': 'さまざまなMBTI性格タイプと効果的にコミュニケーションする方法を学びましょう。デートや人間関係、より深い繋がりを築くための会話術を身につけましょう。',
-                'navCompatibility': '相性',
-                'navDatingStyle': 'デートスタイル',
-                'navIdealType': '理想のタイプ',
-                'navRankings': 'ランキング',
-                'navConversation': '会話',
-                'navBalanceGame': 'バランスゲーム',
-                'navAbout': 'About',
-                'heroTitle': 'MBTI会話ガイド',
-                'heroSubtitle': '様々な性格タイプと効果的にコミュニケーションする技術を習得しましょう。有意義な会話を通じて、深い繋がりを築き、誤解を避け、より強い関係を構築する方法を学びましょう。',
-                'advertisement': '広告',
-                'sectionTitle': '性格タイプを選ぶ',
-                'selectorTitle': 'コミュニケーション戦略を学びたいMBTIタイプを選んでください',
-                'type.INTJ': '建築家', 'type.INTP': '論理学者', 'type.ENTJ': '指揮官', 'type.ENTP': '討論者',
-                'type.INFJ': '提唱者', 'type.INFP': '仲介者', 'type.ENFJ': '主人公', 'type.ENFP': '広報運動家',
-                'type.ISTJ': '管理者', 'type.ISFJ': '擁護者', 'type.ESTJ': '幹部', 'type.ESFJ': '領事',
-                'type.ISTP': '巨匠', 'type.ISFP': '冒険家', 'type.ESTP': '起業家', 'type.ESFP': 'エンターテイナー',
-                'tips.title1': '積極的な傾聴',
-                'tips.desc1': '相手が何を話すかだけでなく、どのように話すかにも注意を払ってください。タイプによって表現方法が異なります。',
-                'tips.title2': 'スタイルを合わせる',
-                'tips.desc2': '相手の性格の好みや快適なゾーンに合わせて、コミュニケーションのアプローチを調整してください。',
-                'tips.title3': '開かれた質問をする',
-                'tips.desc3': 'より深い共有を促し、相手の視点をよりよく理解するのに役立つ質問をしてください。',
-                'tips.title4': '感謝を示す',
-                'tips.desc4': '彼らのユニークな強みや、会話や関係にもたらす価値を認めましょう。',
-                'tips.title5': 'エネルギーレベルを尊重する',
-                'tips.desc5': '内向的な人は考える時間が必要な場合がありますが、外向的な人は声に出して考えることが多いです。両方のスタイルを尊重してください。',
-                'tips.title6': '安心できる空間を作る',
-                'tips.desc6': '彼らが本物であると感じ、自分の考えを共有するのに快適な環境を育ててください。',
-                'footer.explore': '探す',
-                'footer.resources': '資料',
-                'footer.legal': '法律',
-                'footer.contact': 'お問い合わせ',
-                'footer.test': '公式MBTIテスト',
-                'footer.privacy': 'プライバシーポリシー',
-                'footer.terms': '利用規約',
-                'guide.title': '<span class="mbti-type"></span>（<span class="mbti-name"></span>）とのコミュニケーション',
-                'guide.subtitle': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
-                'guide.noGuide': 'このタイプの会話ガイドはまだありません。近日中に更新します！',
-                'section.approach.title': 'コミュニケーションアプローチ',
-                'section.approach.content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
-                'section.approach.tips1': '彼らの自然なコミュニケーションスタイルを観察する',
-                'section.approach.tips2': '彼らの好みに合わせてアプローチを調整する',
-                'section.approach.tips3': '忍耐強く、理解を示す',
-                'section.approach.tips4': '本物のつながりを築くことに焦点を当てる',
-                'section.topics.title': '好まれる話題',
-                'section.topics.content': '異なるタイプは異なる種類の会話によって活気づきます。',
-                'section.topics.tips1': '彼らの興味や情熱について尋ねる',
-                'section.topics.tips2': '関連する経験を共有する',
-                'section.topics.tips3': '彼らの視点に心から興味を持つ',
-                'section.topics.tips4': '共通の興味を見つける',
-                'section.avoid.title': 'コミュニケーションの落とし穴',
-                'section.avoid.content': 'このタイプに響かないかもしれないアプローチに注意してください。',
-                'section.avoid.tips1': 'あなたの好みのスタイルで彼らを圧倒しないようにする',
-                'section.avoid.tips2': '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
-                'section.avoid.tips3': '彼らのエネルギーレベルと境界線を尊重する',
-                'section.avoid.tips4': '彼らが処理する時間が必要な場合は忍耐強く待つ',
+            ko: {
+                pageTitle: "MBTI 대화 가이드 - 모든 유형과 더 잘 소통하는 법 | MBTI러브",
+                pageDescription: "다양한 MBTI 성격 유형과 효과적으로 대화하는 방법을 배우세요. 데이트, 관계, 깊은 연결을 위한 대화 기술을 마스터하세요.",
+                nav: { home: "홈", about: "소개", contact: "연락처" },
+                hero: { title: "MBTI 대화의 기술을 마스터하세요", subtitle: "모든 성격 유형을 이해하여 데이트, 직장, 친구 관계를 위한 개인화된 대화 전략을 잠금 해제하세요." },
+                selector: { title: "가이드를 보려면 MBTI 유형을 선택하세요" },
+                guide: {
+                    title: "<span class=\"mbti-type\"></span> 유형 (<span class=\"mbti-name\"></span>)을 위한 대화 가이드",
+                    subtitle: "진정한 연결을 만드는 개인 맞춤형 팁.",
+                    approach: "최적의 접근법", topics: "좋은 대화 주제", avoid: "피해야 할 것들",
+                    placeholder: { title: "연결할 준비가 되셨나요?", subtitle: "위에 있는 16가지 성격 유형 중 하나를 클릭하여 개인화된 대화 전략을 확인하세요." }
+                },
+                example: { title: "대화 예시" }
             },
-            'ko': {
-                'pageTitle': 'MBTI 대화 가이드 - 모든 유형과 더 잘 소통하기 | MBTILove',
-                'pageDescription': '다양한 MBTI 성격 유형과 효과적으로 소통하는 방법을 배워보세요. 데이트, 관계, 그리고 더 깊은 연결을 위한 대화 기술을 익히세요.',
-                'navCompatibility': '궁합',
-                'navDatingStyle': '연애 스타일',
-                'navIdealType': '이상형',
-                'navRankings': '랭킹',
-                'navConversation': '대화',
-                'navBalanceGame': '밸런스 게임',
-                'navAbout': '소개',
-                'heroTitle': 'MBTI 대화 가이드',
-                'heroSubtitle': '다양한 성격 유형과 소통하는 기술을 익혀보세요. 효과적인 대화를 통해 깊은 관계를 맺고, 오해를 피하며, 더 강력한 관계를 구축하는 방법을 배워보세요.',
-                'advertisement': '광고',
-                'sectionTitle': '성격 유형 선택하기',
-                'selectorTitle': '소통 전략을 배우고 싶은 MBTI 유형을 선택하세요',
-                'type.INTJ': '건축가', 'type.INTP': '논리주의자', 'type.ENTJ': '통솔자', 'type.ENTP': '변론가',
-                'type.INFJ': '옹호자', 'type.INFP': '중재자', 'type.ENFJ': '선도자', 'type.ENFP': '활동가',
-                'type.ISTJ': '현실주의자', 'type.ISFJ': '수호자', 'type.ESTJ': '경영자', 'type.ESFJ': '사교형',
-                'type.ISTP': '장인', 'type.ISFP': '모험가', 'type.ESTP': '사업가', 'type.ESFP': '연예인',
-                'tips.title1': '적극적으로 경청하기',
-                'tips.desc1': '상대방이 무엇을 말하는지, 그리고 어떻게 말하는지에 모두 주의를 기울이세요. 유형에 따라 자신을 표현하는 방식이 다릅니다.',
-                'tips.title2': '자신의 스타일 조정하기',
-                'tips.desc2': '상대방의 성격 선호도와 편안함을 느끼는 영역에 따라 대화 방식을 조절하세요.',
-                'tips.title3': '개방형 질문하기',
-                'tips.desc3': '더 깊은 공유를 유도하고 상대방의 관점을 더 잘 이해하는 데 도움이 되는 질문을 사용하세요.',
-                'tips.title4': '감사 표현하기',
-                'tips.desc4': '그들의 독특한 강점과 대화 및 관계에 가져오는 가치를 인정해주세요.',
-                'tips.title5': '에너지 수준 존중하기',
-                'tips.desc5': '내향적인 사람은 생각할 시간이 필요할 수 있으며, 외향적인 사람은 소리 내어 생각하는 경향이 있습니다. 두 가지 스타일을 모두 존중하세요.',
-                'tips.title6': '안전한 공간 만들기',
-                'tips.desc6': '상대방이 진솔하게 느끼고 자신의 생각을 편안하게 공유할 수 있는 환경을 조성하세요.',
-                'footer.explore': '탐색하기',
-                'footer.resources': '자료',
-                'footer.legal': '법률',
-                'footer.contact': '연락처',
-                'footer.test': '공식 MBTI 테스트',
-                'footer.privacy': '개인정보 처리방침',
-                'footer.terms': '이용약관',
-                'guide.title': '<span class="mbti-type"></span> (<span class="mbti-name"></span>)와 소통하기',
-                'guide.subtitle': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
-                'guide.noGuide': '아직 이 유형에 대한 대화 가이드는 준비되지 않았습니다. 곧 업데이트할 예정입니다!',
-                'section.approach.title': '소통 접근법',
-                'section.approach.content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
-                'section.approach.tips1': '그들의 자연스러운 소통 방식을 관찰하세요',
-                'section.approach.tips2': '그들의 선호도에 맞게 접근법을 조정하세요',
-                'section.approach.tips3': '인내심을 가지고 이해하세요',
-                'section.approach.tips4': '진정한 관계 구축에 집중하세요',
-                'section.topics.title': '선호하는 주제',
-                'section.topics.content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
-                'section.topics.tips1': '그들의 관심사와 열정에 대해 물어보세요',
-                'section.topics.tips2': '관련된 경험을 공유하세요',
-                'section.topics.tips3': '그들의 관점에 대해 진심으로 궁금해하세요',
-                'section.topics.tips4': '공통 관심사를 찾아보세요',
-                'section.avoid.title': '소통 시 주의할 점',
-                'section.avoid.content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
-                'section.avoid.tips1': '자신이 선호하는 방식으로 그들을 압도하지 마세요',
-                'section.avoid.tips2': '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
-                'section.avoid.tips3': '그들의 에너지 수준과 경계를 존중하세요',
-                'section.avoid.tips4': '처리할 시간이 필요하다면 인내심을 가지세요',
+            ja: {
+                pageTitle: "MBTI会話ガイド - 全てのタイプとより良くコミュニケーションをとる方法 | MBTILove",
+                pageDescription: "様々なMBTIタイプと効果的に会話する方法を学びましょう。デート、人間関係、より深いつながりのための会話テクニックをマスターしてください。",
+                nav: { home: "ホーム", about: "について", contact: "連絡先" },
+                hero: { title: "MBTI会話の芸術をマスターする", subtitle: "すべての性格タイプを理解することで、デート、仕事、友情のためのパーソナライズされた会話戦略を解き放ちます。" },
+                selector: { title: "ガイドを見るためにMBTIタイプを選択してください" },
+                guide: {
+                    title: "<span class=\"mbti-type\"></span> タイプ（<span class=\"mbti-name\"></span>）のための会話ガイド",
+                    subtitle: "真のつながりを作るための個別化されたヒント。",
+                    approach: "最適なアプローチ", topics: "良い会話のトピック", avoid: "避けるべきこと",
+                    placeholder: { title: "繋がる準備はできましたか？", subtitle: "上記の16の性格タイプのいずれかをクリックして、あなたのパーソナライズされた会話戦略を明らかにしてください。" }
+                },
+                example: { title: "会話の例" }
             }
         };
 
         const typeNames = {
-            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
-            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
-            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
-            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+            INTJ: { en: "The Architect", ko: "건축가", ja: "建築家" },
+            INTP: { en: "The Logician", ko: "논리술사", ja: "論理学者" },
+            ENTJ: { en: "The Commander", ko: "통솔자", ja: "指揮官" },
+            ENTP: { en: "The Debater", ko: "변론가", ja: "討論者" },
+            INFJ: { en: "The Advocate", ko: "옹호자", ja: "提唱者" },
+            INFP: { en: "The Mediator", ko: "중재자", ja: "仲介者" },
+            ENFJ: { en: "The Protagonist", ko: "선도자", ja: "主人公" },
+            ENFP: { en: "The Campaigner", ko: "활동가", ja: "広報運動家" },
+            ISTJ: { en: "The Logistician", ko: "현실주의자", ja: "管理者" },
+            ISFJ: { en: "The Defender", ko: "수호자", ja: "擁護者" },
+            ESTJ: { en: "The Executive", ko: "경영자", ja: "幹部" },
+            ESFJ: { en: "The Consul", ko: "사교적인 사람", ja: "領事官" },
+            ISTP: { en: "The Virtuoso", ko: "장인", ja: "巨匠" },
+            ISFP: { en: "The Adventurer", ko: "모험가", ja: "冒険家" },
+            ESTP: { en: "The Entrepreneur", ko: "사업가", ja: "起業家" },
+            ESFP: { en: "The Entertainer", ko: "연예인", ja: "エンターテイナー" }
         };
 
+        // --- 콘텐츠 보강 부분 시작 (ISTJ, INFJ, ESTP, ENTJ 추가) ---
         const conversationGuides = {
-            'INTJ': {
-                'en': {
-                    'name': 'The Architect',
-                    'description': 'Strategic, independent thinkers who value competence and efficiency in communication.',
-                    'sections': {
-                        'approach': {
-                            'title': 'How to Approach INTJs',
-                            'content': 'INTJs appreciate direct, purposeful conversations. They value depth over small talk and prefer discussing ideas, future plans, and meaningful topics.',
-                            'tips': [
-                                'Be direct and get to the point quickly',
-                                'Come prepared with well-thought-out ideas',
-                                'Respect their need for processing time',
-                                'Focus on future possibilities and long-term thinking'
-                            ],
-                            'example': {
-                                'title': 'Good conversation starter:',
-                                'content': '"I\'ve been thinking about that project idea you mentioned. What do you see as the biggest challenges we might face?"'
+            // 1. 기존 INTJ 콘텐츠 (유지)
+            INTJ: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Focus on Logic and Ideas",
+                            content: "INTJs value depth and intellectual rigor. Approach them with well-researched ideas and respect for their solitary nature.",
+                            tips: ["Be precise and factual.", "Focus on abstract, conceptual topics.", "Give them time to process before responding."],
+                            example: {
+                                title: "Example Dialogue (Work)",
+                                content: "Instead of 'Let's try this new idea because it feels right,' say: 'Based on Q3 data, option B offers a 15% efficiency increase. What potential structural flaws do you see in that model?'"
                             }
                         },
-                        'topics': {
-                            'title': 'Best Conversation Topics',
-                            'content': 'INTJs thrive when discussing complex ideas, strategic planning, and conceptual frameworks.',
-                            'tips': [
-                                'Future plans and long-term goals',
-                                'Abstract theories and concepts',
-                                'Problem-solving strategies',
-                                'Books, documentaries, and learning experiences'
-                            ]
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "They enjoy discussing theories, future strategies, complex systems, and intellectual hobbies like chess or programming.",
+                            tips: ["Future-oriented strategies and long-term plans.", "Philosophical debates or ethics.", "Discussions on technology and science."],
+                            example: {
+                                title: "Example Dialogue (Dating)",
+                                content: "Ask: 'If you could redesign the education system from scratch, what would your first principle be?'"
+                            }
                         },
-                        'avoid': {
-                            'title': 'What to Avoid',
-                            'content': 'Steer clear of superficial topics and overly emotional approaches that might make them uncomfortable.',
-                            'tips': [
-                                'Small talk about weather or celebrity gossip',
-                                'Overly emotional or dramatic expressions',
-                                'Interrupting their thought process',
-                                'Pushing for immediate decisions'
-                            ]
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "INTJs dislike small talk, emotional manipulation, and illogical arguments. Respect their time and boundaries.",
+                            tips: ["Avoid excessive emotional oversharing.", "Don't interrupt their thought process.", "Avoid vague or baseless claims."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'I just *feel* like we should do it this way, trust me on this.' (Avoid relying solely on feelings)."
+                            }
                         }
                     }
                 },
-                'ja': {
-                    'name': '建築家',
-                    'description': 'コミュニケーションにおいて能力と効率を重視する、戦略的で独立した思考家です。',
-                    'sections': {
-                        'approach': {
-                            'title': 'INTJへのアプローチ方法',
-                            'content': 'INTJは直接的で目的のある会話を好みます。世間話よりも深さを重んじ、アイデア、将来の計画、有意義な話題について議論することを好みます。',
-                            'tips': [
-                                '単刀直入に話し、素早く要点にたどり着く',
-                                'よく考えられたアイデアを準備する',
-                                '彼らが思考するのに必要な時間を尊重する',
-                                '将来の可能性と長期的な思考に焦点を当てる'
-                            ],
-                            'example': {
-                                'title': '良い会話のきっかけ:',
-                                'content': '"あなたが言及したプロジェクトのアイデアについて考えていました。私たちが直面する可能性のある最大の課題は何だと思いますか？"'
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "논리와 아이디어에 집중",
+                            content: "INTJ는 깊이와 지적 엄밀성을 중요하게 생각합니다. 충분히 조사된 아이디어로 접근하고 그들의 고독한 본성을 존중하세요.",
+                            tips: ["정확하고 사실에 기반하여 말하세요.", "추상적이고 개념적인 주제에 집중하세요.", "응답하기 전에 그들이 숙고할 시간을 주세요."],
+                            example: {
+                                title: "대화 예시 (업무)",
+                                content: "'느낌이 좋으니 이 새로운 아이디어를 시도해 봅시다' 대신: '3분기 데이터에 따르면 옵션 B는 15%의 효율성 증가를 제공합니다. 해당 모델에서 잠재적인 구조적 결함은 무엇이라고 보십니까?'"
                             }
                         },
-                        'topics': {
-                            'title': '最適な会話の話題',
-                            'content': 'INTJは、複雑なアイデア、戦略的計画、概念的なフレームワークについて議論するときに活気づきます。',
-                            'tips': [
-                                '将来の計画と長期的な目標',
-                                '抽象的な理論と概念',
-                                '問題解決の戦略',
-                                '本、ドキュメンタリー、学習経験'
-                            ]
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "이론, 미래 전략, 복잡한 시스템, 그리고 체스나 프로그래밍 같은 지적 취미에 대해 토론하는 것을 즐깁니다.",
+                            tips: ["미래 지향적인 전략과 장기 계획.", "철학적 논쟁 또는 윤리.", "기술 및 과학에 대한 토론."],
+                            example: {
+                                title: "대화 예시 (연애)",
+                                content: "질문: '교육 시스템을 처음부터 다시 설계할 수 있다면, 당신의 첫 번째 원칙은 무엇이 될까요?'"
+                            }
                         },
-                        'avoid': {
-                            'title': '避けるべきこと',
-                            'content': '彼らを不快にさせる可能性のある表面的な話題や感情に偏ったアプローチを避けてください。',
-                            'tips': [
-                                '天気や有名人のゴシップのような世間話',
-                                '過度に感情的またはドラマチックな表現',
-                                '彼らの思考プロセスを遮る',
-                                '即座の決断を迫る'
-                            ]
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "INTJ는 잡담, 감정적 조작, 비논리적인 주장을 싫어합니다. 그들의 시간과 경계를 존중하세요.",
+                            tips: ["과도한 감정적 과공유를 피하세요.", "그들의 사고 과정을 방해하지 마세요.", "모호하거나 근거 없는 주장을 피하세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'그냥 *느낌상* 이렇게 해야 할 것 같아, 나만 믿어.' (오직 감정에만 의존하는 것을 피하세요)."
+                            }
                         }
                     }
                 },
-                'ko': {
-                    'name': '건축가',
-                    'description': '소통에 있어 능력과 효율성을 중요시하는 전략적이고 독립적인 사상가입니다.',
-                    'sections': {
-                        'approach': {
-                            'title': 'INTJ에게 접근하는 방법',
-                            'content': 'INTJ는 직접적이고 목적 있는 대화를 선호합니다. 잡담보다 깊이를 중시하며 아이디어, 미래 계획, 의미 있는 주제에 대해 토론하는 것을 좋아합니다.',
-                            'tips': [
-                                '직설적으로 말하고 빠르게 요점에 도달하세요',
-                                '잘 생각한 아이디어를 준비하세요',
-                                '그들이 생각할 시간을 존중하세요',
-                                '미래의 가능성과 장기적 사고에 집중하세요'
-                            ],
-                            'example': {
-                                'title': '좋은 대화 시작법:',
-                                'content': '"언급했던 프로젝트 아이디어에 대해 생각 중이었어요. 우리가 직면할 수 있는 가장 큰 과제는 무엇이라고 생각하세요?"'
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "論理とアイデアに焦点を当てる",
+                            content: "INTJは深さと知的厳密さを重視します。十分に調査されたアイデアでアプローチし、彼らの孤独な性質を尊重してください。",
+                            tips: ["正確かつ事実に基づいて話す。", "抽象的で概念的なトピックに焦点を当てる。", "応答する前に処理する時間を与える。"],
+                            example: {
+                                title: "会話例（仕事）",
+                                content: "「なんとなく良い感じがするから、この新しいアイデアを試してみましょう」ではなく、「第3四半期のデータに基づくと、オプションBは15％の効率向上を提供します。このモデルにどのような潜在的な構造的欠陥があるとお考えですか？」"
                             }
                         },
-                        'topics': {
-                            'title': '최고의 대화 주제',
-                            'content': 'INTJ는 복잡한 아이디어, 전략적 계획, 개념적 틀에 대해 토론할 때 활기를 띱니다.',
-                            'tips': [
-                                '미래 계획 및 장기 목표',
-                                '추상적인 이론과 개념',
-                                '문제 해결 전략',
-                                '책, 다큐멘터리, 학습 경험'
-                            ]
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "理論、将来の戦略、複雑なシステム、チェスやプログラミングのような知的な趣味について議論することを楽しんでいます。",
+                            tips: ["未来志向の戦略と長期計画。", "哲学的議論や倫理。", "技術と科学に関する議論。"],
+                            example: {
+                                title: "会話例（デート）",
+                                content: "質問：「教育システムをゼロから再設計できるとしたら、あなたの最初の原則は何になりますか？」"
+                            }
                         },
-                        'avoid': {
-                            'title': '피해야 할 것들',
-                            'content': '그들을 불편하게 만들 수 있는 피상적인 주제와 지나치게 감정적인 접근은 피하세요.',
-                            'tips': [
-                                '날씨나 유명인 가십 같은 잡담',
-                                '지나치게 감정적이거나 극적인 표현',
-                                '그들의 사고 과정을 방해하는 행위',
-                                '즉각적인 결정을 강요하는 것'
-                            ]
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "INTJは雑談、感情的な操作、非論理的な議論を嫌います。彼らの時間と境界を尊重してください。",
+                            tips: ["過度な感情的な共有を避ける。", "彼らの思考プロセスを中断しない。", "曖昧または根拠のない主張を避ける。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「ただ、*なんとなく*このやり方でやるべきだと思うの。私を信じて。」（感情だけに頼ることを避ける）。"
+                            }
                         }
                     }
                 }
             },
-            'ENFP': {
-                'en': {
-                    'name': 'The Campaigner',
-                    'description': 'Enthusiastic, creative communicators who love exploring ideas and connecting with others.',
-                    'sections': {
-                        'approach': {
-                            'title': 'How to Approach ENFPs',
-                            'content': 'ENFPs love animated, energetic conversations filled with possibilities and creative ideas. Show genuine interest in their thoughts and dreams.',
-                            'tips': [
-                                'Match their enthusiasm and energy',
-                                'Ask about their dreams and aspirations',
-                                'Be open to spontaneous conversation turns',
-                                'Show genuine interest in their ideas'
-                            ],
-                            'example': {
-                                'title': 'Good conversation starter:',
-                                'content': '"You always have such interesting perspectives! What\'s been inspiring you lately?"'
+            // 2. ISTJ 콘텐츠 (추가)
+            ISTJ: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Be Clear, Direct, and Respectful of Facts",
+                            content: "ISTJs are grounded in reality, facts, and established procedures. Approach them with clear, organized information and a serious, respectful tone.",
+                            tips: ["Stick to the facts and verifiable details.", "Be punctual and reliable.", "Present information logically, step-by-step."],
+                            example: {
+                                title: "Example Dialogue (Work)",
+                                content: "Say: 'I’ve completed the report using the standard protocol. Pages 5-7 contain the full details you requested. Can we review the process on page 8?'"
                             }
                         },
-                        'topics': {
-                            'title': 'Best Conversation Topics',
-                            'content': 'ENFPs enjoy discussing possibilities, personal growth, relationships, and creative projects.',
-                            'tips': [
-                                'Dreams and future possibilities',
-                                'Personal growth and self-improvement',
-                                'Relationships and human connections',
-                                'Creative projects and artistic expressions'
-                            ]
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "They enjoy practical discussions about work, history, traditions, personal responsibilities, and clear goals.",
+                            tips: ["Concrete, real-world problems and solutions.", "Discussions about past experiences and lessons learned.", "Details about organized hobbies (e.g., collecting, meticulous craftwork)."],
+                            example: {
+                                title: "Example Dialogue (Social)",
+                                content: "Ask: 'What organizational system do you find most effective for managing large projects?'"
+                            }
                         },
-                        'avoid': {
-                            'title': 'What to Avoid',
-                            'content': 'Avoid being overly critical or focusing too heavily on mundane details and logistics.',
-                            'tips': [
-                                'Being overly critical or negative',
-                                'Focusing on mundane details',
-                                'Rigid schedules and strict rules',
-                                'Dismissing their ideas as unrealistic'
-                            ]
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "Avoid abstract theories, overly emotional outbursts, and questioning established rules without a compelling, factual reason.",
+                            tips: ["Avoid excessive speculation or 'what-ifs'.", "Don't criticize their sense of duty or responsibility.", "Avoid emotional manipulation or drama."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'Let's just wing it and see what happens!' (Avoid unpredictable spontaneity in important matters)."
+                            }
                         }
                     }
                 },
-                'ja': {
-                    'name': '広報運動家',
-                    'description': 'アイデアを探求し、他人とつながることを愛する、熱意にあふれた創造的なコミュニケーターです。',
-                    'sections': {
-                        'approach': {
-                            'title': 'ENFPへのアプローチ方法',
-                            'content': 'ENFPは可能性と創造的なアイデアに満ちた、活気に満ちたエネルギーのある会話を好みます。彼らの考えや夢に心からの興味を示してください。',
-                            'tips': [
-                                '彼らの熱意とエネルギーに合わせる',
-                                '彼らの夢や願望について尋ねる',
-                                '自発的な会話の展開にオープンになる',
-                                '彼らのアイデアに心からの興味を示す'
-                            ],
-                            'example': {
-                                'title': '良い会話のきっかけ:',
-                                'content': '"あなたはいつもとても興味深い視点を持っていますね！最近、あなたをインスパイアしたものは何ですか？"'
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "명확하고 직접적이며 사실을 존중하세요",
+                            content: "ISTJ는 현실, 사실, 확립된 절차에 기반을 둡니다. 명확하고 체계적인 정보와 진지하고 정중한 어조로 접근하세요.",
+                            tips: ["사실과 검증 가능한 세부 사항을 고수하세요.", "시간을 잘 지키고 신뢰할 수 있음을 보여주세요.", "정보를 논리적으로, 단계별로 제시하세요."],
+                            example: {
+                                title: "대화 예시 (업무)",
+                                content: "'표준 프로토콜을 사용하여 보고서를 완료했습니다. 5-7페이지에 요청하신 전체 세부 정보가 포함되어 있습니다. 8페이지의 프로세스를 검토해 주시겠습니까?'"
                             }
                         },
-                        'topics': {
-                            'title': '最適な会話の話題',
-                            'content': 'ENFPは、可能性、個人的な成長、人間関係、創造的なプロジェクトについて話すことを楽しみます。',
-                            'tips': [
-                                '夢と将来の可能性',
-                                '個人的な成長と自己改善',
-                                '人間関係と人とのつながり',
-                                '創造的なプロジェクトと芸術的表現'
-                            ]
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "업무, 역사, 전통, 개인적인 책임, 명확한 목표에 대한 실용적인 토론을 즐깁니다.",
+                            tips: ["구체적이고 현실 세계의 문제와 해결책.", "과거 경험과 배운 교훈에 대한 토론.", "체계적인 취미(예: 수집, 정교한 공예)에 대한 세부 사항."],
+                            example: {
+                                title: "대화 예시 (사교)",
+                                content: "질문: '대규모 프로젝트를 관리하는 데 가장 효과적이라고 생각하는 조직 시스템은 무엇입니까?'"
+                            }
                         },
-                        'avoid': {
-                            'title': '避けるべきこと',
-                            'content': '過度に批判的になったり、ありふれた詳細やロジスティクスに過度に焦点を当てることを避けてください。',
-                            'tips': [
-                                '過度に批判的または否定的になること',
-                                'ありふれた詳細に焦点を当てること',
-                                '厳格なスケジュールや規則',
-                                '彼らのアイデアを非現実的だと却下すること'
-                            ]
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "추상적인 이론, 지나친 감정 폭발, 그리고 설득력 있는 사실적 이유 없이 확립된 규칙에 의문을 제기하는 것을 피하세요.",
+                            tips: ["과도한 추측이나 '만약에'를 피하세요.", "그들의 의무감이나 책임감을 비판하지 마세요.", "감정적인 조작이나 드라마를 피하세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'그냥 되는대로 즉흥적으로 해보고 어떻게 되는지 봅시다!' (중요한 문제에서 예측 불가능한 즉흥성을 피하세요)."
+                            }
                         }
                     }
                 },
-                'ko': {
-                    'name': '활동가',
-                    'description': '아이디어를 탐구하고 타인과 연결하는 것을 좋아하는, 열정적이고 창의적인 소통가입니다.',
-                    'sections': {
-                        'approach': {
-                            'title': 'ENFP에게 접근하는 방법',
-                            'content': 'ENFP는 가능성과 창의적인 아이디어로 가득 찬 활기차고 에너지 넘치는 대화를 좋아합니다. 그들의 생각과 꿈에 진정한 관심을 보여주세요.',
-                            'tips': [
-                                '그들의 열정과 에너지에 맞추세요',
-                                '그들의 꿈과 열망에 대해 물어보세요',
-                                '자발적인 대화의 흐름에 열린 태도를 가지세요',
-                                '그들의 아이디어에 진정한 관심을 보여주세요'
-                            ],
-                            'example': {
-                                'title': '좋은 대화 시작법:',
-                                'content': '"당신은 항상 흥미로운 관점을 가지고 있네요! 요즘 당신에게 영감을 주는 것은 무엇인가요?"'
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "明確に、直接的に、事実を尊重する",
+                            content: "ISTJは現実、事実、確立された手順に基づいています。明確で整理された情報と真摯で敬意を持ったトーンでアプローチしてください。",
+                            tips: ["事実と検証可能な詳細に固執する。", "時間を守り、信頼できる態度を示す。", "情報を論理的に、段階的に提示する。"],
+                            example: {
+                                title: "会話例（仕事）",
+                                content: "「標準プロトコルを使用してレポートを完了しました。5-7ページに要求された詳細が含まれています。8ページのプロセスを確認していただけますか？」"
                             }
                         },
-                        'topics': {
-                            'title': '최고의 대화 주제',
-                            'content': 'ENFP는 가능성, 개인적 성장, 관계, 창의적인 프로젝트에 대해 이야기하는 것을 즐깁니다.',
-                            'tips': [
-                                '꿈과 미래의 가능성',
-                                '개인적인 성장과 자기 계발',
-                                '인간관계와 사람과의 연결',
-                                '창의적인 프로젝트 및 예술적 표현'
-                            ]
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "仕事、歴史、伝統、個人の責任、明確な目標についての実践的な議論を楽しみます。",
+                            tips: ["具体的で現実世界の問題と解決策。", "過去の経験と学んだ教訓についての議論。", "整理された趣味（例：収集、緻密な工芸）の詳細。"],
+                            example: {
+                                title: "会話例（社交）",
+                                content: "質問：「大規模プロジェクトを管理するのに最も効果的だと考える組織システムは何ですか？」"
+                            }
                         },
-                        'avoid': {
-                            'title': '피해야 할 것들',
-                            'content': '지나치게 비판적이거나 평범한 세부 사항과 실용적인 문제에 너무 집중하는 것을 피하세요.',
-                            'tips': [
-                                '지나치게 비판적이거나 부정적이 되는 것',
-                                '평범한 세부 사항에 집중하는 것',
-                                '엄격한 스케줄과 규칙',
-                                '그들의 아이디어를 비현실적이라고 치부하는 것'
-                            ]
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "抽象的な理論、過度な感情的な爆発、説得力のある事実的な理由なしに確立された規則に疑問を呈することを避けてください。",
+                            tips: ["過度な憶測や「もしも」を避ける。", "彼らの義務感や責任感を批判しない。", "感情的な操作やドラマを避ける。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「成り行きに任せて、どうなるか見てみましょう！」（重要な事柄での予測不能な即興性を避ける）。"
+                            }
                         }
                     }
                 }
-            }
+            },
+            // 3. INFJ 콘텐츠 (추가)
+            INFJ: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Seek Depth, Meaning, and Authenticity",
+                            content: "INFJs seek genuine connection and meaningful conversations. Approach them with empathy, curiosity about their values, and a willingness to explore deep topics.",
+                            tips: ["Show genuine interest in their feelings and ideas.", "Focus on ethics, purpose, and personal growth.", "Be patient; they often take time to open up."],
+                            example: {
+                                title: "Example Dialogue (Personal)",
+                                content: "Instead of small talk, say: 'I was thinking about what makes a life truly fulfilled. What guiding principle drives your personal decisions?'"
+                            }
+                        },
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "Discussions about human potential, social justice, personal psychology, symbolism, and their creative or humanitarian passions.",
+                            tips: ["The 'why' behind actions and decisions.", "Global issues and how to create positive change.", "Deep-seated values and belief systems."],
+                            example: {
+                                title: "Example Dialogue (Dating)",
+                                content: "Ask: 'What is one thing you truly wish the world understood better about human nature?'"
+                            }
+                        },
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "Avoid superficiality, cynicism, and aggressive conflict. They are sensitive to criticism and intense negative emotions.",
+                            tips: ["Don't dismiss their feelings or idealism as impractical.", "Avoid gossip or superficial self-promotion.", "Do not pressure them for immediate answers or decisions."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'That’s a nice dream, but let's be realistic and stick to the bottom line.' (Dismissing their ideals)."
+                            }
+                        }
+                    }
+                },
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "깊이, 의미, 진정성을 추구하세요",
+                            content: "INFJ는 진정한 연결과 의미 있는 대화를 추구합니다. 공감, 그들의 가치에 대한 호기심, 깊은 주제를 탐구하려는 의지로 접근하세요.",
+                            tips: ["그들의 감정과 생각에 진정한 관심을 보이세요.", "윤리, 목적, 개인 성장에 집중하세요.", "인내심을 가지세요. 그들은 마음을 여는 데 시간이 걸립니다."],
+                            example: {
+                                title: "대화 예시 (개인)",
+                                content: "잡담 대신: '저는 진정으로 충족된 삶을 만드는 것이 무엇인지에 대해 생각하고 있었어요. 당신의 개인적인 결정을 이끄는 지침 원칙은 무엇인가요?'"
+                            }
+                        },
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "인간의 잠재력, 사회 정의, 개인 심리학, 상징주의, 그리고 그들의 창의적이거나 인도주의적인 열정에 대한 토론.",
+                            tips: ["행동과 결정의 '이유'에 대한 질문.", "전 지구적 문제와 긍정적인 변화를 만드는 방법.", "깊이 뿌리내린 가치와 신념 체계."],
+                            example: {
+                                title: "대화 예시 (연애)",
+                                content: "질문: '인간 본성에 대해 세상이 진정으로 더 잘 이해했으면 하는 한 가지는 무엇입니까?'"
+                            }
+                        },
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "피상성, 냉소주의, 공격적인 갈등을 피하세요. 그들은 비판과 강렬한 부정적인 감정에 민감합니다.",
+                            tips: ["그들의 감정이나 이상주의를 비현실적이라고 일축하지 마세요.", "험담이나 피상적인 자기 홍보를 피하세요.", "즉각적인 답변이나 결정을 압박하지 마세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'좋은 꿈이지만, 현실을 직시하고 본론에 집중합시다.' (그들의 이상을 무시하는 것)."
+                            }
+                        }
+                    }
+                },
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "深さ、意味、真正性を求める",
+                            content: "INFJは真のつながりと意味のある会話を求めます。共感、彼らの価値観への好奇心、そして深いトピックを探求する意欲をもってアプローチしてください。",
+                            tips: ["彼らの感情やアイデアに心からの関心を示す。", "倫理、目的、個人の成長に焦点を当てる。", "忍耐強く接する。心を開くのに時間がかかることが多いです。"],
+                            example: {
+                                title: "会話例（個人的）",
+                                content: "雑談ではなく: 「真に満たされた人生とは何かを考えていました。あなたの個人的な決断を導く指針は何ですか？」と尋ねる。"
+                            }
+                        },
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "人間の可能性、社会正義、個人心理学、象徴主義、そして彼らの創造的または人道的な情熱についての議論。",
+                            tips: ["行動や決定の「理由」を問う。", "地球規模の問題と、ポジティブな変化を生み出す方法。", "根深い価値観と信念体系。"],
+                            example: {
+                                title: "会話例（デート）",
+                                content: "質問：「人間性について、世界が真に理解してほしいとあなたが願うことは何ですか？」"
+                            }
+                        },
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "表面的な会話、シニシズム、攻撃的な対立を避けてください。彼らは批判や激しいネガティブな感情に敏感です。",
+                            tips: ["彼らの感情や理想主義を非現実的だと一蹴しない。", "ゴシップや表面的な自己宣伝を避ける。", "即座の回答や決断を迫らない。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「それは素敵な夢だけど、現実を見て、収益に集中しましょう。」（彼らの理想を無視する）。"
+                            }
+                        }
+                    }
+                }
+            },
+            // 4. ENFP 콘텐츠 (기존)
+            ENFP: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Bring Energy, Enthusiasm, and Openness",
+                            content: "ENFPs are enthusiastic explorers of life and ideas. Match their energy and approach them with curiosity and a willingness to jump between various topics.",
+                            tips: ["Be spontaneous and flexible with the topic.", "Show excitement about their passions and projects.", "Focus on possibilities and human connections."],
+                            example: {
+                                title: "Example Dialogue (Social)",
+                                content: "Say: 'That’s an amazing idea! If we had unlimited resources, how would you turn that into a reality that impacts people?'"
+                            }
+                        },
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "New concepts, creative projects, their personal dreams, travel stories, deep relationships, and philosophical 'what if' scenarios.",
+                            tips: ["Their personal values and sources of inspiration.", "Funny or exciting stories with a focus on human interaction.", "Any topic that allows for brainstorming and exploration."],
+                            example: {
+                                title: "Example Dialogue (Work)",
+                                content: "Ask: 'What’s the most unconventional approach you’ve ever considered for solving this problem?'"
+                            }
+                        },
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "Avoid being overly cynical, rigid, or focusing excessively on tedious details. They hate feeling confined or lectured.",
+                            tips: ["Don't be overly critical or dismissive of their ideas.", "Avoid repetitive small talk.", "Do not try to force them into a rigid schedule or commitment immediately."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'Before we talk about your idea, we need to spend three hours reviewing the budget spreadsheet.' (Too much focus on rigid details)."
+                            }
+                        }
+                    }
+                },
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "에너지, 열정, 개방성을 가져오세요",
+                            content: "ENFP는 삶과 아이디어의 열정적인 탐험가입니다. 그들의 에너지에 맞춰 호기심을 가지고 다양한 주제를 넘나들 의향을 가지고 접근하세요.",
+                            tips: ["주제에 대해 자발적이고 유연하게 대처하세요.", "그들의 열정과 프로젝트에 대한 흥분을 보여주세요.", "가능성과 인간 관계에 집중하세요."],
+                            example: {
+                                title: "대화 예시 (사교)",
+                                content: "말하세요: '정말 멋진 아이디어네요! 만약 무한한 자원이 있다면, 그것을 사람들에게 영향을 미치는 현실로 어떻게 바꾸시겠어요?'"
+                            }
+                        },
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "새로운 개념, 창의적인 프로젝트, 그들의 개인적인 꿈, 여행 이야기, 깊은 관계, 그리고 철학적인 '만약에' 시나리오.",
+                            tips: ["그들의 개인적인 가치와 영감의 원천.", "인간 상호작용에 초점을 맞춘 재미있거나 흥미진진한 이야기.", "브레인스토밍과 탐색이 가능한 모든 주제."],
+                            example: {
+                                title: "대화 예시 (업무)",
+                                content: "질문: '이 문제를 해결하기 위해 당신이 고려했던 가장 비전통적인 접근 방식은 무엇입니까?'"
+                            }
+                        },
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "지나치게 냉소적이거나 경직되거나 지루한 세부 사항에 지나치게 집중하는 것을 피하세요. 그들은 갇히거나 훈계받는 것을 싫어합니다.",
+                            tips: ["그들의 아이디어를 지나치게 비판하거나 일축하지 마세요.", "반복적인 잡담을 피하세요.", "즉시 엄격한 일정이나 약속을 강요하려고 하지 마세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'당신의 아이디어에 대해 이야기하기 전에, 예산 스프레드시트를 검토하는 데 세 시간을 써야 합니다.' (경직된 세부 사항에 너무 많이 집중)."
+                            }
+                        }
+                    }
+                },
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "エネルギー、熱意、開放性をもたらす",
+                            content: "ENFPは人生とアイデアの熱心な探求者です。彼らのエネルギーに合わせ、好奇心と様々なトピックに飛び込む意欲をもってアプローチしてください。",
+                            tips: ["自発的で柔軟にトピックに対応する。", "彼らの情熱やプロジェクトに対する興奮を示す。", "可能性と人間関係に焦点を当てる。"],
+                            example: {
+                                title: "会話例（社交）",
+                                content: "「それは素晴らしいアイデアですね！もし無限のリソースがあったら、それを人々に影響を与える現実にどのように変えますか？」と尋ねる。"
+                            }
+                        },
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "新しい概念、創造的なプロジェクト、彼らの個人的な夢、旅行の話、深い人間関係、そして哲学的な「もしも」のシナリオ。",
+                            tips: ["彼らの個人的な価値観とインスピレーションの源。", "人間関係に焦点を当てた面白くてエキサイティングな話。", "ブレーンストーミングと探求が可能なすべてのトピック。"],
+                            example: {
+                                title: "会話例（仕事）",
+                                content: "質問：「この問題を解決するために、これまでに検討した最も型破りなアプローチは何ですか？」"
+                            }
+                        },
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "過度に皮肉っぽくなったり、頑固になったり、退屈な詳細に過度に焦点を当てたりすることを避けてください。彼らは閉じ込められたり、説教されたりすることを嫌います。",
+                            tips: ["彼らのアイデアを過度に批判したり、却下したりしない。", "反復的な雑談を避ける。", "すぐに厳格なスケジュールやコミットメントを強制しようとしない。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「あなたのアイデアについて話す前に、予算のスプレッドシートを確認するために3時間費やす必要があります。」（厳格な詳細に集中しすぎること）。"
+                            }
+                        }
+                    }
+                }
+            },
+            // 5. ESTP 콘텐츠 (추가)
+            ESTP: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Be Action-Oriented, Humorous, and Direct",
+                            content: "ESTPs are practical, spontaneous, and focused on the present moment. Engage them with lively banter, a willingness to participate in activities, and direct communication.",
+                            tips: ["Keep the pace quick and energetic.", "Focus on immediate, tangible sensory experiences.", "Use humor and light-hearted teasing."],
+                            example: {
+                                title: "Example Dialogue (Social)",
+                                content: "Say: 'That story is wild! But seriously, what was the very next step you took when that happened?' (Focus on action)."
+                            }
+                        },
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "Current events, sports, physical activities, hands-on projects, thrilling past adventures, and practical ways to make money or solve a current problem.",
+                            tips: ["Anything related to physical mastery or skill.", "Exciting, real-life stories where they were the hero/problem-solver.", "The best food, drinks, or places to visit right now."],
+                            example: {
+                                title: "Example Dialogue (Dating)",
+                                content: "Ask: 'If you had an unexpected free weekend right now, what's the most exciting thing you'd go do?'"
+                            }
+                        },
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "Avoid dwelling on abstract theories, future planning, or overly sensitive discussions. They prefer to solve problems than analyze feelings.",
+                            tips: ["Don't get bogged down in deep emotional analysis.", "Avoid long-term planning discussions without concrete steps.", "Don't lecture them about rules or morality."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'Let's spend the next hour discussing the philosophical implications of that decision.' (Avoid lengthy, abstract analysis)."
+                            }
+                        }
+                    }
+                },
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "행동 지향적이고, 유머러스하며, 직접적이세요",
+                            content: "ESTP는 실용적이고, 자발적이며, 현재 순간에 집중합니다. 활기찬 농담, 활동에 참여하려는 의지, 직접적인 의사소통으로 그들을 대하세요.",
+                            tips: ["대화 속도를 빠르고 활기차게 유지하세요.", "즉각적이고 유형적인 감각 경험에 집중하세요.", "유머와 가벼운 장난을 사용하세요."],
+                            example: {
+                                title: "대화 예시 (사교)",
+                                content: "말하세요: '정말 대단한 이야기네요! 그런데 진심으로, 그런 일이 일어났을 때 당신이 취한 바로 다음 단계는 무엇이었나요?' (행동에 집중)."
+                            }
+                        },
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "현재 사건, 스포츠, 신체 활동, 실제 프로젝트, 스릴 넘치는 과거 모험, 그리고 돈을 벌거나 현재 문제를 해결하는 실용적인 방법.",
+                            tips: ["신체적 숙련도나 기술과 관련된 모든 것.", "그들이 영웅/문제 해결사였던 흥미진진한 실생활 이야기.", "지금 당장 가장 좋은 음식, 음료, 또는 방문할 장소."],
+                            example: {
+                                title: "대화 예시 (연애)",
+                                content: "질문: '만약 지금 예상치 못한 자유 주말이 생긴다면, 당신이 가서 할 가장 신나는 일은 무엇입니까?'"
+                            }
+                        },
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "추상적인 이론, 미래 계획, 또는 지나치게 민감한 토론에 집착하는 것을 피하세요. 그들은 감정을 분석하기보다 문제를 해결하는 것을 선호합니다.",
+                            tips: ["깊은 감정 분석에 빠지지 마세요.", "구체적인 단계 없는 장기 계획 토론을 피하세요.", "규칙이나 도덕성에 대해 훈계하지 마세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'이 결정의 철학적 함의에 대해 다음 한 시간 동안 논의해 봅시다.' (길고 추상적인 분석을 피하세요)."
+                            }
+                        }
+                    }
+                },
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "行動志向で、ユーモラスで、直接的であること",
+                            content: "ESTPは実用的で、自発的で、今この瞬間に焦点を当てています。活発な冗談、活動への参加意欲、直接的なコミュニケーションで彼らと関わってください。",
+                            tips: ["ペースを速く、エネルギッシュに保つ。", "即座に、具体的な感覚的体験に焦点を当てる。", "ユーモアと軽快なからかいを使う。"],
+                            example: {
+                                title: "会話例（社交）",
+                                content: "「その話はワイルドですね！でも真面目に、それが起こったときにあなたが取った次のステップは何でしたか？」（行動に焦点を当てる）。"
+                            }
+                        },
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "時事問題、スポーツ、身体活動、実践的なプロジェクト、スリル満点の過去の冒険、そしてお金を稼いだり現在の問題を解決したりする実用的な方法。",
+                            tips: ["身体的な熟練やスキルに関連することすべて。", "彼らがヒーロー/問題解決者であったエキサイティングな実生活の話。", "今すぐ最高の食べ物、飲み物、または訪れるべき場所。"],
+                            example: {
+                                title: "会話例（デート）",
+                                content: "質問：「もし今、予期せぬ自由な週末ができたら、あなたが行ってする最もエキサイティングなことは何ですか？」"
+                            }
+                        },
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "抽象的な理論、将来の計画、または過度に敏感な議論にこだわるのを避けてください。彼らは感情を分析するよりも問題を解決することを好みます。",
+                            tips: ["深い感情分析に深入りしない。", "具体的な手順のない長期計画の議論を避ける。", "規則や道徳について彼らを説教しない。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「この決定の哲学的意味合いについて次の1時間を議論しましょう。」（長くて抽象的な分析を避ける）。"
+                            }
+                        }
+                    }
+                }
+            },
+            // 6. ENTJ 콘텐츠 (추가)
+            ENTJ: {
+                en: {
+                    sections: {
+                        approach: {
+                            title: "Be Confident, Challenge Ideas, and Focus on Efficiency",
+                            content: "ENTJs are natural leaders who respect competence, strategic thinking, and efficiency. Approach them with a clear agenda, confidence, and well-structured arguments.",
+                            tips: ["Get straight to the point without filler.", "Discuss high-level, strategic objectives.", "Challenge their ideas respectfully with strong counter-arguments."],
+                            example: {
+                                title: "Example Dialogue (Work)",
+                                content: "Say: 'Your Q4 plan is solid, but I see a risk in the distribution bottleneck on page 12. My proposal: we allocate 20% more resources to logistics to mitigate that risk.' (Be solution-oriented)."
+                            }
+                        },
+                        topics: {
+                            title: "Great Conversation Topics",
+                            content: "Business strategy, leadership, power dynamics, achieving ambitious goals, global systems, and efficiency improvements in any area.",
+                            tips: ["The future and how to organize resources to control it.", "Debates on effective leadership styles.", "Discussions about their grand vision or ambitious projects."],
+                            example: {
+                                title: "Example Dialogue (Social)",
+                                content: "Ask: 'If you could lead any organization in the world for one year, what measurable change would you make first?'"
+                            }
+                        },
+                        avoid: {
+                            title: "Things to Avoid",
+                            content: "Avoid indecisiveness, inefficiency, and allowing emotions to derail a logical discussion. They have little patience for incompetence.",
+                            tips: ["Don't waffle or appear indecisive.", "Avoid excessive focus on minor, non-strategic details.", "Do not take their directness or criticism personally."],
+                            example: {
+                                title: "What NOT to Say",
+                                content: "'I'm not sure what I want to do, so I'll just wait and see what you decide.' (Avoid passivity)."
+                            }
+                        }
+                    }
+                },
+                ko: {
+                    sections: {
+                        approach: {
+                            title: "자신감을 가지고, 아이디어에 도전하며, 효율성에 집중하세요",
+                            content: "ENTJ는 역량, 전략적 사고, 효율성을 존중하는 타고난 리더입니다. 명확한 안건, 자신감, 잘 구성된 논거로 그들에게 접근하세요.",
+                            tips: ["군더더기 없이 바로 요점으로 들어가세요.", "고차원적이고 전략적인 목표를 논의하세요.", "강력한 반론으로 그들의 아이디어에 정중하게 도전하세요."],
+                            example: {
+                                title: "대화 예시 (업무)",
+                                content: "말하세요: '당신의 4분기 계획은 훌륭하지만, 12페이지의 유통 병목 현상에서 위험을 봅니다. 제 제안은: 그 위험을 완화하기 위해 물류에 20% 더 많은 자원을 할당하는 것입니다.' (해결책 지향적이 되세요)."
+                            }
+                        },
+                        topics: {
+                            title: "좋은 대화 주제",
+                            content: "비즈니스 전략, 리더십, 권력 역학, 야심찬 목표 달성, 글로벌 시스템, 그리고 모든 영역에서의 효율성 개선.",
+                            tips: ["미래와 그것을 통제하기 위해 자원을 조직하는 방법.", "효과적인 리더십 스타일에 대한 토론.", "그들의 원대한 비전이나 야심찬 프로젝트에 대한 논의."],
+                            example: {
+                                title: "대화 예시 (사교)",
+                                content: "질문: '1년 동안 세상의 어떤 조직이든 이끌 수 있다면, 가장 먼저 만들 측정 가능한 변화는 무엇입니까?'"
+                            }
+                        },
+                        avoid: {
+                            title: "피해야 할 것들",
+                            content: "우유부단함, 비효율성, 감정이 논리적인 논의를 방해하도록 두는 것을 피하세요. 그들은 무능함에 대한 인내심이 거의 없습니다.",
+                            tips: ["애매모호하거나 우유부단하게 보이지 마세요.", "사소하거나 비전략적인 세부 사항에 지나치게 집중하는 것을 피하세요.", "그들의 직설적이거나 비판적인 태도를 개인적으로 받아들이지 마세요."],
+                            example: {
+                                title: "피해야 할 말",
+                                content: "'내가 무엇을 하고 싶은지 잘 모르겠으니, 당신이 결정하는 것을 기다려 볼 거예요.' (수동성을 피하세요)."
+                            }
+                        }
+                    }
+                },
+                ja: {
+                    sections: {
+                        approach: {
+                            title: "自信を持ち、アイデアに挑戦し、効率に焦点を当てる",
+                            content: "ENTJは能力、戦略的思考、効率を尊重する生まれながらのリーダーです。明確な議題、自信、そしてよく構成された議論をもって彼らにアプローチしてください。",
+                            tips: ["余計な言葉なしで要点に直行する。", "高レベルの戦略的目標について議論する。", "強力な反論をもって彼らのアイデアに敬意を表して挑戦する。"],
+                            example: {
+                                title: "会話例（仕事）",
+                                content: "「あなたの第4四半期計画はしっかりしていますが、12ページ目の流通のボトルネックにリスクを見ています。私の提案：そのリスクを軽減するために物流により多くのリソースを20%割り当てることです。」（ソリューション志向になる）。"
+                            }
+                        },
+                        topics: {
+                            title: "良い会話のトピック",
+                            content: "ビジネス戦略、リーダーシップ、権力力学、野心的な目標達成、グローバルシステム、あらゆる分野での効率改善。",
+                            tips: ["未来と、それを制御するためにリソースをどのように組織するか。", "効果的なリーダーシップスタイルについての議論。", "彼らの壮大なビジョンや野心的なプロジェクトについての話し合い。"],
+                            example: {
+                                title: "会話例（社交）",
+                                content: "質問：「世界中のどの組織でも1年間率いることができるとしたら、最初にどのような測定可能な変更を加えますか？」"
+                            }
+                        },
+                        avoid: {
+                            title: "避けるべきこと",
+                            content: "優柔不断、非効率、そして感情が論理的な議論を脱線させるのを許容することを避けてください。彼らは無能に対してほとんど忍耐力がありません。",
+                            tips: ["優柔不断になったり、決断力がないように見えないようにする。", "些細な、非戦略的な詳細に過度に焦点を当てるのを避ける。", "彼らの率直さや批判を個人的に受け止めない。"],
+                            example: {
+                                title: "言ってはいけないこと",
+                                content: "「何をしたいのかよくわからないので、あなたが決めるのを待つつもりです。」（受動性を避ける）。"
+                            }
+                        }
+                    }
+                }
+            },
+            
+            // --- 나머지 10개 유형은 현재는 defaultGuide로 대체되며, 사용자가 여기에 내용을 추가해야 합니다. ---
+            ISFJ: {}, INFP: {}, INTP: {}, ESTJ: {}, ESFJ: {}, ISTP: {}, ISFP: {}, ENTP: {}, ENFJ: {}, ESFP: {}
+            
+            // 사용자는 ISFJ, INFP 등 여기에 빈 객체로 남아 있는 유형에 대해
+            // INTJ, ISTJ 등과 같은 형식으로 ko, en, ja 콘텐츠를 추가해야 합니다.
         };
+        // --- 콘텐츠 보강 부분 끝 ---
+
 
         const defaultGuide = {
-            'en': {
-                'name': 'Default Guide',
-                'description': 'Understanding how to communicate effectively with this personality type.',
-                'sections': {
-                    'approach': {
-                        'title': 'Communication Approach',
-                        'content': 'Each personality type has unique communication preferences and styles.',
-                        'tips': [
-                            'Observe their natural communication style',
-                            'Adapt your approach to match their preferences',
-                            'Be patient and understanding',
-                            'Focus on building genuine connection'
-                        ]
-                    },
-                    'topics': {
-                        'title': 'Preferred Topics',
-                        'content': 'Different types are energized by different kinds of conversations.',
-                        'tips': [
-                            'Ask about their interests and passions',
-                            'Share relevant experiences',
-                            'Be genuinely curious about their perspective',
-                            'Find common ground in your interests'
-                        ]
-                    },
-                    'avoid': {
-                        'title': 'Communication Pitfalls',
-                        'content': 'Be mindful of approaches that might not resonate with this type.',
-                        'tips': [
-                            'Avoid overwhelming them with your preferred style',
-                            'Don\'t assume they communicate like you do',
-                            'Respect their energy levels and boundaries',
-                            'Be patient if they need time to process'
-                        ]
-                    }
+            en: {
+                sections: {
+                    approach: { title: "Start with Genuine Curiosity", content: "Approach the conversation with an open mind, focusing on finding common ground and respecting their personal space and preferences.", tips: ["Be polite and respectful.", "Ask open-ended questions.", "Listen actively to their response."], example: { title: "Example Dialogue", content: "Ask: 'What are you most passionate about lately, and why does it excite you?'" } },
+                    topics: { title: "Explore Mutual Interests", content: "Topics should be balanced between their interests and yours, allowing for natural, stress-free discussion.", tips: ["Shared hobbies or activities.", "Recent low-stakes experiences.", "Light-hearted personal stories."], example: { title: "Example Dialogue", content: "Ask: 'I recently started hiking. Have you found any great trails in this area?'" } },
+                    avoid: { title: "Keep it Respectful and Calm", content: "Avoid making assumptions or being overly aggressive in your communication style. Maintain a positive and relaxed atmosphere.", tips: ["Avoid high-pressure decisions.", "Don't pry into private matters.", "Avoid excessive negative venting."], example: { title: "What NOT to Say", content: "'Why haven't you finished that yet? You need to hurry up.' (Avoid aggressive demands)." } }
                 }
             },
-            'ja': {
-                'name': 'デフォルトガイド',
-                'description': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
-                'sections': {
-                    'approach': {
-                        'title': 'コミュニケーションアプローチ',
-                        'content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
-                        'tips': [
-                            '彼らの自然なコミュニケーションスタイルを観察する',
-                            '彼らの好みに合わせてアプローチを調整する',
-                            '忍耐強く、理解を示す',
-                            '本物のつながりを築くことに焦点を当てる'
-                        ]
-                    },
-                    'topics': {
-                        'title': '好まれる話題',
-                        'content': '異なるタイプは異なる種類の会話によって活気づきます。',
-                        'tips': [
-                            '彼らの興味や情熱について尋ねる',
-                            '関連する経験を共有する',
-                            '彼らの視点に心から興味を持つ',
-                            '共通の興味を見つける'
-                        ]
-                    },
-                    'avoid': {
-                        'title': 'コミュニケーションの落とし穴',
-                        'content': 'このタイプに響かないかもしれないアプローチに注意してください。',
-                        'tips': [
-                            'あなたの好みのスタイルで彼らを圧倒しないようにする',
-                            '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
-                            '彼らのエネルギーレベルと境界線を尊重する',
-                            '彼らが処理する時間が必要な場合は忍耐強く待つ'
-                        ]
-                    }
+            ko: {
+                sections: {
+                    approach: { title: "진정한 호기심으로 시작하기", content: "열린 마음으로 대화에 접근하고, 공통점을 찾고 그들의 개인적인 공간과 선호도를 존중하는 데 집중하세요.", tips: ["정중하고 예의 바르게 대하세요.", "개방형 질문을 하세요.", "그들의 반응을 능동적으로 경청하세요."], example: { title: "대화 예시", content: "질문: '요즘 가장 열정을 느끼는 것이 무엇이며, 왜 그것이 당신을 설레게 하나요?'" } },
+                    topics: { title: "상호 관심사 탐색", content: "주제는 그들의 관심사와 당신의 관심사 사이에서 균형을 이루어 자연스럽고 스트레스 없는 토론이 가능하도록 해야 합니다.", tips: ["공유된 취미나 활동.", "최근의 가벼운 경험.", "가벼운 개인적인 이야기."], example: { title: "대화 예시", content: "질문: '최근에 등산을 시작했어요. 이 지역에서 좋은 등산로를 찾으셨나요?'" } },
+                    avoid: { title: "존중하고 침착하게 유지하기", content: "가정을 하거나 의사소통 방식에서 지나치게 공격적인 것을 피하세요. 긍정적이고 편안한 분위기를 유지하세요.", tips: ["높은 압력의 결정을 피하세요.", "사적인 문제에 캐묻지 마세요.", "과도한 부정적인 감정 표출을 피하세요."], example: { title: "피해야 할 말", content: "'왜 아직 그것을 끝내지 않았어요? 서둘러야 합니다.' (공격적인 요구를 피하세요)." } }
                 }
             },
-            'ko': {
-                'name': '기본 가이드',
-                'description': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
-                'sections': {
-                    'approach': {
-                        'title': '소통 접근법',
-                        'content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
-                        'tips': [
-                            '그들의 자연스러운 소통 방식을 관찰하세요',
-                            '그들의 선호도에 맞게 접근법을 조정하세요',
-                            '인내심을 가지고 이해하세요',
-                            '진정한 관계 구축에 집중하세요'
-                        ]
-                    },
-                    'topics': {
-                        'title': '선호하는 주제',
-                        'content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
-                        'tips': [
-                            '그들의 관심사와 열정에 대해 물어보세요',
-                            '관련된 경험을 공유하세요',
-                            '그들의 관점에 대해 진심으로 궁금해하세요',
-                            '공통 관심사를 찾아보세요'
-                        ]
-                    },
-                    'avoid': {
-                        'title': '소통 시 주의할 점',
-                        'content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
-                        'tips': [
-                            '자신이 선호하는 방식으로 그들을 압도하지 마세요',
-                            '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
-                            '그들의 에너지 수준과 경계를 존중하세요',
-                            '처리할 시간이 필요하다면 인내심을 가지세요'
-                        ]
-                    }
+            ja: {
+                sections: {
+                    approach: { title: "純粋な好奇心から始める", content: "オープンな心で会話に臨み、共通点を見つけ、彼らの個人的な空間と好みを尊重することに焦点を当ててください。", tips: ["丁寧で敬意を払う。", "開かれた質問をする。", "彼らの反応を積極的に聞く。"], example: { title: "会話例", content: "質問：「最近あなたが最も情熱を注いでいることは何ですか？そして、なぜそれがあなたをワクワクさせるのですか？」" } },
+                    topics: { title: "相互の関心事を探る", content: "トピックは彼らの興味とあなたの興味の間でバランスが取れており、自然でストレスのない議論を可能にする必要があります。", tips: ["共通の趣味や活動。", "最近の軽い経験。", "気軽な個人的な話。"], example: { title: "会話例", content: "質問：「最近ハイキングを始めました。この地域で良いトレイルを見つけましたか？」" } },
+                    avoid: { title: "敬意を払い、冷静さを保つ", content: "憶測を立てたり、コミュニケーションスタイルが過度に攻撃的になったりすることを避けてください。ポジティブでリラックスした雰囲気を維持してください。", tips: ["プレッシャーの高い決定を避ける。", "私的な事柄に詮索しない。", "過度なネガティブな不満の表明を避ける。"], example: { title: "言ってはいけないこと", content: "「なぜまだそれを終えていないのですか？急ぐ必要があります。」（攻撃的な要求を避ける）。" } }
                 }
             }
         };
 
-        // Function to get the current language
+        // Function to get the current language - 드롭다운 메뉴 기준으로 수정 (핵심 수정 사항)
         function getCurrentLanguage() {
-            const activeLangButton = document.querySelector('.lang-btn.active');
-            return activeLangButton ? activeLangButton.dataset.lang : 'ko';
+            const dropdown = document.querySelector('.lang-dropdown');
+            // 드롭다운이 없거나 선택된 값이 없으면 'en'을 기본값으로 설정
+            return dropdown ? dropdown.value : 'en'; 
+        }
+
+        // 드롭다운 변경 이벤트를 처리하는 함수 추가 (HTML에서 onchange로 호출됨) (핵심 수정 사항)
+        function changeLanguage(lang) {
+            updateContent(lang);
+        }
+
+        function getGuideContent(mbtiType, lang) {
+            const guide = conversationGuides[mbtiType];
+            // 해당 유형에 대한 상세 가이드가 없거나, 현재 언어의 내용이 없으면 defaultGuide를 사용
+            if (guide && guide[lang]) {
+                return guide[lang];
+            }
+            return defaultGuide[lang];
         }
 
         // Function to update static text based on language
         function updateContent(lang) {
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                const translation = translations[lang][key];
+                const keyPath = element.getAttribute('data-i18n');
+                let translation = translations[lang];
+
+                // Nested property lookup (e.g., nav.home)
+                keyPath.split('.').forEach(key => {
+                    translation = translation ? translation[key] : undefined;
+                });
+                
                 if (translation) {
-                    // Use textContent for simple text, innerHTML for potential tags
-                    if (element.hasAttribute('data-i18n-html')) {
-                        element.innerHTML = translation;
-                    } else {
-                        element.textContent = translation;
-                    }
+                    element.textContent = translation;
                 }
             });
 
-            // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            // Update the dropdown selection to reflect the new language
+            const dropdown = document.querySelector('.lang-dropdown');
+            if (dropdown) {
+                dropdown.value = lang;
+            }
 
             // Re-render the guide if a type is currently selected
             const selectedButton = document.querySelector('.type-btn.selected');
             if (selectedButton) {
+                // 현재 언어 기준으로 가이드를 다시 렌더링
                 showConversationGuide(selectedButton.dataset.type);
+            } else {
+                // 아무것도 선택되지 않았을 경우, placeholder 텍스트를 업데이트
+                const guideDiv = document.getElementById('conversation-guide');
+                guideDiv.innerHTML = `
+                    <div style="text-align:center; padding: 50px;">
+                        <h3 data-i18n="guide.placeholder.title" style="color:var(--color-dark-gray);">${translations[lang]['guide']['placeholder']['title']}</h3>
+                        <p data-i18n="guide.placeholder.subtitle" style="margin-top:15px; font-size:1.1rem;">${translations[lang]['guide']['placeholder']['subtitle']}</p>
+                    </div>
+                `;
+                // 이 경우 .show 클래스는 유지하거나 제거할 필요는 없음 (이미 로딩 시점에 표시되므로)
+                guideDiv.classList.add('show');
             }
-        }
-
-        function getGuideContent(mbtiType, lang) {
-            const guide = conversationGuides[mbtiType] || {};
-            const content = guide[lang];
-            return content || defaultGuide[lang];
         }
 
         // Function to show the conversation guide for a selected MBTI type
         function showConversationGuide(selectedType) {
             const guideDiv = document.getElementById('conversation-guide');
             const currentLang = getCurrentLanguage();
-            const guide = getGuideContent(selectedType, currentLang);
-            const mbtiName = typeNames[selectedType];
+            const guideData = getGuideContent(selectedType, currentLang);
+            const mbtiName = typeNames[selectedType][currentLang];
+            const t = translations[currentLang];
             
             // Update button selection
             document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
@@ -956,8 +1189,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             let html = `
                 <div class="guide-header">
-                    <h3 class="guide-title">${translations[currentLang]['guide.title'].replace('<span class="mbti-type"></span>', selectedType).replace('<span class="mbti-name"></span>', mbtiName)}</h3>
-                    <p class="guide-subtitle">${translations[currentLang]['guide.subtitle']}</p>
+                    <h3 class="guide-title">${t.guide.title.replace('<span class="mbti-type"></span>', selectedType).replace('<span class="mbti-name"></span>', mbtiName)}</h3>
+                    <p class="guide-subtitle">${t.guide.subtitle}</p>
                 </div>
                 <div class="guide-sections">
             `;
@@ -965,7 +1198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Use the data-driven approach to populate sections
             const sectionOrder = ['approach', 'topics', 'avoid'];
             sectionOrder.forEach(key => {
-                const section = guide.sections[key];
+                const section = guideData.sections[key];
                 if (section) {
                     html += `
                         <div class="guide-section">
@@ -979,8 +1212,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 </ul>
                                 ${section.example ? `
                                     <div class="example-box">
-                                        <div class="example-title">${section.example.title}</div>
-                                        <div class="example-content">${section.example.content}</div>
+                                        <div class="example-title">${t.example.title}</div>
+                                    <div class="example-content">${section.example.content}</div>
                                     </div>
                                 ` : ''}
                             </div>
@@ -1010,14 +1243,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
-            // Add event listeners to language buttons
-            document.querySelectorAll('.lang-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    updateContent(button.dataset.lang);
-                });
-            });
-
             // Set initial active language and content
+            // 페이지 로드 시 초기 언어를 'en'으로 설정하고 콘텐츠를 업데이트합니다.
             updateContent('en');
         });
     </script>
