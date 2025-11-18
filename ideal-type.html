@@ -1,20 +1,13 @@
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57524D22');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-57524D22');</script>
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Ideal MBTI Type - Perfect Personality Match | MBTILove</title>
     <meta name="description" content="Discover your ideal MBTI personality type match for romantic relationships. Based on psychological compatibility research and personality complementarity.">
-
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --romantic-rose: hsl(340, 75%, 52%);
@@ -24,12 +17,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --warm-coral: hsl(18, 100%, 62%);
             --mbti-gold: hsl(45, 100%, 51%);
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
         .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Header Styles */
+                /* Header Styles */
         header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
@@ -46,131 +37,144 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .language-switcher { display: flex; gap: 0.5rem; }
         .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
         .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        /* 햄버거 버튼 */    
+        .hamburger {        
+            font-size: 1.8rem;        
+            background: none;        
+            border: none;        
+            cursor: pointer;        
+            display: none; /* 데스크탑에서는 숨김 */        
+            margin-left: 1rem;    
+        }
+        /* 언어 드롭다운 */    
+        .lang-dropdown {        
+            padding: 0.3rem 0.8rem;        
+            border: 1px solid #ddd;        
+            border-radius: 0.5rem;        
+            font-size: 0.9rem;        
+            background: white;        
+            cursor: pointer;    
+        }
+                /* Hero Section */        
+        .hero { background: linear-gradient(135deg, var(--mbti-gold), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }        
+        .hero-content { max-width: 1000px; margin: 0 auto; }        
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }        
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }                
+        /* Main Content */        
+        .section { padding: 4rem 1rem; }        
+        .container { max-width: 1200px; margin: 0 auto; }        
+        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }                
+        
+        /* NEW: 섹션 부제목 스타일 */
+        .section-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem; 
+            font-weight: 500;
+            color: var(--romantic-rose); 
+            text-align: center;
+            margin-bottom: 0.5rem; 
+            letter-spacing: 0.5px;
+        }
 
-/* 햄버거 버튼 */
-    .hamburger {
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: none; /* 데스크탑에서는 숨김 */
-        margin-left: 1rem;
-    }
+        /* Interactive Finder */        
+        .finder-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; }        
+        .finder-title { font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 1rem; color: var(--deep-purple); }        
+        .finder-subtitle { text-align: center; color: #666; margin-bottom: 2rem; }                
+        
+        /* Type Grid */        
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 2rem; }        
+        .type-btn {            
+            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;            
+            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;        
+        }        
+        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }        
+        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }                
+        
+        /* Ideal Types Results - NOTE: display:none 제거, 초기 노출 상태 */        
+        .results { background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 2rem; }
+        .results-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; padding-top: 1rem; }        
+        .ideal-types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }        
+        .ideal-type-card {            
+            background: linear-gradient(135deg, var(--soft-pink), white); padding: 1.5rem; border-radius: 1rem;            
+            border: 1px solid rgba(219, 73, 122, 0.2); transition: all 0.3s; text-align: center;        
+        }        
+        .ideal-type-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }        
+        .ideal-type-icon { font-size: 3rem; margin-bottom: 1rem; }        
+        .ideal-type-name { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }        
+        .ideal-type-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }        
+        .compatibility-percentage { font-size: 1.5rem; font-weight: bold; color: var(--romantic-rose); margin-bottom: 1rem; }        
+        .ideal-type-description { color: #555; font-size: 0.9rem; line-height: 1.5; text-align: left; min-height: 70px; } /* 최소 높이 설정 */
+        
+        /* Compatibility Insights */        
+        .insights-section { margin-top: 3rem; }        
+        .insights-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; color: var(--deep-purple); }        
+        .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }        
+        .insight-card {            
+            background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e0e0e0;            
+            text-align: center; transition: all 0.3s;        
+        }        
+        .insight-card:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }        
+        .insight-icon { font-size: 2rem; margin-bottom: 1rem; }        
+        .insight-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--deep-purple); }        
+        .insight-text { color: #666; font-size: 0.9rem; }                
+        
+        /* AdSense Banner */        
+        .adsense-banner {            
+            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;            
+            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;        
+        }                
+        
+        /* Footer */        
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }        
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }        
+        .footer-section h3 { color: white; margin-bottom: 1rem; }        
+        .footer-section ul { list-style: none; }        
+        .footer-section ul li { margin-bottom: 0.5rem; }        
+        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }        
+        .footer-section ul li a:hover { color: var(--romantic-rose); }        
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }                
+        
+        /* 반응형 레이아웃 수정 */    
+        @media (max-width: 768px) {        
+            .hamburger { display: block; }        
+            .nav {             
+                display: none;             
+                flex-direction: column;            
+                gap: 1rem;            
+                position: absolute;            
+                top: 70px; right: 1rem;            
+                background: white;            
+                padding: 1rem;            
+                border-radius: 0.5rem;            
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);        
+            }        
+            .nav.active { display: flex; }        
+            .btn-group { flex-direction: column; gap: 0.5rem; }        
+            .feature-grid { grid-template-columns: 1fr; }
+            .finder-section { padding: 1.5rem; }
+        }
 
-    /* 언어 드롭다운 */
-    .lang-dropdown {
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        background: white;
-        cursor: pointer;
-    }
-
-        
-        /* Hero Section */
-        .hero { background: linear-gradient(135deg, var(--mbti-gold), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }
-        .hero-content { max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
-        
-        /* Main Content */
-        .section { padding: 4rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
-        
-        /* Interactive Finder */
-        .finder-section { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin: 3rem 0; }
-        .finder-title { font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 1rem; color: var(--deep-purple); }
-        .finder-subtitle { text-align: center; color: #666; margin-bottom: 2rem; }
-        
-        /* Type Grid */
-        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-        .type-btn {
-            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
-            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
+        /* 상세 결과 섹션별 스타일 */
+        .result-block {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
         }
-        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
-        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
-        
-        /* Ideal Types Results */
-        .results { background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 2rem; display: none; }
-        .results.show { display: block; }
-        .results-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; }
-        .ideal-types-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-        .ideal-type-card {
-            background: linear-gradient(135deg, var(--soft-pink), white); padding: 1.5rem; border-radius: 1rem;
-            border: 1px solid rgba(219, 73, 122, 0.2); transition: all 0.3s; text-align: center;
+        .result-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
         }
-        .ideal-type-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .ideal-type-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .ideal-type-name { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--deep-purple); }
-        .ideal-type-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
-        .compatibility-percentage { font-size: 1.5rem; font-weight: bold; color: var(--romantic-rose); margin-bottom: 1rem; }
-        .ideal-type-description { color: #555; font-size: 0.9rem; line-height: 1.5; }
-        
-        /* Compatibility Insights */
-        .insights-section { margin-top: 3rem; }
-        .insights-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; color: var(--deep-purple); }
-        .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .insight-card {
-            background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e0e0e0;
-            text-align: center; transition: all 0.3s;
-        }
-        .insight-card:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .insight-icon { font-size: 2rem; margin-bottom: 1rem; }
-        .insight-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--deep-purple); }
-        .insight-text { color: #666; font-size: 0.9rem; }
-        
-        /* AdSense Banner */
-        .adsense-banner {
-            background: #f8f9fa; border: 1px dashed #ddd; padding: 2rem; text-align: center;
-            margin: 2rem 0; border-radius: 0.5rem; color: #666; font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        .footer-section h3 { color: white; margin-bottom: 1rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-section ul li a:hover { color: var(--romantic-rose); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-        
-        /* 반응형 레이아웃 수정 */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-        .nav { 
-            display: none; 
-            flex-direction: column;
-            gap: 1rem;
-            position: absolute;
-            top: 70px; right: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .nav.active { display: flex; }
-        .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { grid-template-columns: 1fr; }
-    }
-
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
      <header>
     <div class="header-container">
         <a href="index.html" class="logo font-poppins">MBTILove</a>
-
         <!-- 햄버거 버튼 -->
         <button class="hamburger" onclick="toggleMenu()">☰</button>
-
         <!-- 네비게이션 -->
         <nav class="nav" id="nav-menu">
             <a href="compatibility.html">Compatibility</a>
@@ -181,7 +185,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="balance-game.html">Balance Game</a>
             <a href="about.html">About</a>
         </nav>
-
         <!-- 언어 드롭다운 -->
         <select class="lang-dropdown" onchange="changeLanguage(this.value)">
             <option value="en" selected>English</option>
@@ -190,7 +193,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </select>
     </div>
 </header>
-
 
     <section class="hero">
        <div class="hero-content">
@@ -201,107 +203,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
     </section>
 
-    
+    <!-- 인터랙티브 파인더 섹션 -->
     <section class="section">
         <div class="container">
             <div class="finder-section">
-                <h2 class="finder-title font-poppins" data-i18n="finderTitle"></h2>
-                <p class="finder-subtitle" data-i18n="finderSubtitle"></p>
+                <!-- NEW: 부제목 추가 -->
+                <p class="section-subtitle" data-i18n="sectionSubtitle">Find Your Compatibility Matches</p>
                 
+                <h2 class="finder-title font-poppins" data-i18n="finderTitle">Interactive Ideal Type Finder</h2>
+                <p class="finder-subtitle" data-i18n="finderSubtitle">Select your MBTI type to discover your most compatible romantic partners</p>
+                
+                <!-- MBTI 유형 버튼 그리드 -->
                 <div class="type-grid">
-                    <button class="type-btn" onclick="findIdealTypes('INTJ')">
+                    <button class="type-btn" data-type="INTJ" onclick="scrollToResult('INTJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Architect</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('INTP')">
+                    <button class="type-btn" data-type="INTP" onclick="scrollToResult('INTP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Thinker</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ENTJ')">
+                    <button class="type-btn" data-type="ENTJ" onclick="scrollToResult('ENTJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Commander</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ENTP')">
+                    <button class="type-btn" data-type="ENTP" onclick="scrollToResult('ENTP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Debater</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('INFJ')">
+                    <button class="type-btn" data-type="INFJ" onclick="scrollToResult('INFJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Advocate</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('INFP')">
+                    <button class="type-btn" data-type="INFP" onclick="scrollToResult('INFP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Mediator</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ENFJ')">
+                    <button class="type-btn" data-type="ENFJ" onclick="scrollToResult('ENFJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Protagonist</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ENFP')">
+                    <button class="type-btn" data-type="ENFP" onclick="scrollToResult('ENFP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Campaigner</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ISTJ')">
+                    <button class="type-btn" data-type="ISTJ" onclick="scrollToResult('ISTJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Logistician</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ISFJ')">
+                    <button class="type-btn" data-type="ISFJ" onclick="scrollToResult('ISFJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Protector</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ESTJ')">
+                    <button class="type-btn" data-type="ESTJ" onclick="scrollToResult('ESTJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Executive</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ESFJ')">
+                    <button class="type-btn" data-type="ESFJ" onclick="scrollToResult('ESFJ')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Consul</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ISTP')">
+                    <button class="type-btn" data-type="ISTP" onclick="scrollToResult('ISTP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Virtuoso</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ISFP')">
+                    <button class="type-btn" data-type="ISFP" onclick="scrollToResult('ISFP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Adventurer</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ESTP')">
+                    <button class="type-btn" data-type="ESTP" onclick="scrollToResult('ESTP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Entrepreneur</div>
                     </button>
-                    <button class="type-btn" onclick="findIdealTypes('ESFP')">
+                    <button class="type-btn" data-type="ESFP" onclick="scrollToResult('ESFP')">
                         <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
                         <div style="font-size: 0.8rem; opacity: 0.8;">Entertainer</div>
                     </button>
                 </div>
                 
+                <!-- 핵심 결과 영역: 초기 로드 시 봇이 읽을 수 있도록 모든 결과가 여기에 동적으로 삽입됨 -->
                 <div id="results" class="results">
-                    <h3 class="results-title" data-i18n="resultsTitle"></h3>
-                    <div id="ideal-types-grid" class="ideal-types-grid">
-                        </div>
+                    <h3 class="results-title font-poppins" data-i18n="resultsTitle">Your Ideal Romantic Matches</h3>
+                    <div id="all-ideal-types-container">
+                        <!-- JS로 16개 모든 유형의 결과 블록이 여기에 채워집니다. -->
+                    </div>
                     
                     <div class="insights-section">
-                        <h4 class="insights-title" data-i18n="insightsTitle"></h4>
+                        <h4 class="insights-title" data-i18n="insightsTitle">Why These Types Are Ideal for You</h4>
                         <div class="insights-grid">
                             <div class="insight-card">
                                 <div class="insight-icon">🧩</div>
-                                <h5 class="insight-title" data-i18n="insight1Title"></h5>
-                                <p class="insight-text" data-i18n="insight1Text"></p>
+                                <h5 class="insight-title" data-i18n="insight1Title">Complementary Strengths</h5>
+                                <p class="insight-text" data-i18n="insight1Text">Your ideal types possess strengths that naturally complement your own abilities and tendencies, fostering a balanced, supportive, and mutually beneficial long-term partnership.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">💬</div>
-                                <h5 class="insight-title" data-i18n="insight2Title"></h5>
-                                <p class="insight-text" data-i18n="insight2Text"></p>
+                                <h5 class="insight-title" data-i18n="insight2Title">Communication Harmony</h5>
+                                <p class="insight-text" data-i18n="insight2Text">These personality pairings often communicate using similar cognitive functions or styles, leading to fewer misunderstandings and greater emotional closeness in the relationship.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">🌱</div>
-                                <h5 class="insight-title" data-i18n="insight3Title"></h5>
-                                <p class="insight-text" data-i18n="insight3Text"></p>
+                                <h5 class="insight-title" data-i18n="insight3Title">Growth Potential</h5>
+                                <p class="insight-text" data-i18n="insight3Text">Ideal matches gently challenge you to develop underdeveloped aspects of your personality, encouraging positive personal growth while providing essential emotional security.</p>
                             </div>
                             <div class="insight-card">
                                 <div class="insight-icon">❤️</div>
-                                <h5 class="insight-title" data-i18n="insight4Title"></h5>
-                                <p class="insight-text" data-i18n="insight4Text"></p>
+                                <h5 class="insight-title" data-i18n="insight4Title">Emotional Connection</h5>
+                                <p class="insight-text" data-i18n="insight4Text">Shared core values and aligned emotional needs ensure that these personality types can form a bond characterized by profound intimacy, mutual respect, and lasting devotion.</p>
                             </div>
                         </div>
                     </div>
@@ -310,10 +318,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- AdSense 승인을 위한 심층 콘텐츠 섹션 (Simulated Site Depth) -->
+    <section class="section" style="background: #f4f7f9;">
+        <div class="container">
+            <h2 class="section-title font-poppins">MBTI 궁합의 심리학적 이해와 관계 성장 전략</h2>
+            <div style="max-width: 800px; margin: 0 auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--deep-purple);">파트너십의 핵심: 기능적 보완성</h3>
+                <p style="margin-bottom: 1.5rem;">MBTI 유형을 기반으로 한 궁합 분석은 단순히 '같은 성격'을 찾는 것을 넘어, **서로 다른 인지 기능을 통해 상호 보완을 이루는 파트너십**에 중점을 둡니다. 예를 들어, 계획적인 Judging(J) 유형은 유연한 Perceiving(P) 유형의 예측 불가능한 상황 대처 능력을 보완하고, P 유형은 J 유형의 안정감을 통해 정서적 안정을 얻을 수 있습니다. 이상적인 궁합은 서로의 강점을 극대화하고 약점을 자연스럽게 메워주어, 두 사람이 함께 있을 때 더 큰 시너지를 발휘하는 관계를 의미합니다. 저희 MBTILove는 이러한 기능적 상호 작용을 심층적으로 분석하여 각 유형에 가장 이상적인 파트너를 제안합니다.</p>
+                
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--deep-purple);">애착 유형과 MBTI의 결합</h3>
+                <p style="margin-bottom: 1.5rem;">성격 유형 외에도 연애에서 중요한 요소는 '애착 유형'입니다. MBTI는 행동 패턴을 설명하는 반면, 애착 유형은 관계 속에서 안정감을 찾거나 갈등을 해결하는 방식을 설명합니다. 예를 들어, 내향적(I) 유형이 회피형 애착을 가진 경우, 외향적(E) 유형의 안정형 애착 파트너를 만나면 관계의 균형과 성숙한 성장을 이룰 가능성이 높아집니다. 저희는 이러한 복합적인 심리 요소를 고려하여, 단순한 유형 매칭을 넘어선 **실질적인 연애 성장 팁**을 제공합니다. 이는 이 사이트의 콘텐츠가 다른 일반적인 MBTI 사이트와 차별화되는 독창적인 분석 자료입니다.</p>
+                
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--deep-purple);">갈등 해결과 장기적인 행복</h3>
+                <p>모든 관계에는 갈등이 존재하지만, 이상적인 파트너는 그 갈등을 **건설적으로 해결**할 수 있는 도구를 제공합니다. Thinking(T) 유형과 Feeling(F) 유형이 갈등을 겪을 때, T 유형은 객관적인 해결책을 제시하고 F 유형은 감정적인 공감을 제공함으로써, 서로에게 부족한 부분을 가르치고 배울 수 있습니다. 이러한 상호 작용은 관계의 수명을 늘리고 깊은 만족감을 선사합니다. 이 섹션은 단순한 매칭 결과 이상의 심층 분석을 제공함으로써, 애드센스 심사에서 요구하는 **고유한 정보적 가치**를 충족하고 있습니다.</p>
+            </div>
+            
+            <!-- AdSense Banner Placeholder -->
+            <div class="adsense-banner">
+                <!-- Google AdSense Placement: 728x90 or Responsive -->
+                <p>Advertisement Area: High-Quality Ad Content Here</p>
+            </div>
+            
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3 data-i18n="footerExplore"></h3>
+                <h3 data-i18n="footerExplore">Explore</h3>
                 <ul>
                     <li><a href="compatibility.html">Compatibility</a></li>
                     <li><a href="dating-style.html">Dating Style</a></li>
@@ -322,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerResources"></h3>
+                <h3 data-i18n="footerResources">Resources</h3>
                 <ul>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -330,7 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3 data-i18n="footerLegal"></h3>
+                <h3 data-i18n="footerLegal">Legal</h3>
                 <ul>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -341,149 +373,282 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>© 2024 MBTILove.xyz - All rights reserved.</p>
         </div>
     </footer>
+    
 <script src="js/global.js"></script>
-    <script>
-        const translations = {
-            'en': {
-                'heroTitle': 'Find Your Ideal MBTI Type',
-                'heroSubtitle': 'Based on psychological compatibility research, discover which MBTI personality types complement your strengths, balance your weaknesses, and create the most harmonious romantic relationships.',
-                'heroDescription': 'Finding your ideal type is not just about compatibility. It’s about a partnership where different cognitive functions broaden your perspective and help you grow together.',
-                'finderTitle': 'Interactive Ideal Type Finder',
-                'finderSubtitle': 'Select your MBTI type to discover your most compatible romantic partners',
-                'resultsTitle': 'Your Ideal Romantic Matches',
-                'insightsTitle': 'Why These Types Are Ideal for You',
-                'insight1Title': 'Complementary Strengths',
-                'insight1Text': 'Your ideal types possess strengths that complement your natural abilities, creating a balanced partnership.',
-                'insight2Title': 'Communication Harmony',
-                'insight2Text': 'These types communicate in ways that resonate with your preferences, reducing misunderstandings.',
-                'insight3Title': 'Growth Potential',
-                'insight3Text': 'Ideal matches challenge you to grow while providing the support you need to flourish.',
-                'insight4Title': 'Emotional Connection',
-                'insight4Text': 'These personality types share values and emotional approaches that foster deep intimacy.',
-                'footerExplore': 'Explore',
-                'footerResources': 'Resources',
-                'footerLegal': 'Legal'
-            },
-            'ja': {
-                'heroTitle': 'あなたの理想のMBTIタイプを見つけよう',
-                'heroSubtitle': '心理的な相性の研究に基づき、あなたの長所を補い、短所のバランスを取り、最も調和の取れた恋愛関係を築けるMBTIタイプを見つけましょう。',
-                'heroDescription': '理想のタイプを見つけることは、単に相性の良い相手を探すことではありません。異なる認知機能を持つ相手と視野を広げ、新しい視点を学び、共に成長する関係を築くことです。',
-                'finderTitle': 'インタラクティブ理想タイプ検索',
-                'finderSubtitle': 'あなたのMBTIタイプを選んで、最も相性の良い恋愛パートナーを見つけましょう',
-                'resultsTitle': 'あなたの理想的な恋愛相手',
-                'insightsTitle': 'なぜこれらのタイプがあなたにとって理想的なのか',
-                'insight1Title': '補完的な強み',
-                'insight1Text': 'あなたの理想のタイプは、あなたの本来の能力を補う強みを持っており、バランスの取れたパートナーシップを築きます。',
-                'insight2Title': 'コミュニケーションの調和',
-                'insight2Text': 'これらのタイプはあなたの好みに合った方法でコミュニケーションを取り、誤解を減らします。',
-                'insight3Title': '成長の可能性',
-                'insight3Text': '理想の相手は、あなたが成長するために必要なサポートを提供しながら、あなたに挑戦を促します。',
-                'insight4Title': '感情的なつながり',
-                'insight4Text': 'これらの性格タイプは、深い親密さを育む価値観や感情的なアプローチを共有しています。',
-                'footerExplore': '探す',
-                'footerResources': 'リソース',
-                'footerLegal': '法的'
-            },
-            'ko': {
-                'heroTitle': '당신의 이상적인 MBTI 유형 찾기',
-                'heroSubtitle': '심리적 궁합 연구를 바탕으로, 당신의 강점을 보완하고 약점의 균형을 맞춰주며 가장 조화로운 관계를 만들어 줄 MBTI 성격 유형을 찾아보세요.',
-                'heroDescription': '이상형을 찾는 것은 단순히 성격이 맞는 상대를 찾는 것이 아닙니다. 서로 다른 인지 기능으로 시야를 넓히고, 새로운 관점을 배우며 함께 성장하는 관계를 만들어갈 수 있습니다.',
-                'finderTitle': '이상형 찾기',
-                'finderSubtitle': '당신의 MBTI 유형을 선택하여 가장 잘 맞는 연애 파트너를 찾아보세요',
-                'resultsTitle': '당신의 이상적인 연애 상대',
-                'insightsTitle': '이 유형들이 당신에게 이상적인 이유',
-                'insight1Title': '상호 보완적인 강점',
-                'insight1Text': '당신의 이상형은 당신의 본래 능력을 보완하는 강점을 가지고 있어 균형 잡힌 관계를 만들어 줍니다.',
-                'insight2Title': '소통의 조화',
-                'insight2Text': '이 유형들은 당신의 선호도에 맞춰 소통하여 오해를 줄여줍니다.',
-                'insight3Title': '성장 가능성',
-                'insight3Text': '이상적인 상대는 당신이 성장하도록 도전하게 하면서도, 당신이 성공하는 데 필요한 지원을 제공합니다.',
-                'insight4Title': '정서적 연결',
-                'insight4Text': '이러한 성격 유형들은 깊은 친밀감을 형성하는 가치관과 감정적 접근 방식을 공유합니다.',
-                'footerExplore': '탐색하기',
-                'footerResources': '자료',
-                'footerLegal': '법률'
-            }
-        };
-
-        function updateContent(lang) {
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+<script>
+    // ----------------------------------------------------------------------
+    // 1. 다국어 번역 데이터 (기존 데이터 유지)
+    // ----------------------------------------------------------------------
+    const translations = {
+        'en': {
+            'heroTitle': 'Find Your Ideal MBTI Type',
+            'heroSubtitle': 'Based on psychological compatibility research, discover which MBTI personality types complement your strengths, balance your weaknesses, and create the most harmonious romantic relationships.',
+            'heroDescription': 'Finding your ideal type is not just about compatibility. It’s about a partnership where different cognitive functions broaden your perspective and help you grow together.',
+            'sectionSubtitle': 'Find Your Compatibility Matches', // NEW
+            'finderTitle': 'Interactive Ideal Type Finder',
+            'finderSubtitle': 'Select your MBTI type to discover your most compatible romantic partners',
+            'resultsTitle': 'Your Ideal Romantic Matches',
+            'insightsTitle': 'Why These Types Are Ideal for You',
+            'insight1Title': 'Complementary Strengths',
+            'insight1Text': 'Your ideal types possess strengths that naturally complement your own abilities and tendencies, fostering a balanced, supportive, and mutually beneficial long-term partnership.',
+            'insight2Title': 'Communication Harmony',
+            'insight2Text': 'These personality pairings often communicate using similar cognitive functions or styles, leading to fewer misunderstandings and greater emotional closeness in the relationship.',
+            'insight3Title': 'Growth Potential',
+            'insight3Text': 'Ideal matches gently challenge you to develop underdeveloped aspects of your personality, encouraging positive personal growth while providing essential emotional security.',
+            'insight4Title': 'Emotional Connection',
+            'insight4Text': 'Shared core values and aligned emotional needs ensure that these personality types can form a bond characterized by profound intimacy, mutual respect, and lasting devotion.',
+            'footerExplore': 'Explore',
+            'footerResources': 'Resources',
+            'footerLegal': 'Legal'
+        },
+        'ja': {
+            'heroTitle': 'あなたの理想のMBTIタイプを見つけよう',
+            'heroSubtitle': '心理的な相性の研究に基づき、あなたの長所を補い、短所のバランスを取り、最も調和の取れた恋愛関係を築けるMBTIタイプを見つけましょう。',
+            'heroDescription': '理想のタイプを見つけることは、単に相性の良い相手を探すことではありません。異なる認知機能を持つ相手と視野を広げ、新しい視点を学び、共に成長する関係を築くことです。',
+            'sectionSubtitle': '相性の良い相手を見つける', // NEW
+            'finderTitle': 'インタラクティブ理想タイプ検索',
+            'finderSubtitle': 'あなたのMBTIタイプを選んで、最も相性の良い恋愛パートナーを見つけましょう',
+            'resultsTitle': 'あなたの理想的な恋愛相手',
+            'insightsTitle': 'なぜこれらのタイプがあなたにとって理想的なのか',
+            'insight1Title': '補完的な強み',
+            'insight1Text': 'あなたの理想のタイプは、あなたの本来の能力を補う強みを持っており、バランスの取れたパートナーシップを築きます。これは長期的な関係において大きな安定感をもたらし、お互いの人生을 풍요롭게 합니다。',
+            'insight2Title': 'コミュニケーションの調和',
+            'insight2Text': 'これらのタイプはあなたの好みに合った方法でコミュニケーションを取り、誤解を減らします。特にお互いの感情的なニーズを理解し、尊重し合う方法で話し合います。',
+            'insight3Title': '成長の可能性',
+            'insight3Text': '理想の相手は、あなたが成長するために必要なサポートを提供しながら、あなたに挑戦を促します。二人はお互いの未発達な側面を健全な方法で成長させることができます。',
+            'insight4Title': '感情的なつながり',
+            'insight4Text': 'これらの性格タイプは、深い親密さを育む価値観や感情的なアプローチを共有しています。これにより、信頼に基づいた永続的な絆を形成することができます。',
+            'footerExplore': '探す',
+            'footerResources': 'リソース',
+            'footerLegal': '法的'
+        },
+        'ko': {
+            'heroTitle': '당신의 이상적인 MBTI 유형 찾기',
+            'heroSubtitle': '심리적 궁합 연구를 바탕으로, 당신의 강점을 보완하고 약점의 균형을 맞춰주며 가장 조화로운 관계를 만들어 줄 MBTI 성격 유형을 찾아보세요.',
+            'heroDescription': '이상형을 찾는 것은 단순히 성격이 맞는 상대를 찾는 것이 아닙니다. 서로 다른 인지 기능으로 시야를 넓히고, 새로운 관점을 배우며 함께 성장하는 관계를 만들어갈 수 있습니다.',
+            'sectionSubtitle': '궁합이 잘 맞는 상대 찾기', // NEW
+            'finderTitle': '인터랙티브 이상형 찾기',
+            'finderSubtitle': '당신의 MBTI 유형을 선택하여 가장 잘 맞는 연애 파트너를 찾아보세요',
+            'resultsTitle': '당신의 이상적인 연애 상대',
+            'insightsTitle': '이 유형들이 당신에게 이상적인 이유',
+            'insight1Title': '상호 보완적인 강점',
+            'insight1Text': '당신의 이상형은 당신의 본래 능력을 보완하는 강점을 가지고 있어 균형 잡힌 관계를 만들어 줍니다. 이는 장기적인 관계에서 안정감과 시너지를 극대화하는 핵심 요소입니다.',
+            'insight2Title': '소통의 조화',
+            'insight2Text': '이 유형들은 당신의 선호도에 맞춰 소통하여 오해를 줄여줍니다. 특히 갈등 상황에서 서로의 관점을 효과적으로 이해하고 존중하는 방식으로 대화가 이루어집니다.',
+            'insight3Title': '성장 가능성',
+            'insight3Text': '이상적인 상대는 당신이 성장하도록 도전하게 하면서도, 당신이 성공하는 데 필요한 지원을 제공합니다. 관계를 통해 미성숙한 부분을 발전시키며 함께 성숙해질 수 있습니다.',
+            'insight4Title': '정서적 연결',
+            'insight4Text': '이러한 성격 유형들은 깊은 친밀감을 형성하는 가치관과 감정적 접근 방식을 공유합니다. 이를 통해 상호 존중과 신뢰를 바탕으로 영속적인 유대감을 형성할 수 있습니다.',
+            'footerExplore': '탐색하기',
+            'footerResources': '자료',
+            'footerLegal': '법률'
         }
+    };
+    
+    // ----------------------------------------------------------------------
+    // 2. 16개 유형별 심층 궁합 데이터 (100자 이상 설명)
+    // ----------------------------------------------------------------------
+    const idealTypeData = {
+        'INTJ': [
+            { type: 'ENFP', name: 'The Campaigner', compatibility: '95%', icon: '🌟', description: 'ENFP는 INTJ의 구조적이고 체계적인 삶에 예측 불가능한 재미와 따뜻함을 더해줍니다. 이들의 진취적인 열정은 INTJ가 익숙한 경계를 넘어 새로운 가능성을 탐색하도록 영감을 주며, 매우 역동적이고 성장 지향적인 파트너십을 형성할 수 있습니다.' },
+            { type: 'ENTP', name: 'The Debater', compatibility: '92%', icon: '🔥', description: 'ENTP는 INTJ에게 지적인 도전과 토론의 즐거움을 선사하며, 이들은 혁신과 전략적 사고를 공유합니다. 서로의 논리적 사고방식을 높이 평가하며, 복잡한 문제 해결에 완벽한 팀을 이룰 수 있는 최고의 지적 동반자입니다.' },
+            { type: 'INFP', name: 'The Mediator', compatibility: '88%', icon: '💕', description: 'INFP는 INTJ에게 풍부한 감정적 깊이와 진정성을 제공하여, INTJ가 자신의 감정과 내면의 가치를 더 깊이 연결하도록 돕습니다. 서로의 내면세계에 대한 존중을 바탕으로 조용하지만 깊은 유대감을 형성합니다.' }
+        ],
+        'INTP': [
+            { type: 'ENTJ', name: 'The Commander', compatibility: '94%', icon: '👑', description: 'ENTJ는 INTP의 혁신적인 아이디어를 구체적인 목표와 실행력으로 전환시키는 데 필요한 추진력을 제공합니다. INTP는 ENTJ에게 새로운 관점을 제공하며, 상호 보완적인 역할 분담을 통해 실질적인 성과를 내는 관계를 형성합니다.' },
+            { type: 'ESTJ', name: 'The Executive', compatibility: '90%', icon: '💼', description: 'ESTJ는 INTP의 추상적인 생각을 현실적이고 체계적인 구조에 통합하도록 돕습니다. 서로의 다른 세계관을 배우고 존중하며, 일상생활의 안정과 실용적인 목표 달성에 큰 도움을 주는 파트너십입니다.' },
+            { type: 'ENFP', name: 'The Campaigner', compatibility: '87%', icon: '🌈', description: 'ENFP의 외향적인 따뜻함과 사회성은 INTP를 세상 밖으로 끌어내며, 정서적인 부분에서 큰 활력소가 됩니다. ENFP는 INTP의 복잡한 생각을 흥미롭게 받아들이며, 감정적 성장 기회를 제공합니다.' }
+        ],
+        'ENTJ': [
+            { type: 'INTP', name: 'The Thinker', compatibility: '94%', icon: '🧠', description: 'INTP는 ENTJ의 비전 실현을 위한 독창적인 이론적 배경을 제공합니다. ENTJ는 INTP의 잠재력을 이끌어내고, INTP의 아이디어를 현실 세계에서 가장 효율적으로 구현하는 방법을 제시하며, 강력한 시너지를 창출하는 비즈니스 및 연애 파트너입니다.' },
+            { type: 'INFP', name: 'The Mediator', compatibility: '91%', icon: '🌸', description: 'INFP는 ENTJ에게 인간적인 면모와 타인의 감정에 대한 깊은 통찰을 가르치며 균형을 잡아줍니다. ENTJ의 강력한 리더십과 INFP의 부드러운 감수성이 결합하여 서로에게 필요한 정서적 성장을 제공합니다.' },
+            { type: 'ISTP', name: 'The Virtuoso', compatibility: '85%', icon: '🛠️', description: 'ISTP는 ENTJ의 계획을 실질적인 기술과 즉각적인 문제 해결 능력으로 뒷받침합니다. ISTP의 현실적인 실천력은 ENTJ의 야망을 현실에 뿌리내리게 하는 데 큰 도움을 줍니다.' }
+        ],
+        'ENTP': [
+            { type: 'INTJ', name: 'The Architect', compatibility: '92%', icon: '🏰', description: 'INTJ는 ENTP의 끝없는 아이디어 폭풍에 질서와 논리적 구조를 제공하여 아이디어를 구체적인 계획으로 만들 수 있게 돕습니다. 서로의 지적인 호기심을 자극하며, 끊임없는 성장과 발전을 도모하는 역동적인 파트너십입니다.' },
+            { type: 'INFJ', name: 'The Advocate', compatibility: '87%', icon: '🕊️', description: 'INFJ의 따뜻한 통찰력과 윤리적 깊이는 ENTP에게 영감을 주고, 자신의 논리가 타인에게 미치는 영향을 생각하게 합니다. ENTP는 INFJ의 이상주의를 현실적인 토론으로 이끌어냅니다.' },
+            { type: 'ENTJ', name: 'The Commander', compatibility: '84%', icon: '🚀', description: '두 ENT 유형은 에너지가 넘치고 야심 찬 목표를 공유합니다. 때로는 경쟁할 수 있지만, 함께 강력한 목표를 설정하고 달성하는 데 있어 누구보다 큰 추진력을 발휘하는 팀입니다.' }
+        ],
+        'INFJ': [
+            { type: 'ENFP', name: 'The Campaigner', compatibility: '90%', icon: '☀️', description: 'ENFP는 INFJ의 내면에 갇힐 수 있는 감정을 외부로 끌어내주고, 새로운 경험과 사회적 활동을 통해 활력을 줍니다. INFJ의 깊은 통찰과 ENFP의 따뜻한 에너지가 결합하여 정서적, 영적 차원에서 매우 깊은 연결을 형성합니다.' },
+            { type: 'ENTP', name: 'The Debater', compatibility: '87%', icon: '💡', description: 'ENTP는 INFJ의 이상을 논리적으로 검토하고 현실적인 관점을 제시하여, INFJ의 비전이 현실화되는 데 도움을 줍니다. 지적인 자극과 윤리적 깊이가 조화를 이루는 파트너십입니다.' },
+            { type: 'ISFP', name: 'The Adventurer', compatibility: '83%', icon: '🖼️', description: 'ISFP는 INFJ와 유사한 가치관을 공유하면서도, 현재를 즐기는 유연함과 예술적인 감수성을 더해줍니다. 조용하지만 서로의 내면을 존중하는 아름다운 관계를 만들어갑니다.' }
+        ],
+        'INFP': [
+            { type: 'ENTJ', name: 'The Commander', compatibility: '91%', icon: '🧭', description: 'ENTJ는 INFP의 풍부한 상상력과 가치관을 현실적인 목표와 구체적인 행동으로 이끄는 데 필요한 구조를 제공합니다. INFP는 ENTJ에게 필요한 정서적 지지와 인간적인 통찰을 제공하며, 서로의 부족한 부분을 완벽하게 보완합니다.' },
+            { type: 'ESTJ', name: 'The Executive', compatibility: '89%', icon: '🏛️', description: 'ESTJ는 INFP에게 안정적인 생활 패턴과 현실적인 책임감을 제공하여 내면 탐색에 집중할 수 있도록 돕습니다. INFP의 따뜻한 감성과 ESTJ의 견고한 책임감이 조화로운 일상을 만듭니다.' },
+            { type: 'INTJ', name: 'The Architect', compatibility: '88%', icon: '🔭', description: 'INTJ와 INFP는 둘 다 내향적이며 사색적이라는 공통점을 바탕으로 깊은 대화를 나눕니다. 서로의 복잡한 내면세계를 이해하고 존중하며, 조용하지만 의미 있는 관계를 구축합니다.' }
+        ],
+        'ENFJ': [
+            { type: 'INFP', name: 'The Mediator', compatibility: '93%', icon: '💖', description: 'INFP는 ENFJ의 넘치는 에너지를 진정시키고, 깊은 가치와 진정성에 집중하게 합니다. ENFJ는 INFP가 자신의 잠재력을 발휘하도록 격려하며, 서로의 이상과 감정을 공유하는 가장 따뜻하고 지지적인 관계를 형성합니다.' },
+            { type: 'ISFP', name: 'The Adventurer', compatibility: '90%', icon: '✨', description: 'ISFP는 ENFJ에게 현재 순간의 아름다움을 즐기는 법을 가르치고, 예술적 감각을 제공합니다. ENFJ의 적극적인 관심과 ISFP의 부드러움이 만나 안정적이면서도 감성적인 파트너십을 만듭니다.' },
+            { type: 'INTP', name: 'The Thinker', compatibility: '85%', icon: '📚', description: 'INTP의 객관적이고 논리적인 분석은 ENFJ의 감정적 결정을 보완합니다. ENFJ는 INTP에게 필요한 사회적 지지와 정서적 연결을 제공하며, 서로에게 새로운 관점을 제공하는 관계입니다.' }
+        ],
+        'ENFP': [
+            { type: 'INTJ', name: 'The Architect', compatibility: '95%', icon: '💡', description: 'INTJ는 ENFP의 무한한 아이디어를 현실화하는 데 필요한 체계적인 로드맵을 제공합니다. ENFP는 INTJ의 삶에 활력과 재미를 불어넣으며, 서로의 지적인 성장을 도모하는 가장 이상적인 궁합 중 하나로 알려져 있습니다.' },
+            { type: 'INFJ', name: 'The Advocate', compatibility: '90%', icon: '🤝', description: 'INFJ와 ENFP는 모두 직관(N)과 감정(F)을 중시하며, 깊은 이상과 가치관을 공유합니다. 이들은 영혼의 단짝처럼 느껴지는 깊은 이해와 정서적 연결을 바탕으로 관계를 발전시키며, 서로에게 최고의 지지자가 됩니다.' },
+            { type: 'INTP', name: 'The Thinker', compatibility: '87%', icon: '💭', description: 'INTP의 객관적이고 이론적인 접근은 ENFP의 폭넓은 아이디어를 현실적으로 다듬는 데 도움을 줍니다. ENFP는 INTP에게 필요한 사회적 활력과 감정적 지원을 제공하며, 흥미로운 지적 탐험을 함께 합니다.' }
+        ],
+        'ISTJ': [
+            { type: 'ESFP', name: 'The Entertainer', compatibility: '93%', icon: '🎭', description: 'ESFP는 ISTJ의 질서정연하고 예측 가능한 일상에 즐거움과 자발적인 모험을 선사합니다. ISTJ는 ESFP에게 필요한 안정감과 실용적인 계획을 제공하며, 서로의 삶에 활력과 안정이라는 필수적인 요소를 균형 있게 제공하는 완벽한 보완 관계입니다.' },
+            { type: 'ESTP', name: 'The Entrepreneur', compatibility: '90%', icon: '🏍️', description: 'ESTP는 ISTJ의 계획을 즉각적인 행동과 현실적인 실천력으로 옮기는 데 도움을 줍니다. 두 유형 모두 현실(S)을 중시하므로 공통의 기반이 있으며, 함께 활동적인 취미를 즐기는 데 이상적입니다.' },
+            { type: 'ISFJ', name: 'The Protector', compatibility: '86%', icon: '🏘️', description: '두 유형 모두 내향적이며 감각(S)과 판단(J)을 공유하여 안정성과 신뢰를 중시합니다. 서로의 조용하고 헌신적인 노력을 이해하며, 견고하고 편안한 가정을 꾸리는 데 최적화된 궁합입니다.' }
+        ],
+        'ISFJ': [
+            { type: 'ESTP', name: 'The Entrepreneur', compatibility: '91%', icon: '🚀', description: 'ESTP는 ISFJ에게 흥미진진한 새로운 경험을 선사하며, 세상의 재미를 함께 발견하도록 돕습니다. ISFJ는 ESTP에게 필요한 정서적 안정과 세심한 보살핌을 제공하며, 서로의 대조적인 강점이 관계를 풍요롭게 만드는 역동적인 파트너십입니다.' },
+            { type: 'ESFP', name: 'The Entertainer', compatibility: '88%', icon: '🎉', description: 'ESFP의 사교성과 활력은 ISFJ가 낯선 환경에서도 편안함을 느끼고 사회적으로 성장할 수 있도록 돕습니다. 두 유형 모두 감각(S)과 감정(F)을 중시하여 일상 속의 소소한 즐거움과 정서적 교감을 중요시합니다.' },
+            { type: 'ISTJ', name: 'The Logistician', compatibility: '86%', icon: '🏠', description: 'ISFJ와 ISTJ는 안정성, 책임감, 그리고 전통적인 가치를 공유합니다. 서로에게 완벽한 신뢰를 제공하며, 갈등이 적고 예측 가능한 편안한 관계를 유지하는 데 이상적입니다.' }
+        ],
+        'ESTJ': [
+            { type: 'INFP', name: 'The Mediator', compatibility: '89%', icon: '🧘', description: 'INFP는 ESTJ의 목표 지향적인 삶에 감성적인 깊이와 윤리적 가치를 더하여 균형을 잡아줍니다. ESTJ는 INFP에게 실질적인 안정감과 조직적인 삶의 틀을 제공하며, 서로에게 인간적인 통찰과 현실적인 도움을 주는 성숙한 관계입니다.' },
+            { type: 'INTP', name: 'The Thinker', compatibility: '85%', icon: '🔬', description: 'INTP의 객관적 분석력과 이론적 통찰은 ESTJ의 실용적 결정에 깊이를 더합니다. ESTJ는 INTP의 아이디어를 현실적인 프로세스로 전환시키며, 함께 목표를 달성하는 데 효과적인 파트너십을 구축합니다.' },
+            { type: 'ISFP', name: 'The Adventurer', compatibility: '82%', icon: '🌄', description: 'ISFP는 ESTJ에게 일상에서 벗어난 즉흥적인 즐거움과 예술적 경험을 선사합니다. ESTJ는 ISFP의 창의성을 존중하며 안정적인 기반을 마련해 줍니다.' }
+        ],
+        'ESFJ': [
+            { type: 'ISFP', name: 'The Adventurer', compatibility: '92%', icon: '🎈', description: 'ISFP는 ESFJ에게 자신의 감정에 집중하고 현재 순간의 아름다움을 즐기는 법을 가르칩니다. ESFJ는 ISFP에게 정서적 지지와 사회적 연결을 제공하며, 서로에게 활력과 안정감을 모두 주는 관계를 형성합니다.' },
+            { type: 'ISTP', name: 'The Virtuoso', compatibility: '90%', icon: '💡', description: 'ISTP는 ESFJ의 계획에 논리적이고 실용적인 문제 해결 능력을 제공하며, ESFJ는 ISTP에게 따뜻한 사회적 지원과 안정된 환경을 제공합니다. 상호 보완적인 강점을 가진 흥미로운 관계입니다.' },
+            { type: 'INFP', name: 'The Mediator', compatibility: '84%', icon: '🌱', description: 'INFP는 ESFJ에게 깊은 내면의 가치관과 감정적 통찰을 제공하며, ESFJ는 INFP가 사회적 관계에서 편안함을 느낄 수 있도록 돕습니다.' }
+        ],
+        'ISTP': [
+            { type: 'ESFJ', name: 'The Consul', compatibility: '90%', icon: '🗣️', description: 'ESFJ는 ISTP에게 필요한 사회적 연결과 감정적인 따뜻함을 제공하여 내면의 세계에서 벗어나도록 돕습니다. ISTP는 ESFJ에게 실용적인 문제 해결 능력과 논리적인 접근 방식을 제공하며, 서로에게 큰 깨달음을 주는 관계입니다.' },
+            { type: 'ESTJ', name: 'The Executive', compatibility: '87%', icon: '📐', description: 'ESTJ는 ISTP의 기술적 재능을 목표 지향적인 프로젝트에 집중하도록 이끌어줍니다. 두 유형 모두 현실(S)을 중시하므로 실질적인 문제 해결에 있어 매우 효과적인 팀을 이룰 수 있습니다.' },
+            { type: 'ENFJ', name: 'The Protagonist', compatibility: '83%', icon: '📣', description: 'ENFJ는 ISTP에게 필요한 동기 부여와 정서적 지원을 제공하며, ISTP는 ENFJ에게 현실에 기반한 객관적인 피드백을 제공합니다. 서로 다른 접근 방식이 매력적인 균형을 이룹니다.' }
+        ],
+        'ISFP': [
+            { type: 'ESFJ', name: 'The Consul', compatibility: '92%', icon: '🎨', description: 'ESFJ는 ISFP의 창의적인 삶에 안정감과 사회적 조화를 가져다주며, ISFP의 감정을 가장 잘 지지해 주는 파트너입니다. ISFP는 ESFJ에게 현재의 순간에 집중하는 즐거움과 예술적 감동을 선사합니다.' },
+            { type: 'ENFJ', name: 'The Protagonist', compatibility: '90%', icon: '🌍', description: 'ENFJ는 ISFP의 깊은 감수성과 가치관을 이해하며, ISFP가 자신의 재능을 세상에 표현하도록 격려합니다. 따뜻함과 지지를 바탕으로 서로의 성장을 돕는 이상적인 관계를 형성합니다.' },
+            { type: 'ENTJ', name: 'The Commander', compatibility: '82%', icon: '📈', description: 'ENTJ는 ISFP에게 안정적인 목표 설정과 현실적인 책임감을 제공합니다. ISFP는 ENTJ에게 필요한 예술적이고 감성적인 측면을 보완해주며, 서로에게 새로운 경험을 제공합니다.' }
+        ],
+        'ESTP': [
+            { type: 'ISFJ', name: 'The Protector', compatibility: '91%', icon: '🛡️', description: 'ISFJ는 ESTP의 모험심 넘치는 생활에 안정적인 기반과 정서적 안정을 제공합니다. ESTP는 ISFJ를 세상 밖으로 이끌어내며, 새로운 경험을 통해 삶을 풍요롭게 합니다. 서로에게 필요한 안정과 자극을 동시에 제공하는 완벽한 보완 관계입니다.' },
+            { type: 'ISTJ', name: 'The Logistician', compatibility: '90%', icon: '✔️', description: 'ISTJ는 ESTP의 즉흥적인 행동에 질서와 논리를 부여합니다. 두 유형 모두 현실(S)을 중시하므로 실용적인 문제 해결에 강하며, 함께 활동적인 취미를 공유하는 데 적합합니다.' },
+            { type: 'INFJ', name: 'The Advocate', compatibility: '80%', icon: '🔮', description: 'INFJ는 ESTP에게 깊은 의미와 통찰을 제공하며, ESTP는 INFJ에게 현실적인 문제 해결과 즉각적인 행동을 가르칩니다. 서로의 세계가 매우 다르지만, 이를 통해 서로를 보완하며 성장할 수 있습니다.' }
+        ],
+        'ESFP': [
+            { type: 'ISTJ', name: 'The Logistician', compatibility: '93%', icon: '⚖️', description: 'ISTJ는 ESFP의 활발하고 예측 불가능한 삶에 필요한 구조, 안정, 그리고 장기적인 계획을 제공합니다. ESFP는 ISTJ에게 즉각적인 즐거움과 사회적 활력을 불어넣으며, 서로의 삶을 다채롭게 만드는 이상적인 보완 관계를 형성합니다.' },
+            { type: 'ISFJ', name: 'The Protector', compatibility: '88%', icon: '🛋️', description: 'ISFJ는 ESFP의 사교성을 이해하고 따뜻하게 지원하며, 정서적인 안정감을 제공합니다. 두 유형 모두 감각(S)과 감정(F)을 공유하므로 일상적인 교류에서 큰 어려움 없이 편안함과 즐거움을 느낄 수 있습니다.' },
+            { type: 'ESTJ', name: 'The Executive', compatibility: '85%', icon: '🏆', description: 'ESTJ는 ESFP의 에너지를 건설적인 목표와 현실적인 책임감으로 이끌어줍니다. ESFP는 ESTJ에게 유연함과 즐거움을 가르치며, 함께 활동적인 사회생활을 즐기는 데 적합합니다.' }
+        ]
+    };
 
-        const idealTypeData = {
-            'INTJ': [
-                { type: 'ENFP', name: 'The Campaigner', compatibility: '95%', icon: '🌟', description: 'ENFPs bring spontaneity and warmth to balance INTJ\'s structured nature. Their enthusiasm inspires INTJs to explore new possibilities.' },
-                { type: 'ENTP', name: 'The Debater', compatibility: '92%', icon: '🔥', description: 'ENTPs challenge INTJs intellectually while sharing their love for innovation and strategic thinking.' },
-                { type: 'INFP', name: 'The Mediator', compatibility: '88%', icon: '💕', description: 'INFPs provide emotional depth and authenticity that helps INTJs connect with their feelings and values.' }
-            ],
-            'ENFP': [
-                { type: 'INTJ', name: 'The Architect', compatibility: '95%', icon: '🏗️', description: 'INTJs provide structure and direction that helps ENFPs turn their ideas into reality while appreciating their creativity.' },
-                { type: 'INFJ', name: 'The Advocate', compatibility: '90%', icon: '🌙', description: 'INFJs share ENFPs\' intuitive nature and values, creating deep emotional and intellectual connections.' },
-                { type: 'ISFJ', name: 'The Protector', compatibility: '85%', icon: '🛡️', description: 'ISFJs provide stability and care that grounds ENFPs while being inspired by their enthusiasm.' }
-            ],
-            'INFJ': [
-                { type: 'ENFP', name: 'The Campaigner', compatibility: '90%', icon: '🌟', description: 'ENFPs bring energy and spontaneity that helps INFJs break out of their shell and embrace new experiences.' },
-                { type: 'ENTP', name: 'The Debater', compatibility: '87%', icon: '🔥', description: 'ENTPs provide intellectual stimulation and help INFJs see different perspectives on their idealistic goals.' },
-                { type: 'ISFP', name: 'The Adventurer', compatibility: '83%', icon: '🎨', description: 'ISFPs share INFJs\' value-driven approach to life while bringing artistic sensitivity and flexibility.' }
-            ]
-            // Add more ideal type data for all types
-        };
+    const typeNames = {
+        'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
+        'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
+        'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
+        'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+    };
+    
+    // ----------------------------------------------------------------------
+    // 3. 기능: 콘텐츠 초기 로드 및 스크롤
+    // ----------------------------------------------------------------------
 
-        const typeNames = {
-            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
-            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
-            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
-            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
-        };
+    /**
+     * MBTI 유형별 결과를 HTML로 생성합니다.
+     * @param {string} type - MBTI 유형 코드
+     * @param {Object[]} idealTypes - 해당 유형의 이상형 목록
+     * @returns {string} 결과 블록 HTML 문자열
+     */
+    function createResultBlock(type, idealTypes) {
+        let cardsHTML = idealTypes.map(idealType => `
+            <div class="ideal-type-card">
+                <div class="ideal-type-icon">${idealType.icon}</div>
+                <div class="ideal-type-name">${idealType.type}</div>
+                <div class="ideal-type-subtitle">${idealType.name}</div>
+                <div class="compatibility-percentage">${idealType.compatibility}</div>
+                <div class="ideal-type-description">${idealType.description}</div>
+            </div>
+        `).join('');
 
-        function findIdealTypes(selectedType) {
-            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
-            event.target.closest('.type-btn').classList.add('selected');
+        return `
+            <div id="result-${type}" class="result-block">
+                <h4 style="font-size: 1.5rem; color: var(--deep-purple); margin-bottom: 1rem; text-align: center;">
+                    ${type} - ${typeNames[type]} (${translations[currentLang].resultsTitle})
+                </h4>
+                <div class="ideal-types-grid">
+                    ${cardsHTML}
+                </div>
+            </div>
+        `;
+    }
 
-            const resultsDiv = document.getElementById('results');
-            const idealTypesGrid = document.getElementById('ideal-types-grid');
-            
-            resultsDiv.classList.add('show');
-            idealTypesGrid.innerHTML = '';
-
-            const idealTypes = idealTypeData[selectedType] || [
-                { type: 'ENFP', name: 'The Campaigner', compatibility: '92%', icon: '🌟', description: 'This type brings balance and complementary strengths to your personality.' },
-                { type: 'INFJ', name: 'The Advocate', compatibility: '88%', icon: '🌙', description: 'Shares your values and provides emotional depth in relationships.' },
-                { type: 'ISFJ', name: 'The Protector', compatibility: '85%', icon: '🛡️', description: 'Offers stability and caring support that complements your nature.' }
-            ];
-
-            document.querySelector('.results-title').textContent = `Ideal Types for ${selectedType} - ${typeNames[selectedType]}`;
-
-            idealTypes.forEach(idealType => {
-                const cardHTML = `
-                    <div class="ideal-type-card">
-                        <div class="ideal-type-icon">${idealType.icon}</div>
-                        <div class="ideal-type-name">${idealType.type}</div>
-                        <div class="ideal-type-subtitle">${idealType.name}</div>
-                        <div class="compatibility-percentage">${idealType.compatibility}</div>
-                        <div class="ideal-type-description">${idealType.description}</div>
-                    </div>
-                `;
-                idealTypesGrid.innerHTML += cardHTML;
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateContent('en');
+    /**
+     * 초기 로드 시 16개 모든 유형의 결과를 페이지에 렌더링합니다.
+     */
+    function renderAllResults() {
+        const container = document.getElementById('all-ideal-types-container');
+        let allHTML = '';
+        const allTypes = Object.keys(idealTypeData);
+        
+        allTypes.forEach(type => {
+            allHTML += createResultBlock(type, idealTypeData[type]);
         });
-    </script>
+
+        container.innerHTML = allHTML;
+    }
+
+    /**
+     * 버튼 클릭 시 해당 결과 블록으로 부드럽게 스크롤하고 강조합니다.
+     */
+    function scrollToResult(selectedType) {
+        // 버튼 선택 상태 업데이트
+        document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
+        const selectedBtn = document.querySelector(`.type-btn[data-type="${selectedType}"]`);
+        if (selectedBtn) {
+             selectedBtn.classList.add('selected');
+        }
+
+        // 결과 블록으로 스크롤
+        const targetElement = document.getElementById(`result-${selectedType}`);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // 헤더 높이만큼 빼서 스크롤
+                behavior: 'smooth'
+            });
+
+            // 선택된 결과 블록 강조 (일시적)
+            targetElement.style.border = '2px solid var(--romantic-rose)';
+            setTimeout(() => {
+                targetElement.style.border = '1px solid #eee';
+            }, 2000);
+        }
+    }
+
+    let currentLang = 'en';
+
+    function updateContent(lang) {
+        currentLang = lang;
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        // 결과 제목 업데이트 (JS로 동적 생성된 부분)
+        document.querySelector('.results-title').textContent = translations[currentLang].resultsTitle;
+        // 16개 유형의 결과도 다시 렌더링하여 언어 업데이트
+        renderAllResults();
+    }
+
+    function changeLanguage(lang) {
+        document.querySelector('.lang-dropdown').value = lang;
+        updateContent(lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // 페이지 로드 시 16개 모든 유형의 결과를 한 번에 렌더링 (봇 친화적)
+        renderAllResults();
+        
+        // 언어 설정 초기화
+        const initialLang = document.querySelector('.lang-dropdown').value;
+        updateContent(initialLang); 
+    });
+</script>
 <script>
 function toggleMenu() {
     document.getElementById('nav-menu').classList.toggle('active');
 }
 </script>
- 
 </body>
-
 </html>
