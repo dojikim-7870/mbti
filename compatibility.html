@@ -1,24 +1,17 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57524D22');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-57524D22');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI Compatibility Analysis - Find Your Perfect Match | MBTILove</title>
     <meta name="description" content="Discover which MBTI types are most compatible with yours. Explore love compatibility, communication styles, and relationship success rates.">
 
-    <meta property="og:title" content="MBTI Compatibility Analysis - Find Your Perfect Match">
-    <meta property="og:description" content="Discover which MBTI personality types create the most harmonious relationships with yours.">
-    <meta property="og:type" content="website">
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --romantic-rose: hsl(340, 75%, 52%);
@@ -28,680 +21,451 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --warm-coral: hsl(18, 100%, 62%);
             --mbti-gold: hsl(45, 100%, 51%);
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
+        html,body{height:100%;}
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; background: #fff; }
         .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Header Styles */
-        header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        .header-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
-            display: flex; justify-content: space-between; align-items: center; height: 70px;
-        }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--romantic-rose); text-decoration: none; }
-        .nav { display: flex; gap: 2rem; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
- /* 햄버거 버튼 */
-    .hamburger {
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: none; /* 데스크탑에서는 숨김 */
-        margin-left: 1rem;
-    }
 
-    /* 언어 드롭다운 */
-    .lang-dropdown {
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        background: white;
-        cursor: pointer;
-    }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--romantic-rose); text-decoration: none; }
+        .nav { display: flex; gap: 1.25rem; align-items: center; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; padding: 0.35rem 0.6rem; border-radius: 8px; }
+        .nav a:hover { color: var(--romantic-rose); background: rgba(219,73,122,0.05); }
+        .hamburger { font-size: 1.6rem; background: none; border: none; cursor: pointer; display: none; }
+        .lang-dropdown { padding: 0.28rem 0.6rem; border: 1px solid #eee; border-radius: 6px; font-size: 0.9rem; background: white; }
 
-        /* Hero Section */
         .hero { background: linear-gradient(135deg, var(--romantic-rose), var(--deep-purple)); padding: 5rem 1rem; color: white; text-align: center; }
         .hero-content { max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
-        .hero-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: rgba(255,255,255,0.8); }
-        .stat-item { display: flex; align-items: center; gap: 0.5rem; }
-        
-        /* Main Content */
-        .section { padding: 4rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
-        
-        /* Type Selector */
-        .type-selector { background: #f8f9fa; border-radius: 1.5rem; padding: 2rem; margin-bottom: 3rem; }
-        .selector-title { text-align: center; margin-bottom: 2rem; font-size: 1.5rem; font-weight: bold; }
-        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; }
-        .type-btn {
-            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
-            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
-        }
-        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
-        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
-        
-        /* Results */
-        .results { background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .results-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; }
-        .compatibility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .compatibility-card {
-            background: linear-gradient(135deg, #f8f9fa, white); padding: 1.5rem; border-radius: 1rem;
-            border: 1px solid #e0e0e0; transition: all 0.3s;
-        }
-        .compatibility-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-        .type-name { font-weight: bold; font-size: 1.1rem; }
-        .compatibility-score { font-weight: bold; color: var(--romantic-rose); }
-        .progress-bar { width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; margin: 0.5rem 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--romantic-rose), var(--deep-purple)); transition: width 0.5s; }
-        
-        .status-badge {
-            padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 500;
-        }
-        .status-perfect { background: #dcfce7; color: #166534; }
-        .status-good { background: #dbeafe; color: #1e40af; }
-        .status-potential { background: #fef3c7; color: #92400e; }
-        .status-challenging { background: #fef2f2; color: #991b1b; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; margin-bottom: 1rem; font-family: 'Poppins', sans-serif; }
+        .hero-subtitle { font-size: clamp(1rem, 1.8vw, 1.2rem); margin-bottom: 1.25rem; opacity: 0.95; }
 
-        /* New styles for detailed analysis */
-        .detailed-analysis-section h3 {
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--romantic-rose);
-        }
-        .detailed-pair {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #fdf6f8;
-            border-left: 5px solid var(--romantic-rose);
-            border-radius: 0.5rem;
-        }
-        .detailed-pair h4 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .detailed-pair p {
-            font-size: 1rem;
-            color: #555;
-        }
-        
-       
-        
-        /* Footer */
-        footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        .footer-section h3 { color: white; margin-bottom: 1rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-        .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-section ul li a:hover { color: var(--romantic-rose); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-        
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        
-        /* 반응형 레이아웃 수정 */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-        .nav { 
-            display: none; 
-            flex-direction: column;
+        .section { padding: 3.25rem 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+
+        .type-selector { background: #faf8fb; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+        .selector-title { text-align: center; margin-bottom: 1rem; font-size: 1.05rem; font-weight: 700; }
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
             gap: 1rem;
-            position: absolute;
-            top: 70px; right: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .nav.active { display: flex; }
-        .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { grid-template-columns: 1fr; }
-    }
+        .type-btn {
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .type-btn:hover {
+            background: rgba(219,73,122,0.12);
+            color: var(--romantic-rose);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .type-btn.selected {
+            background: var(--romantic-rose);
+            color: white;
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(219,73,122,0.35);
+        }
+        .type-btn.selected { background: var(--romantic-rose); color: white; transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+
+        .results { background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 6px 22px rgba(0,0,0,0.04); margin-top: 1rem; }
+        .compatibility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+        .compatibility-card { padding: 1rem; border-radius: 10px; border: 1px solid #f0e7ea; background: linear-gradient(180deg,#fff,#fffaf8); }
+        .compatibility-card h3 { margin-bottom: 0.6rem; font-size: 1.05rem; color: var(--deep-purple); }
+        .compatibility-card p { color: #444; font-size: 0.95rem; line-height: 1.35; }
+
+        .progress-bar { width: 100%; height: 8px; background: #eee; border-radius: 6px; overflow: hidden; margin: 0.5rem 0 0.75rem; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg,var(--romantic-rose),var(--deep-purple)); transition: width 0.5s ease; }
+
+        .detail { margin-top: 1rem; padding: 1rem; border-left: 4px solid var(--romantic-rose); background: #fff9fb; border-radius: 6px; }
+
+        footer { background: #171717; color: #cfcfcf; padding: 2.5rem 1rem 3.5rem; margin-top: 2.5rem; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+        .footer-section h3 { color: #fff; margin-bottom: 0.6rem; }
+        .footer-bottom { text-align: center; margin-top: 1rem; color: #9b9b9b; font-size: 0.9rem; }
+
+        /* inline SVG illustration styling */
+        .pair-illustration { width: 100%; height: 100px; display:flex; align-items:center; justify-content:center; gap:10px; }
+        .illustration-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav { display: none; flex-direction: column; gap: 1rem; position: absolute; top: 70px; right: 1rem; background: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+            .nav.active { display: flex; }
+            .type-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+            .nav{display:none}
+            .nav.active{display:flex;flex-direction:column;position:absolute;top:70px;right:12px;background:#fff;padding:12px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+            .hero{padding:3.5rem 1rem}
+            .pair-illustration{height:78px}
+        }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <header>
-    <div class="header-container">
-        <a href="index.html" class="logo font-poppins">MBTILove</a>
-
-        <!-- 햄버거 버튼 -->
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-        <!-- 네비게이션 -->
-        <nav class="nav" id="nav-menu">
-            <a href="compatibility.html">Compatibility</a>
-            <a href="dating-style.html">Dating Style</a>
-            <a href="ideal-type.html">Ideal Type</a>
-            <a href="rankings.html">Rankings</a>
-            <a href="conversation.html">Conversation</a>
-            <a href="balance-game.html">Balance Game</a>
-            <a href="about.html">About</a>
-        </nav>
-
-        <!-- 언어 드롭다운 -->
-        <select class="lang-dropdown" onchange="changeLanguage(this.value)">
-            <option value="en" selected>English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-        </select>
-    </div>
-</header>
-
+        <div class="header-container">
+            <a class="logo font-poppins" href="index.html">MBTILove</a>
+            <button class="hamburger" aria-label="menu" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu" class="nav" aria-label="Main navigation">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+            <select class="lang-dropdown" id="lang-switcher" aria-label="language" onchange="changeLanguage(this.value)">
+                <option value="en">EN</option>
+                <option value="ko">KO</option>
+                <option value="ja">JA</option>
+            </select>
+        </div>
+    </header>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="lang-content active" data-lang="en">
-                <h1 class="hero-title font-poppins">MBTI Compatibility Analysis</h1>
-                <p class="hero-subtitle">
-                    Discover which personality types create the most harmonious relationships with yours. 
-                    Our comprehensive compatibility system analyzes communication styles, shared values, 
-                    and relationship dynamics to help you find your perfect match.
+            <h1 class="hero-title">Find Your Perfect MBTI Compatibility</h1>
+            <p class="hero-subtitle">
+                Discover how each personality type connects, communicates, and builds long‑lasting chemistry with yours.
+            </p>
+
+            <div style="margin-top:2rem; font-size:1.1rem; line-height:1.7;">
+                <p>This analysis is based on the theory of <strong>8 Cognitive Functions</strong> within the MBTI framework. Relationship harmony often comes from complementing each other's functions, not merely matching them.</p>
+                <p style="margin-top:0.7rem;">
+                    For example, an ENFP using <strong>Extraverted Intuition (Ne)</strong> and an INTJ using <strong>Introverted Intuition (Ni)</strong> can expand each other's perspectives and form a uniquely deep bond.
                 </p>
-<div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-    <p style="font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; color: white;">
-        This analysis is based on the theory of **8 Cognitive Functions** within the MBTI framework.
-        Relationship harmony often comes from complementing each other's different functions, not just from matching them.
-        For example, an ENFP using **Extraverted Intuition (Ne)** and an INTJ using **Introverted Intuition (Ni)** can broaden each other's perspectives and form a deep bond.
-        The compatibility scores for each type reflect the potential of these psychological interactions.
-    </p>
-</div>
-            </div>
-            
-            <div class="lang-content" data-lang="ja">
-                <h1 class="hero-title font-poppins">MBTI相性分析</h1>
-                <p class="hero-subtitle">
-                    あなたの性格タイプと最も調和の取れた関係を築けるタイプを発見してください。
-                    包括的な相性システムがコミュニケーションスタイル、共通の価値観、
-                    関係性のダイナミクスを分析し、完璧なマッチを見つけるお手伝いをします。
-                </p>
-<div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-    <p style="font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; color: white;">
-        この分析は、MBTIフレームワーク内の**8つの認知機能（Cognitive Functions）**理論に基づいています。
-        関係の調和は、単にタイプが一致するだけでなく、異なる機能を補完し、バランスを取ることから生まれます。
-        例えば、**外向的直観（Ne）**を使うENFPと、**内向的直観（Ni）**を使うINTJは、お互いの視点を広げ、深い絆を築くことができます。
-        各タイプの相性スコアは、これらの心理的相互作用の可能性を示しています。
-    </p>
-</div>
-            </div>
-            
-            <div class="lang-content" data-lang="ko">
-                <h1 class="hero-title font-poppins">MBTI 궁합 분석</h1>
-                <p class="hero-subtitle">
-                    당신의 성격 유형과 가장 조화로운 관계를 만들 수 있는 유형을 발견하세요.
-                    포괄적인 호환성 시스템이 소통 스타일, 공유 가치관,
-                    관계 역학을 분석하여 완벽한 짝을 찾는 데 도움을 줍니다.
-                </p>
-<div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-    <p style="font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; color: white;">
-        이 분석은 MBTI의 **8가지 인지 기능(Cognitive Functions)** 이론을 바탕으로 합니다.
-        관계의 조화는 단순히 유형이 일치하는 것이 아니라, 서로 다른 기능을 보완하고 균형을 이루는 데서 옵니다.
-        예를 들어, **외향적 직관(Ne)**을 사용하는 ENFP와 **내향적 직관(Ni)**을 사용하는 INTJ는 서로의 관점을 넓혀주며 깊은 유대감을 형성할 수 있습니다.
-        각 유형의 궁합 점수는 이러한 심리학적 상호작용의 가능성을 보여줍니다.
-    </p>
-</div>
-            </div>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span>❤️</span>
-                    <span data-translate="hero.stat1">16 Personality Types</span>
-                </div>
-                <div class="stat-item">
-                    <span>👥</span>
-                    <span data-translate="hero.stat2">256 Combinations</span>
-                </div>
-                <div class="stat-item">
-                    <span>📊</span>
-                    <span data-translate="hero.stat3">Scientifically Based</span>
+                <div style="display:flex; justify-content:center; gap:2rem; margin-top:1.2rem; font-size:1.2rem;">
+                    <span>❤️ 16 Personality Types</span>
+                    <span>👥 256 Combinations</span>
+                    <span>📊 Scientifically Based</span>
                 </div>
             </div>
         </div>
     </section>
 
-    
-
     <section class="section">
         <div class="container">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="section-title font-poppins">Find Your Compatibility Matches</h2>
-                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Select your MBTI personality type to see detailed compatibility analysis with all 16 types
-                </p>
-            </div>
-            
-            <div class="lang-content" data-lang="ja">
-                <h2 class="section-title font-poppins">あなたの相性マッチを見つけよう</h2>
-                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    あなたのMBTI性格タイプを選択して、すべての16タイプとの詳細な相性分析を確認してください
-                </p>
-            </div>
-            
-            <div class="lang-content" data-lang="ko">
-                <h2 class="section-title font-poppins">호환성 매치 찾기</h2>
-                <p style="text-align: center; font-size: 1.25rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    MBTI 성격 유형을 선택하여 모든 16개 유형과의 자세한 호환성 분석을 확인하세요
-                </p>
-            </div>
-
+            <h2 class="section-title" data-i18n="sectionTitle">Select Your MBTI Type</h2>
             <div class="type-selector">
-                <h3 class="selector-title">Select Your MBTI Type</h3>
-                <div class="type-grid">
-                    <button class="type-btn" onclick="selectType('INTJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Architect</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('INTP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Thinker</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ENTJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Commander</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ENTP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Debater</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('INFJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Advocate</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('INFP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Mediator</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ENFJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Protagonist</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ENFP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Campaigner</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ISTJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Logistician</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ISFJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Protector</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ESTJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Executive</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ESFJ')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Consul</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ISTP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Virtuoso</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ISFP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Adventurer</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ESTP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Entrepreneur</div>
-                    </button>
-                    <button class="type-btn" onclick="selectType('ESFP')">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;">Entertainer</div>
-                    </button>
-                </div>
+                <p class="selector-title" data-i18n="selectorPrompt">Choose your personality type to see your best compatibility matches.</p>
+                <div class="type-grid" id="type-grid"></div>
             </div>
 
-            <div id="results" class="results" style="display: none;">
-                <h3 class="results-title">Compatibility Results</h3>
-                <div id="results-grid" class="compatibility-grid">
-                    </div>
-            </div>
-
-            <div id="detailed-analysis" class="detailed-analysis-section" style="display: none;">
-                </div>
+            <div id="results" class="results" style="display:none;"></div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Explore</h3>
-                <ul>
-                    <li><a href="compatibility.html">Compatibility</a></li>
-                    <li><a href="dating-style.html">Dating Style</a></li>
-                    <li><a href="ideal-type.html">Ideal Type</a></li>
-                    <li><a href="rankings.html">Rankings</a></li>
-                </ul>
+                <h3>About MBTILove</h3>
+                <p>Your trusted platform for understanding personality connections, emotional chemistry, and meaningful relationship matching.</p>
             </div>
             <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
-                </ul>
+                <h3>Pages</h3>
+                <p>Compatibility<br>Dating Style<br>Ideal Type<br>Rankings<br>Balance Game</p>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-use.html">Terms of Use</a></li>
-                </ul>
+                <h3>Contact</h3>
+                <p>For partnerships or inquiries, reach us at: support@mbtilove.xyz</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
-        </div>
+        <div class="footer-bottom">© 2025 MBTILove. All Rights Reserved.</div>
     </footer>
 
-    <script>
-        // MBTI compatibility data
-        const compatibilityData = {
-            'INTJ': { 'ENFP': 92, 'ENTP': 89, 'INFP': 87, 'ISFP': 84, 'INTP': 82, 'ENFJ': 80, 'INFJ': 78, 'ISFJ': 75, 'ESFP': 72, 'ESTP': 70, 'ESFJ': 68, 'ESTJ': 65, 'ISTP': 63, 'ISTJ': 60, 'ENTJ': 58, 'INTJ': 55 },
-            'INTP': { 'ENFJ': 90, 'INFJ': 88, 'ENTJ': 85, 'INTJ': 82, 'ENFP': 80, 'INFP': 78, 'ENTP': 75, 'ESFJ': 72, 'ISFJ': 70, 'ESTJ': 68, 'ISFP': 65, 'ESFP': 63, 'ESTP': 60, 'ISTP': 58, 'ISTJ': 55, 'INTP': 52 },
-            'ENFJ': { 'INFP': 92, 'ENFP': 88, 'INFJ': 85, 'ENFJ': 82, 'INTJ': 80, 'INTP': 78, 'ESFP': 75, 'ESTP': 72, 'ISTP': 70, 'ISTJ': 68, 'ISFJ': 65, 'ISFP': 63, 'ENTJ': 60, 'ENTP': 58, 'ESFJ': 55, 'ESTJ': 52 },
-            'ENFP': { 'INTJ': 92, 'INFP': 89, 'ENFJ': 87, 'INFJ': 84, 'INTP': 82, 'ENFP': 80, 'ENTP': 78, 'ISFJ': 75, 'ESFJ': 72, 'ESTJ': 70, 'ISTJ': 68, 'ISTP': 65, 'ISFP': 63, 'ESFP': 60, 'ESTP': 58, 'ENTJ': 55 },
-            'INFJ': { 'ENFP': 90, 'ENTP': 88, 'INFP': 85, 'INFJ': 82, 'ENFJ': 80, 'INTP': 78, 'INTJ': 75, 'ISFJ': 72, 'ESFP': 70, 'ESTP': 68, 'ISTP': 65, 'ISTJ': 63, 'ENTJ': 60, 'ESFJ': 58, 'ISFP': 55, 'ESTJ': 52 },
-            'INFP': { 'ENFJ': 92, 'ENTJ': 89, 'ENFP': 87, 'INFJ': 84, 'INTJ': 82, 'INTP': 80, 'ISFP': 78, 'ESFP': 75, 'ISTP': 72, 'ISTJ': 70, 'ISFJ': 68, 'ESFJ': 65, 'ENTP': 63, 'ESTP': 60, 'ESTJ': 58, 'INFP': 55 },
-            'ENTJ': { 'INFP': 89, 'INTP': 85, 'ENTP': 82, 'INTJ': 78, 'ENFJ': 75, 'INFJ': 72, 'ENFP': 70, 'ISTJ': 68, 'ESTJ': 65, 'ISFP': 63, 'ESFP': 60, 'ISTP': 58, 'ISFJ': 55, 'ESFJ': 52, 'ESTP': 50, 'ENTJ': 48 },
-            'ENTP': { 'INFJ': 88, 'INTJ': 85, 'INFP': 82, 'ENTP': 80, 'ENFJ': 78, 'INTP': 75, 'ISTP': 72, 'ESTP': 70, 'ISFP': 68, 'ESFP': 65, 'ISFJ': 63, 'ESFJ': 60, 'ISTJ': 58, 'ESTJ': 55, 'ENFP': 52, 'ENTJ': 50 },
-            'ISTJ': { 'ESFP': 92, 'ESTP': 89, 'ISFJ': 87, 'ISTP': 84, 'ESTJ': 82, 'ESFJ': 80, 'ISFP': 78, 'ISTJ': 75, 'ENTJ': 72, 'ENTP': 70, 'ENFJ': 68, 'ENFP': 65, 'INFJ': 63, 'INFP': 60, 'INTJ': 58, 'INTP': 55 },
-            'ISFJ': { 'ESFP': 90, 'ESTP': 88, 'ISFP': 85, 'ESFJ': 82, 'ISTJ': 80, 'ISTP': 78, 'ESTJ': 75, 'ISFJ': 72, 'ENFJ': 70, 'ENTJ': 68, 'ENFP': 65, 'ENTP': 63, 'INFJ': 60, 'INFP': 58, 'INTJ': 55, 'INTP': 52 },
-            'ESTJ': { 'ISFP': 92, 'ISTP': 89, 'ESFP': 87, 'ESTP': 84, 'ISTJ': 82, 'ISFJ': 80, 'ESFJ': 78, 'ESTJ': 75, 'INTJ': 72, 'INTP': 70, 'INFJ': 68, 'INFP': 65, 'ENFJ': 63, 'ENFP': 60, 'ENTJ': 58, 'ENTP': 55 },
-            'ESFJ': { 'ISTP': 90, 'ISFP': 88, 'ESTP': 85, 'ISFJ': 82, 'ESFP': 80, 'ISTJ': 78, 'ESTJ': 75, 'ESFJ': 72, 'INTP': 70, 'ENTP': 68, 'INTJ': 65, 'ENTJ': 63, 'ENFJ': 60, 'ENFP': 58, 'INFJ': 55, 'INFP': 52 },
-            'ISTP': { 'ESFJ': 92, 'ESTJ': 89, 'ISFJ': 87, 'ISTP': 84, 'ENTJ': 82, 'INTP': 80, 'ESFP': 78, 'ESTP': 75, 'ISFP': 72, 'ISTJ': 70, 'ENFJ': 68, 'ENFP': 65, 'INFJ': 63, 'INFP': 60, 'INTJ': 58, 'ENTP': 55 },
-            'ISFP': { 'ESTJ': 90, 'ESFJ': 88, 'ISTP': 85, 'ISFJ': 82, 'ESTP': 80, 'ISTJ': 78, 'ESFP': 75, 'ISFP': 72, 'ENFP': 70, 'ENFJ': 68, 'INTP': 65, 'INFJ': 63, 'INTJ': 60, 'INFP': 58, 'ENTJ': 55, 'ENTP': 52 },
-            'ESTP': { 'ISFJ': 92, 'ISFP': 89, 'ESFJ': 87, 'ESTP': 84, 'ISTP': 82, 'ISTJ': 80, 'ESFP': 78, 'ESTJ': 75, 'ENTP': 72, 'ENTJ': 70, 'ENFP': 68, 'ENFJ': 65, 'INFP': 63, 'INFJ': 60, 'INTP': 58, 'INTJ': 55 },
-            'ESFP': { 'ISTJ': 92, 'ESTJ': 89, 'ISFJ': 87, 'ISFP': 84, 'ESTP': 82, 'ESFJ': 80, 'ISTP': 78, 'ESFP': 75, 'INFJ': 72, 'ENFJ': 70, 'INFP': 68, 'ENFP': 65, 'INTJ': 63, 'INTP': 60, 'ENTP': 58, 'ENTJ': 55 }
-        };
-
-        const typeNames = {
-            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
-            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
-            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
-            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
-        };
-
-        function selectType(selectedType) {
-            // Update button selection
-            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
-            event.target.closest('.type-btn').classList.add('selected');
-
-            // Show results section
-            const resultsDiv = document.getElementById('results');
-            const resultsGrid = document.getElementById('results-grid');
-            resultsDiv.style.display = 'block';
-            resultsGrid.innerHTML = '';
-
-            // Generate compatibility results
-            const matches = compatibilityData[selectedType] ? Object.entries(compatibilityData[selectedType]) : [];
-            const sortedMatches = matches.sort((a, b) => b[1] - a[1]);
-
-            sortedMatches.forEach(([type, score]) => {
-                const status = score >= 85 ? 'Perfect Match' : score >= 75 ? 'Good Match' : score >= 65 ? 'Potential' : 'Challenging';
-                const statusClass = score >= 85 ? 'status-perfect' : score >= 75 ? 'status-good' : score >= 65 ? 'status-potential' : 'status-challenging';
-                
-                const cardHTML = `
-                    <div class="compatibility-card">
-                        <div class="card-header">
-                            <div>
-                                <div class="type-name">${type}</div>
-                                <div style="font-size: 0.9rem; color: #666;">${typeNames[type]}</div>
-                            </div>
-                            <span class="status-badge ${statusClass}">${status}</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${score}%"></div>
-                        </div>
-                        <div class="compatibility-score">${score}% Compatible</div>
-                    </div>
-                `;
-                resultsGrid.innerHTML += cardHTML;
-            });
-            
-            // Show and populate detailed analysis section
-            displayDetailedAnalysis(selectedType);
-        }
-
-        function displayDetailedAnalysis(selectedType) {
-            const analysisDiv = document.getElementById('detailed-analysis');
-            analysisDiv.style.display = 'block';
-            analysisDiv.innerHTML = '';
-            
-            // Group the compatibility data
-            const perfectMatches = [];
-            const goodMatches = [];
-            const potentialMatches = [];
-            const challengingMatches = [];
-
-            const matches = compatibilityData[selectedType] ? Object.entries(compatibilityData[selectedType]) : [];
-            const sortedMatches = matches.sort((a, b) => b[1] - a[1]);
-
-            sortedMatches.forEach(([type, score]) => {
-                if (score >= 85) perfectMatches.push(type);
-                else if (score >= 75) goodMatches.push(type);
-                else if (score >= 65) potentialMatches.push(type);
-                else challengingMatches.push(type);
-            });
-
-            // Korean content for detailed analysis
-            const koContent = {
-                'INTJ': {
-                    perfect: {
-                        types: perfectMatches.filter(t => compatibilityData.INTJ[t] >= 85),
-                        title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
-                        descriptions: {
-                            'ENFP': {
-                                title: 'INTJ ❤️ ENFP: 환상의 짝꿍',
-                                analysis: '두 유형은 내향-외향, 사고-감정의 차이에도 불구하고 서로에게 없는 부분을 채워주며 엄청난 시너지를 냅니다. INTJ의 비전이 ENFP의 무한한 아이디어를 만나면 그 어떤 프로젝트도 성공적으로 이끌 수 있습니다.',
-                                advice: 'INTJ는 ENFP의 자유분방함을 존중하고, ENFP는 INTJ의 깊은 생각을 이해하려 노력해야 합니다. 서로의 다름을 인정하고 존중하는 것이 관계의 핵심입니다.'
-                            },
-                            'INFP': {
-                                title: 'INTJ ❤️ INFP: 조용하지만 강력한 시너지',
-                                analysis: '두 유형 모두 내향적이고 이상주의적인 성향을 공유하여 서로의 내면 세계를 깊이 이해합니다. INTJ의 목표 지향적인 사고가 INFP의 감수성과 만나면, 현실적인 계획과 따뜻한 감정이 조화를 이룹니다.',
-                                advice: 'INFP는 INTJ에게 감정을 솔직하게 표현하는 연습을 하고, INTJ는 INFP의 섬세한 감정 변화에 조금 더 귀 기울이는 노력이 필요합니다.'
-                            }
-                        }
-                    },
-                    good: {
-                        types: goodMatches.filter(t => compatibilityData.INTJ[t] >= 75 && compatibilityData.INTJ[t] < 85),
-                        title: '좋은 궁합: 안정적이고 편안한 관계',
-                        descriptions: {
-                            'ENTP': {
-                                title: 'INTJ ❤️ ENTP: 지적 동반자',
-                                analysis: '두 유형 모두 논리적이고 새로운 아이디어를 탐구하는 것을 좋아하여 지적으로 통하는 부분이 많습니다. 함께라면 흥미로운 대화가 끊이지 않습니다.',
-                                advice: 'ENTP의 즉흥적인 행동이 INTJ의 계획을 방해할 수 있습니다. ENTP는 때로 계획에서 벗어나는 것을 즐기고, ENTP는 INTJ의 계획을 존중하는 노력이 필요합니다.'
-                            },
-                            'INTP': {
-                                title: 'INTJ ❤️ INTP: 사색하는 짝꿍',
-                                analysis: '두 유형 모두 논리적이고 분석적이며, 혼자만의 시간을 소중히 여깁니다. 서로의 독립성을 존중해주는 관계라 편안함을 느낄 수 있습니다.',
-                                advice: '감정을 잘 표현하지 않는 두 유형이므로, 서로에게 마음을 열고 대화하는 시간이 꼭 필요합니다. 일상적인 대화를 통해 친밀감을 쌓는 것이 좋습니다.'
-                            },
-                            'ENFJ': {
-                                title: 'INTJ ❤️ ENFJ: 서로를 보완하는 관계',
-                                analysis: 'INTJ의 논리성과 ENFJ의 따뜻함이 만나 서로에게 부족한 점을 채워줍니다. ENFJ는 INTJ를 세상 밖으로 이끌어주고, INTJ는 ENFJ에게 현실적인 조언을 제공합니다.',
-                                advice: 'INTJ는 ENFJ의 감정적 요구에 조금 더 공감하려 노력하고, ENFJ는 INTJ의 논리적 사고를 이해하려는 노력이 필요합니다. 서로의 다름을 존중해야 관계가 발전합니다.'
-                            }
-                        }
-                    },
-                    potential: {
-                        types: potentialMatches.filter(t => compatibilityData.INTJ[t] >= 65 && compatibilityData.INTJ[t] < 75),
-                        title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
-                        descriptions: {
-                            'ISTP': {
-                                title: 'INTJ ❤️ ISTP: 조용한 관찰자들',
-                                analysis: '두 유형 모두 내향적이고 독립적인 성향을 가졌습니다. 서로에게 많은 개인 공간을 제공하지만, 감정을 표현하는 데 서툴러서 관계가 정체될 수 있습니다.',
-                                advice: '감정을 솔직하게 표현하고 대화의 양을 늘리려는 노력이 필요합니다. 서로의 취미를 함께 공유하며 관계의 깊이를 더할 수 있습니다.'
-                            },
-                            'ESTJ': {
-                                title: 'INTJ ❤️ ESTJ: 계획과 실행의 차이',
-                                analysis: 'INTJ는 미래의 가능성에 초점을 맞추고 ESTJ는 현실적인 실행을 중시합니다. 서로의 관점 차이가 충돌의 원인이 될 수 있습니다.',
-                                advice: '상대방의 접근 방식을 존중하고, 서로의 장점을 인정하는 대화가 중요합니다. INTJ의 장기적 비전과 ESTJ의 효율적 실행력을 결합하는 방법을 찾아보세요.'
-                            }
-                        }
-                    },
-                    challenging: {
-                        types: challengingMatches.filter(t => compatibilityData.INTJ[t] < 65),
-                        title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
-                        descriptions: {
-                            'ESFP': {
-                                title: 'INTJ ❤️ ESFP: 정반대의 끌림',
-                                analysis: 'INTJ는 계획적이고 내향적인 반면, ESFP는 즉흥적이고 외향적입니다. 서로의 세상이 너무나 달라 처음에는 신기함을 느끼지만, 시간이 지나면 소통의 어려움을 겪을 수 있습니다.',
-                                advice: '서로의 세계관을 이해하려는 열린 마음이 필요합니다. INTJ는 가끔 즉흥적으로 ESFP와 즐거운 시간을 보내고, ESFP는 INTJ의 깊은 생각을 존중해야 합니다.'
-                            }
-                        }
-                    }
-                },
-                'INTP': {
-                    perfect: {
-                        types: perfectMatches.filter(t => compatibilityData.INTP[t] >= 85),
-                        title: '환상의 궁합: 서로에게 깊은 영감을 주는 관계',
-                        descriptions: {
-                            'ENFJ': {
-                                title: 'INTP ❤️ ENFJ: 서로에게 완벽한 멘토',
-                                analysis: 'INTP의 논리적인 분석력과 ENFJ의 따뜻한 감정적 지지가 만나 서로에게 부족한 부분을 완벽하게 채워줍니다. INTP는 ENFJ에게 새로운 관점을 제공하고, ENFJ는 INTP가 감정적으로 성장하도록 돕습니다.',
-                                advice: 'INTP는 가끔씩 자신의 감정을 ENFJ에게 표현하려 노력하고, ENFJ는 INTP의 개인 공간을 존중하며 강요하지 않는 것이 중요합니다.'
-                            }
-                        }
-                    },
-                    good: {
-                        types: goodMatches.filter(t => compatibilityData.INTP[t] >= 75 && compatibilityData.INTP[t] < 85),
-                        title: '좋은 궁합: 안정적이고 편안한 관계',
-                        descriptions: {
-                            'INFJ': {
-                                title: 'INTP ❤️ INFJ: 지혜로운 동반자',
-                                analysis: '두 유형 모두 내향적이고 지적인 교류를 중시하여 깊은 대화를 나눌 수 있습니다. INFJ는 INTP의 아이디어에 영감을 주고, INTP는 INFJ의 비전을 논리적으로 뒷받침해줍니다.',
-                                advice: 'INFJ의 감정적 예민함을 INTP가 논리적으로만 접근하지 않도록 주의해야 합니다. 서로의 생각과 감정을 솔직하게 나누는 노력이 필요합니다.'
-                            },
-                             'ENTJ': {
-                                title: 'INTP ❤️ ENTJ: 계획을 현실로',
-                                analysis: 'INTP의 무궁무진한 아이디어와 ENTJ의 강력한 실행력이 만나면 그 어떤 목표도 이룰 수 있습니다. 서로의 능력에 깊은 존경심을 느낄 수 있는 관계입니다.',
-                                advice: 'INTP는 ENTJ의 리더십을 신뢰하고, ENTJ는 INTP가 자유롭게 생각할 수 있는 시간을 존중해야 합니다. 의견 충돌 시 논쟁보다는 해결책을 찾는 대화가 중요합니다.'
-                            }
-                        }
-                    },
-                    potential: {
-                        types: potentialMatches.filter(t => compatibilityData.INTP[t] >= 65 && compatibilityData.INTP[t] < 75),
-                        title: '노력하는 궁합: 서로를 이해하려는 노력이 필요한 관계',
-                        descriptions: {
-                            'ESFJ': {
-                                title: 'INTP ❤️ ESFJ: 정반대의 조화',
-                                analysis: 'INTP는 사실과 논리를, ESFJ는 감정과 관계를 중시합니다. 서로의 우선순위가 너무 달라 처음에는 혼란스러울 수 있지만, 서로에게 새로운 관점을 제공할 수 있습니다.',
-                                advice: 'INTP는 ESFJ의 감정적 요구에 조금 더 주의를 기울이고, ESFJ는 INTP의 독립적인 성향을 이해하고 존중해야 합니다.'
-                            },
-                             'ISTP': {
-                                title: 'INTP ❤️ ISTP: 조용한 경쟁자',
-                                analysis: '두 유형 모두 논리적이고 실용적이며, 개인적인 공간을 중요하게 생각합니다. 비슷한 성향 때문에 서로에게 별다른 노력을 하지 않을 수 있습니다.',
-                                advice: '가끔은 먼저 다가가 대화를 시도하고, 서로의 취미를 함께 공유하며 관계의 활력을 찾아야 합니다.'
-                            }
-                        }
-                    },
-                    challenging: {
-                        types: challengingMatches.filter(t => compatibilityData.INTP[t] < 65),
-                        title: '성향이 다른 궁합: 많은 배려와 이해가 필요한 관계',
-                        descriptions: {
-                            'ESFP': {
-                                title: 'INTP ❤️ ESFP: 즉흥적인 모험가와 사색가',
-                                analysis: 'INTP의 분석적이고 조용한 성향은 ESFP의 즉흥적이고 사교적인 성향과 충돌하기 쉽습니다. 서로의 삶의 방식이 너무 달라 이해하기 어려울 수 있습니다.',
-                                advice: '서로의 세계를 탐험하려는 열린 마음이 필요합니다. INTP는 ESFP와 함께 새로운 경험을 시도하고, ESFP는 INTP의 깊은 생각을 존중해야 합니다.'
-                            }
-                        }
-                    }
-                }
-            };
-            
-            // Function to generate HTML for a group
-            const generateGroupHTML = (group, lang) => {
-                if (group.types.length === 0) return '';
-                let html = `<div class="detailed-analysis-group"><h3>${group.title}</h3>`;
-                group.types.forEach(type => {
-                    const desc = group.descriptions[type];
-                    if (desc) {
-                        html += `
-                            <div class="detailed-pair">
-                                <h4>${desc.title}</h4>
-                                <p><strong>관계 분석:</strong> ${desc.analysis}</p>
-                                <p><strong>실용적 조언:</strong> ${desc.advice}</p>
-                            </div>
-                        `;
-                    }
-                });
-                html += `</div>`;
-                return html;
-            };
-
-            const selectedKoContent = koContent[selectedType];
-            if (selectedKoContent) {
-                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.perfect);
-                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.good);
-                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.potential);
-                analysisDiv.innerHTML += generateGroupHTML(selectedKoContent.challenging);
-            }
-        }
-
-        // Language switching functionality
-        let currentLanguage = 'en';
-        
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            
-            // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Show/hide content based on language
-            document.querySelectorAll('.lang-content').forEach(content => {
-                if (content.getAttribute('data-lang') === lang) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-            
-            localStorage.setItem('preferredLanguage', lang);
-        }
-        
-        // Load language preference on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            if (savedLang !== 'en') {
-                changeLanguage(savedLang);
-                document.querySelector(`[onclick="changeLanguage('${savedLang}')"]`).classList.add('active');
-                document.querySelector(`[onclick="changeLanguage('en')"]`).classList.remove('active');
-            }
-        });
-    </script>
 <script>
-function toggleMenu() {
-    document.getElementById('nav-menu').classList.toggle('active');
-}
-</script>
- 
-</body>
+// --- Translations (EN/KO/JA)
+const i18n = {
+  en: {
+    heroTitle: "Find Your Perfect MBTI Compatibility",
+    heroSubtitle: "Discover which personality types build the strongest chemistry, deepest understanding, and most meaningful relationships with you.",
+    sectionTitle: "Select Your MBTI Type",
+    selectorPrompt: "Choose your personality type to see your best compatibility matches.",
+    bestLabel: "Best Match",
+    greatLabel: "Great Match",
+    goodLabel: "Good Match"
+  },
+  ko: {
+    heroTitle: "당신의 완벽한 MBTI 궁합 찾기",
+    heroSubtitle: "어떤 성격 유형이 가장 강한 케미와 깊은 이해, 의미 있는 관계를 만들어내는지 알아보세요.",
+    sectionTitle: "MBTI 유형 선택",
+    selectorPrompt: "당신의 성격 유형을 선택하면 가장 잘 맞는 궁합을 보여드립니다.",
+    bestLabel: "최적의 궁합",
+    greatLabel: "매우 잘 맞음",
+    goodLabel: "좋은 궁합"
+  },
+  ja: {
+    heroTitle: "あなたにぴったりのMBTI相性を見つける",
+    heroSubtitle: "どの性格タイプが強いケミストリー、深い理解、意味のある関係を築けるかを見つけましょう。",
+    sectionTitle: "MBTIタイプを選択",
+    selectorPrompt: "自分のMBTIタイプを選んで、最も相性の良い相手を見つけましょう。",
+    bestLabel: "ベストマッチ",
+    greatLabel: "相性良好",
+    goodLabel: "良い相性"
+  }
+};
 
+// --- MBTI list
+const types = ["INTJ","INTP","ENTJ","ENTP","INFJ","INFP","ENFJ","ENFP","ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP"];
+
+// --- Compatibility data (compact, with trilingual descriptions)
+const compatibility = {
+  INTJ: { best:["ENFP","ENTP"], great:["INFJ","INFP","ENTJ"], good:["ISTJ","INTP","ISFJ"], desc:{
+      ENFP:{en:"Magnetic opposites — ENFP brings warmth, curiosity and flexible energy that opens INTJ's inner world.", ko:"강력한 반대의 끌림 — ENFP는 따뜻함과 호기심으로 INTJ의 내면을 열어줍니다.", ja:"魅力的な反対性 — ENFPはINTJの内面を開く温かさと好奇心をもたらします。"},
+      ENTP:{en:"Intellectual sparks — ENTP's debate and playfulness energize INTJ's strategic thinking.", ko:"지적 시너지 — ENTP의 토론과 장난기가 INTJ의 전략적 사고를 활기차게 합니다.", ja:"知的な火花 — ENTPの議論と遊び心がINTJの戦略的思考を活性化します。"},
+      INFJ:{en:"Shared depth — INFJ's insight aligns with INTJ's vision for meaningful connection.", ko:"공유된 깊이 — INFJ의 통찰은 INTJ의 비전에 맞닿아 깊은 연결을 만듭니다.", ja:"共有された深み — INFJの洞察はINTJのビジョンと一致し、深い結びつきを作ります。"},
+      INFP:{en:"Emotional harmony — INFP brings quiet values and empathy to balance INTJ's logic.", ko:"정서적 균형 — INFP는 조용한 가치와 공감으로 INTJ의 논리를 보완합니다.", ja:"感情の調和 — INFPは静かな価値観と共感でINTJの論理を補います。"},
+      ENTJ:{en:"Ambitious pair — ENTJ complements INTJ with drive; needs mutual respect for pace.", ko:"야망의 파트너 — ENTJ는 추진력으로 INTJ를 보완하지만, 속도에 대한 상호 존중이 필요합니다.", ja:"野心的な組み合わせ — ENTJは行動力でINTJを補完しますが、ペースへの相互尊重が必要です。"},
+      ISTJ:{en:"Practical steadiness — ISTJ provides grounded routine that supports INTJ's plans.", ko:"실용적 안정감 — ISTJ는 INTJ의 계획을 지지하는 실용적 루틴을 제공합니다.", ja:"実務的な安定 — ISTJはINTJの計画を支える実用的なルーティンを提供します。"},
+      INTP:{en:"Thoughtful companion — INTP shares intellectual curiosity though may need emotional tuning.", ko:"사려 깊은 동반자 — INTP는 지적 호기심을 공유하지만 감정 표현에서 보완이 필요합니다.", ja:"思慮深い仲間 — INTPは知的好奇心を共有しますが、感情の表現で補完が必要です。"},
+      ISFJ:{en:"Supportive backbone — ISFJ brings care and consistency to practical daily life.", ko:"지지하는 기반 — ISFJ는 실생활에서 보살핌과 일관성을 제공합니다.", ja:"支えとなる存在 — ISFJは日常生活に思いやりと安定性をもたらします。"}
+  }},
+  INTP: { best:["ENFJ","INFJ"], great:["ENTJ","INTJ","ENFP"], good:["ISTP","ISFJ","INTP"], desc:{
+      ENFJ:{en:"Emotional scaffolding — ENFJ helps INTP apply ideas to people-centered goals.", ko:"감정적 지지 — ENFJ는 INTP의 아이디어를 사람 중심의 목표로 연결해줍니다.", ja:"感情の支え — ENFJはINTPのアイデアを人に向けた目標へ繋げます。"},
+      INFJ:{en:"Quiet synergy — INFJ and INTP share deep insight and mutual intellectual trust.", ko:"조용한 시너지 — INFJ와 INTP는 깊은 통찰과 지적 신뢰를 공유합니다.", ja:"静かな相性 — INFJとINTPは深い洞察と知的信頼を共有します。"},
+      ENTJ:{en:"Execution partner — ENTJ turns INTP's concepts into tangible plans.", ko:"실행의 동반자 — ENTJ는 INTP의 개념을 실현 가능한 계획으로 바꿉니다.", ja:"実行の相手 — ENTJはINTPの概念を実行計画に変えます。"},
+      INTJ:{en:"Shared structure — INTJ and INTP enjoy analyzing systems and possibilities together.", ko:"공유된 구조 — INTJ와 INTP는 시스템과 가능성 분석을 즐깁니다.", ja:"共有の構造 — INTJとINTPはシステムや可能性の分析を共に楽しみます。"},
+      ENFP:{en:"Creative contrast — ENFP injects spontaneity that helps INTP test new ideas.", ko:"창의적 대비 — ENFP의 즉흥성이 INTP의 새 아이디어 실험을 돕습니다.", ja:"創造的な対比 — ENFPの即興性がINTPの新しいアイデアを刺激します。"},
+      ISTP:{en:"Hands-on balance — ISTP grounds INTP's theorizing with practical skill.", ko:"실용적 균형 — ISTP는 이론을 실무로 연결합니다.", ja:"実践的なバランス — ISTPはINTPの理論を実務に結びつけます。"},
+      ISFJ:{en:"Nurturing focus — ISFJ's care can steady INTP's scattered attention.", ko:"돌보는 집중 — ISFJ의 보살핌이 INTP의 분산된 관심을 안정시킵니다.", ja:"育む安定 — ISFJの配慮がINTPの散漫な注意を安定させます。"},
+      INTP:{en:"Twin intellects — two INTPs can spark brilliant ideas but must prioritize communication.", ko:"지적 쌍 — INTP끼리는 훌륭한 아이디어를 만들지만 소통을 우선해야 합니다.", ja:"知の双子 — INTP同士は素晴らしい発想を生みますが、対話を大切にする必要があります。"}
+  }},
+  ENTJ: { best:["INFP","INTP"], great:["ENTP","ESTJ","INTJ"], good:["ENFJ","ISTJ","ESFJ"], desc:{
+      INFP:{en:"Values complement — INFP's depth tempers ENTJ's drive with compassion.", ko:"가치의 보완 — INFP의 깊이가 ENTJ의 추진력에 온기를 더합니다.", ja:"価値の補完 — INFPの深みがENTJの推進力に温かさを与えます。"},
+      INTP:{en:"Strategic laboratory — INTP's ideas feed ENTJ's execution plans.", ko:"전략의 실험실 — INTP의 아이디어가 ENTJ의 실행을 돕습니다.", ja:"戦略の実験場 — INTPのアイデアがENTJの実行を支えます。"},
+      ENTP:{en:"Bold innovators — ENTP and ENTJ push boundaries and build together.", ko:"대담한 혁신 — ENTP와 ENTJ는 경계를 넓히며 함께 만듭니다.", ja:"大胆な革新 — ENTPとENTJは境界を押し広げ共に創造します。"},
+      ESTJ:{en:"Operational harmony — ESTJ's process sense pairs well with ENTJ's vision.", ko:"운영의 조화 — ESTJ의 절차감이 ENTJ의 비전과 잘 맞습니다.", ja:"運営の調和 — ESTJのプロセス感がENTJのビジョンと合います。"},
+      INTJ:{en:"Executive duo — shared long-term focus, must balance control and flexibility.", ko:"경영 듀오 — 장기적 관점 공유, 통제와 유연성의 균형 필요합니다.", ja:"エグゼクティブな組み合わせ — 長期的視点を共有しますが、管理と柔軟性の均衡が重要です。"},
+      ENFJ:{en:"People-forward leadership — ENFJ helps ENTJ lead with empathy.", ko:"사람 중심 리더십 — ENFJ는 ENTJ가 공감으로 이끌게 돕습니다.", ja:"人間重視のリーダーシップ — ENFJはENTJの共感ある指導を助けます。"},
+      ISTJ:{en:"Reliable backbone — ISTJ's duty-focused approach steadies ENTJ's plans.", ko:"신뢰하는 기반 — ISTJ의 의무감이 ENTJ의 계획을 안정시켜줍니다.", ja:"信頼できる基盤 — ISTJの責任感がENTJの計画を安定させます。"},
+      ESFJ:{en:"Community anchor — ESFJ nurtures social ties ENTJ may overlook.", ko:"커뮤니티의 중심 — ESFJ는 ENTJ가 놓칠 수 있는 사회적 연결을 키웁니다.", ja:"コミュニティの核 — ESFJはENTJが見落としがちな社会的つながりを育みます。"}
+  }},
+  ENTP: { best:["INFJ","INTJ"], great:["ENTJ","ENFP","INTP"], good:["ESTP","ISTP","ENFJ"], desc:{
+      INFJ:{en:"Creative mirror — INFJ grounds ENTP's bold ideas with meaning.", ko:"창의적 반영 — INFJ는 ENTP의 대담한 아이디어에 의미를 더합니다.", ja:"創造の鏡 — INFJはENTPの大胆な発想に意味を与えます。"},
+      INTJ:{en:"Intellectual joust — INTJ's depth and ENTP's playfulness produce growth.", ko:"지적 교류 — INTJ의 깊이와 ENTP의 장난기가 성장을 만듭니다.", ja:"知的なやり取り — INTJの深みとENTPの遊び心が成長を生みます。"},
+      ENTJ:{en:"Ambitious collaboration — both drive progress; need to manage debates constructively.", ko:"야망의 협업 — 둘 다 진보를 밀고, 논쟁을 건설적으로 다뤄야 합니다.", ja:"野心的な協働 — 両者は進歩を牽引しますが、議論を建設的に扱う必要があります。"},
+      ENFP:{en:"Playful synergy — shared enthusiasm fuels experiments and novelty.", ko:"즐거운 시너지 — 열정이 실험과 새로움을 돕습니다.", ja:"遊び心のある相性 — 共通の熱意が実験や新奇性を生みます。"},
+      INTP:{en:"Idea laboratory — ENTP tests INTP's hypotheses with charm and speed.", ko:"아이디어 실험실 — ENTP가 INTP의 가설을 빠르게 실험합니다.", ja:"アイデアの研究所 — ENTPはINTPの仮説を速やかに試します。"},
+      ESTP:{en:"Action-friendly — ESTP converts ENTP's plans into real-world experiments.", ko:"행동 친화 — ESTP가 ENTP의 계획을 현실로 실행합니다.", ja:"行動的な相性 — ESTPはENTPの計画を現実実験に変えます。"},
+      ISTP:{en:"Practical tactician — ISTP's hands-on skill grounds ENTP's concepts.", ko:"실용적 전략가 — ISTP의 실무 기술이 ENTP의 개념을 현실로 만듭니다.", ja:"実践の戦術家 — ISTPの手際がENTPの概念を支えます。"},
+      ENFJ:{en:"Energetic mentor — ENFJ channels ENTP's ideas into team-oriented outcomes.", ko:"활기찬 멘토 — ENFJ가 ENTP의 아이디어를 팀 중심 결과로 이끕니다.", ja:"エネルギッシュな支援 — ENFJはENTPの発想をチーム志向に導きます。"}
+  }},
+  INFJ: { best:["ENFP","ENTP"], great:["INFP","INTJ","ENFJ"], good:["ISFP","INFJ","INTP"], desc:{
+      ENFP:{en:"Complementary soulmate — ENFP brings warmth and wonder to INFJ's insights.", ko:"보완적 소울메이트 — ENFP는 INFJ의 통찰에 온기와 경이를 더합니다.", ja:"補完的なソウルメイト — ENFPはINFJの洞察に温かさと驚きをもたらします。"},
+      ENTP:{en:"Perspective expanders — ENTP helps INFJ test visions against new possibilities.", ko:"시야 확장 — ENTP가 INFJ의 비전을 새 가능성에 대입해봅니다.", ja:"視野を広げる相手 — ENTPはINFJのビジョンを新たな可能性で試します。"},
+      INFP:{en:"Values alignment — deep emotional resonance and mutual idealism.", ko:"가치 일치 — 깊은 감정적 공명과 이상주의적 공감.", ja:"価値観の一致 — 深い感情的共鳴と相互の理想主義。"},
+      INTJ:{en:"Vision partners — shared long-term intuition with different execution styles.", ko:"비전 파트너 — 장기적 직관을 공유하지만 실행 방식은 다릅니다.", ja:"ビジョンの共有 — 長期的な直感を共有しますが、実行スタイルは異なります。"},
+      ENFJ:{en:"Emotional co-pilots — ENFJ's warmth supports INFJ's inner life.", ko:"정서적 협력자 — ENFJ의 온기가 INFJ의 내면을 지지합니다.", ja:"感情の共演者 — ENFJの温かさがINFJの内面を支えます。"},
+      ISFP:{en:"Artistic calm — ISFP offers sensory presence that grounds INFJ's ideals.", ko:"예술적 평온 — ISFP는 감각적 존재감으로 INFJ의 이상을 현실로 만듭니다.", ja:"芸術的な安らぎ — ISFPは感性的な存在でINFJの理想を落ち着かせます。"},
+      INFJ:{en:"Mirror souls — two INFJs can build profound understanding but must avoid echo chambers.", ko:"거울 같은 영혼 — 두 INFJ는 깊은 이해를 쌓지만 울림만 되지 않게 주의해야 합니다.", ja:"鏡のような魂 — INFJ同士は深い理解を築けますが、内輪だけにならない工夫が必要です。"},
+      INTP:{en:"Balanced intellect — INTP adds analytical clarity to INFJ's vision.", ko:"균형 잡힌 지성 — INTP가 INFJ의 비전에 분석적 명료함을 더합니다.", ja:"バランスの取れた知性 — INTPがINFJのビジョンに分析的な明瞭さを加えます。"}
+  }},
+  INFP: { best:["ENFJ","ENTJ"], great:["INFJ","ENFP","ISFP"], good:["INFP","ISFJ","INTJ"], desc:{
+      ENFJ:{en:"Nurturing synergy — ENFJ helps INFP bring inner values into shared life.", ko:"보살피는 시너지 — ENFJ가 INFP의 가치를 함께 생활로 연결합니다.", ja:"育む相性 — ENFJはINFPの価値を共有の生活へ導きます。"},
+      ENTJ:{en:"Complementary challenge — ENTJ provides structure while INFP brings meaning.", ko:"보완적 도전 — ENTJ는 구조를, INFP는 의미를 제공합니다.", ja:"補完的な挑戦 — ENTJは構造を、INFPは意味をもたらします。"},
+      INFJ:{en:"Emotional resonance — deep mutual understanding and shared ideals.", ko:"정서적 공명 — 깊은 상호 이해와 공유된 이상.", ja:"感情的な共鳴 — 深い相互理解と共有の理想。"},
+      ENFP:{en:"Kindred spirits — shared enthusiasm for meaning and exploration.", ko:"같은 영혼 — 의미와 탐험에 대한 공감대.", ja:"共鳴する精神 — 意味と探求への共通の熱意。"},
+      ISFP:{en:"Sensory warmth — ISFP's presence comforts INFP's inner life.", ko:"감각적 온기 — ISFP의 존재가 INFP의 내면을 위로합니다.", ja:"感覚の温もり — ISFPの存在がINFPの内面を癒します。"},
+      ISFJ:{en:"Stable care — ISFJ provides dependable support for INFP's ideals.", ko:"안정된 보살핌 — ISFJ가 INFP의 이상을 지지합니다.", ja:"安定した支え — ISFJはINFPの理想を支えます。"},
+      INTJ:{en:"Quiet partnership — INTJ's plans and INFP's values can build meaningful outcomes.", ko:"조용한 협력 — INTJ의 계획과 INFP의 가치가 의미 있는 결과를 만듭니다.", ja:"静かな協働 — INTJの計画とINFPの価値観が意味ある結果を生みます。"},
+      INFP:{en:"Reflective pair — two INFPs share deep empathy but need practical anchors.", ko:"사색적 쌍 — INFP끼리는 깊은 공감을 공유하지만 실용적 기반이 필요합니다.", ja:"反映する組み合わせ — INFP同士は深い共感を共有しますが、実用性の土台が必要です。"}
+  }},
+  ENFJ: { best:["INFP","ENFP"], great:["INFJ","ENTP","ESFJ"], good:["ENFJ","ISFJ","INTP"], desc:{
+      INFP:{en:"Mutual growth — INFP's values meet ENFJ's guidance to foster personal development.", ko:"상호 성장 — INFP의 가치가 ENFJ의 인도로 성장합니다.", ja:"相互成長 — INFPの価値がENFJの導きで育ちます。"},
+      ENFP:{en:"Joyful pairing — shared energy and warmth make life adventurous together.", ko:"기쁨의 결합 — 공통의 에너지가 함께 모험을 만듭니다.", ja:"楽しい組み合わせ — 共有のエネルギーが冒険をもたらします。"},
+      INFJ:{en:"Supportive team — INFJ's depth complements ENFJ's outreach and care.", ko:"지지하는 팀 — INFJ의 깊이가 ENFJ의 배려를 보완합니다.", ja:"支え合うチーム — INFJの深みがENFJの気配りを補います。"},
+      ENTP:{en:"Dynamic duo — ENTP's ideas and ENFJ's people skills create momentum.", ko:"동적인 듀오 — ENTP의 아이디어와 ENFJ의 소통이 시너지를 냅니다.", ja:"ダイナミックな組み合わせ — ENTPの発想とENFJの対人スキルが勢いを作ります。"},
+      ESFJ:{en:"Community builders — ESFJ's care pairs naturally with ENFJ's leadership.", ko:"커뮤니티 빌더 — ESFJ의 보살핌이 ENFJ의 리더십과 맞습니다.", ja:"コミュニティを築く — ESFJの配慮がENFJのリーダーシップと馴染みます。"},
+      ISFJ:{en:"Caring steadiness — ISFJ supports ENFJ's projects through consistent service.", ko:"보호적 안정 — ISFJ가 ENFJ의 프로젝트를 꾸준히 돕습니다.", ja:"思いやりのある安定 — ISFJはENFJの活動を安定的に支えます。"},
+      INTP:{en:"Idea + empathy — INTP's concepts gain human resonance through ENFJ's empathy.", ko:"아이디어와 공감 — INTP의 개념이 ENFJ의 공감을 통해 실현됩니다.", ja:"アイデアと共感 — INTPの概念がENFJの共感で実を結びます。"},
+      ENFJ:{en:"Leadership pair — two ENFJs can co-create impact but must rotate caretaking to avoid burnout.", ko:"리더십 쌍 — ENFJ끼리는 영향력을 만들지만 번아웃 주의가 필요합니다.", ja:"リーダーシップの組み合わせ — ENFJ同士は影響力を生みますが、疲労管理が必要です。"}
+  }},
+  ENFP: { best:["INTJ","INFJ"], great:["ENFJ","INFP","ENTP"], good:["ESFJ","ISFP","ISTP"], desc:{
+      INTJ:{en:"Opposite attract — INTJ's structure and ENFP's spark create productive balance.", ko:"반대의 매력 — INTJ의 구조와 ENFP의 활력이 균형을 이룹니다.", ja:"反対が惹かれ合う — INTJの構造とENFPの活気がバランスします。"},
+      INFJ:{en:"Deep connection — shared intuition and value-based conversations.", ko:"깊은 연결 — 직관과 가치 중심 대화 공유.", ja:"深い結びつき — 直感と価値観に基づく会話を共有します。"},
+      ENFJ:{en:"Social spark — mutual enthusiasm fuels meaningful group and personal bonds.", ko:"사회적 활력 — 열정이 그룹과 개인의 유대를 강화합니다.", ja:"社交的な活力 — 熱意がグループと個人の絆を深めます。"},
+      INFP:{en:"Soulful exploration — shared idealism and curiosity about meaning.", ko:"영혼의 탐험 — 이상과 의미에 대한 공감대.", ja:"魂の探求 — 理想主義と意味への好奇心を共有します。"},
+      ENTP:{en:"Playful experimentation — ENTP's ideas and ENFP's enthusiasm make life lively.", ko:"장난스런 실험 — ENTP의 아이디어와 ENFP의 열정이 활력소가 됩니다.", ja:"遊び心ある実験 — ENTPの発想とENFPの熱意が活気を生みます。"},
+      ESFJ:{en:"Practical warmth — ESFJ's care grounds ENFP's spontaneity.", ko:"실용적 온기 — ESFJ의 보살핌이 ENFP의 즉흥성을 안정시킵니다.", ja:"実践的な温もり — ESFJの配慮がENFPの即興性を支えます。"},
+      ISFP:{en:"Creative companionship — ISFP shares sensory appreciation that resonates with ENFP.", ko:"창조적 동반 — ISFP의 감각적 감상이 ENFP와 공명합니다.", ja:"創造的な伴侶 — ISFPの感性がENFPに共鳴します。"},
+      ISTP:{en:"Action balance — ISTP grounds ENFP's ideas with practical skill.", ko:"행동의 균형 — ISTP가 ENFP의 아이디어를 실천으로 연결합니다.", ja:"行動的なバランス — ISTPがENFPの発想を実行に移します。"}
+  }},
+  ISTJ: { best:["ESFP","ESTP"], great:["ISFJ","ISTP","ESTJ"], good:["INTJ","ISFP","ESFJ"], desc:{
+      ESFP:{en:"Lively complement — ESFP injects fun and present-moment joy into ISTJ's routine.", ko:"활기찬 보완 — ESFP가 ISTJ의 일상에 즐거움을 더합니다.", ja:"活気ある補完 — ESFPはISTJの日常に喜びをもたらします。"},
+      ESTP:{en:"Practical thrill — ESTP's action-orientation pairs well with ISTJ's efficiency.", ko:"실용적 스릴 — ESTP의 행동력이 ISTJ의 효율성과 잘 맞습니다.", ja:"実践的なスリル — ESTPの行動力がISTJの効率性に合います。"},
+      ISFJ:{en:"Steady support — ISFJ offers care and tradition that match ISTJ values.", ko:"안정적 지원 — ISFJ가 ISTJ의 가치관과 맞는 보살핌을 제공합니다.", ja:"安定した支え — ISFJはISTJの価値に合ったケアを提供します。"},
+      ISTP:{en:"Skillful balance — ISTP's hands-on ability complements ISTJ's methodical planning.", ko:"숙련된 균형 — ISTP의 실무 능력이 ISTJ의 계획을 보완합니다.", ja:"技能的なバランス — ISTPの実践力がISTJの計画を支えます。"},
+      ESTJ:{en:"Operational partners — shared focus on structure and results.", ko:"운영 파트너 — 구조와 성과에 대한 공통의 초점.", ja:"運用の協力 — 構造と結果への共通の注力。"},
+      INTJ:{en:"Quiet respect — INTJ's vision can work well with ISTJ's steady implementation.", ko:"조용한 존중 — INTJ의 비전이 ISTJ의 실행력과 잘 맞습니다.", ja:"静かな敬意 — INTJのビジョンがISTJの実行力と調和します。"},
+      ISFP:{en:"Gentle contrast — ISFP's creativity softens ISTJ's rigidity.", ko:"부드러운 대비 — ISFP의 창의성이 ISTJ의 경직성을 완화합니다.", ja:"穏やかな対比 — ISFPの創造性がISTJの硬さを和らげます。"},
+      ESFJ:{en:"Community caretakers — ESFJ's social focus supports ISTJ's loyalty.", ko:"커뮤니티 보살핌 — ESFJ의 사회적 관심이 ISTJ의 충성심을 보완합니다.", ja:"コミュニティの配慮 — ESFJの社交性がISTJの忠誠心を支えます。"}
+  }},
+  ISFJ: { best:["ESFP","ESTP"], great:["ISFP","ESFJ","ISTJ"], good:["ENFJ","ISTP","INFP"], desc:{
+      ESFP:{en:"Generous harmony — ESFP brings sparkle and spontaneity to ISFJ's care.", ko:"아낌없는 조화 — ESFP가 ISFJ의 보살핌에 활기를 더합니다.", ja:"惜しみない調和 — ESFPはISFJの配慮に生気を吹き込みます。"},
+      ESTP:{en:"Protective energy — ESTP's boldness pairs well with ISFJ's guardianship.", ko:"보호적 에너지 — ESTP의 대담함이 ISFJ의 보호성을 돋보이게 합니다.", ja:"守る力 — ESTPの大胆さがISFJの守備性と合います。"},
+      ISFP:{en:"Compassionate rhythm — ISFP and ISFJ share gentle care and sensory appreciation.", ko:"연민의 리듬 — ISFP와 ISFJ는 부드러운 보살핌을 공유합니다.", ja:"思いやりのリズム — ISFPとISFJはやさしい配慮を共有します。"},
+      ESFJ:{en:"Warm community — ESFJ's sociability complements ISFJ's devotion.", ko:"따뜻한 공동체 — ESFJ의 사교성이 ISFJ의 헌신을 보완합니다.", ja:"温かな共同体 — ESFJの社交性がISFJの献身を補います。"},
+      ISTJ:{en:"Dependable routine — ISTJ's order supports ISFJ's caregiving role.", ko:"신뢰하는 루틴 — ISTJ의 질서가 ISFJ의 보살핌을 지지합니다.", ja:"頼れる日常 — ISTJの秩序がISFJのケアを支えます。"},
+      ENFJ:{en:"Mutual support — ENFJ energizes ISFJ's caring with vision and outreach.", ko:"상호 지원 — ENFJ가 ISFJ의 보살핌에 비전과 확장을 더합니다.", ja:"相互支援 — ENFJはISFJのケアにビジョンを与えます。"},
+      ISTP:{en:"Practical aid — ISTP's tools and skills complement ISFJ's service-oriented focus.", ko:"실용적 도움 — ISTP의 기술이 ISFJ의 봉사성을 보완합니다.", ja:"実践的な支援 — ISTPの技能がISFJの奉仕精神を補います。"},
+      INFP:{en:"Heartfelt steadiness — INFP's values are nurtured by ISFJ's attentive care.", ko:"진심 어린 안정 — INFP의 가치가 ISFJ의 세심한 보살핌으로 자랍니다.", ja:"心の安定 — INFPの価値はISFJの配慮で育ちます。"}
+  }},
+  ESTJ: { best:["ISFP","ISTP"], great:["ESFJ","ESTP","ISTJ"], good:["ENTJ","ISTP","ESFP"], desc:{
+      ISFP:{en:"Balancing contrast — ISFP's values soften ESTJ's executive focus.", ko:"균형 잡힌 대조 — ISFP의 가치가 ESTJ의 실행 중심을 완화합니다.", ja:"バランスの対比 — ISFPの価値がESTJの実行重視を和らげます。"},
+      ISTP:{en:"Efficient action — ISTP and ESTJ make fast, practical teams.", ko:"효율적 행동 — ISTP와 ESTJ는 빠르고 실용적인 팀을 만듭니다.", ja:"効率的な実践 — ISTPとESTJは迅速で実用的なチームを作ります。"},
+      ESFJ:{en:"Community leadership — ESFJ ensures people are cared for while ESTJ organizes.", ko:"공동체 리더십 — ESFJ가 사람들을 돌보는 동안 ESTJ가 정리합니다.", ja:"共同体の指導 — ESFJが人々を支えESTJが組織します。"},
+      ESTP:{en:"Action synergy — ESTP's risk-taking complements ESTJ's structure.", ko:"행동 시너지 — ESTP의 모험성이 ESTJ의 구조와 조화를 이룹니다.", ja:"行動的な相性 — ESTPの冒険心がESTJの構造と調和します。"},
+      ENTJ:{en:"Commanding alliance — shared leadership but requires role clarity.", ko:"지휘적 연합 — 공통의 리더십, 역할 명확성 필요합니다.", ja:"指導的な連携 — 共通のリーダーシップですが役割明確化が重要です。"},
+      ESFP:{en:"Vivacious balance — ESFP livens ESTJ's order with spontaneity.", ko:"활기찬 균형 — ESFP가 ESTJ의 질서에 즉흥성을 더합니다.", ja:"活気あるバランス — ESFPがESTJの秩序に即興性を加えます。"}
+  }},
+  ESFJ: { best:["ISTP","ISFP"], great:["ESFP","ISFJ","ENFJ"], good:["ESTJ","ENFP","ISTJ"], desc:{
+      ISTP:{en:"Hands-on support — ISTP provides practical solutions to ESFJ's care.", ko:"실무적 지원 — ISTP가 ESFJ의 보살핌에 실용적 해결책을 줍니다.", ja:"実務的な支え — ISTPはESFJの配慮に実用的解決を提供します。"},
+      ISFP:{en:"Warm collaboration — ISFP's artistic sensitivity pairs with ESFJ's nurturing.", ko:"따뜻한 협력 — ISFP의 감수성이 ESFJ의 보살핌과 어울립니다.", ja:"温かな協働 — ISFPの感性がESFJの配慮と馴染みます。"},
+      ESFP:{en:"Social spark — ESFP and ESFJ create lively, affectionate communities.", ko:"사회적 활력 — ESFP와 ESFJ는 활기찬 공동체를 만듭니다.", ja:"社交的な活力 — ESFPとESFJは賑やかな共同体を作ります。"},
+      ISFJ:{en:"Mutual care — ISFJ's consistency supports ESFJ's outreach.", ko:"상호 보살핌 — ISFJ의 일관성이 ESFJ의 활동을 지지합니다.", ja:"相互の配慮 — ISFJの一貫性がESFJの活動を支えます。"},
+      ENFJ:{en:"Compassionate leadership — ENFJ and ESFJ build supportive networks.", ko:"동정적 리더십 — ENFJ와 ESFJ는 지지 네트워크를 만듭니다.", ja:"思いやりのリーダーシップ — ENFJとESFJは支え合うネットワークを築きます。"},
+      ESTJ:{en:"Organized care — ESTJ's structure helps ESFJ deliver on commitments.", ko:"정리된 보살핌 — ESTJ의 구조가 ESFJ의 실행을 돕습니다.", ja:"整理された配慮 — ESTJの構造がESFJの実行を助けます。"}
+  }},
+  ISTP: { best:["ESFJ","ESTJ"], great:["ISTJ","ENTP","ISFP"], good:["INTP","ESTP","ISFJ"], desc:{
+      ESFJ:{en:"Practical safety — ESFJ's care balances ISTP's risk-taking.", ko:"실용적 안전 — ESFJ의 보살핌이 ISTP의 모험을 조절합니다.", ja:"実用的な安心 — ESFJの配慮がISTPの冒険を調整します。"},
+      ESTJ:{en:"Task-focused team — ESTJ and ISTP execute plans efficiently together.", ko:"업무 중심 팀 — ESTJ와 ISTP는 효율적으로 계획을 실행합니다.", ja:"タスク重視のチーム — ESTJとISTPは効率的に実行します。"},
+      ISTJ:{en:"Skilled reliability — ISTJ's order supports ISTP's craftsmanship.", ko:"숙련된 신뢰 — ISTJ의 질서가 ISTP의 숙련도를 지지합니다.", ja:"技能的な信頼 — ISTJの秩序がISTPの技を支えます。"},
+      ENTP:{en:"Experiment partners — ENTP's ideas and ISTP's execution create fast results.", ko:"실험 파트너 — ENTP의 아이디어와 ISTP의 실행이 빠른 결과를 만듭니다.", ja:"実験的な相性 — ENTPの発想とISTPの実行が速い結果を生みます。"},
+      ISFP:{en:"Calm maker — ISFP's presence softens ISTP's bluntness.", ko:"평온의 연결 — ISFP의 존재가 ISTP의 직설을 부드럽게 합니다.", ja:"落ち着く関係 — ISFPの存在がISTPの率直さを和らげます。"},
+      INTP:{en:"Practical theory — INTP's thinking pairs well with ISTP's hands-on skills.", ko:"실용적 이론 — INTP의 사고가 ISTP의 실무와 잘 맞습니다.", ja:"実践的な理論 — INTPの思考がISTPの手業と合います。"}
+  }},
+  ISFP: { best:["ESTJ","ESFJ"], great:["INFP","ISFJ","ESFP"], good:["INTP","ISTP","ENFP"], desc:{
+      ESTJ:{en:"Creative steadiness — ESTJ's structure helps ISFP bring projects to life.", ko:"창의적 안정 — ESTJ의 구조가 ISFP의 창작을 현실로 만듭니다.", ja:"創造的な安定 — ESTJの構造がISFPの創作を実現します。"},
+      ESFJ:{en:"Tender community — ESFJ's care and ISFP's artistry make warm environments.", ko:"부드러운 공동체 — ESFJ의 보살핌과 ISFP의 예술성이 따뜻한 분위기를 만듭니다.", ja:"優しい共同体 — ESFJの配慮とISFPの芸術性が温かい空間を作ります。"},
+      INFP:{en:"Shared values — deep artistic and emotional resonance.", ko:"공유된 가치 — 깊은 예술적, 감정적 공명.", ja:"共有の価値 — 深い芸術的・感情的共鳴。"},
+      ISFJ:{en:"Gentle caretaking — ISFJ supports ISFP's routines and health.", ko:"부드러운 보살핌 — ISFJ가 ISFP의 일상을 지지합니다.", ja:"穏やかな世話 — ISFJはISFPの日常を支えます。"},
+      ESFP:{en:"Sensory joy — ESFP and ISFP celebrate beauty and present-moment pleasure.", ko:"감각적 기쁨 — 두 유형이 아름다움과 현재의 즐거움을 공유합니다.", ja:"感覚の喜び — ESFPとISFPは美と瞬間を楽しみます。"},
+      INTP:{en:"Calm analyst — INTP's ideas can match ISFP's grounded creativity.", ko:"차분한 분석 — INTP의 아이디어가 ISFP의 창의와 맞을 수 있습니다.", ja:"落ち着いた分析 — INTPの発想がISFPの創造性に合います。"}
+  }},
+  ESTP: { best:["ISFJ","ESFJ"], great:["ESFP","ENTP","ISTP"], good:["ESTJ","ENFP","ISTJ"], desc:{
+      ISFJ:{en:"Protective fun — ISFJ's caretaking stabilizes ESTP's adventurousness.", ko:"보호적 재미 — ISFJ의 보살핌이 ESTP의 모험을 안정시킵니다.", ja:"保護的な楽しさ — ISFJの配慮がESTPの冒険心を安定させます。"},
+      ESFJ:{en:"Social thrill — ESFJ and ESTP build lively, caring communities.", ko:"사회적 스릴 — 활기차고 돌보는 공동체를 만듭니다.", ja:"社交的なスリル — ESFJとESTPは活気ある共同体を作ります。"},
+      ESFP:{en:"Adventurous pair — shared love for sensory experience and excitement.", ko:"모험적 쌍 — 감각과 흥분을 공유합니다.", ja:"冒険的な組み合わせ — 感覚と興奮を共有します。"},
+      ENTP:{en:"Fast collaborators — brainstorms turn into rapid experiments.", ko:"빠른 협업 — 아이디어가 빠르게 실험으로 이어집니다.", ja:"迅速な協力 — 発想がすぐに実験に移ります。"},
+      ISTP:{en:"Action allies — ISTP's skills help ESTP execute daring plans.", ko:"행동의 동맹 — ISTP의 기술이 대담한 계획 실행을 돕습니다.", ja:"行動の同盟 — ISTPの技能がESTPの計画実行を支えます。"},
+      ESTJ:{en:"Energetic order — ESTJ's structure channels ESTP's energy productively.", ko:"활력 있는 질서 — ESTJ의 구조가 ESTP의 에너지를 이끕니다.", ja:"活力ある秩序 — ESTJの構造がESTPのエネルギーを生かします。"}
+  }},
+  ESFP: { best:["ISTJ","ISFJ"], great:["ESTP","ENFP","ESFJ"], good:["ESFP","ISFP","ENTP"], desc:{
+      ISTJ:{en:"Playful anchor — ISTJ's reliability allows ESFP to express joy safely.", ko:"즐거운 닻 — ISTJ의 신뢰가 ESFP의 표현을 안전하게 합니다.", ja:"遊び心のある安定 — ISTJの信頼がESFPの表現を安全にします。"},
+      ISFJ:{en:"Comforting warmth — ISFJ's care supports ESFP's exuberance.", ko:"위로의 온기 — ISFJ의 보살핌이 ESFP의 활기를 지지합니다.", ja:"安心する温かさ — ISFJの配慮がESFPの生気を支えます。"},
+      ESTP:{en:"High-energy duo — shared zest for living and new experiences.", ko:"에너지 넘치는 듀오 — 삶과 경험에 대한 갈증을 공유합니다.", ja:"高エネルギーの組み合わせ — 生活と体験への情熱を共有します。"},
+      ENFP:{en:"Creative companionship — ENFP and ESFP celebrate spontaneity and fun.", ko:"창의적 동반 — 즉흥성과 즐거움을 함께합니다.", ja:"創造的な伴侶 — ENFPとESFPは即興と楽しさを分かち合います。"},
+      ESFJ:{en:"Social caretakers — ESFJ helps ESFP sustain relationships over time.", ko:"사회적 보호자 — ESFJ가 ESFP의 관계를 지속하게 돕습니다.", ja:"社交的な支え — ESFJはESFPの関係を長続きさせます。"},
+      INTP:{en:"Curious contrast — INTP's analysis complements ESFP's experiential learning.", ko:"호기심 있는 대비 — INTP의 분석이 ESFP의 경험 학습을 보완합니다.", ja:"好奇心ある対比 — INTPの分析がESFPの経験学習を補います。"}
+  }}
+};
+
+// ---------- Render buttons and interaction ----------
+function renderTypeButtons(){
+  const grid = document.getElementById('type-grid');
+  grid.innerHTML = '';
+  types.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'type-btn';
+    btn.textContent = t;
+    btn.onclick = () => selectType(t);
+    btn.setAttribute('aria-label', t + ' type');
+    grid.appendChild(btn);
+  });
+}
+
+function selectType(type){
+  document.querySelectorAll('.type-btn').forEach(b=>b.classList.remove('selected'));
+  const btn = Array.from(document.querySelectorAll('.type-btn')).find(b=>b.textContent===type);
+  if(btn) btn.classList.add('selected');
+  showResults(type);
+}
+
+function showResults(type){
+  const data = compatibility[type];
+  const box = document.getElementById('results');
+  box.style.display = 'block';
+  const lang = localStorage.getItem('mbtilove_lang') || 'en';
+  const t = i18n[lang];
+
+  box.innerHTML = `<h2 class="section-title">${type} — ${t.sectionTitle}</h2>`;
+
+  // compatibility grid
+  const grid = document.createElement('div'); grid.className='compatibility-grid';
+
+  const groups = [ {label:t.bestLabel, arr:data.best, score:95}, {label:t.greatLabel, arr:data.great, score:85}, {label:t.goodLabel, arr:data.good, score:72} ];
+
+  groups.forEach(g=>{
+    const card = document.createElement('div'); card.className='compatibility-card';
+    const h = document.createElement('h3'); h.textContent = g.label; card.appendChild(h);
+
+    g.arr.forEach(pair => {
+      const pairWrap = document.createElement('div');
+      pairWrap.style.marginBottom = '10px';
+
+      // illustration (inline circles with initials)
+      const ill = document.createElement('div'); ill.className='pair-illustration';
+      const c1 = document.createElement('div'); c1.className='illustration-circle'; c1.style.background = generateColor(type); c1.textContent = type.slice(0,2);
+      const c2 = document.createElement('div'); c2.className='illustration-circle'; c2.style.background = generateColor(pair); c2.textContent = pair.slice(0,2);
+      ill.appendChild(c1); ill.appendChild(c2);
+
+      const title = document.createElement('p'); title.innerHTML = `<strong>${pair}</strong>`;
+      const pb = document.createElement('div'); pb.className='progress-bar'; pb.innerHTML = `<div class='progress-fill' style='width:${g.score}%'></div>`;
+      const desc = document.createElement('p'); desc.className='desc'; desc.textContent = (compatibility[type].desc && compatibility[type].desc[pair] && compatibility[type].desc[pair][lang]) ? compatibility[type].desc[pair][lang] : '';
+
+      pairWrap.appendChild(ill);
+      pairWrap.appendChild(title);
+      pairWrap.appendChild(pb);
+      pairWrap.appendChild(desc);
+      card.appendChild(pairWrap);
+    });
+
+    grid.appendChild(card);
+  });
+
+  box.appendChild(grid);
+
+  // detail block
+  const detail = document.createElement('div'); detail.className='detail';
+  detail.innerHTML = `<strong>How to make it work</strong><br>Every match needs communication, respect for differences, and shared rituals. Small practices like weekly check-ins and celebrating each other's strengths deepen bonds.`;
+  box.appendChild(detail);
+}
+
+function generateColor(key){
+  // deterministic pastel color from string
+  let hash=0; for(let i=0;i<key.length;i++) hash=key.charCodeAt(i)+((hash<<5)-hash);
+  const h = Math.abs(hash) % 360; return `linear-gradient(180deg,hsl(${h},70%,55%), hsl(${(h+30)%360},65%,45%))`;
+}
+
+// language
+function changeLanguage(lang){
+  localStorage.setItem('mbtilove_lang', lang);
+  // update static text
+  const t = i18n[lang] || i18n.en;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n'); if(t[key]) el.textContent = t[key];
+  });
+  // if results visible, re-render to update descriptions
+  const selected = Array.from(document.querySelectorAll('.type-btn')).find(b=>b.classList.contains('selected'));
+  if(selected) showResults(selected.textContent);
+}
+
+// hamburger
+function toggleMenu(){ document.getElementById('nav-menu').classList.toggle('active'); }
+
+// init
+(function(){ renderTypeButtons(); changeLanguage(localStorage.getItem('mbtilove_lang')||'en'); })();
+</script>
+</body>
 </html>
