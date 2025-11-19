@@ -1,4 +1,5 @@
 
+
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
@@ -902,8 +903,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Function to get the current language
         function getCurrentLanguage() {
-            const activeLangButton = document.querySelector('.lang-btn.active');
-            return activeLangButton ? activeLangButton.dataset.lang : 'ko';
+            const dropdown = document.querySelector('.lang-dropdown');
+    return dropdown ? dropdown.value : 'en';
         }
 
         // Function to update static text based on language
@@ -923,8 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
 
             // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+           document.querySelector('.lang-dropdown').value = lang;
 
             // Re-render the guide if a type is currently selected
             const selectedButton = document.querySelector('.type-btn.selected');
