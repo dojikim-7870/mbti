@@ -1009,12 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
             });
 
-            // Add event listeners to language buttons
-            document.querySelectorAll('.lang-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    updateContent(button.dataset.lang);
-                });
-            });
+        
 
             // Set initial active language and content
             updateContent('en');
