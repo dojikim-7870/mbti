@@ -1554,37 +1554,146 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Explore</h3>
-                <ul>
-                    <li><a href="compatibility.html">Compatibility</a></li>
-                    <li><a href="dating-style.html">Dating Style</a></li>
-                    <li><a href="ideal-type.html">Ideal Type</a></li>
-                    <li><a href="rankings.html">Rankings</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-use.html">Terms of Use</a></li>
-                </ul>
-            </div>
+    
+    <footer class="footer">
+    <div class="footer-content">
+        <!-- About Section -->
+        <div class="footer-section">
+            <h3>❤️ MBTILove</h3>
+            <p>Your trusted platform for understanding personality connections, emotional chemistry, and meaningful relationship matching.</p>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+
+        <!-- Explore Section -->
+        <div class="footer-section">
+            <h3 data-i18n="footerExplore">Explore</h3>
+            <ul>
+                <li><a href="compatibility.html">Compatibility</a></li>
+                <li><a href="dating-style.html">Dating Style</a></li>
+                <li><a href="ideal-type.html">Ideal Type</a></li>
+                <li><a href="rankings.html">Rankings</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <!-- Resources Section -->
+        <div class="footer-section">
+            <h3 data-i18n="footerResources">Resources</h3>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
+            </ul>
+        </div>
+
+        <!-- Legal Section -->
+        <div class="footer-section">
+            <h3 data-i18n="footerLegal">Legal</h3>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2024 MBTILove.xyz - All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+/* Footer 기본 스타일 */
+.footer {
+    background: #000; /* 검정색 배경 */
+    color: #fff;
+    padding: 3rem 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; /* 섹션 간격 */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 220px;
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.footer-section ul {
+    list-style: none; /* 점 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #fff; /* 흰색 */
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ccc; /* 마우스 오버 시 살짝 회색 */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    color: #bbb;
+    font-size: 0.95rem;
+}
+
+/* 반응형 모바일 */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+    }
+
+    .footer-section h3 {
+        font-size: 1.15rem;
+    }
+
+    .footer-section p, 
+    .footer-section ul li a {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section p, 
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+}
+</style>
     
     <script>
         function changeLanguage(lang) {
@@ -1619,4 +1728,5 @@ function toggleMenu() {
 </body>
 
 </html>
+
 
