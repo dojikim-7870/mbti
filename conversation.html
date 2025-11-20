@@ -1,18 +1,18 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57524D22');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-57524D22');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">MBTI Conversation Guide - Communicate Better with Every Type | MBTILove</title>
-    <meta name="description" data-i18n="pageDescription" content="Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.">
+    <title>MBTI Conversation Guide - Communicate Better with Every Type | MBTILove</title>
+    <meta name="description" content="Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; padding-top: 70px; }
         .font-poppins { font-family: 'Poppins', sans-serif; }
         
-        /* Header Styles */
+        /* Header */
         header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
@@ -44,292 +44,417 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav { display: flex; gap: 2rem; }
         .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
         .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
- /* 햄버거 버튼 */
-    .hamburger {
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: none; /* 데스크탑에서는 숨김 */
-        margin-left: 1rem;
-    }
 
-    /* 언어 드롭다운 */
-    .lang-dropdown {
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        background: white;
-        cursor: pointer;
-    }
+        /* Hamburger */
+        .hamburger {
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: none;
+            margin-left: 1rem;
+        }
 
-        /* Hero Section */
-        .hero { background: linear-gradient(135deg, var(--deep-purple), var(--warm-coral)); padding: 5rem 1rem; color: white; text-align: center; }
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-purple), var(--warm-coral));
+            padding: 5rem 1rem;
+            color: white;
+            text-align: center;
+        }
         .hero-content { max-width: 1000px; margin: 0 auto; }
-        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: bold; margin-bottom: 1.5rem; }
-        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.5rem); margin-bottom: 2rem; opacity: 0.9; }
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
         
         /* Main Content */
         .section { padding: 4rem 1rem; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
         
         /* Type Selector */
-        .type-selector { background: var(--soft-pink); border-radius: 2rem; padding: 3rem; margin-bottom: 3rem; }
-        .selector-title { text-align: center; margin-bottom: 2rem; font-size: 1.5rem; font-weight: bold; color: var(--deep-purple); }
-        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; }
-        .type-btn {
-            padding: 1rem; border-radius: 1rem; text-align: center; font-weight: 600;
-            border: 1px solid #ddd; background: white; cursor: pointer; transition: all 0.3s;
+        .type-selector {
+            background: var(--soft-pink);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin-bottom: 3rem;
         }
-        .type-btn.selected { background: var(--romantic-rose); color: white; transform: scale(1.05); }
-        .type-btn:hover { background: rgba(219, 73, 122, 0.1); color: var(--romantic-rose); }
+        .selector-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--deep-purple);
+        }
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+        .type-btn {
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .type-btn.selected {
+            background: var(--romantic-rose);
+            color: white;
+            transform: scale(1.05);
+        }
+        .type-btn:hover {
+            background: rgba(219, 73, 122, 0.1);
+            color: var(--romantic-rose);
+        }
         
         /* Conversation Guide */
-        .conversation-guide { background: white; border-radius: 2rem; padding: 3rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-bottom: 3rem; display: none; }
+        .conversation-guide {
+            background: white;
+            border-radius: 2rem;
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: none;
+        }
         .conversation-guide.show { display: block; }
-        .guide-header { text-align: center; margin-bottom: 3rem; }
-        .guide-title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
-        .guide-subtitle { color: #666; font-size: 1.1rem; }
+        .guide-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .guide-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--deep-purple);
+        }
+        .guide-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
         
         .guide-sections { display: grid; gap: 2rem; }
         .guide-section {
-            background: linear-gradient(135deg, var(--soft-pink), white); padding: 2rem; border-radius: 1.5rem;
+            background: linear-gradient(135deg, var(--soft-pink), white);
+            padding: 2rem;
+            border-radius: 1.5rem;
             border: 1px solid rgba(219, 73, 122, 0.2);
         }
-        .guide-section-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); display: flex; align-items: center; gap: 0.5rem; }
-        .guide-section-content { color: #555; }
-        .tip-list { list-style: none; margin: 1rem 0; }
-        .tip-list li { padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
-        .tip-list li:before { content: '💡'; font-size: 1rem; flex-shrink: 0; }
-        
-        .example-box { background: var(--lavender); padding: 1.5rem; border-radius: 1rem; margin: 1rem 0; }
-        .example-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--deep-purple); }
-        .example-content { font-style: italic; color: #555; }
-        
-        /* Conversation Tips */
-        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .tip-card {
-            background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0; text-align: center; transition: all 0.3s;
+        .guide-section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--deep-purple);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .tip-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .guide-section-content { color: #555; }
+        .tip-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .tip-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        .tip-list li::before {
+            content: '💡';
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .example-box {
+            background: var(--lavender);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 1rem 0;
+        }
+        .example-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--deep-purple);
+        }
+        .example-content {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* General Tips */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .tip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
         .tip-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .tip-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; color: var(--deep-purple); }
+        .tip-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--deep-purple);
+        }
         .tip-description { color: #666; line-height: 1.5; }
         
-       
         /* Footer */
         footer { background: #1a1a1a; color: #ccc; padding: 3rem 1rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
         .footer-section h3 { color: white; margin-bottom: 1rem; }
         .footer-section ul { list-style: none; }
         .footer-section ul li { margin-bottom: 0.5rem; }
         .footer-section ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
         .footer-section ul li a:hover { color: var(--romantic-rose); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-        
-         /* 반응형 레이아웃 수정 */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-        .nav { 
-            display: none; 
-            flex-direction: column;
-            gap: 1rem;
-            position: absolute;
-            top: 70px; right: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
         }
-        .nav.active { display: flex; }
-        .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { grid-template-columns: 1fr; }
-    }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav { 
+                display: none; 
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 70px; right: 1rem;
+                background: white;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            .nav.active { display: flex; }
+        }
+
+        /* Footer responsive */
+        @media screen and (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .footer-section { flex: 1 1 100%; }
+            .footer-section h3 { font-size: 1.15rem; }
+            .footer-section p,
+            .footer-section ul li a { font-size: 0.95rem; }
+        }
+        @media screen and (max-width: 480px) {
+            .footer { padding: 2rem 1rem; }
+            .footer-section h3 { font-size: 1.1rem; }
+            .footer-section p,
+            .footer-section ul li a { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
-    <div class="header-container">
-        <a href="index.html" class="logo font-poppins">MBTILove</a>
+        <div class="header-container">
+            <a href="index.html" class="logo font-poppins">MBTILove</a>
 
-        <!-- 햄버거 버튼 -->
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <!-- Hamburger -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-        <!-- 네비게이션 -->
-        <nav class="nav" id="nav-menu">
-            <a href="compatibility.html">Compatibility</a>
-            <a href="dating-style.html">Dating Style</a>
-            <a href="ideal-type.html">Ideal Type</a>
-            <a href="rankings.html">Rankings</a>
-            <a href="conversation.html">Conversation</a>
-            <a href="balance-game.html">Balance Game</a>
-            <a href="about.html">About</a>
-        </nav>
-
-        <!-- 언어 드롭다운 -->
-        <select class="lang-dropdown" onchange="changeLanguage(this.value)">
-            <option value="en" selected>English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-        </select>
-    </div>
-</header>
-
+            <!-- Navigation -->
+            <nav class="nav" id="nav-menu">
+                <a href="compatibility.html">Compatibility</a>
+                <a href="dating-style.html">Dating Style</a>
+                <a href="ideal-type.html">Ideal Type</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="conversation.html">Conversation</a>
+                <a href="balance-game.html">Balance Game</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title font-poppins" data-i18n="heroTitle">MBTI Conversation Guide</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">
+            <h1 class="hero-title font-poppins">MBTI Conversation Guide</h1>
+            <p class="hero-subtitle">
                 Master the art of communicating with different personality types. Learn how to connect deeply, 
                 avoid misunderstandings, and build stronger relationships through effective conversation.
             </p>
         </div>
     </section>
 
-    
-
     <section class="section">
         <div class="container">
-            <h2 class="section-title font-poppins" data-i18n="sectionTitle">Choose a Personality Type</h2>
+            <h2 class="section-title font-poppins">Choose a Personality Type</h2>
             
             <div class="type-selector">
-                <h3 class="selector-title" data-i18n="selectorTitle">Select an MBTI Type to Learn Communication Strategies</h3>
+                <h3 class="selector-title">Select an MBTI Type to Learn Communication Strategies</h3>
                 <div class="type-grid">
                     <button class="type-btn" data-type="INTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTJ">Architect</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">INTJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Architect</div>
                     </button>
                     <button class="type-btn" data-type="INTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INTP">Thinker</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">INTP</div>
+                        <div style="font-size:0.8rem;opacity:0.8.;">Thinker</div>
                     </button>
                     <button class="type-btn" data-type="ENTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTJ">Commander</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ENTJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Commander</div>
                     </button>
                     <button class="type-btn" data-type="ENTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENTP">Debater</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ENTP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Debater</div>
                     </button>
                     <button class="type-btn" data-type="INFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFJ">Advocate</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">INFJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Advocate</div>
                     </button>
                     <button class="type-btn" data-type="INFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">INFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.INFP">Mediator</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">INFP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Mediator</div>
                     </button>
                     <button class="type-btn" data-type="ENFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFJ">Protagonist</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ENFJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Protagonist</div>
                     </button>
                     <button class="type-btn" data-type="ENFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ENFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ENFP">Campaigner</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ENFP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Campaigner</div>
                     </button>
                     <button class="type-btn" data-type="ISTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTJ">Logistician</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ISTJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Logistician</div>
                     </button>
                     <button class="type-btn" data-type="ISFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFJ">Protector</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ISFJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Protector</div>
                     </button>
                     <button class="type-btn" data-type="ESTJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTJ">Executive</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ESTJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Executive</div>
                     </button>
                     <button class="type-btn" data-type="ESFJ">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFJ</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFJ">Consul</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ESFJ</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Consul</div>
                     </button>
                     <button class="type-btn" data-type="ISTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISTP">Virtuoso</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ISTP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Virtuoso</div>
                     </button>
                     <button class="type-btn" data-type="ISFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ISFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ISFP">Adventurer</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ISFP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Adventurer</div>
                     </button>
                     <button class="type-btn" data-type="ESTP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESTP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESTP">Entrepreneur</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ESTP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Entrepreneur</div>
                     </button>
                     <button class="type-btn" data-type="ESFP">
-                        <div style="font-size: 1.1rem; font-weight: bold;">ESFP</div>
-                        <div style="font-size: 0.8rem; opacity: 0.8;" data-i18n="type.ESFP">Entertainer</div>
+                        <div style="font-size:1.1rem;font-weight:bold;">ESFP</div>
+                        <div style="font-size:0.8rem;opacity:0.8;">Entertainer</div>
                     </button>
                 </div>
             </div>
             
-            <div id="conversation-guide" class="conversation-guide">
-                </div>
+            <div id="conversation-guide" class="conversation-guide"></div>
             
             <div class="tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">👂</div>
-                    <h3 class="tip-title" data-i18n="tips.title1">Active Listening</h3>
-                    <p class="tip-description" data-i18n="tips.desc1">Pay attention to both what they say and how they say it. Different types express themselves in unique ways.</p>
+                    <h3 class="tip-title">Active Listening</h3>
+                    <p class="tip-description">
+                        Pay attention to both what they say and how they say it. Different types express themselves in unique ways.
+                    </p>
                 </div>
                 
                 <div class="tip-card">
                     <div class="tip-icon">🎯</div>
-                    <h3 class="tip-title" data-i18n="tips.title2">Adapt Your Style</h3>
-                    <p class="tip-description" data-i18n="tips.desc2">Adjust your communication approach based on their personality preferences and comfort zone.</p>
+                    <h3 class="tip-title">Adapt Your Style</h3>
+                    <p class="tip-description">
+                        Adjust your communication approach based on their personality preferences and comfort zone.
+                    </p>
                 </div>
                 
                 <div class="tip-card">
                     <div class="tip-icon">❓</div>
-                    <h3 class="tip-title" data-i18n="tips.title3">Ask Open Questions</h3>
-                    <p class="tip-description" data-i18n="tips.desc3">Use questions that encourage deeper sharing and help you understand their perspective better.</p>
+                    <h3 class="tip-title">Ask Open Questions</h3>
+                    <p class="tip-description">
+                        Use questions that encourage deeper sharing and help you understand their perspective better.
+                    </p>
                 </div>
                 
                 <div class="tip-card">
                     <div class="tip-icon">💝</div>
-                    <h3 class="tip-title" data-i18n="tips.title4">Show Appreciation</h3>
-                    <p class="tip-description" data-i18n="tips.desc4">Acknowledge their unique strengths and the value they bring to conversations and relationships.</p>
+                    <h3 class="tip-title">Show Appreciation</h3>
+                    <p class="tip-description">
+                        Acknowledge their unique strengths and the value they bring to conversations and relationships.
+                    </p>
                 </div>
                 
                 <div class="tip-card">
                     <div class="tip-icon">⚡</div>
-                    <h3 class="tip-title" data-i18n="tips.title5">Respect Energy Levels</h3>
-                    <p class="tip-description" data-i18n="tips.desc5">Introverts may need processing time, while extroverts often think out loud. Honor both styles.</p>
+                    <h3 class="tip-title">Respect Energy Levels</h3>
+                    <p class="tip-description">
+                        Introverts may need processing time, while extroverts often think out loud. Honor both styles.
+                    </p>
                 </div>
                 
                 <div class="tip-card">
                     <div class="tip-icon">🌱</div>
-                    <h3 class="tip-title" data-i18n="tips.title6">Create Safe Spaces</h3>
-                    <p class="tip-description" data-i18n="tips.desc6">Foster an environment where they feel comfortable being authentic and sharing their thoughts.</p>
+                    <h3 class="tip-title">Create Safe Spaces</h3>
+                    <p class="tip-description">
+                        Foster an environment where they feel comfortable being authentic and sharing their thoughts.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    
-
-    
     <footer class="footer">
     <div class="footer-content">
-        <!-- About Section -->
         <div class="footer-section">
             <h3>❤️ MBTILove</h3>
             <p>Your trusted platform for understanding personality connections, emotional chemistry, and meaningful relationship matching.</p>
         </div>
-
-        <!-- Explore Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerExplore">Explore</h3>
+            <h3>Explore</h3>
             <ul>
                 <li><a href="compatibility.html">Compatibility</a></li>
                 <li><a href="dating-style.html">Dating Style</a></li>
@@ -337,20 +462,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="rankings.html">Rankings</a></li>
             </ul>
         </div>
-
-        <!-- Resources Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerResources">Resources</h3>
+            <h3>Resources</h3>
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="https://www.16personalities.com/free-personality-test" target="_blank">Official MBTI Test</a></li>
             </ul>
         </div>
-
-        <!-- Legal Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerLegal">Legal</h3>
+            <h3>Legal</h3>
             <ul>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -361,773 +482,219 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-bottom">
         <p>© 2024 MBTILove.xyz - All rights reserved.</p>
     </div>
-</footer>
-
-<style>
-/* Footer 기본 스타일 */
-.footer {
-    background: #000; /* 검정색 배경 */
-    color: #fff;
-    padding: 3rem 2rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem; /* 섹션 간격 */
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-section {
-    flex: 1 1 220px;
-}
-
-.footer-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.8rem;
-}
-
-.footer-section p {
-    line-height: 1.6;
-    color: #ddd;
-}
-
-.footer-section ul {
-    list-style: none; /* 점 제거 */
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #fff; /* 흰색 */
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #ccc; /* 마우스 오버 시 살짝 회색 */
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    color: #bbb;
-    font-size: 0.95rem;
-}
-
-/* 반응형 모바일 */
-@media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .footer-section {
-        flex: 1 1 100%;
-    }
-
-    .footer-section h3 {
-        font-size: 1.15rem;
-    }
-
-    .footer-section p, 
-    .footer-section ul li a {
-        font-size: 0.95rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .footer {
-        padding: 2rem 1rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1.1rem;
-    }
-
-    .footer-section p, 
-    .footer-section ul li a {
-        font-size: 0.9rem;
-    }
-}
-</style>
+    </footer>
 
     <script>
-        const translations = {
-            'en': {
-                'pageTitle': 'MBTI Conversation Guide - Communicate Better with Every Type | MBTILove',
-                'pageDescription': 'Learn how to communicate effectively with different MBTI personality types. Master conversation techniques for dating, relationships, and deeper connections.',
-                'navCompatibility': 'Compatibility',
-                'navDatingStyle': 'Dating Style',
-                'navIdealType': 'Ideal Type',
-                'navRankings': 'Rankings',
-                'navConversation': 'Conversation',
-                'navBalanceGame': 'Balance Game',
-                'navAbout': 'About',
-                'heroTitle': 'MBTI Conversation Guide',
-                'heroSubtitle': 'Master the art of communicating with different personality types. Learn how to connect deeply, avoid misunderstandings, and build stronger relationships through effective conversation.',
-                'advertisement': 'Advertisement',
-                'sectionTitle': 'Choose a Personality Type',
-                'selectorTitle': 'Select an MBTI Type to Learn Communication Strategies',
-                'type.INTJ': 'Architect', 'type.INTP': 'Thinker', 'type.ENTJ': 'Commander', 'type.ENTP': 'Debater',
-                'type.INFJ': 'Advocate', 'type.INFP': 'Mediator', 'type.ENFJ': 'Protagonist', 'type.ENFP': 'Campaigner',
-                'type.ISTJ': 'Logistician', 'type.ISFJ': 'Protector', 'type.ESTJ': 'Executive', 'type.ESFJ': 'Consul',
-                'type.ISTP': 'Virtuoso', 'type.ISFP': 'Adventurer', 'type.ESTP': 'Entrepreneur', 'type.ESFP': 'Entertainer',
-                'tips.title1': 'Active Listening',
-                'tips.desc1': 'Pay attention to both what they say and how they say it. Different types express themselves in unique ways.',
-                'tips.title2': 'Adapt Your Style',
-                'tips.desc2': 'Adjust your communication approach based on their personality preferences and comfort zone.',
-                'tips.title3': 'Ask Open Questions',
-                'tips.desc3': 'Use questions that encourage deeper sharing and help you understand their perspective better.',
-                'tips.title4': 'Show Appreciation',
-                'tips.desc4': 'Acknowledge their unique strengths and the value they bring to conversations and relationships.',
-                'tips.title5': 'Respect Energy Levels',
-                'tips.desc5': 'Introverts may need processing time, while extroverts often think out loud. Honor both styles.',
-                'tips.title6': 'Create Safe Spaces',
-                'tips.desc6': 'Foster an environment where they feel comfortable being authentic and sharing their thoughts.',
-                'footer.explore': 'Explore',
-                'footer.resources': 'Resources',
-                'footer.legal': 'Legal',
-                'footer.contact': 'Contact',
-                'footer.test': 'Official MBTI Test',
-                'footer.privacy': 'Privacy Policy',
-                'footer.terms': 'Terms of Use',
-                'guide.title': 'Communicating with <span class="mbti-type"></span> - <span class="mbti-name"></span>',
-                'guide.subtitle': 'Understanding how to communicate effectively with this personality type.',
-                'guide.noGuide': 'No conversation guide available for this type yet. We will update it soon!',
-                'section.approach.title': 'Communication Approach',
-                'section.approach.content': 'Each personality type has unique communication preferences and styles.',
-                'section.approach.tips1': 'Observe their natural communication style',
-                'section.approach.tips2': 'Adapt your approach to match their preferences',
-                'section.approach.tips3': 'Be patient and understanding',
-                'section.approach.tips4': 'Focus on building genuine connection',
-                'section.topics.title': 'Preferred Topics',
-                'section.topics.content': 'Different types are energized by different kinds of conversations.',
-                'section.topics.tips1': 'Ask about their interests and passions',
-                'section.topics.tips2': 'Share relevant experiences',
-                'section.topics.tips3': 'Be genuinely curious about their perspective',
-                'section.topics.tips4': 'Find common ground in your interests',
-                'section.avoid.title': 'Communication Pitfalls',
-                'section.avoid.content': 'Be mindful of approaches that might not resonate with this type.',
-                'section.avoid.tips1': 'Avoid overwhelming them with your preferred style',
-                'section.avoid.tips2': 'Don\'t assume they communicate like you do',
-                'section.avoid.tips3': 'Respect their energy levels and boundaries',
-                'section.avoid.tips4': 'Be patient if they need time to process',
-            },
-            'ja': {
-                'pageTitle': 'MBTI会話ガイド - 全タイプとより良くコミュニケーションする方法 | MBTILove',
-                'pageDescription': 'さまざまなMBTI性格タイプと効果的にコミュニケーションする方法を学びましょう。デートや人間関係、より深い繋がりを築くための会話術を身につけましょう。',
-                'navCompatibility': '相性',
-                'navDatingStyle': 'デートスタイル',
-                'navIdealType': '理想のタイプ',
-                'navRankings': 'ランキング',
-                'navConversation': '会話',
-                'navBalanceGame': 'バランスゲーム',
-                'navAbout': 'About',
-                'heroTitle': 'MBTI会話ガイド',
-                'heroSubtitle': '様々な性格タイプと効果的にコミュニケーションする技術を習得しましょう。有意義な会話を通じて、深い繋がりを築き、誤解を避け、より強い関係を構築する方法を学びましょう。',
-                'advertisement': '広告',
-                'sectionTitle': '性格タイプを選ぶ',
-                'selectorTitle': 'コミュニケーション戦略を学びたいMBTIタイプを選んでください',
-                'type.INTJ': '建築家', 'type.INTP': '論理学者', 'type.ENTJ': '指揮官', 'type.ENTP': '討論者',
-                'type.INFJ': '提唱者', 'type.INFP': '仲介者', 'type.ENFJ': '主人公', 'type.ENFP': '広報運動家',
-                'type.ISTJ': '管理者', 'type.ISFJ': '擁護者', 'type.ESTJ': '幹部', 'type.ESFJ': '領事',
-                'type.ISTP': '巨匠', 'type.ISFP': '冒険家', 'type.ESTP': '起業家', 'type.ESFP': 'エンターテイナー',
-                'tips.title1': '積極的な傾聴',
-                'tips.desc1': '相手が何を話すかだけでなく、どのように話すかにも注意を払ってください。タイプによって表現方法が異なります。',
-                'tips.title2': 'スタイルを合わせる',
-                'tips.desc2': '相手の性格の好みや快適なゾーンに合わせて、コミュニケーションのアプローチを調整してください。',
-                'tips.title3': '開かれた質問をする',
-                'tips.desc3': 'より深い共有を促し、相手の視点をよりよく理解するのに役立つ質問をしてください。',
-                'tips.title4': '感謝を示す',
-                'tips.desc4': '彼らのユニークな強みや、会話や関係にもたらす価値を認めましょう。',
-                'tips.title5': 'エネルギーレベルを尊重する',
-                'tips.desc5': '内向的な人は考える時間が必要な場合がありますが、外向的な人は声に出して考えることが多いです。両方のスタイルを尊重してください。',
-                'tips.title6': '安心できる空間を作る',
-                'tips.desc6': '彼らが本物であると感じ、自分の考えを共有するのに快適な環境を育ててください。',
-                'footer.explore': '探す',
-                'footer.resources': '資料',
-                'footer.legal': '法律',
-                'footer.contact': 'お問い合わせ',
-                'footer.test': '公式MBTIテスト',
-                'footer.privacy': 'プライバシーポリシー',
-                'footer.terms': '利用規約',
-                'guide.title': '<span class="mbti-type"></span>（<span class="mbti-name"></span>）とのコミュニケーション',
-                'guide.subtitle': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
-                'guide.noGuide': 'このタイプの会話ガイドはまだありません。近日中に更新します！',
-                'section.approach.title': 'コミュニケーションアプローチ',
-                'section.approach.content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
-                'section.approach.tips1': '彼らの自然なコミュニケーションスタイルを観察する',
-                'section.approach.tips2': '彼らの好みに合わせてアプローチを調整する',
-                'section.approach.tips3': '忍耐強く、理解を示す',
-                'section.approach.tips4': '本物のつながりを築くことに焦点を当てる',
-                'section.topics.title': '好まれる話題',
-                'section.topics.content': '異なるタイプは異なる種類の会話によって活気づきます。',
-                'section.topics.tips1': '彼らの興味や情熱について尋ねる',
-                'section.topics.tips2': '関連する経験を共有する',
-                'section.topics.tips3': '彼らの視点に心から興味を持つ',
-                'section.topics.tips4': '共通の興味を見つける',
-                'section.avoid.title': 'コミュニケーションの落とし穴',
-                'section.avoid.content': 'このタイプに響かないかもしれないアプローチに注意してください。',
-                'section.avoid.tips1': 'あなたの好みのスタイルで彼らを圧倒しないようにする',
-                'section.avoid.tips2': '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
-                'section.avoid.tips3': '彼らのエネルギーレベルと境界線を尊重する',
-                'section.avoid.tips4': '彼らが処理する時間が必要な場合は忍耐強く待つ',
-            },
-            'ko': {
-                'pageTitle': 'MBTI 대화 가이드 - 모든 유형과 더 잘 소통하기 | MBTILove',
-                'pageDescription': '다양한 MBTI 성격 유형과 효과적으로 소통하는 방법을 배워보세요. 데이트, 관계, 그리고 더 깊은 연결을 위한 대화 기술을 익히세요.',
-                'navCompatibility': '궁합',
-                'navDatingStyle': '연애 스타일',
-                'navIdealType': '이상형',
-                'navRankings': '랭킹',
-                'navConversation': '대화',
-                'navBalanceGame': '밸런스 게임',
-                'navAbout': '소개',
-                'heroTitle': 'MBTI 대화 가이드',
-                'heroSubtitle': '다양한 성격 유형과 소통하는 기술을 익혀보세요. 효과적인 대화를 통해 깊은 관계를 맺고, 오해를 피하며, 더 강력한 관계를 구축하는 방법을 배워보세요.',
-                'advertisement': '광고',
-                'sectionTitle': '성격 유형 선택하기',
-                'selectorTitle': '소통 전략을 배우고 싶은 MBTI 유형을 선택하세요',
-                'type.INTJ': '건축가', 'type.INTP': '논리주의자', 'type.ENTJ': '통솔자', 'type.ENTP': '변론가',
-                'type.INFJ': '옹호자', 'type.INFP': '중재자', 'type.ENFJ': '선도자', 'type.ENFP': '활동가',
-                'type.ISTJ': '현실주의자', 'type.ISFJ': '수호자', 'type.ESTJ': '경영자', 'type.ESFJ': '사교형',
-                'type.ISTP': '장인', 'type.ISFP': '모험가', 'type.ESTP': '사업가', 'type.ESFP': '연예인',
-                'tips.title1': '적극적으로 경청하기',
-                'tips.desc1': '상대방이 무엇을 말하는지, 그리고 어떻게 말하는지에 모두 주의를 기울이세요. 유형에 따라 자신을 표현하는 방식이 다릅니다.',
-                'tips.title2': '자신의 스타일 조정하기',
-                'tips.desc2': '상대방의 성격 선호도와 편안함을 느끼는 영역에 따라 대화 방식을 조절하세요.',
-                'tips.title3': '개방형 질문하기',
-                'tips.desc3': '더 깊은 공유를 유도하고 상대방의 관점을 더 잘 이해하는 데 도움이 되는 질문을 사용하세요.',
-                'tips.title4': '감사 표현하기',
-                'tips.desc4': '그들의 독특한 강점과 대화 및 관계에 가져오는 가치를 인정해주세요.',
-                'tips.title5': '에너지 수준 존중하기',
-                'tips.desc5': '내향적인 사람은 생각할 시간이 필요할 수 있으며, 외향적인 사람은 소리 내어 생각하는 경향이 있습니다. 두 가지 스타일을 모두 존중하세요.',
-                'tips.title6': '안전한 공간 만들기',
-                'tips.desc6': '상대방이 진솔하게 느끼고 자신의 생각을 편안하게 공유할 수 있는 환경을 조성하세요.',
-                'footer.explore': '탐색하기',
-                'footer.resources': '자료',
-                'footer.legal': '법률',
-                'footer.contact': '연락처',
-                'footer.test': '공식 MBTI 테스트',
-                'footer.privacy': '개인정보 처리방침',
-                'footer.terms': '이용약관',
-                'guide.title': '<span class="mbti-type"></span> (<span class="mbti-name"></span>)와 소통하기',
-                'guide.subtitle': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
-                'guide.noGuide': '아직 이 유형에 대한 대화 가이드는 준비되지 않았습니다. 곧 업데이트할 예정입니다!',
-                'section.approach.title': '소통 접근법',
-                'section.approach.content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
-                'section.approach.tips1': '그들의 자연스러운 소통 방식을 관찰하세요',
-                'section.approach.tips2': '그들의 선호도에 맞게 접근법을 조정하세요',
-                'section.approach.tips3': '인내심을 가지고 이해하세요',
-                'section.approach.tips4': '진정한 관계 구축에 집중하세요',
-                'section.topics.title': '선호하는 주제',
-                'section.topics.content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
-                'section.topics.tips1': '그들의 관심사와 열정에 대해 물어보세요',
-                'section.topics.tips2': '관련된 경험을 공유하세요',
-                'section.topics.tips3': '그들의 관점에 대해 진심으로 궁금해하세요',
-                'section.topics.tips4': '공통 관심사를 찾아보세요',
-                'section.avoid.title': '소통 시 주의할 점',
-                'section.avoid.content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
-                'section.avoid.tips1': '자신이 선호하는 방식으로 그들을 압도하지 마세요',
-                'section.avoid.tips2': '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
-                'section.avoid.tips3': '그들의 에너지 수준과 경계를 존중하세요',
-                'section.avoid.tips4': '처리할 시간이 필요하다면 인내심을 가지세요',
-            }
-        };
-
         const typeNames = {
-            'INTJ': 'The Architect', 'INTP': 'The Thinker', 'ENTJ': 'The Commander', 'ENTP': 'The Debater',
-            'INFJ': 'The Advocate', 'INFP': 'The Mediator', 'ENFJ': 'The Protagonist', 'ENFP': 'The Campaigner',
-            'ISTJ': 'The Logistician', 'ISFJ': 'The Protector', 'ESTJ': 'The Executive', 'ESFJ': 'The Consul',
-            'ISTP': 'The Virtuoso', 'ISFP': 'The Adventurer', 'ESTP': 'The Entrepreneur', 'ESFP': 'The Entertainer'
+            INTJ: 'The Architect', INTP: 'The Thinker', ENTJ: 'The Commander', ENTP: 'The Debater',
+            INFJ: 'The Advocate', INFP: 'The Mediator', ENFJ: 'The Protagonist', ENFP: 'The Campaigner',
+            ISTJ: 'The Logistician', ISFJ: 'The Protector', ESTJ: 'The Executive', ESFJ: 'The Consul',
+            ISTP: 'The Virtuoso', ISFP: 'The Adventurer', ESTP: 'The Entrepreneur', ESFP: 'The Entertainer'
         };
 
+        // English-only guides for some types; others will use defaultGuide
         const conversationGuides = {
-            'INTJ': {
-                'en': {
-                    'name': 'The Architect',
-                    'description': 'Strategic, independent thinkers who value competence and efficiency in communication.',
-                    'sections': {
-                        'approach': {
-                            'title': 'How to Approach INTJs',
-                            'content': 'INTJs appreciate direct, purposeful conversations. They value depth over small talk and prefer discussing ideas, future plans, and meaningful topics.',
-                            'tips': [
-                                'Be direct and get to the point quickly',
-                                'Come prepared with well-thought-out ideas',
-                                'Respect their need for processing time',
-                                'Focus on future possibilities and long-term thinking'
-                            ],
-                            'example': {
-                                'title': 'Good conversation starter:',
-                                'content': '"I\'ve been thinking about that project idea you mentioned. What do you see as the biggest challenges we might face?"'
-                            }
-                        },
-                        'topics': {
-                            'title': 'Best Conversation Topics',
-                            'content': 'INTJs thrive when discussing complex ideas, strategic planning, and conceptual frameworks.',
-                            'tips': [
-                                'Future plans and long-term goals',
-                                'Abstract theories and concepts',
-                                'Problem-solving strategies',
-                                'Books, documentaries, and learning experiences'
-                            ]
-                        },
-                        'avoid': {
-                            'title': 'What to Avoid',
-                            'content': 'Steer clear of superficial topics and overly emotional approaches that might make them uncomfortable.',
-                            'tips': [
-                                'Small talk about weather or celebrity gossip',
-                                'Overly emotional or dramatic expressions',
-                                'Interrupting their thought process',
-                                'Pushing for immediate decisions'
-                            ]
+            INTJ: {
+                name: 'The Architect',
+                description: 'Strategic, independent thinkers who value competence and efficiency in communication.',
+                sections: {
+                    approach: {
+                        title: 'How to Approach INTJs',
+                        content:
+                            'INTJs appreciate direct, purposeful conversations. They value depth over small talk and prefer discussing ideas, future plans, and meaningful topics.',
+                        tips: [
+                            'Be direct and get to the point quickly',
+                            'Come prepared with well-thought-out ideas',
+                            'Respect their need for processing time',
+                            'Focus on future possibilities and long-term thinking'
+                        ],
+                        example: {
+                            title: 'Good conversation starter:',
+                            content:
+                                '"I\'ve been thinking about that project idea you mentioned. What do you see as the biggest challenges we might face?"'
                         }
-                    }
-                },
-                'ja': {
-                    'name': '建築家',
-                    'description': 'コミュニケーションにおいて能力と効率を重視する、戦略的で独立した思考家です。',
-                    'sections': {
-                        'approach': {
-                            'title': 'INTJへのアプローチ方法',
-                            'content': 'INTJは直接的で目的のある会話を好みます。世間話よりも深さを重んじ、アイデア、将来の計画、有意義な話題について議論することを好みます。',
-                            'tips': [
-                                '単刀直入に話し、素早く要点にたどり着く',
-                                'よく考えられたアイデアを準備する',
-                                '彼らが思考するのに必要な時間を尊重する',
-                                '将来の可能性と長期的な思考に焦点を当てる'
-                            ],
-                            'example': {
-                                'title': '良い会話のきっかけ:',
-                                'content': '"あなたが言及したプロジェクトのアイデアについて考えていました。私たちが直面する可能性のある最大の課題は何だと思いますか？"'
-                            }
-                        },
-                        'topics': {
-                            'title': '最適な会話の話題',
-                            'content': 'INTJは、複雑なアイデア、戦略的計画、概念的なフレームワークについて議論するときに活気づきます。',
-                            'tips': [
-                                '将来の計画と長期的な目標',
-                                '抽象的な理論と概念',
-                                '問題解決の戦略',
-                                '本、ドキュメンタリー、学習経験'
-                            ]
-                        },
-                        'avoid': {
-                            'title': '避けるべきこと',
-                            'content': '彼らを不快にさせる可能性のある表面的な話題や感情に偏ったアプローチを避けてください。',
-                            'tips': [
-                                '天気や有名人のゴシップのような世間話',
-                                '過度に感情的またはドラマチックな表現',
-                                '彼らの思考プロセスを遮る',
-                                '即座の決断を迫る'
-                            ]
-                        }
-                    }
-                },
-                'ko': {
-                    'name': '건축가',
-                    'description': '소통에 있어 능력과 효율성을 중요시하는 전략적이고 독립적인 사상가입니다.',
-                    'sections': {
-                        'approach': {
-                            'title': 'INTJ에게 접근하는 방법',
-                            'content': 'INTJ는 직접적이고 목적 있는 대화를 선호합니다. 잡담보다 깊이를 중시하며 아이디어, 미래 계획, 의미 있는 주제에 대해 토론하는 것을 좋아합니다.',
-                            'tips': [
-                                '직설적으로 말하고 빠르게 요점에 도달하세요',
-                                '잘 생각한 아이디어를 준비하세요',
-                                '그들이 생각할 시간을 존중하세요',
-                                '미래의 가능성과 장기적 사고에 집중하세요'
-                            ],
-                            'example': {
-                                'title': '좋은 대화 시작법:',
-                                'content': '"언급했던 프로젝트 아이디어에 대해 생각 중이었어요. 우리가 직면할 수 있는 가장 큰 과제는 무엇이라고 생각하세요?"'
-                            }
-                        },
-                        'topics': {
-                            'title': '최고의 대화 주제',
-                            'content': 'INTJ는 복잡한 아이디어, 전략적 계획, 개념적 틀에 대해 토론할 때 활기를 띱니다.',
-                            'tips': [
-                                '미래 계획 및 장기 목표',
-                                '추상적인 이론과 개념',
-                                '문제 해결 전략',
-                                '책, 다큐멘터리, 학습 경험'
-                            ]
-                        },
-                        'avoid': {
-                            'title': '피해야 할 것들',
-                            'content': '그들을 불편하게 만들 수 있는 피상적인 주제와 지나치게 감정적인 접근은 피하세요.',
-                            'tips': [
-                                '날씨나 유명인 가십 같은 잡담',
-                                '지나치게 감정적이거나 극적인 표현',
-                                '그들의 사고 과정을 방해하는 행위',
-                                '즉각적인 결정을 강요하는 것'
-                            ]
-                        }
+                    },
+                    topics: {
+                        title: 'Best Conversation Topics',
+                        content:
+                            'INTJs thrive when discussing complex ideas, strategic planning, and conceptual frameworks.',
+                        tips: [
+                            'Future plans and long-term goals',
+                            'Abstract theories and concepts',
+                            'Problem-solving strategies',
+                            'Books, documentaries, and learning experiences'
+                        ]
+                    },
+                    avoid: {
+                        title: 'What to Avoid',
+                        content:
+                            'Steer clear of superficial topics and overly emotional approaches that might make them uncomfortable.',
+                        tips: [
+                            'Small talk about weather or celebrity gossip',
+                            'Overly emotional or dramatic expressions',
+                            'Interrupting their thought process',
+                            'Pushing for immediate decisions'
+                        ]
                     }
                 }
             },
-            'ENFP': {
-                'en': {
-                    'name': 'The Campaigner',
-                    'description': 'Enthusiastic, creative communicators who love exploring ideas and connecting with others.',
-                    'sections': {
-                        'approach': {
-                            'title': 'How to Approach ENFPs',
-                            'content': 'ENFPs love animated, energetic conversations filled with possibilities and creative ideas. Show genuine interest in their thoughts and dreams.',
-                            'tips': [
-                                'Match their enthusiasm and energy',
-                                'Ask about their dreams and aspirations',
-                                'Be open to spontaneous conversation turns',
-                                'Show genuine interest in their ideas'
-                            ],
-                            'example': {
-                                'title': 'Good conversation starter:',
-                                'content': '"You always have such interesting perspectives! What\'s been inspiring you lately?"'
-                            }
-                        },
-                        'topics': {
-                            'title': 'Best Conversation Topics',
-                            'content': 'ENFPs enjoy discussing possibilities, personal growth, relationships, and creative projects.',
-                            'tips': [
-                                'Dreams and future possibilities',
-                                'Personal growth and self-improvement',
-                                'Relationships and human connections',
-                                'Creative projects and artistic expressions'
-                            ]
-                        },
-                        'avoid': {
-                            'title': 'What to Avoid',
-                            'content': 'Avoid being overly critical or focusing too heavily on mundane details and logistics.',
-                            'tips': [
-                                'Being overly critical or negative',
-                                'Focusing on mundane details',
-                                'Rigid schedules and strict rules',
-                                'Dismissing their ideas as unrealistic'
-                            ]
+            ENFP: {
+                name: 'The Campaigner',
+                description:
+                    'Enthusiastic, creative communicators who love exploring ideas and connecting with others.',
+                sections: {
+                    approach: {
+                        title: 'How to Approach ENFPs',
+                        content:
+                            'ENFPs love animated, energetic conversations filled with possibilities and creative ideas. Show genuine interest in their thoughts and dreams.',
+                        tips: [
+                            'Match their enthusiasm and energy',
+                            'Ask about their dreams and aspirations',
+                            'Be open to spontaneous conversation turns',
+                            'Show genuine interest in their ideas'
+                        ],
+                        example: {
+                            title: 'Good conversation starter:',
+                            content:
+                                '"You always have such interesting perspectives! What\'s been inspiring you lately?"'
                         }
-                    }
-                },
-                'ja': {
-                    'name': '広報運動家',
-                    'description': 'アイデアを探求し、他人とつながることを愛する、熱意にあふれた創造的なコミュニケーターです。',
-                    'sections': {
-                        'approach': {
-                            'title': 'ENFPへのアプローチ方法',
-                            'content': 'ENFPは可能性と創造的なアイデアに満ちた、活気に満ちたエネルギーのある会話を好みます。彼らの考えや夢に心からの興味を示してください。',
-                            'tips': [
-                                '彼らの熱意とエネルギーに合わせる',
-                                '彼らの夢や願望について尋ねる',
-                                '自発的な会話の展開にオープンになる',
-                                '彼らのアイデアに心からの興味を示す'
-                            ],
-                            'example': {
-                                'title': '良い会話のきっかけ:',
-                                'content': '"あなたはいつもとても興味深い視点を持っていますね！最近、あなたをインスパイアしたものは何ですか？"'
-                            }
-                        },
-                        'topics': {
-                            'title': '最適な会話の話題',
-                            'content': 'ENFPは、可能性、個人的な成長、人間関係、創造的なプロジェクトについて話すことを楽しみます。',
-                            'tips': [
-                                '夢と将来の可能性',
-                                '個人的な成長と自己改善',
-                                '人間関係と人とのつながり',
-                                '創造的なプロジェクトと芸術的表現'
-                            ]
-                        },
-                        'avoid': {
-                            'title': '避けるべきこと',
-                            'content': '過度に批判的になったり、ありふれた詳細やロジスティクスに過度に焦点を当てることを避けてください。',
-                            'tips': [
-                                '過度に批判的または否定的になること',
-                                'ありふれた詳細に焦点を当てること',
-                                '厳格なスケジュールや規則',
-                                '彼らのアイデアを非現実的だと却下すること'
-                            ]
-                        }
-                    }
-                },
-                'ko': {
-                    'name': '활동가',
-                    'description': '아이디어를 탐구하고 타인과 연결하는 것을 좋아하는, 열정적이고 창의적인 소통가입니다.',
-                    'sections': {
-                        'approach': {
-                            'title': 'ENFP에게 접근하는 방법',
-                            'content': 'ENFP는 가능성과 창의적인 아이디어로 가득 찬 활기차고 에너지 넘치는 대화를 좋아합니다. 그들의 생각과 꿈에 진정한 관심을 보여주세요.',
-                            'tips': [
-                                '그들의 열정과 에너지에 맞추세요',
-                                '그들의 꿈과 열망에 대해 물어보세요',
-                                '자발적인 대화의 흐름에 열린 태도를 가지세요',
-                                '그들의 아이디어에 진정한 관심을 보여주세요'
-                            ],
-                            'example': {
-                                'title': '좋은 대화 시작법:',
-                                'content': '"당신은 항상 흥미로운 관점을 가지고 있네요! 요즘 당신에게 영감을 주는 것은 무엇인가요?"'
-                            }
-                        },
-                        'topics': {
-                            'title': '최고의 대화 주제',
-                            'content': 'ENFP는 가능성, 개인적 성장, 관계, 창의적인 프로젝트에 대해 이야기하는 것을 즐깁니다.',
-                            'tips': [
-                                '꿈과 미래의 가능성',
-                                '개인적인 성장과 자기 계발',
-                                '인간관계와 사람과의 연결',
-                                '창의적인 프로젝트 및 예술적 표현'
-                            ]
-                        },
-                        'avoid': {
-                            'title': '피해야 할 것들',
-                            'content': '지나치게 비판적이거나 평범한 세부 사항과 실용적인 문제에 너무 집중하는 것을 피하세요.',
-                            'tips': [
-                                '지나치게 비판적이거나 부정적이 되는 것',
-                                '평범한 세부 사항에 집중하는 것',
-                                '엄격한 스케줄과 규칙',
-                                '그들의 아이디어를 비현실적이라고 치부하는 것'
-                            ]
-                        }
+                    },
+                    topics: {
+                        title: 'Best Conversation Topics',
+                        content:
+                            'ENFPs enjoy discussing possibilities, personal growth, relationships, and creative projects.',
+                        tips: [
+                            'Dreams and future possibilities',
+                            'Personal growth and self-improvement',
+                            'Relationships and human connections',
+                            'Creative projects and artistic expressions'
+                        ]
+                    },
+                    avoid: {
+                        title: 'What to Avoid',
+                        content:
+                            'Avoid being overly critical or focusing too heavily on mundane details and logistics.',
+                        tips: [
+                            'Being overly critical or negative',
+                            'Focusing on mundane details',
+                            'Rigid schedules and strict rules',
+                            'Dismissing their ideas as unrealistic'
+                        ]
                     }
                 }
             }
         };
 
         const defaultGuide = {
-            'en': {
-                'name': 'Default Guide',
-                'description': 'Understanding how to communicate effectively with this personality type.',
-                'sections': {
-                    'approach': {
-                        'title': 'Communication Approach',
-                        'content': 'Each personality type has unique communication preferences and styles.',
-                        'tips': [
-                            'Observe their natural communication style',
-                            'Adapt your approach to match their preferences',
-                            'Be patient and understanding',
-                            'Focus on building genuine connection'
-                        ]
-                    },
-                    'topics': {
-                        'title': 'Preferred Topics',
-                        'content': 'Different types are energized by different kinds of conversations.',
-                        'tips': [
-                            'Ask about their interests and passions',
-                            'Share relevant experiences',
-                            'Be genuinely curious about their perspective',
-                            'Find common ground in your interests'
-                        ]
-                    },
-                    'avoid': {
-                        'title': 'Communication Pitfalls',
-                        'content': 'Be mindful of approaches that might not resonate with this type.',
-                        'tips': [
-                            'Avoid overwhelming them with your preferred style',
-                            'Don\'t assume they communicate like you do',
-                            'Respect their energy levels and boundaries',
-                            'Be patient if they need time to process'
-                        ]
-                    }
-                }
-            },
-            'ja': {
-                'name': 'デフォルトガイド',
-                'description': 'この性格タイプと効果的にコミュニケーションする方法を理解する。',
-                'sections': {
-                    'approach': {
-                        'title': 'コミュニケーションアプローチ',
-                        'content': '各性格タイプには、独自のコミュニケーションの好みとスタイルがあります。',
-                        'tips': [
-                            '彼らの自然なコミュニケーションスタイルを観察する',
-                            '彼らの好みに合わせてアプローチを調整する',
-                            '忍耐強く、理解を示す',
-                            '本物のつながりを築くことに焦点を当てる'
-                        ]
-                    },
-                    'topics': {
-                        'title': '好まれる話題',
-                        'content': '異なるタイプは異なる種類の会話によって活気づきます。',
-                        'tips': [
-                            '彼らの興味や情熱について尋ねる',
-                            '関連する経験を共有する',
-                            '彼らの視点に心から興味を持つ',
-                            '共通の興味を見つける'
-                        ]
-                    },
-                    'avoid': {
-                        'title': 'コミュニケーションの落とし穴',
-                        'content': 'このタイプに響かないかもしれないアプローチに注意してください。',
-                        'tips': [
-                            'あなたの好みのスタイルで彼らを圧倒しないようにする',
-                            '彼らがあなたと同じようにコミュニケーションをとるとは思い込まない',
-                            '彼らのエネルギーレベルと境界線を尊重する',
-                            '彼らが処理する時間が必要な場合は忍耐強く待つ'
-                        ]
-                    }
-                }
-            },
-            'ko': {
-                'name': '기본 가이드',
-                'description': '이 성격 유형과 효과적으로 소통하는 방법을 이해하세요.',
-                'sections': {
-                    'approach': {
-                        'title': '소통 접근법',
-                        'content': '각 성격 유형에는 고유한 소통 방식과 선호도가 있습니다.',
-                        'tips': [
-                            '그들의 자연스러운 소통 방식을 관찰하세요',
-                            '그들의 선호도에 맞게 접근법을 조정하세요',
-                            '인내심을 가지고 이해하세요',
-                            '진정한 관계 구축에 집중하세요'
-                        ]
-                    },
-                    'topics': {
-                        'title': '선호하는 주제',
-                        'content': '다양한 유형은 서로 다른 종류의 대화에 활력을 얻습니다.',
-                        'tips': [
-                            '그들의 관심사와 열정에 대해 물어보세요',
-                            '관련된 경험을 공유하세요',
-                            '그들의 관점에 대해 진심으로 궁금해하세요',
-                            '공통 관심사를 찾아보세요'
-                        ]
-                    },
-                    'avoid': {
-                        'title': '소통 시 주의할 점',
-                        'content': '이 유형과 맞지 않을 수 있는 접근법에 유의하세요.',
-                        'tips': [
-                            '자신이 선호하는 방식으로 그들을 압도하지 마세요',
-                            '그들이 당신처럼 소통할 것이라고 가정하지 마세요',
-                            '그들의 에너지 수준과 경계를 존중하세요',
-                            '처리할 시간이 필요하다면 인내심을 가지세요'
-                        ]
-                    }
+            name: 'Default Guide',
+            description: 'Understanding how to communicate effectively with this personality type.',
+            sections: {
+                approach: {
+                    title: 'Communication Approach',
+                    content: 'Each personality type has unique communication preferences and styles.',
+                    tips: [
+                        'Observe their natural communication style',
+                        'Adapt your approach to match their preferences',
+                        'Be patient and understanding',
+                        'Focus on building genuine connection'
+                    ]
+                },
+                topics: {
+                    title: 'Preferred Topics',
+                    content: 'Different types are energized by different kinds of conversations.',
+                    tips: [
+                        'Ask about their interests and passions',
+                        'Share relevant experiences',
+                        'Be genuinely curious about their perspective',
+                        'Find common ground in your interests'
+                    ]
+                },
+                avoid: {
+                    title: 'Communication Pitfalls',
+                    content: 'Be mindful of approaches that might not resonate with this type.',
+                    tips: [
+                        'Avoid overwhelming them with your preferred style',
+                        'Don’t assume they communicate like you do',
+                        'Respect their energy levels and boundaries',
+                        'Be patient if they need time to process'
+                    ]
                 }
             }
         };
 
-        // Function to get the current language
-        function getCurrentLanguage() {
-            const dropdown = document.querySelector('.lang-dropdown');
-    return dropdown ? dropdown.value : 'en';
+        function getIconForSection(sectionKey) {
+            const icons = { approach: '🎯', topics: '💬', avoid: '⚠️' };
+            return icons[sectionKey] || '📝';
         }
 
-        // Function to update static text based on language
-        function updateContent(lang) {
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                const translation = translations[lang][key];
-                if (translation) {
-                    // Use textContent for simple text, innerHTML for potential tags
-                    if (element.hasAttribute('data-i18n-html')) {
-                        element.innerHTML = translation;
-                    } else {
-                        element.textContent = translation;
-                    }
-                }
-            });
-
-            // Update language buttons
-           document.querySelector('.lang-dropdown').value = lang;
-
-            // Re-render the guide if a type is currently selected
-            const selectedButton = document.querySelector('.type-btn.selected');
-            if (selectedButton) {
-                showConversationGuide(selectedButton.dataset.type);
-            }
-        }
-
-        function getGuideContent(mbtiType, lang) {
-            const guide = conversationGuides[mbtiType] || {};
-            const content = guide[lang];
-            return content || defaultGuide[lang];
-        }
-
-        // Function to show the conversation guide for a selected MBTI type
         function showConversationGuide(selectedType) {
             const guideDiv = document.getElementById('conversation-guide');
-            const currentLang = getCurrentLanguage();
-            const guide = getGuideContent(selectedType, currentLang);
-            const mbtiName = typeNames[selectedType];
-            
-            // Update button selection
-            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
-            document.querySelector(`[data-type="${selectedType}"]`).classList.add('selected');
+            const guide = conversationGuides[selectedType] || defaultGuide;
+            const mbtiName = typeNames[selectedType] || guide.name;
 
-            // Show guide container
+            // button selection
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('selected'));
+            const btn = document.querySelector(`.type-btn[data-type="${selectedType}"]`);
+            if (btn) btn.classList.add('selected');
+
             guideDiv.classList.add('show');
 
+            const sectionOrder = ['approach', 'topics', 'avoid'];
             let html = `
                 <div class="guide-header">
-                    <h3 class="guide-title">${translations[currentLang]['guide.title'].replace('<span class="mbti-type"></span>', selectedType).replace('<span class="mbti-name"></span>', mbtiName)}</h3>
-                    <p class="guide-subtitle">${translations[currentLang]['guide.subtitle']}</p>
+                    <h3 class="guide-title">${selectedType} - ${mbtiName} Conversation Guide</h3>
+                    <p class="guide-subtitle">${guide.description}</p>
                 </div>
                 <div class="guide-sections">
             `;
 
-            // Use the data-driven approach to populate sections
-            const sectionOrder = ['approach', 'topics', 'avoid'];
             sectionOrder.forEach(key => {
                 const section = guide.sections[key];
-                if (section) {
-                    html += `
-                        <div class="guide-section">
-                            <h4 class="guide-section-title">
-                                ${getIconForSection(key)} ${section.title}
-                            </h4>
-                            <div class="guide-section-content">
-                                <p>${section.content}</p>
-                                <ul class="tip-list">
-                                    ${section.tips.map(tip => `<li>${tip}</li>`).join('')}
-                                </ul>
-                                ${section.example ? `
-                                    <div class="example-box">
-                                        <div class="example-title">${section.example.title}</div>
-                                        <div class="example-content">${section.example.content}</div>
-                                    </div>
-                                ` : ''}
-                            </div>
+                if (!section) return;
+                html += `
+                    <div class="guide-section">
+                        <h4 class="guide-section-title">
+                            ${getIconForSection(key)} ${section.title}
+                        </h4>
+                        <div class="guide-section-content">
+                            <p>${section.content}</p>
+                            <ul class="tip-list">
+                                ${section.tips.map(tip => `<li>${tip}</li>`).join('')}
+                            </ul>
+                            ${
+                                section.example
+                                    ? `
+                                <div class="example-box">
+                                    <div class="example-title">${section.example.title}</div>
+                                    <div class="example-content">${section.example.content}</div>
+                                </div>
+                            `
+                                    : ''
+                            }
                         </div>
-                    `;
-                }
+                    </div>
+                `;
             });
 
             html += '</div>';
             guideDiv.innerHTML = html;
         }
 
-        function getIconForSection(sectionKey) {
-            const icons = {
-                'approach': '🎯',
-                'topics': '💬',
-                'avoid': '⚠️'
-            };
-            return icons[sectionKey] || '📝';
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            // Add event listeners to MBTI buttons
+            // attach listeners
             document.querySelectorAll('.type-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     showConversationGuide(button.dataset.type);
                 });
             });
 
-        
-
-            // Set initial active language and content
-            updateContent('en');
+            // Optionally preselect a type (e.g., INTJ)
+            // showConversationGuide('INTJ');
         });
+
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
     </script>
-<script>
-function toggleMenu() {
-    document.getElementById('nav-menu').classList.toggle('active');
-}
-</script>
 </body>
-
 </html>
-

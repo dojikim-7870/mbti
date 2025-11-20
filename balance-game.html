@@ -1,15 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6237171158673362"
      crossorigin="anonymous"></script>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-57524D22');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI Balance Game - Discover Your Relationship Preferences | MBTILove</title>
     <meta name="description" content="Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.">
@@ -44,30 +43,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav { display: flex; gap: 2rem; }
         .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
         .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
-        
+        /* Language Switcher/Button Styles removed - only dropdown styles remain to be removed below */
 
-/* 햄버거 버튼 */
-    .hamburger {
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: none; /* 데스크탑에서는 숨김 */
-        margin-left: 1rem;
-    }
+        /* 햄버거 버튼 */
+        .hamburger {
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: none; /* 데스크탑에서는 숨김 */
+            margin-left: 1rem;
+        }
 
-    /* 언어 드롭다운 */
-    .lang-dropdown {
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        background: white;
-        cursor: pointer;
-    }
+        /* 언어 드롭다운 - 제거 */
+        .lang-dropdown {
+            display: none; /* 드롭다운 숨김 */
+        }
 
         /* Game Container */
         .game-container { min-height: calc(100vh - 70px); background: linear-gradient(135deg, var(--soft-pink), white); }
@@ -180,38 +171,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
         
         /* 반응형 레이아웃 수정 */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-        .nav { 
-            display: none; 
-            flex-direction: column;
-            gap: 1rem;
-            position: absolute;
-            top: 70px; right: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav { 
+                display: none; 
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 70px; right: 1rem;
+                background: white;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            .nav.active { display: flex; }
+            .btn-group { flex-direction: column; gap: 0.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
         }
-        .nav.active { display: flex; }
-        .btn-group { flex-direction: column; gap: 0.5rem; }
-        .feature-grid { grid-template-columns: 1fr; }
-    }
+        
+        /* Footer Style Override (기존 CSS에 추가된 부분 유지) */
+        .footer { background: #000; color: #fff; padding: 3rem 2rem; font-family: 'Poppins', sans-serif;}
+        .footer-content { display: flex; flex-wrap: wrap; gap: 3rem; justify-content: space-between; max-width: 1200px; margin: 0 auto;}
+        .footer-section { flex: 1 1 220px;}
+        .footer-section h3 { font-size: 1.25rem; margin-bottom: 0.8rem;}
+        .footer-section p { line-height: 1.6; color: #ddd;}
+        .footer-section ul { list-style: none; padding: 0; margin: 0;}
+        .footer-section ul li { margin-bottom: 0.5rem;}
+        .footer-section ul li a { text-decoration: none; color: #fff; transition: color 0.3s;}
+        .footer-section ul li a:hover { color: #ccc;}
+        .footer-bottom { text-align: center; margin-top: 2rem; color: #bbb; font-size: 0.95rem;}
+        @media screen and (max-width: 768px) {
+            .footer-content { flex-direction: column; gap: 2rem; }
+            .footer-section { flex: 1 1 100%; }
+            .footer-section h3 { font-size: 1.15rem; }
+            .footer-section p, .footer-section ul li a { font-size: 0.95rem; }
+        }
+        @media screen and (max-width: 480px) {
+            .footer { padding: 2rem 1rem; }
+            .footer-section h3 { font-size: 1.1rem; }
+            .footer-section p, .footer-section ul li a { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57524D22"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <header>
+<header>
     <div class="header-container">
         <a href="index.html" class="logo font-poppins">MBTILove</a>
 
-        <!-- 햄버거 버튼 -->
         <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-        <!-- 네비게이션 -->
         <nav class="nav" id="nav-menu">
             <a href="compatibility.html">Compatibility</a>
             <a href="dating-style.html">Dating Style</a>
@@ -222,57 +232,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="about.html">About</a>
         </nav>
 
-        <!-- 언어 드롭다운 -->
-        <select class="lang-dropdown" onchange="changeLanguage(this.value)">
-            <option value="en" selected>English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-        </select>
-    </div>
+        </div>
 </header>
     <div class="game-container">
         <div id="welcome-screen" class="welcome-screen">
             <div class="welcome-content">
-                <h1 class="welcome-title font-poppins" data-lang-key="welcome_title">MBTI Balance Game</h1>
-                <p class="welcome-subtitle" data-lang-key="welcome_subtitle">
+                <h1 class="welcome-title font-poppins">MBTI Balance Game</h1>
+                <p class="welcome-subtitle">
                     Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.
                 </p>
                 
                 <div class="welcome-features">
                     <div class="feature-item">
                         <span>❤️</span>
-                        <span data-lang-key="feature1">10 Questions</span>
+                        <span>10 Questions</span>
                     </div>
                     <div class="feature-item">
                         <span>👥</span>
-                        <span data-lang-key="feature2">Personalized Insights</span>
+                        <span>Personalized Insights</span>
                     </div>
                     <div class="feature-item">
                         <span>✨</span>
-                        <span data-lang-key="feature3">Relationship Tips</span>
+                        <span>Relationship Tips</span>
                     </div>
                 </div>
                 
-                <button class="start-btn" onclick="startGame()" data-lang-key="start_button">Start Balance Game</button>
+                <button class="start-btn" onclick="startGame()">Start Balance Game</button>
                 
                 <div class="how-it-works">
-                    <h3 class="font-poppins" data-lang-key="how_to_play_title">How to Play</h3>
+                    <h3 class="font-poppins">How to Play</h3>
                     <div class="steps-grid">
                         <div class="step">
                             <div class="step-number">1</div>
-                            <span data-lang-key="step1">Answer 10 dilemma questions about your relationship preferences</span>
+                            <span>Answer 10 dilemma questions about your relationship preferences</span>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
-                            <span data-lang-key="step2">Gain insights into your dating style and relationship values</span>
+                            <span>Gain insights into your dating style and relationship values</span>
                         </div>
                         <div class="step">
                             <div class="step-number">3</div>
-                            <span data-lang-key="step3">Learn about your compatibility with various personality types</span>
+                            <span>Learn about your compatibility with various personality types</span>
                         </div>
                         <div class="step">
                             <div class="step-number">4</div>
-                            <span data-lang-key="step4">Receive personalized relationship advice and tips</span>
+                            <span>Receive personalized relationship advice and tips</span>
                         </div>
                     </div>
                 </div>
@@ -295,13 +299,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div id="results-screen" class="results-screen">
             <div class="results-content">
                 <div class="adsense-banner">
-                    <p data-lang-key="ad_label">Advertisement</p>
+                    <p>Advertisement</p>
                 </div>
                 
                 <div class="results-header">
-                    <h2 class="results-title font-poppins" data-lang-key="results_title">Your Results</h2>
+                    <h2 class="results-title font-poppins">Your Results</h2>
                     <div class="personality-result">
-                        <h3 class="personality-type" id="personality-type" data-lang-key="results_style_title">Your Relationship Style:</h3>
+                        <h3 class="personality-type" id="personality-type">Your Relationship Style:</h3>
                         <p class="personality-description" id="personality-description"></p>
                     </div>
                 </div>
@@ -309,7 +313,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div id="insights-grid" class="insights-grid">
                     </div>
                 
-                <button class="reset-btn" onclick="resetGame()" data-lang-key="retake_quiz_button">Retake Quiz</button>
+                <button class="reset-btn" onclick="resetGame()">Retake Quiz</button>
             </div>
         </div>
     </div>
@@ -317,15 +321,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <footer class="footer">
     <div class="footer-content">
-        <!-- About Section -->
         <div class="footer-section">
             <h3>❤️ MBTILove</h3>
             <p>Your trusted platform for understanding personality connections, emotional chemistry, and meaningful relationship matching.</p>
         </div>
 
-        <!-- Explore Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerExplore">Explore</h3>
+            <h3>Explore</h3>
             <ul>
                 <li><a href="compatibility.html">Compatibility</a></li>
                 <li><a href="dating-style.html">Dating Style</a></li>
@@ -334,9 +336,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
 
-        <!-- Resources Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerResources">Resources</h3>
+            <h3>Resources</h3>
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -344,9 +345,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
 
-        <!-- Legal Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerLegal">Legal</h3>
+            <h3>Legal</h3>
             <ul>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -359,319 +359,231 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 
-<style>
-/* Footer 기본 스타일 */
-.footer {
-    background: #000; /* 검정색 배경 */
-    color: #fff;
-    padding: 3rem 2rem;
-    font-family: 'Poppins', sans-serif;
-}
+<script>
+    let currentQuestion = 0;
+    let answers = [];
+    let gameStarted = false;
+    let currentLanguage = 'en'; // English fixed
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem; /* 섹션 간격 */
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    // --- Core Game Data (Questions) ---
+    const questions = [
+        {
+            category: 'Emotional vs. Intellectual',
+            question: 'When a partner shares a problem with you...',
+            options: [
+                { key: 'emotional', text: 'You focus on their feelings and offer emotional support.', choice: 'A', insight: "You're a deeply empathetic listener. You prioritize emotional connection, creating a safe space for your partner to feel understood and cared for.", analysis: "This choice suggests an emotionally-focused dating style. You are likely an empathetic and compassionate partner who values deep emotional bonds and is skilled at providing comfort. Your focus is on feelings and building intimacy through shared vulnerability."},
+                { key: 'intellectual', text: 'You analyze the situation and help them find a practical solution.', choice: 'B', insight: "You're a practical problem-solver. You help your partner think logically through their issues, offering clear and actionable advice.", analysis: "This choice indicates an intellectually-focused dating style. You are likely a logical and solution-oriented partner who values effective communication and shared goals. Your focus is on fixing problems and building a relationship based on mutual growth and support."},
+            ]
+        },
+        {
+            category: 'Spontaneous vs. Planned',
+            question: 'Your ideal date night is...',
+            options: [
+                { key: 'spontaneous', text: 'A surprise trip to a new town or an unplanned activity.', choice: 'A', insight: "You thrive on new experiences. You enjoy adventure and spontaneity, which keeps the relationship exciting and fresh.", analysis: "Choosing this option suggests a spontaneous dating style. You are likely an adventurous and flexible partner who values excitement and new experiences. You believe that love is an anventure to be explored, not a plan to be followed."},
+                { key: 'planned', text: 'A carefully planned evening with reservations and a clear itinerary.', choice: 'B', insight: "You value security and predictability. A well-organized plan makes you feel relaxed and cared for.", analysis: "This indicates a planned dating style. You are likely a thoughtful and reliable partner who values stability and consistency. You show your love through careful planning and by creating a secure and comfortable environment."},
+            ]
+        },
+        {
+            category: 'Direct vs. Thoughtful Communicator',
+            question: 'When you need to talk about a difficult topic...',
+            options: [
+                { key: 'direct', text: 'You address it head-on, directly stating your feelings and thoughts.', choice: 'A', insight: "You are a straightforward communicator. You value clarity and honesty, believing that directness is the key to resolving conflicts quickly.", analysis: "This choice points to a direct communication style. You are likely a clear and open partner who prefers to deal with issues immediately. While this approach can be highly effective, it may sometimes be perceived as blunt by more sensitive partners."},
+                { key: 'thoughtful', text: 'You think about it for a while and bring it up gently and indirectly.', choice: 'B', insight: "You are a considerate communicator. You prioritize harmony and think carefully before speaking, aiming to avoid hurt feelings.", analysis: "This indicates a thoughtful communication style. You are likely a sensitive and considerate partner who values harmony and emotional safety. You take your time to ensure your words are gentle, but this can sometimes lead to unresolved issues if not managed well."},
+            ]
+        },
+        {
+            category: 'Emotional vs. Intellectual',
+            question: 'When your partner succeeds at something, you celebrate by...',
+            options: [
+                { key: 'emotional', text: 'Expressing your proud feelings with hugs and heartfelt words.', choice: 'A', insight: "You celebrate with passion and genuine emotion, making your partner feel truly seen and appreciated for their hard work.", analysis: "Your celebration style is emotionally-driven. You believe in sharing joy openly and making your partner feel loved through physical and verbal affection. This strengthens the emotional bond."},
+                { key: 'intellectual', text: 'Analyzing their success, discussing the next steps, and planning for future wins.', choice: 'B', insight: "You celebrate with a focus on growth and future potential. You see their success as a stepping stone to even greater achievements.", analysis: "Your celebration style is intellectually-driven. You show your support by engaging with their success on a logical level, demonstrating that you are a partner in their journey toward personal and professional growth."},
+            ]
+        },
+        {
+            category: 'Spontaneous vs. Planned',
+            question: 'When preparing for a holiday trip...',
+            options: [
+                { key: 'spontaneous', text: 'You pack the essentials and figure out the rest as you go.', choice: 'A', insight: "You're a go-with-the-flow traveler. You love the freedom of not having a rigid schedule, which allows for unexpected discoveries.", analysis: "Your travel style is spontaneous. You enjoy the excitement of the unknown and trust in your ability to adapt. This approach can be a lot of fun, but may cause anxiety for a more planner-oriented partner."},
+                { key: 'planned', text: 'You have a detailed itinerary with all flights and hotels booked in advance.', choice: 'B', insight: "You’re a meticulous planner. You enjoy the security of having everything prepared, which minimizes stress and ensures a smooth trip.", analysis: "Your travel style is planned. You find comfort in structure and preparation. This makes you a reliable and thoughtful partner, but you may struggle to adapt to unexpected changes."},
+            ]
+        },
+        {
+            category: 'Direct vs. Thoughtful Communicator',
+            question: 'During a disagreement, you are more likely to...',
+            options: [
+                { key: 'direct', text: 'Confront the issue immediately, even if it might be uncomfortable.', choice: 'A', insight: "You prefer to clear the air quickly. Your directness can prevent misunderstandings from festering and helps both partners move on.", analysis: "This choice reinforces a direct communication style. You believe that open confrontation is the healthiest way to resolve conflict. Your directness is a sign of your trust in the relationship's strength."},
+                { key: 'thoughtful', text: 'Take a break to process your thoughts before discussing the issue.', choice: 'B', insight: "You choose calm over conflict. Taking time to process allows you to approach the conversation with a clear mind and a composed demeanor.", analysis: "This choice aligns with a thoughtful communication style. You prioritize emotional regulation and seek to prevent heated arguments. Your approach promotes peaceful resolutions, but may sometimes delay addressing important issues."},
+            ]
+        },
+        {
+            category: 'Emotional vs. Intellectual',
+            question: 'You show your love primarily through...',
+            options: [
+                { key: 'emotional', text: 'Passionate and frequent displays of affection and compliments.', choice: 'A', insight: "You express love through grand gestures and constant reassurance, making your partner feel cherished and adored.", analysis: "You lead with an emotional dating style. You show love by being openly expressive and romantic. Your partner never has to guess how you feel, which can be very reassuring."},
+                { key: 'intellectual', text: 'Thoughtful discussions about shared interests and goals.', choice: 'B', insight: "You express love through deep, meaningful conversations. You feel closest when you can share ideas and grow together.", analysis: "You lead with an intellectual dating style. You show love through shared mental and personal growth. You connect on a deeper level by discussing ideas, philosophies, and future plans, creating a strong partnership built on mutual respect."},
+            ]
+        },
+        {
+            category: 'Spontaneous vs. Planned',
+            question: 'For an anniversary celebration, you would prefer...',
+            options: [
+                { key: 'spontaneous', text: 'To wake up and decide on the spot what to do, following your mood.', choice: 'A', insight: "You value the adventure of the unknown. A spontaneous anniversary is more than an event; it's a memorable story you create together.", analysis: "This choice shows a spontaneous dating style. You find joy in the unexpected and believe that the best moments are unplanned. This keeps the relationship feeling fresh and exciting."},
+                { key: 'planned', text: 'To book a special dinner and a show months in advance.', choice: 'B', insight: "You find romance in careful preparation. Planning ahead shows your partner that you’re dedicated and have been looking forward to the moment for a long time.", analysis: "This choice indicates a planned dating style. For you, the act of planning is a way to show love and commitment. You find security and romance in knowing that your special moments are well-thought-out and guaranteed to be perfect."},
+            ]
+        },
+        {
+            category: 'Direct vs. Thoughtful Communicator',
+            question: 'When asked "What do you want to eat?" you are more likely to...',
+            options: [
+                { key: 'direct', text: 'Give a specific answer immediately, like "I want to eat pizza."', choice: 'A', insight: "You are a decisive communicator. You know what you want and you express it clearly, making decision-making easy for your partner.", analysis: "This reflects a direct communication style. You value efficiency and are not afraid to express your preferences. This clear approach minimizes confusion and helps keep things simple."},
+                { key: 'thoughtful', text: 'Say "I am open to anything, what do you feel like?"', choice: 'B', insight: "You are a considerate communicator. You prioritize your partner’s preferences, showing that their feelings are important to you.", analysis: "This reflects a thoughtful communication style. You show love by deferring to your partner's wants and needs. While this is considerate, it may sometimes put the burden of decision-making entirely on your partner."},
+            ]
+        },
+        {
+            category: 'Emotional vs. Intellectual',
+            question: 'You feel most connected to your partner when you are...',
+            options: [
+                { key: 'emotional', text: 'Sharing deep feelings and personal stories.', choice: 'A', insight: "You connect through vulnerability. By sharing your innermost thoughts and feelings, you build a bond of trust and emotional intimacy.", analysis: "This points to an emotionally-focused dating style. You seek connection through deep, personal sharing, which strengthens the emotional fabric of your relationship."},
+                { key: 'intellectual', text: 'Discussing a fascinating book or a new idea.', choice: 'B', insight: "You connect through mental stimulation. You feel a sense of closeness when you can engage in thoughtful conversation and learn something new together.", analysis: "This points to an intellectually-focused dating style. You find intimacy in shared curiosity and mental engagement. For you, a meeting of minds is a meeting of hearts, and you build your bond through a shared world of ideas."},
+            ]
+        },
+    ];
+    
+    // --- Core Game Logic (Categories) ---
+    let categories = {
+        'emotional': 0,
+        'intellectual': 0,
+        'spontaneous': 0,
+        'planned': 0,
+        'direct': 0,
+        'thoughtful': 0
+    };
 
-.footer-section {
-    flex: 1 1 220px;
-}
-
-.footer-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.8rem;
-}
-
-.footer-section p {
-    line-height: 1.6;
-    color: #ddd;
-}
-
-.footer-section ul {
-    list-style: none; /* 점 제거 */
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #fff; /* 흰색 */
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #ccc; /* 마우스 오버 시 살짝 회색 */
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    color: #bbb;
-    font-size: 0.95rem;
-}
-
-/* 반응형 모바일 */
-@media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 2rem;
+    // --- English Text Constants (replacing translation object) ---
+    const ENGLISH_TEXT = {
+        'question_counter': (current, total) => `Question ${current} of ${total}`,
+        'option_label': 'Option',
+        'results_style_title': 'Your Relationship Style:',
+    };
+    
+    // --- Game Functions ---
+    function startGame() {
+        gameStarted = true;
+        document.getElementById('welcome-screen').style.display = 'none';
+        document.getElementById('game-screen').classList.add('active');
+        loadQuestion();
     }
 
-    .footer-section {
-        flex: 1 1 100%;
+    function loadQuestion() {
+        if (currentQuestion < questions.length) {
+            const questionData = questions[currentQuestion];
+            const questionCard = document.getElementById('question-card');
+            
+            let questionHTML = `
+                <p class="question-category font-poppins">${questionData.category}</p>
+                <h2 class="question-text">${questionData.question}</h2>
+                <div class="options">
+            `;
+            
+            questionData.options.forEach(option => {
+                questionHTML += `
+                    <button class="option-btn" onclick="handleAnswer('${option.key}')">
+                        <span class="option-label">${ENGLISH_TEXT['option_label']} ${option.choice}</span>
+                        ${option.text}
+                    </button>
+                `;
+            });
+
+            questionHTML += `</div>`;
+            questionCard.innerHTML = questionHTML;
+
+            // Update question counter text
+            document.getElementById('question-counter').textContent = ENGLISH_TEXT['question_counter'](currentQuestion + 1, questions.length);
+
+        } else {
+            showResults();
+        }
     }
 
-    .footer-section h3 {
-        font-size: 1.15rem;
-    }
-
-    .footer-section p, 
-    .footer-section ul li a {
-        font-size: 0.95rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .footer {
-        padding: 2rem 1rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1.1rem;
-    }
-
-    .footer-section p, 
-    .footer-section ul li a {
-        font-size: 0.9rem;
-    }
-}
-</style>
-
-    <script>
-        let currentQuestion = 0;
-        let answers = [];
-        let gameStarted = false;
-        let currentLanguage = 'en';
-
-        const translations = {
-            'en': {
-                'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
-                'meta_description': 'Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.',
-                'nav_compatibility': 'Compatibility',
-                'nav_dating_style': 'Dating Style',
-                'nav_ideal_type': 'Ideal Type',
-                'nav_rankings': 'Rankings',
-                'nav_conversation': 'Conversation',
-                'nav_balance_game': 'Balance Game',
-                'nav_about': 'About',
-                'welcome_title': 'MBTI Balance Game',
-                'welcome_subtitle': 'Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.',
-                'feature1': '10 Questions',
-                'feature2': 'Personalized Insights',
-                'feature3': 'Relationship Tips',
-                'start_button': 'Start Balance Game',
-                'how_to_play_title': 'How to Play',
-                'step1': 'Answer 10 dilemma questions about your relationship preferences',
-                'step2': 'Gain insights into your dating style and relationship values',
-                'step3': 'Learn about your compatibility with various personality types',
-                'step4': 'Receive personalized relationship advice and tips',
-                'question_counter': (current, total) => `Question ${current} of ${total}`,
-                'option_label': 'Option',
-                'ad_label': 'Advertisement',
-                'results_title': 'Your Results',
-                'results_style_title': 'Your Relationship Style:',
-                'retake_quiz_button': 'Retake Quiz',
-                'footer_explore_title': 'Explore',
-                'nav_compatibility_footer': 'Compatibility',
-                'nav_dating_style_footer': 'Dating Style',
-                'nav_ideal_type_footer': 'Ideal Type',
-                'nav_rankings_footer': 'Rankings',
-                'footer_resources_title': 'Resources',
-                'nav_about_footer': 'About',
-                'nav_contact_footer': 'Contact',
-                'nav_official_test_footer': 'Official MBTI Test',
-                'footer_legal_title': 'Legal',
-                'nav_privacy_policy_footer': 'Privacy Policy',
-                'nav_terms_of_use_footer': 'Terms of Use',
-                'copyright': '© 2024 MBTILove.xyz - All rights reserved.',
-            },
-            'ko': {
-                'title_page': 'MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove',
-                'meta_description': '인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.',
-                'nav_compatibility': '궁합',
-                'nav_dating_style': '데이트 스타일',
-                'nav_ideal_type': '이상형',
-                'nav_rankings': '랭킹',
-                'nav_conversation': '대화',
-                'nav_balance_game': '밸런스 게임',
-                'nav_about': '소개',
-                'welcome_title': 'MBTI 밸런스 게임',
-                'welcome_subtitle': '재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.',
-                'feature1': '10개 질문',
-                'feature2': '개인 맞춤 인사이트',
-                'feature3': '관계 팁',
-                'start_button': '밸런스 게임 시작하기',
-                'how_to_play_title': '게임 방법',
-                'step1': '관계 선호도에 대한 10개의 양자택일 질문에 답하세요',
-                'step2': '당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요',
-                'step3': '다양한 성격 유형과의 궁합에 대해 알아보세요',
-                'step4': '개인 맞춤 관계 조언 및 팁을 받으세요',
-                'question_counter': (current, total) => `질문 ${current} / ${total}`,
-                'option_label': '옵션',
-                'ad_label': '광고',
-                'results_title': '당신의 결과',
-                'results_style_title': '당신의 관계 스타일:',
-                'retake_quiz_button': '퀴즈 다시 하기',
-                'footer_explore_title': '탐색',
-                'nav_compatibility_footer': '궁합',
-                'nav_dating_style_footer': '데이트 스타일',
-                'nav_ideal_type_footer': '이상형',
-                'nav_rankings_footer': '랭킹',
-                'footer_resources_title': '자료',
-                'nav_about_footer': '소개',
-                'nav_contact_footer': '연락처',
-                'nav_official_test_footer': '공식 MBTI 테스트',
-                'footer_legal_title': '법률',
-                'nav_privacy_policy_footer': '개인정보 보호정책',
-                'nav_terms_of_use_footer': '이용 약관',
-                'copyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
-            },
-            'ja': {
-                'title_page': 'MBTIバランスゲーム - あなたの関係の好みを調べる | MBTILove',
-                'meta_description': 'インタラクティブなMBTIバランスゲームを通じて、あなたの関係の好みを調べてください。選択肢を選んで、あなたのデートスタイルと性格の洞察を明らかにします。',
-                'nav_compatibility': '相性',
-                'nav_dating_style': 'デートスタイル',
-                'nav_ideal_type': '理想のタイプ',
-                'nav_rankings': 'ランキング',
-                'nav_conversation': '会話',
-                'nav_balance_game': 'バランスゲーム',
-                'nav_about': 'について',
-                'welcome_title': 'MBTIバランスゲーム',
-                'welcome_subtitle': '楽しい二者択一の質問を通して、あなたの関係の好みを明らかにしましょう。あなたのデートスタイル、コミュニケーションの好み、そして恋愛関係で本当に大切にしている価値観について調べてください。',
-                'feature1': '10個の質問',
-                'feature2': 'パーソナライズされた洞察',
-                'feature3': '関係のヒント',
-                'start_button': 'バランスゲームを始める',
-                'how_to_play_title': '遊び方',
-                'step1': 'あなたの関係の好みに関する10個の二者択一の質問に答える',
-                'step2': 'あなたのデートスタイルと関係の価値観について洞察を得る',
-                'step3': '様々な性格タイプとの相性について知る',
-                'step4': 'パーソナライズされた関係のアドバイスとヒントを受け取る',
-                'question_counter': (current, total) => `質問 ${current} / ${total}`,
-                'option_label': 'オプション',
-                'ad_label': '広告',
-                'results_title': 'あなたの結果',
-                'results_style_title': 'あなたの関係スタイル:',
-                'retake_quiz_button': 'クイズを再度行う',
-                'footer_explore_title': '探す',
-                'nav_compatibility_footer': '相性',
-                'nav_dating_style_footer': 'デートスタイル',
-                'nav_ideal_type_footer': '理想のタイプ',
-                'nav_rankings_footer': 'ランキング',
-                'footer_resources_title': '資料',
-                'nav_about_footer': 'について',
-                'nav_contact_footer': 'お問い合わせ',
-                'nav_official_test_footer': '公式MBTIテスト',
-                'footer_legal_title': '法律',
-                'nav_privacy_policy_footer': 'プライバシーポリシー',
-                'nav_terms_of_use_footer': '利用規約',
-                'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
-            }
-        };
-
-        const questions = [
-            // Your existing question data here...
-            {
-                category: 'Emotional vs. Intellectual',
-                question: 'When a partner shares a problem with you...',
-                options: [
-                    { key: 'emotional', text: 'You focus on their feelings and offer emotional support.', choice: 'A', insight: "You're a deeply empathetic listener. You prioritize emotional connection, creating a safe space for your partner to feel understood and cared for.", analysis: "This choice suggests an emotionally-focused dating style. You are likely an empathetic and compassionate partner who values deep emotional bonds and is skilled at providing comfort. Your focus is on feelings and building intimacy through shared vulnerability."},
-                    { key: 'intellectual', text: 'You analyze the situation and help them find a practical solution.', choice: 'B', insight: "You're a practical problem-solver. You help your partner think logically through their issues, offering clear and actionable advice.", analysis: "This choice indicates an intellectually-focused dating style. You are likely a logical and solution-oriented partner who values effective communication and shared goals. Your focus is on fixing problems and building a relationship based on mutual growth and support."},
-                ]
-            },
-            {
-                category: 'Spontaneous vs. Planned',
-                question: 'Your ideal date night is...',
-                options: [
-                    { key: 'spontaneous', text: 'A surprise trip to a new town or an unplanned activity.', choice: 'A', insight: "You thrive on new experiences. You enjoy adventure and spontaneity, which keeps the relationship exciting and fresh.", analysis: "Choosing this option suggests a spontaneous dating style. You are likely an adventurous and flexible partner who values excitement and new experiences. You believe that love is an anventure to be explored, not a plan to be followed."},
-                    { key: 'planned', text: 'A carefully planned evening with reservations and a clear itinerary.', choice: 'B', insight: "You value security and predictability. A well-organized plan makes you feel relaxed and cared for.", analysis: "This indicates a planned dating style. You are likely a thoughtful and reliable partner who values stability and consistency. You show your love through careful planning and by creating a secure and comfortable environment."},
-                ]
-            },
-            {
-                category: 'Direct vs. Thoughtful Communicator',
-                question: 'When you need to talk about a difficult topic...',
-                options: [
-                    { key: 'direct', text: 'You address it head-on, directly stating your feelings and thoughts.', choice: 'A', insight: "You are a straightforward communicator. You value clarity and honesty, believing that directness is the key to resolving conflicts quickly.", analysis: "This choice points to a direct communication style. You are likely a clear and open partner who prefers to deal with issues immediately. While this approach can be highly effective, it may sometimes be perceived as blunt by more sensitive partners."},
-                    { key: 'thoughtful', text: 'You think about it for a while and bring it up gently and indirectly.', choice: 'B', insight: "You are a considerate communicator. You prioritize harmony and think carefully before speaking, aiming to avoid hurt feelings.", analysis: "This indicates a thoughtful communication style. You are likely a sensitive and considerate partner who values harmony and emotional safety. You take your time to ensure your words are gentle, but this can sometimes lead to unresolved issues if not managed well."},
-                ]
-            },
-            {
-                category: 'Emotional vs. Intellectual',
-                question: 'When your partner succeeds at something, you celebrate by...',
-                options: [
-                    { key: 'emotional', text: 'Expressing your proud feelings with hugs and heartfelt words.', choice: 'A', insight: "You celebrate with passion and genuine emotion, making your partner feel truly seen and appreciated for their hard work.", analysis: "Your celebration style is emotionally-driven. You believe in sharing joy openly and making your partner feel loved through physical and verbal affection. This strengthens the emotional bond."},
-                    { key: 'intellectual', text: 'Analyzing their success, discussing the next steps, and planning for future wins.', choice: 'B', insight: "You celebrate with a focus on growth and future potential. You see their success as a stepping stone to even greater achievements.", analysis: "Your celebration style is intellectually-driven. You show your support by engaging with their success on a logical level, demonstrating that you are a partner in their journey toward personal and professional growth."},
-                ]
-            },
-            {
-                category: 'Spontaneous vs. Planned',
-                question: 'When preparing for a holiday trip...',
-                options: [
-                    { key: 'spontaneous', text: 'You pack the essentials and figure out the rest as you go.', choice: 'A', insight: "You're a go-with-the-flow traveler. You love the freedom of not having a rigid schedule, which allows for unexpected discoveries.", analysis: "Your travel style is spontaneous. You enjoy the excitement of the unknown and trust in your ability to adapt. This approach can be a lot of fun, but may cause anxiety for a more planner-oriented partner."},
-                    { key: 'planned', text: 'You have a detailed itinerary with all flights and hotels booked in advance.', choice: 'B', insight: "You’re a meticulous planner. You enjoy the security of having everything prepared, which minimizes stress and ensures a smooth trip.", analysis: "Your travel style is planned. You find comfort in structure and preparation. This makes you a reliable and thoughtful partner, but you may struggle to adapt to unexpected changes."},
-                ]
-            },
-            {
-                category: 'Direct vs. Thoughtful Communicator',
-                question: 'During a disagreement, you are more likely to...',
-                options: [
-                    { key: 'direct', text: 'Confront the issue immediately, even if it might be uncomfortable.', choice: 'A', insight: "You prefer to clear the air quickly. Your directness can prevent misunderstandings from festering and helps both partners move on.", analysis: "This choice reinforces a direct communication style. You believe that open confrontation is the healthiest way to resolve conflict. Your directness is a sign of your trust in the relationship's strength."},
-                    { key: 'thoughtful', text: 'Take a break to process your thoughts before discussing the issue.', choice: 'B', insight: "You choose calm over conflict. Taking time to process allows you to approach the conversation with a clear mind and a composed demeanor.", analysis: "This choice aligns with a thoughtful communication style. You prioritize emotional regulation and seek to prevent heated arguments. Your approach promotes peaceful resolutions, but may sometimes delay addressing important issues."},
-                ]
-            },
-            {
-                category: 'Emotional vs. Intellectual',
-                question: 'You show your love primarily through...',
-                options: [
-                    { key: 'emotional', text: 'Passionate and frequent displays of affection and compliments.', choice: 'A', insight: "You express love through grand gestures and constant reassurance, making your partner feel cherished and adored.", analysis: "You lead with an emotional dating style. You show love by being openly expressive and romantic. Your partner never has to guess how you feel, which can be very reassuring."},
-                    { key: 'intellectual', text: 'Thoughtful discussions about shared interests and goals.', choice: 'B', insight: "You express love through deep, meaningful conversations. You feel closest when you can share ideas and grow together.", analysis: "You lead with an intellectual dating style. You show love through shared mental and personal growth. You connect on a deeper level by discussing ideas, philosophies, and future plans, creating a strong partnership built on mutual respect."},
-                ]
-            },
-            {
-                category: 'Spontaneous vs. Planned',
-                question: 'For an anniversary celebration, you would prefer...',
-                options: [
-                    { key: 'spontaneous', text: 'To wake up and decide on the spot what to do, following your mood.', choice: 'A', insight: "You value the adventure of the unknown. A spontaneous anniversary is more than an event; it's a memorable story you create together.", analysis: "This choice shows a spontaneous dating style. You find joy in the unexpected and believe that the best moments are unplanned. This keeps the relationship feeling fresh and exciting."},
-                    { key: 'planned', text: 'To book a special dinner and a show months in advance.', choice: 'B', insight: "You find romance in careful preparation. Planning ahead shows your partner that you’re dedicated and have been looking forward to the moment for a long time.", analysis: "This choice indicates a planned dating style. For you, the act of planning is a way to show love and commitment. You find security and romance in knowing that your special moments are well-thought-out and guaranteed to be perfect."},
-                ]
-            },
-            {
-                category: 'Direct vs. Thoughtful Communicator',
-                question: 'When asked "What do you want to eat?" you are more likely to...',
-                options: [
-                    { key: 'direct', text: 'Give a specific answer immediately, like "I want to eat pizza."', choice: 'A', insight: "You are a decisive communicator. You know what you want and you express it clearly, making decision-making easy for your partner.", analysis: "This reflects a direct communication style. You value efficiency and are not afraid to express your preferences. This clear approach minimizes confusion and helps keep things simple."},
-                    { key: 'thoughtful', text: 'Say "I am open to anything, what do you feel like?"', choice: 'B', insight: "You are a considerate communicator. You prioritize your partner’s preferences, showing that their feelings are important to you.", analysis: "This reflects a thoughtful communication style. You show love by deferring to your partner's wants and needs. While this is considerate, it may sometimes put the burden of decision-making entirely on your partner."},
-                ]
-            },
-            {
-                category: 'Emotional vs. Intellectual',
-                question: 'You feel most connected to your partner when you are...',
-                options: [
-                    { key: 'emotional', text: 'Sharing deep feelings and personal stories.', choice: 'A', insight: "You connect through vulnerability. By sharing your innermost thoughts and feelings, you build a bond of trust and emotional intimacy.", analysis: "This points to an emotionally-focused dating style. You seek connection through deep, personal sharing, which strengthens the emotional fabric of your relationship."},
-                    { key: 'intellectual', text: 'Discussing a fascinating book or a new idea.', choice: 'B', insight: "You connect through mental stimulation. You feel a sense of closeness when you can engage in thoughtful conversation and learn something new together.", analysis: "This points to an intellectually-focused dating style. You find intimacy in shared curiosity and mental engagement. For you, a meeting of minds is a meeting of hearts, and you build your bond through a shared world of ideas."},
-                ]
-            },
-        ];
+    function handleAnswer(answerKey) {
+        answers.push({ question: questions[currentQuestion], answerKey: answerKey });
+        categories[answerKey]++;
+        currentQuestion++;
         
-        let categories = {
+        // Update progress bar
+        const progress = (currentQuestion / questions.length) * 100;
+        document.getElementById('progress-fill').style.width = `${progress}%`;
+        
+        loadQuestion();
+    }
+
+    function showResults() {
+        document.getElementById('game-screen').classList.remove('active');
+        document.getElementById('results-screen').classList.add('active');
+        
+        displayInsights();
+        displayPersonalityType();
+    }
+
+    function displayInsights() {
+        const insightsGrid = document.getElementById('insights-grid');
+        insightsGrid.innerHTML = ''; // Clear previous insights
+        
+        answers.forEach(answer => {
+            const selectedOption = answer.question.options.find(option => option.key === answer.answerKey);
+            
+            const insightHTML = `
+                <div class="insight-card">
+                    <p class="insight-category">${answer.question.category}</p>
+                    <h4 class="insight-question">${answer.question.question}</h4>
+                    <p class="insight-choice">${ENGLISH_TEXT['option_label']} ${selectedOption.choice}: ${selectedOption.insight}</p>
+                    <div class="insight-analysis">${selectedOption.analysis}</div>
+                </div>
+            `;
+            insightsGrid.innerHTML += insightHTML;
+        });
+    }
+    
+    function displayPersonalityType() {
+        const personalityType = getPersonalityType();
+        document.getElementById('personality-type').textContent = `${ENGLISH_TEXT['results_style_title']} ${personalityType}`;
+        document.getElementById('personality-description').textContent = getPersonalityDescription(personalityType);
+    }
+
+    function getPersonalityDescription(personalityType) {
+        // Only English descriptions remain
+        if (personalityType === 'Emotional Spontaneous Direct Communicator') return "Your relationship style is passionate, spontaneous, and straightforward. You love expressing your feelings, enjoy impromptu adventures, and prefer to tackle issues head-on.";
+        if (personalityType === 'Emotional Spontaneous Thoughtful Communicator') return "Your relationship style is affectionate, adventurous, and considerate. You cherish emotional connections, enjoy unpredictable experiences, and communicate gently and with care.";
+        if (personalityType === 'Emotional Planned Direct Communicator') return "Your relationship style is devoted, organized, and to the point. You form deep emotional bonds, love planning for the future together, and communicate clearly and honestly.";
+        if (personalityType === 'Emotional Planned Thoughtful Communicator') return "Your relationship style is romantic, caring, and harmonious. You love planning special moments for your loved one, share your warm feelings openly, and always communicate with your partner's feelings in mind.";
+        if (personalityType === 'Intellectual Spontaneous Direct Communicator') return "Your relationship style is intellectual, exciting, and frank. You enjoy exploring new ideas, thrive on impromptu adventures, and deal with issues quickly and clearly.";
+        if (personalityType === 'Intellectual Spontaneous Thoughtful Communicator') return "Your relationship style is analytical, adaptable, and careful. You love discussing new concepts, adapt well to unpredictable situations, and think carefully before you speak.";
+        if (personalityType === 'Intellectual Planned Direct Communicator') return "Your relationship style is logical, systematic, and direct. You enjoy making rational plans, love talking about your shared goals, and communicate directly to solve problems.";
+        if (personalityType === 'Intellectual Planned Thoughtful Communicator') return "Your relationship style is thoughtful, stable, and wise. You plan carefully for the future of your relationship, engage in deep conversations, and communicate in a way that is considerate of your partner's feelings.";
+        return "Unknown Style. Please retake the quiz."; // Fallback
+    }
+
+    function getPersonalityType() {
+        let personalityType = '';
+        
+        // English calculation logic remains
+        if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
+        else personalityType += 'Intellectual ';
+        
+        if (categories.spontaneous >= categories.planned) personalityType += 'Spontaneous ';
+        else personalityType += 'Planned ';
+        
+        if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
+        else personalityType += 'Thoughtful Communicator';
+
+        return personalityType;
+    }
+
+    function resetGame() {
+        currentQuestion = 0;
+        answers = [];
+        // Reset categories
+        categories = {
             'emotional': 0,
             'intellectual': 0,
             'spontaneous': 0,
@@ -679,341 +591,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             'direct': 0,
             'thoughtful': 0
         };
-
-        const translations_ko_text = {
-            'title_page': 'MBTI 밸런스 게임 - 관계 선호도 알아보기 | MBTILove',
-            'meta_description': '인터랙티브 MBTI 밸런스 게임을 통해 당신의 관계 선호도를 알아보세요. 선택지 중 하나를 골라 당신의 데이트 스타일과 성격 특성을 파악하세요.',
-            'nav_compatibility': '궁합',
-            'nav_dating_style': '데이트 스타일',
-            'nav_ideal_type': '이상형',
-            'nav_rankings': '랭킹',
-            'nav_conversation': '대화',
-            'nav_balance_game': '밸런스 게임',
-            'nav_about': '소개',
-            'welcome_title': 'MBTI 밸런스 게임',
-            'welcome_subtitle': '재미있는 양자택일 질문을 통해 당신의 관계 선호도를 발견하세요. 당신의 데이트 스타일, 의사소통 선호도, 그리고 연인 관계에서 진정으로 중요하게 여기는 가치에 대해 알아보세요.',
-            'feature1': '10개 질문',
-            'feature2': '개인 맞춤 인사이트',
-            'feature3': '관계 팁',
-            'start_button': '밸런스 게임 시작하기',
-            'how_to_play_title': '게임 방법',
-            'step1': '관계 선호도에 대한 10개의 양자택일 질문에 답하세요',
-            'step2': '당신의 데이트 스타일과 관계 가치에 대한 인사이트를 얻으세요',
-            'step3': '다양한 성격 유형과의 궁합에 대해 알아보세요',
-            'step4': '개인 맞춤 관계 조언 및 팁을 받으세요',
-            'question_counter': (current, total) => `질문 ${current} / ${total}`,
-            'option_label': '옵션',
-            'ad_label': '광고',
-            'results_title': '당신의 결과',
-            'results_style_title': '당신의 관계 스타일:',
-            'retake_quiz_button': '퀴즈 다시 하기',
-            'footer_explore_title': '탐색',
-            'nav_compatibility_footer': '궁합',
-            'nav_dating_style_footer': '데이트 스타일',
-            'nav_ideal_type_footer': '이상형',
-            'nav_rankings_footer': '랭킹',
-            'footer_resources_title': '자료',
-            'nav_about_footer': '소개',
-            'nav_contact_footer': '연락처',
-            'nav_official_test_footer': '공식 MBTI 테스트',
-            'footer_legal_title': '법률',
-            'nav_privacy_policy_footer': '개인정보 보호정책',
-            'nav_terms_of_use_footer': '이용 약관',
-            'copyright': '© 2024 MBTILove.xyz - 모든 권리 보유.',
-        };
-
-        const translations_en_text = {
-            'title_page': 'MBTI Balance Game - Discover Your Relationship Preferences | MBTILove',
-            'meta_description': 'Discover your relationship preferences with this interactive MBTI balance game. Choose between options to reveal your dating style and personality insights.',
-            'nav_compatibility': 'Compatibility',
-            'nav_dating_style': 'Dating Style',
-            'nav_ideal_type': 'Ideal Type',
-            'nav_rankings': 'Rankings',
-            'nav_conversation': 'Conversation',
-            'nav_balance_game': 'Balance Game',
-            'nav_about': 'About',
-            'welcome_title': 'MBTI Balance Game',
-            'welcome_subtitle': 'Discover your relationship preferences through fun dilemma questions. Find out about your dating style, communication preferences, and the values you truly hold dear in a relationship.',
-            'feature1': '10 Questions',
-            'feature2': 'Personalized Insights',
-            'feature3': 'Relationship Tips',
-            'start_button': 'Start Balance Game',
-            'how_to_play_title': 'How to Play',
-            'step1': 'Answer 10 dilemma questions about your relationship preferences',
-            'step2': 'Gain insights into your dating style and relationship values',
-            'step3': 'Learn about your compatibility with various personality types',
-            'step4': 'Receive personalized relationship advice and tips',
-            'question_counter': (current, total) => `Question ${current} of ${total}`,
-            'option_label': 'Option',
-            'ad_label': 'Advertisement',
-            'results_title': 'Your Results',
-            'results_style_title': 'Your Relationship Style:',
-            'retake_quiz_button': 'Retake Quiz',
-            'footer_explore_title': 'Explore',
-            'nav_compatibility_footer': 'Compatibility',
-            'nav_dating_style_footer': 'Dating Style',
-            'nav_ideal_type_footer': 'Ideal Type',
-            'nav_rankings_footer': 'Rankings',
-            'footer_resources_title': 'Resources',
-            'nav_about_footer': 'About',
-            'nav_contact_footer': 'Contact',
-            'nav_official_test_footer': 'Official MBTI Test',
-            'footer_legal_title': 'Legal',
-            'nav_privacy_policy_footer': 'Privacy Policy',
-            'nav_terms_of_use_footer': 'Terms of Use',
-            'copyright': '© 2024 MBTILove.xyz - All rights reserved.',
-        };
-        const translations_ja_text = {
-            'title_page': 'MBTIバランスゲーム - あなたの関係の好みを調べる | MBTILove',
-            'meta_description': 'インタラクティブなMBTIバランスゲームを通じて、あなたの関係の好みを調べてください。選択肢を選んで、あなたのデートスタイルと性格の洞察を明らかにします。',
-            'nav_compatibility': '相性',
-            'nav_dating_style': 'デートスタイル',
-            'nav_ideal_type': '理想のタイプ',
-            'nav_rankings': 'ランキング',
-            'nav_conversation': '会話',
-            'nav_balance_game': 'バランスゲーム',
-            'nav_about': 'について',
-            'welcome_title': 'MBTIバランスゲーム',
-            'welcome_subtitle': '楽しい二者択一の質問を通して、あなたの関係の好みを明らかにしましょう。あなたのデートスタイル、コミュニケーションの好み、そして恋愛関係で本当に大切にしている価値観について調べてください。',
-            'feature1': '10個の質問',
-            'feature2': 'パーソナライズされた洞察',
-            'feature3': '関係のヒント',
-            'start_button': 'バランスゲームを始める',
-            'how_to_play_title': '遊び方',
-            'step1': 'あなたの関係の好みに関する10個の二者択一の質問に答える',
-            'step2': 'あなたのデートスタイルと関係の価値観について洞察を得る',
-            'step3': '様々な性格タイプとの相性について知る',
-            'step4': 'パーソナライズされた関係のアドバイスとヒントを受け取る',
-            'question_counter': (current, total) => `質問 ${current} / ${total}`,
-            'option_label': 'オプション',
-            'ad_label': '広告',
-            'results_title': 'あなたの結果',
-            'results_style_title': 'あなたの関係スタイル:',
-            'retake_quiz_button': 'クイズを再度行う',
-            'footer_explore_title': '探す',
-            'nav_compatibility_footer': '相性',
-            'nav_dating_style_footer': 'デートスタイル',
-            'nav_ideal_type_footer': '理想のタイプ',
-            'nav_rankings_footer': 'ランキング',
-            'footer_resources_title': '資料',
-            'nav_about_footer': 'について',
-            'nav_contact_footer': 'お問い合わせ',
-            'nav_official_test_footer': '公式MBTIテスト',
-            'footer_legal_title': '法律',
-            'nav_privacy_policy_footer': 'プライバシーポリシー',
-            'nav_terms_of_use_footer': '利用規約',
-            'copyright': '© 2024 MBTILove.xyz - 全著作権所有。',
-            }
-        };
-        const translations_all = {
-            'ko': translations_ko_text,
-            'en': translations_en_text,
-            'ja': translations_ja_text,
-        };
+        gameStarted = false;
         
-        function updateContent(lang) {
-            currentLanguage = lang;
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (translations_all[lang] && translations_all[lang][key]) {
-                    if (typeof translations_all[lang][key] === 'function') {
-                        // Special case for question counter
-                        element.textContent = translations_all[lang][key](currentQuestion + 1, questions.length);
-                    } else {
-                        element.textContent = translations_all[lang][key];
-                    }
-                }
-            });
-        
-            // Update title and meta description manually
-            document.title = translations_all[lang]['title_page'];
-            document.querySelector('meta[name="description"]').setAttribute('content', translations_all[lang]['meta_description']);
-            
-            // Set active class on language button
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang='${lang}']`).classList.add('active');
-            
-            // Save language preference
-            localStorage.setItem('preferredLanguage', lang);
-        }
+        document.getElementById('results-screen').classList.remove('active');
+        document.getElementById('welcome-screen').style.display = 'flex';
+        // Reset progress bar
+        document.getElementById('progress-fill').style.width = `0%`;
+        // Reset counter text
+        document.getElementById('question-counter').textContent = ENGLISH_TEXT['question_counter'](1, questions.length);
+    }
 
-        function startGame() {
-            gameStarted = true;
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('game-screen').classList.add('active');
-            loadQuestion();
-        }
-
-        function loadQuestion() {
-            if (currentQuestion < questions.length) {
-                const questionData = questions[currentQuestion];
-                const questionCard = document.getElementById('question-card');
-                
-                let questionHTML = `
-                    <p class="question-category font-poppins">${questionData.category}</p>
-                    <h2 class="question-text">${questionData.question}</h2>
-                    <div class="options">
-                `;
-                
-                questionData.options.forEach(option => {
-                    questionHTML += `
-                        <button class="option-btn" onclick="handleAnswer('${option.key}')">
-                            <span class="option-label" data-lang-key="option_label">${translations_all[currentLanguage]['option_label']} ${option.choice}</span>
-                            ${option.text}
-                        </button>
-                    `;
-                });
-
-                questionHTML += `</div>`;
-                questionCard.innerHTML = questionHTML;
-
-                // Update question counter text
-                document.getElementById('question-counter').textContent = translations_all[currentLanguage]['question_counter'](currentQuestion + 1, questions.length);
-
-            } else {
-                showResults();
-            }
-        }
-
-        function handleAnswer(answerKey) {
-            answers.push({ question: questions[currentQuestion], answerKey: answerKey });
-            categories[answerKey]++;
-            currentQuestion++;
-            
-            // Update progress bar
-            const progress = (currentQuestion / questions.length) * 100;
-            document.getElementById('progress-fill').style.width = `${progress}%`;
-            
-            loadQuestion();
-        }
-
-        function showResults() {
-            document.getElementById('game-screen').classList.remove('active');
-            document.getElementById('results-screen').classList.add('active');
-            
-            displayInsights();
-            displayPersonalityType();
-        }
-
-        function displayInsights() {
-            const insightsGrid = document.getElementById('insights-grid');
-            insightsGrid.innerHTML = ''; // Clear previous insights
-            
-            answers.forEach(answer => {
-                const selectedOption = answer.question.options.find(option => option.key === answer.answerKey);
-                
-                const insightHTML = `
-                    <div class="insight-card">
-                        <p class="insight-category">${answer.question.category}</p>
-                        <h4 class="insight-question">${answer.question.question}</h4>
-                        <p class="insight-choice">${translations_all[currentLanguage]['option_label']} ${selectedOption.choice}: ${selectedOption.insight}</p>
-                        <div class="insight-analysis">${selectedOption.analysis}</div>
-                    </div>
-                `;
-                insightsGrid.innerHTML += insightHTML;
-            });
-        }
-        
-        function displayPersonalityType() {
-            const personalityType = getPersonalityType();
-            document.getElementById('personality-type').textContent = `${translations_all[currentLanguage]['results_style_title']} ${personalityType}`;
-            document.getElementById('personality-description').textContent = getPersonalityDescription(personalityType);
-        }
-
-        function getPersonalityDescription(personalityType) {
-            if (currentLanguage === 'ko') {
-                if (personalityType === '감정적 즉흥적 직접적인 소통가') return "당신의 관계 스타일은 열정적이고 즉흥적이며 솔직합니다. 감정을 표현하고 즉흥적인 모험을 즐기며, 어떤 문제든 정면으로 다루는 것을 선호합니다.";
-                if (personalityType === '감정적 즉흥적 사려 깊은 소통가') return "당신의 관계 스타일은 다정하고 모험적이며 사려 깊습니다. 감정적인 연결을 소중히 여기고, 예측 불가능한 경험을 즐기며, 부드럽고 신중하게 소통합니다.";
-                if (personalityType === '감정적 계획적 직접적인 소통가') return "당신의 관계 스타일은 헌신적이고 체계적이며 단도직입적입니다. 깊은 감정적 유대감을 형성하며, 관계의 미래를 함께 계획하고, 명확하고 솔직하게 소통합니다.";
-                if (personalityType === '감정적 계획적 사려 깊은 소통가') return "당신의 관계 스타일은 로맨틱하고 배려심 깊으며 조화롭습니다. 사랑하는 사람을 위해 미리 계획하고, 따뜻한 감정을 나누며, 상대방의 감정을 항상 배려하여 말합니다.";
-                if (personalityType === '지적 즉흥적 직접적인 소통가') return "당신의 관계 스타일은 지적이고 흥미진진하며 솔직합니다. 새로운 아이디어를 탐구하는 것을 좋아하며, 즉흥적인 모험을 즐기고, 어떤 문제든 신속하고 명확하게 다룹니다.";
-                if (personalityType === '지적 즉흥적 사려 깊은 소통가') return "당신의 관계 스타일은 분석적이고 적응력이 뛰어나며 조심스럽습니다. 새로운 개념에 대해 이야기하고, 예측 불가능한 상황에 잘 적응하며, 말하기 전에 신중하게 생각합니다.";
-                if (personalityType === '지적 계획적 직접적인 소통가') return "당신의 관계 스타일은 논리적이고 체계적이며 솔직합니다. 합리적인 계획을 세우고, 관계 목표에 대해 이야기하는 것을 좋아하며, 문제 해결을 위해 직접적으로 소통합니다.";
-                if (personalityType === '지적 계획적 사려 깊은 소통가') return "당신의 관계 스타일은 사려 깊고 안정적이며 지혜롭습니다. 관계의 미래를 신중하게 계획하고, 깊은 대화를 나누며, 상대방의 감정을 배려하여 소통합니다.";
-            } else if (currentLanguage === 'ja') {
-                if (personalityType === '感情的 衝動的 直接的なコミュニケーター') return "あなたの関係スタイルは情熱的で、自発的で、率直です。感情を表現し、即興的な冒険を楽しみ、どんな問題でも正面から向き合うことを好みます。";
-                if (personalityType === '感情的 衝動的 思慮深いコミュニケーター') return "あなたの関係スタイルは優しくて冒険的で、思いやりがあります。感情的なつながりを大切にし、予期せぬ経験を楽しみ、穏やかで慎重にコミュニケーションをとります。";
-                if (personalityType === '感情的 計画的 直接的なコミュニケーター') return "あなたの関係スタイルは献身的で、体系的で、単刀直入です。深い感情的な絆を築き、関係の未来を一緒に計画し、明確かつ率直にコミュニケーションをとります。";
-                if (personalityType === '感情的 計画的 思慮深いコミュニケーター') return "あなたの関係スタイルはロマンチックで、気配りができて、調和を大切にします。愛する人のために事前に計画し、温かい感情を分かち合い、相手の感情を常に尊重して話します。";
-                if (personalityType === '知的 衝動的 直接的なコミュニケーター') return "あなたの関係スタイルは知的で、わくわくして、率直です。新しいアイデアを探求するのが好きで、即興的な冒険を楽しみ、どんな問題でも迅速かつ明確に対処します。";
-                if (personalityType === '知的 衝動的 思慮深いコミュニケーター') return "あなたの関係スタイルは分析的で、適応力が高く、慎重です。新しい概念について話し、予期せぬ状況にもうまく適応し、話す前に慎重に考えます。";
-                if (personalityType === '知的 計画的 直接的なコミュニケーター') return "あなたの関係スタイルは論理的で、体系的で、率直です。合理的な計画を立て、関係の目標について話し合うのが好きで、問題解決のために直接的にコミュニケーションをとります。";
-                if (personalityType === '知的 計画的 思慮深いコミュニケーター') return "あなたの関係スタイルは思慮深く、安定していて、賢明です。関係の未来を慎重に計画し、深い会話を交わし、相手の感情を考慮してコミュニケーションをとります。";
-            } else { // 'en'
-                if (personalityType === 'Emotional Spontaneous Direct Communicator') return "Your relationship style is passionate, spontaneous, and straightforward. You love expressing your feelings, enjoy impromptu adventures, and prefer to tackle issues head-on.";
-                if (personalityType === 'Emotional Spontaneous Thoughtful Communicator') return "Your relationship style is affectionate, adventurous, and considerate. You cherish emotional connections, enjoy unpredictable experiences, and communicate gently and with care.";
-                if (personalityType === 'Emotional Planned Direct Communicator') return "Your relationship style is devoted, organized, and to the point. You form deep emotional bonds, love planning for the future together, and communicate clearly and honestly.";
-                if (personalityType === 'Emotional Planned Thoughtful Communicator') return "Your relationship style is romantic, caring, and harmonious. You love planning special moments for your loved one, share your warm feelings openly, and always communicate with your partner's feelings in mind.";
-                if (personalityType === 'Intellectual Spontaneous Direct Communicator') return "Your relationship style is intellectual, exciting, and frank. You enjoy exploring new ideas, thrive on impromptu adventures, and deal with issues quickly and clearly.";
-                if (personalityType === 'Intellectual Spontaneous Thoughtful Communicator') return "Your relationship style is analytical, adaptable, and careful. You love discussing new concepts, adapt well to unpredictable situations, and think carefully before you speak.";
-                if (personalityType === 'Intellectual Planned Direct Communicator') return "Your relationship style is logical, systematic, and direct. You enjoy making rational plans, love talking about your shared goals, and communicate directly to solve problems.";
-                if (personalityType === 'Intellectual Planned Thoughtful Communicator') return "Your relationship style is thoughtful, stable, and wise. You plan carefully for the future of your relationship, engage in deep conversations, and communicate in a way that is considerate of your partner's feelings.";
-            }
-        }
-
-        function getPersonalityType() {
-            let personalityType = '';
-            
-            if (currentLanguage === 'ko') {
-                if (categories.emotional >= categories.intellectual) personalityType += '감정적 ';
-                else personalityType += '지적 ';
-                
-                if (categories.spontaneous >= categories.planned) personalityType += '즉흥적 ';
-                else personalityType += '계획적 ';
-                
-                if (categories.direct >= categories.thoughtful) personalityType += '직접적인 소통가';
-                else personalityType += '사려 깊은 소통가';
-            } else if (currentLanguage === 'ja') {
-                if (categories.emotional >= categories.intellectual) personalityType += '感情的 ';
-                else personalityType += '知的 ';
-                
-                if (categories.spontaneous >= categories.planned) personalityType += '衝動的 ';
-                else personalityType += '計画的 ';
-                
-                if (categories.direct >= categories.thoughtful) personalityType += '直接的なコミュニケーター';
-                else personalityType += '思慮深いコミュニケーター';
-            } else { // 'en'
-                if (categories.emotional >= categories.intellectual) personalityType += 'Emotional ';
-                else personalityType += 'Intellectual ';
-                
-                if (categories.spontaneous >= categories.planned) personalityType += 'Spontaneous ';
-                else personalityType += 'Planned ';
-                
-                if (categories.direct >= categories.thoughtful) personalityType += 'Direct Communicator';
-                else personalityType += 'Thoughtful Communicator';
-            }
-
-            return personalityType;
-        }
-
-        function resetGame() {
-            currentQuestion = 0;
-            answers = [];
-            gameStarted = false;
-            
-            document.getElementById('results-screen').classList.remove('active');
-            document.getElementById('welcome-screen').style.display = 'flex';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            updateContent(savedLang);
-        });
-        
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (event) => {
-                const lang = event.target.getAttribute('data-lang');
-                updateContent(lang);
-            });
-        });
-    </script>
-<script>
-function toggleMenu() {
-    document.getElementById('nav-menu').classList.toggle('active');
-}
+    document.addEventListener('DOMContentLoaded', () => {
+        // Removed language setting logic, default is 'en'
+        // Initialize counter text on load
+        document.getElementById('question-counter').textContent = ENGLISH_TEXT['question_counter'](1, questions.length);
+    });
+    
+    // Toggle menu function for mobile
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
 </script>
 </body>
-
 </html>
-
-

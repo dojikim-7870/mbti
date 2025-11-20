@@ -3,14 +3,11 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6237171158673362"
      crossorigin="anonymous"></script>
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-57524D22');</script>
-<!-- End Google Tag Manager -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | MBTILove</title>
@@ -48,9 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav { display: flex; gap: 2rem; }
         .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
         .nav a:hover { color: var(--romantic-rose); }
-        .language-switcher { display: flex; gap: 0.5rem; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 0.3rem 0.8rem; border-radius: 1rem; cursor: pointer; transition: all 0.3s; }
-        .lang-btn.active { background: var(--romantic-rose); color: white; border-color: var(--romantic-rose); }
+        /* .language-switcher styles removed as the element is removed */
         
         /* Hero Section */
         .hero { 
@@ -206,12 +201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="balance-game.html">Balance Game</a>
       <a href="about.html">About</a>
     </nav>
-    <div class="language-switcher">
-      <button class="lang-btn active">EN</button>
-      <button class="lang-btn">日本語</button>
-      <button class="lang-btn">한국어</button>
     </div>
-  </div>
 </header>
 
 <section class="hero">
@@ -227,7 +217,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="container">
   <div class="contact-grid">
-    <!-- ✅ 메일 폼 제거, 안내 콘텐츠로 대체 -->
     <div class="contact-form">
       <h2 class="form-title font-poppins">Reach Out to Us</h2>
       <p style="margin-bottom: 1.2rem;">
@@ -317,7 +306,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- Modal -->
 <div id="email-modal" class="modal">
   <div class="modal-content">
     <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -329,15 +317,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer class="footer">
     <div class="footer-content">
-        <!-- About Section -->
         <div class="footer-section">
             <h3>❤️ MBTILove</h3>
             <p>Your trusted platform for understanding personality connections, emotional chemistry, and meaningful relationship matching.</p>
         </div>
 
-        <!-- Explore Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerExplore">Explore</h3>
+            <h3>Explore</h3>
             <ul>
                 <li><a href="compatibility.html">Compatibility</a></li>
                 <li><a href="dating-style.html">Dating Style</a></li>
@@ -346,9 +332,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
 
-        <!-- Resources Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerResources">Resources</h3>
+            <h3>Resources</h3>
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -356,9 +341,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
 
-        <!-- Legal Section -->
         <div class="footer-section">
-            <h3 data-i18n="footerLegal">Legal</h3>
+            <h3>Legal</h3>
             <ul>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
@@ -372,9 +356,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <style>
-/* Footer 기본 스타일 */
+/* Footer Basic Styles */
 .footer {
-    background: #000; /* 검정색 배경 */
+    background: #000;
     color: #fff;
     padding: 3rem 2rem;
     font-family: 'Poppins', sans-serif;
@@ -383,7 +367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem; /* 섹션 간격 */
+    gap: 3rem;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
@@ -404,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 
 .footer-section ul {
-    list-style: none; /* 점 제거 */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -414,13 +398,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 
 .footer-section ul li a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #fff; /* 흰색 */
+    text-decoration: none;
+    color: #fff;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: #ccc; /* 마우스 오버 시 살짝 회색 */
+    color: #ccc;
 }
 
 .footer-bottom {
@@ -430,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-size: 0.95rem;
 }
 
-/* 반응형 모바일 */
+/* Responsive Mobile */
 @media screen and (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -480,12 +464,9 @@ function copyEmail() {
     .then(() => alert('Email copied to clipboard!'));
 }
 </script>
-<!-- Hidden email for Googlebot (AdSense verification) -->
 <span id="email-holder" data-email="support@mbtilove.xyz" style="display:none;">
   support@mbtilove.xyz
 </span>
 
 </body>
 </html>
-
-
